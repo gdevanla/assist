@@ -1,0 +1,4 @@
+* The make needs to be changed to build OS specific so/dll files.
+* Instrumentation example:
+
+  java -agentpath:libmtrace2.dylib=/tmp/dump -cp <classpath_to_hello__world> HelloWorld
