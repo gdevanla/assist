@@ -1,0 +1,1 @@
+java -cp /Users/gdevanla/fsf/soot-2.5.0/lib/sootclasses-2.5.0.jar:/Users/gdevanla/fsf/soot/polyglot-1.3.5/lib/polyglot.jar:/Users/gdevanla/fsf/soot/jasmin-2.5.0/lib/jasminclasses-2.5.0.jar soot.Main -cp .:src/test/java/com/ser/statecarver/test/testartifacts:/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar  A e
