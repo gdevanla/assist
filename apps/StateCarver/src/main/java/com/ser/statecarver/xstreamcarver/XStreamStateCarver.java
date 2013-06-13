@@ -62,12 +62,20 @@ class TestObjectForXStream{
     private ObjectWithCircularReference circularReference;
     private Child treeSample;
 
+    int[] x_int_array = new int[10];
+    Parent[] clazz_array = new Parent[10];
+
     public TestObjectForXStream(int x, String s){
         this.x = x;
         this.y = s;
         innerObject = new InnerTestObjectForXStream(x*10, s+":"+s);
         circularReference = new ObjectWithCircularReference(this);
         this.treeSample = new Child(circularReference);
+
+        for ( int i=0; i<10; i++){
+            x_int_array[i] = i;
+            clazz_array[i] = new Parent(circularReference);
+        }
     }
 }
 
@@ -90,11 +98,12 @@ public class XStreamStateCarver {
                 XStream.PRIORITY_LOW);
     }
 
-    private void save(Object o){
+    private void save(Object o, String label){
         try{
             String fileName = getNameofStateFile();
             System.out.println("Writing to file =" + fileName);
             ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName, true));
+            out.writeObject(label);
             out.writeObject(o);
             out.close();
         }
@@ -104,9 +113,9 @@ public class XStreamStateCarver {
         }
     }
 
-    public static void saveState(Object o) {
+    public static void saveState(Object o, String label) {
        System.out.println("Over here - this time");
-       instance.save(o);
+       instance.save(o, label);
        System.out.println("Done saving file");
     }
 
@@ -119,7 +128,7 @@ public class XStreamStateCarver {
     public static void main(String[] args){
         TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
         XStreamStateCarver x = new XStreamStateCarver();
-        x.saveState(o);
-        x.saveState(TestObjectForXStream.class);
+        x.saveState(o, o.toString());
+        x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
     }
 }

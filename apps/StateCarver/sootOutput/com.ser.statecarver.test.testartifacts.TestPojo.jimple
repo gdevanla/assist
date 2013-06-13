@@ -29,9 +29,9 @@ public class com.ser.statecarver.test.testartifacts.TestPojo extends java.lang.O
     public void newadd(int)
     {
         com.ser.statecarver.test.testartifacts.TestPojo this;
-        int x;
+        int x, fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x;
         java.io.PrintStream temp$0;
-        java.lang.Integer nonPrimitiveArgLocal_x;
+        java.lang.Integer nonPrimitiveArgLocal_x, nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x;
 
         this := @this: com.ser.statecarver.test.testartifacts.TestPojo;
         x := @parameter0: int;
@@ -39,6 +39,9 @@ public class com.ser.statecarver.test.testartifacts.TestPojo extends java.lang.O
         staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(this);
         nonPrimitiveArgLocal_x = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(x);
         staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(nonPrimitiveArgLocal_x);
+        fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x = <com.ser.statecarver.test.testartifacts.DummyStaticClass: int x>;
+        nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x);
+        staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x);
         temp$0 = <java.lang.System: java.io.PrintStream out>;
         virtualinvoke temp$0.<java.io.PrintStream: void println(java.lang.String)>("new add");
         return;
@@ -47,8 +50,8 @@ public class com.ser.statecarver.test.testartifacts.TestPojo extends java.lang.O
     public int add(java.lang.Integer)
     {
         com.ser.statecarver.test.testartifacts.TestPojo this;
-        java.lang.Integer x;
-        int y, temp$0, temp$1, temp$2, temp$3, temp$4, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11;
+        java.lang.Integer x, nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x;
+        int y, temp$0, temp$1, temp$2, temp$3, temp$4, temp$6, temp$7, temp$8, temp$9, temp$10, temp$11, fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x;
         java.io.PrintStream temp$5;
 
         this := @this: com.ser.statecarver.test.testartifacts.TestPojo;
@@ -56,6 +59,9 @@ public class com.ser.statecarver.test.testartifacts.TestPojo extends java.lang.O
         staticinvoke <com.ser.statecarver.core.MethodTracer: void writeMethodTrace(java.lang.String,java.lang.String)>("add", "com.ser.statecarver.test.testartifacts.TestPojo");
         staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(this);
         staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(x);
+        fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x = <com.ser.statecarver.test.testartifacts.DummyStaticClass: int x>;
+        nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x = staticinvoke <java.lang.Integer: java.lang.Integer valueOf(int)>(fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x);
+        staticinvoke <com.ser.statecarver.xstreamcarver.XStreamStateCarver: void saveState(java.lang.Object)>(nonPrimitiveArgLocal_fieldRef_com.ser.statecarver.test.testartifacts.DummyStaticClass_x);
         y = 10;
         temp$0 = this.<com.ser.statecarver.test.testartifacts.TestPojo: int private_int_x>;
         temp$1 = virtualinvoke x.<java.lang.Integer: int intValue()>();

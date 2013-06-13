@@ -14,6 +14,7 @@ public class Configuration {
     private String baseFolder = "/tmp";
     private String testName = "";
     private String methodTracerFileName = "/tmp/MethodTracer1.log";
+    private String appClassesPrefix = "com.ser.statecarver.test.testartifacts";
 
     public String getMethodTraceFileName(){
         return methodTracerFileName;
@@ -21,6 +22,10 @@ public class Configuration {
 
     public String getBaseFolder(){
         return baseFolder;
+    }
+
+    public String getAppClassesPrefix(){
+        return appClassesPrefix;
     }
 
 }
