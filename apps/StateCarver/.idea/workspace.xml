@@ -4,16 +4,39 @@
     <list default="true" id="9f502390-c44b-4565-a8d4-a88480bf95e9" name="Default" comment="" />
     <ignored path="StateCarver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370790146136" ignored="false" />
-    <file path="/TestPojo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370840943715" ignored="false" />
+    <file path="/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370951286421" ignored="false" />
+    <file path="/TestPojo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371081823035" ignored="false" />
     <file path="/StateInstrumentor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370601642620" ignored="false" />
-    <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370815874770" ignored="false" />
+    <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371082725006" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/soot/src/soot/JastAddInitialResolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370790253860" ignored="false" />
     <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866430297" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866873322" ignored="false" />
-    <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866618815" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866875240" ignored="false" />
+    <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371056113791" ignored="false" />
     <file path="/StaticClassConverter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866263526" ignored="false" />
     <file path="/StaticReflectionProvider.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866473720" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/settings-1.0.0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/profiles-1.0.0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
+    <file path="/MethodTracer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371081336880" ignored="false" />
+    <file path="/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371037458175" ignored="false" />
+    <file path="/Research.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370952142687" ignored="false" />
+    <file path="/MethodInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371084758648" ignored="false" />
+    <file path="/Utils.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371084931933" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +51,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -65,6 +87,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -74,79 +97,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="48" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.m2/settings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="31" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestPojo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="46" selection-start="8" selection-end="46" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XStreamStateCarver.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/XStreamStateCarver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.24916944">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StaticReflectionProvider.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticReflectionProvider.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="32" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaticAttributeConverter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticAttributeConverter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="50" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JastAddInitialResolver.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/soot/soot/2.5.0/soot-2.5.0.jar!/soot/JastAddInitialResolver.class">
+      <file leaf-file-name="MethodTracer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodTracer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="72" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0">
+            <state line="25" column="33" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="A.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/A.java">
+      <file leaf-file-name="Configuration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Configuration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0">
+            <state line="22" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateInstrumenter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="62" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.36307055">
               <folding />
             </state>
           </provider>
@@ -155,16 +136,58 @@
       <file leaf-file-name="com.ser.statecarver.test.testartifacts.TestPojo.jimple" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.TestPojo.jimple">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="30" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0">
+            <state line="42" column="24" selection-start="2179" selection-end="2179" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StateInstrumenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java">
+      <file leaf-file-name="TestPojo.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sootOutput/com/ser/statecarver/test/testartifacts/TestPojo.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="28" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
+            <state line="19" column="1" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestPojo.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="21" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodInstrumenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodInstrumenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="83" column="40" selection-start="3462" selection-end="3462" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1719#1725#0" expanded="true" />
+                <element signature="e#2254#2260#0" expanded="true" />
+                <element signature="e#2841#2847#0" expanded="true" />
+                <element signature="e#3625#3633#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="com.ser.statecarver.test.testartifacts.A.jimple" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.A.jimple">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="31" selection-start="4118" selection-end="4118" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -186,13 +209,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumentor.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/A.java" />
         <option value="$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.TestPojo.jimple" />
-        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticClassConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticAttributeConverter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticReflectionProvider.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/com/ser/statecarver/random/Research.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Configuration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/XStreamStateCarver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodTracer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Utils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodInstrumenter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java" />
       </list>
     </option>
   </component>
@@ -205,6 +233,20 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="StateCarver" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+      </PATH>
       <PATH>
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
@@ -233,20 +275,6 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="Dependencies" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="StateCarver" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
           <option name="myItemId" value="Lifecycle" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$LifecycleNode" />
         </PATH_ELEMENT>
@@ -255,8 +283,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="960" />
+    <option name="width" value="2560" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -289,7 +317,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -326,18 +353,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testartifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -380,44 +395,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xstreamcarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XStreamStateCarver.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xstreamcarver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,8 +428,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sootOutput" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sootOutput" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="statecarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testartifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -461,12 +487,13 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.lastSelected" value="MavenSettings" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -478,7 +505,7 @@
       <recent name="com.ser.statecarver.xstreamcarver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.XStreamStateCarver">
+  <component name="RunManager" selected="Application.StateInstrumenter">
     <configuration default="false" name="TestPojo" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.ser.statecarver.test.testartifacts.TestPojo" />
       <option name="VM_PARAMETERS" />
@@ -491,7 +518,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="StateCarver" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -507,7 +540,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="StateCarver" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -622,9 +661,9 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.XStreamStateCarver" />
-        <item index="1" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestPojo" />
+        <item index="0" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TestPojo" />
+        <item index="2" class="java.lang.String" itemvalue="Application.XStreamStateCarver" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -659,7 +698,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="960" extended-state="6" />
+    <frame x="0" y="22" width="2560" height="952" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -670,13 +709,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43452382" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26923078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1505508" sideWeight="0.77738094" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33216783" sideWeight="0.77738094" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24602203" sideWeight="0.77738094" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22261904" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20047733" sideWeight="0.6129808" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38701922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -749,62 +788,28 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="12" selection-start="903" selection-end="903" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="93" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.A.jimple">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.m2/settings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/soot/soot/2.5.0/soot-2.5.0.jar!/soot/JastAddInitialResolver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="72" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0">
+        <state line="16" column="72" selection-start="749" selection-end="749" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="39" selection-start="1264" selection-end="1264" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticAttributeConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/com/ser/statecarver/random/Research.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="81" selection-start="438" selection-end="500" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -816,60 +821,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.TestPojo.jimple">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/XStreamStateCarver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="30" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0">
+        <state line="99" column="45" selection-start="2914" selection-end="2914" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/sootOutput/com/ser/statecarver/test/testartifacts/TestPojo.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="48" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
+        <state line="19" column="1" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="28" selection-start="292" selection-end="292" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="46" selection-start="8" selection-end="46" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticReflectionProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="32" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/StaticAttributeConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="50" selection-start="927" selection-end="927" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/xstreamcarver/XStreamStateCarver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="351" selection-end="351" vertical-scroll-proportion="0.24916944">
+        <state line="22" column="18" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/ser/statecarver/test/testartifacts/TestPojo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="21" selection-start="1129" selection-end="1129" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="99" column="31" selection-start="4118" selection-end="4118" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodTracer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="33" selection-start="827" selection-end="827" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/MethodInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="40" selection-start="3462" selection-end="3462" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1719#1725#0" expanded="true" />
+            <element signature="e#2254#2260#0" expanded="true" />
+            <element signature="e#2841#2847#0" expanded="true" />
+            <element signature="e#3625#3633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.A.jimple">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sootOutput/com.ser.statecarver.test.testartifacts.TestPojo.jimple">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="24" selection-start="2179" selection-end="2179" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/ser/statecarver/core/StateInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="62" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.36307055">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,7 +983,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.thoughtworks.xstream:xstream-parent:1.4.4</last-edited>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

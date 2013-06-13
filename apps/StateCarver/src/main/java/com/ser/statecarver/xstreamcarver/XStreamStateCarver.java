@@ -1,5 +1,7 @@
 package com.ser.statecarver.xstreamcarver;
 
+import com.ser.statecarver.core.Configuration;
+import com.ser.statecarver.core.MethodTracer;
 import com.sun.corba.se.impl.orb.ParserTable;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
@@ -74,8 +76,10 @@ public class XStreamStateCarver {
     private XStream xstream;
     private String fileName;
 
-    private XStreamStateCarver(String fileName){
-        this.fileName = fileName;
+   private static XStreamStateCarver instance = new XStreamStateCarver();
+
+    public XStreamStateCarver(){
+        this.fileName = MethodTracer.getStateFileForMethod();
         xstream = new XStream(new Sun14ReflectionProvider(),
                 new DomDriver());
         //TODO: Do I need to set a Marshalling Strategy?
@@ -86,8 +90,10 @@ public class XStreamStateCarver {
                 XStream.PRIORITY_LOW);
     }
 
-    public void saveState(Object o) {
+    private void save(Object o){
         try{
+            String fileName = getNameofStateFile();
+            System.out.println("Writing to file =" + fileName);
             ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName, true));
             out.writeObject(o);
             out.close();
@@ -98,9 +104,21 @@ public class XStreamStateCarver {
         }
     }
 
+    public static void saveState(Object o) {
+       System.out.println("Over here - this time");
+       instance.save(o);
+       System.out.println("Done saving file");
+    }
+
+
+    private static String getNameofStateFile(){
+        //TODO: use proper path concatenation style
+        return new Configuration().getBaseFolder() + "/" + MethodTracer.getCurrentMethodCounter() + ".xml";
+    }
+
     public static void main(String[] args){
         TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
-        XStreamStateCarver x = new XStreamStateCarver("/tmp/state.xml");
+        XStreamStateCarver x = new XStreamStateCarver();
         x.saveState(o);
         x.saveState(TestObjectForXStream.class);
     }

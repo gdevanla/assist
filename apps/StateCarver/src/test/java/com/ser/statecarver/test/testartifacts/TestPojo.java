@@ -1,8 +1,5 @@
 package com.ser.statecarver.test.testartifacts;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
-
 /**
  * Created with IntelliJ IDEA.
  * User: gdevanla
@@ -22,28 +19,32 @@ public class TestPojo {
         this.public_int_x = public_int_x;
         this.private_int_x = private_int_x;
         this.public_string_s = public_string_s;
-        static_int_x = static_int_x;
+        static_int_x = this.static_int_x;
     }
 
-    public int add(int x){
-        /*int y = 10;
+    public void newadd(int x){
+        System.out.println("new add");
+    }
+
+    public int add(Integer x){
+        int y = 10;
         private_int_x += x;
-        public_int_x *= 2;*/
+        public_int_x *= 2;
+        System.out.println("Reached this statement1.");
 
         static_int_x = 100;
         static_int_x = x + 10;
         static_int_x = 20 + 10;
 
         return static_int_x + 50;
-
-
     }
 
-    /*public static void main(String[] args){
+    public static void main(String[] args){
         TestPojo pojo =  new TestPojo(1,1,1,"test");
-        pojo.add(10);
+        pojo.newadd(1);
+        pojo.add(new Integer(10));
         pojo.public_int_x *=5;
         pojo.add(20);
-    }*/
+    }
 
 }
