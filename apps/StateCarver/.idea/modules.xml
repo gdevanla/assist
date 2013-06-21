@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/StateCarver.iml" filepath="$PROJECT_DIR$/StateCarver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestArtifacts/TestArtifacts.iml" filepath="$PROJECT_DIR$/TestArtifacts/TestArtifacts.iml" />
     </modules>
   </component>
 </project>

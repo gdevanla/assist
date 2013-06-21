@@ -40,11 +40,14 @@ public class TestPojo {
     }
 
     public static void main(String[] args){
-        TestPojo pojo =  new TestPojo(1,1,1,"test");
+       /* TestPojo pojo =  new TestPojo(1,1,1,"test");
         pojo.newadd(1);
         pojo.add(new Integer(10));
         pojo.public_int_x *=5;
-        pojo.add(20);
+        pojo.add(20);*/
+
+        TestClassReferringToStaticClass t = new TestClassReferringToStaticClass();
+        t.referToStaticPropertyOfAnotherClass(10);
     }
 
 }

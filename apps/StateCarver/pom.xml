@@ -5,8 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>StateCarver</groupId>
     <artifactId>StateCarver</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-         <dependencies>
+    <modules>
+        <module>TestArtifacts</module>
+    </modules>
+    <dependencies>
              <dependency>
                  <groupId>soot</groupId>
                  <artifactId>soot</artifactId>

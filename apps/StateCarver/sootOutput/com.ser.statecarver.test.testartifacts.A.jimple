@@ -1,16 +1,25 @@
 public class com.ser.statecarver.test.testartifacts.A extends java.lang.Object
 {
-    public int x;
+
+    public void T1()
+    {
+        com.ser.statecarver.test.testartifacts.A this;
+        int a, temp$0, temp$1;
+
+        this := @this: com.ser.statecarver.test.testartifacts.A;
+        a = 0;
+        temp$0 = a;
+        temp$1 = temp$0 + 1;
+        a = temp$1;
+        return;
+    }
 
     public void <init>()
     {
         com.ser.statecarver.test.testartifacts.A this;
-        int temp$0;
 
         this := @this: com.ser.statecarver.test.testartifacts.A;
         specialinvoke this.<java.lang.Object: void <init>()>();
-        temp$0 = 10;
-        this.<com.ser.statecarver.test.testartifacts.A: int x> = temp$0;
         return;
     }
 }

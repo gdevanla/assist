@@ -24,7 +24,7 @@ public class Research {
     public void reviewUseDefBoxes(Body body, String s, Map map) {
         SootMethod method = body.getMethod();
         System.out.println(method.getName());
-        if ( method.getName().equals("add")){
+        if ( method.getName().equals("T1")){
             Chain<Local> locals = body.getLocals();
             System.out.println("Here=" + method);
             for(Local l:locals){
@@ -51,10 +51,10 @@ public class Research {
         }
 
         List<ValueBox> useBoxes = body.getUseBoxes();
-        System.out.println("UseBoxes:" + useBoxes);
+        //System.out.println("UseBoxes:" + useBoxes);
         for (ValueBox v:useBoxes){
             //System.out.println("Inside Use-Def boxes");
-            System.out.println(v.toString() + "," + v.getValue() + "," + v.getTags());
+            //System.out.println(v.toString() + "," + v.getValue() + "," + v.getTags());
         }
     }
 

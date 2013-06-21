@@ -1,5 +1,6 @@
 package com.ser.statecarver.core;
 
+import com.ser.statecarver.com.ser.statecarver.random.Research;
 import soot.*;
 import soot.options.Options;
 
@@ -21,13 +22,13 @@ public class StateInstrumenter extends BodyTransformer {
 
     @Override
     protected void internalTransform(Body body, String s, Map map) {
-      //new Research().reviewUseDefBoxes(body, s, map);
+      new Research().reviewUseDefBoxes(body, s, map);
 
-      if (!staticFieldInitialized){
+     /* if (!staticFieldInitialized){
           StaticStateOfApp.init();
           staticFieldInitialized = true;
       }
-      new MethodInstrumenter().instrumentMethod(body, s, map);
+      new MethodInstrumenter().instrumentMethod(body, s, map);*/
     }
 
     public static StateInstrumenter v() { return instance;}
@@ -38,8 +39,8 @@ public class StateInstrumenter extends BodyTransformer {
         //TODO: Static fields need to be captured across the application
 
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
-        Options.v().set_verbose(true);
-        //Options.v().set_output_format(Options.output_format_J);
+        //Options.v().set_verbose(true);
+        Options.v().set_output_format(Options.output_format_J);
 
         //move this whole thing to mvn, can that be done?
         String[] sootArguments = new String[]{"-process-dir", sourceFolder,

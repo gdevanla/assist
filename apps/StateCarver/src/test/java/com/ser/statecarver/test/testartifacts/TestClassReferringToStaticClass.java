@@ -9,8 +9,9 @@ package com.ser.statecarver.test.testartifacts;
  */
 public class TestClassReferringToStaticClass {
 
-    public void referToStaticPropertyOfAnotherClass(int i){
-        int j = DummyStaticClass.x;
-    }
+    public static DummyStaticClass x = new DummyStaticClass();
 
+    public void referToStaticPropertyOfAnotherClass(int i){
+        //int j = DummyStaticClass.x;
+    }
 }
