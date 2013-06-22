@@ -9,37 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>TestArtifacts</module>
+        <module>assist</module>
     </modules>
-    <dependencies>
-             <dependency>
-                 <groupId>soot</groupId>
-                 <artifactId>soot</artifactId>
-                 <version>2.5.0-myversion</version>
-             </dependency>
-             <dependency>
-                 <groupId>polyglot</groupId>
-                 <artifactId>polyglot</artifactId>
-                 <version>1.3.5</version>
-             </dependency>
-             <dependency>
-                 <groupId>java_cup</groupId>
-                 <artifactId>java_cup</artifactId>
-                 <version>1.0.0</version>
-             </dependency>
-             <dependency>
-                 <groupId>jasmin</groupId>
-                 <artifactId>jasmin</artifactId>
-                 <version>2.5.0</version>
-             </dependency>
-             <dependency>
-                 <groupId>com.thoughtworks.xstream</groupId>
-                 <artifactId>xstream</artifactId>
-                 <version>1.4.4</version>
-             </dependency>
-             <dependency>
-                 <groupId>com.google.inject</groupId>
-                 <artifactId>guice</artifactId>
-                 <version>3.0</version>
-             </dependency>
-         </dependencies>
+
+
 </project>
