@@ -1,7 +1,7 @@
-package com.ser.statecarver.xstreamcarver;
+package com.ser.assist.statecarver.xstreamcarver;
 
-import com.ser.statecarver.core.Configuration;
-import com.ser.statecarver.core.MethodTracer;
+import com.ser.assist.statecarver.core.Configuration;
+import com.ser.assist.statecarver.core.MethodTracer;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;

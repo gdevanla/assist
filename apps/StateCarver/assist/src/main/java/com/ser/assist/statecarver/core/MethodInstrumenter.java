@@ -1,4 +1,4 @@
-package com.ser.statecarver.core;
+package com.ser.assist.statecarver.core;
 
 import soot.*;
 import soot.jimple.*;
@@ -15,7 +15,7 @@ public class MethodInstrumenter {
     SootClass methodTracerClass = Scene.v().forceResolve("MethodTracer", SootClass.SIGNATURES);
     SootMethod methodTracerWrite = methodTracerClass.getMethodByName("writeMethodTrace");
     SootClass xStreamStateCarverClass = Scene.v().forceResolve(
-            "com.ser.statecarver.xstreamcarver.XStreamStateCarver",
+            "XStreamStateCarver",
             SootClass.SIGNATURES);
     SootMethod xStreamSaveMethod = xStreamStateCarverClass.getMethodByName("saveState");
 
@@ -35,7 +35,15 @@ public class MethodInstrumenter {
 
         body.getUnits().insertBefore(methodTraceStmt, stmtToInsertBefore);
         body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
-        body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
+
+        if ( staticStateSavingStmts.size()>0){
+            System.out.println("has static fields " + body);
+            body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
+        }
+        else
+        {
+           // System.out.println(body + " has no static fields");
+        }
 
     }
 

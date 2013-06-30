@@ -1,4 +1,4 @@
-package com.ser.statecarver.core;
+package com.ser.assist.statecarver.core;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,7 +14,7 @@ public class Configuration {
     private String baseFolder = "/tmp";
     private String testName = "";
     private String methodTracerFileName = "/tmp/MethodTracer1.log";
-    private String appClassesPrefix = "com.ser.statecarver.test.testartifacts";
+    private String appClassesPrefix = "com.ser.statecarver.testartifacts";
 
     public String getMethodTraceFileName(){
         return methodTracerFileName;

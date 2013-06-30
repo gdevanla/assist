@@ -14,12 +14,13 @@ class Apples{
     }
 }
 
-public class SimpleReturnPatternTest extends TestCase {
+public class SimpleReturnPatternTest1 extends TestCase {
 
-    public void testSimpleReturnPattern() {
+    public void testSimpleReturnPattern1() {
         /* Here MUT is add*/
         Apples x = new Apples();
-        int y = x.add(10);
+        int z = x.add(10); //+ Math.abs(10);
+        int y = z;
         assertEquals(20, y);
     }
 }

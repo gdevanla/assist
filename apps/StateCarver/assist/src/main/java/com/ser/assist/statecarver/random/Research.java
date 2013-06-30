@@ -1,4 +1,4 @@
-package com.ser.statecarver.random;
+package com.ser.assist.statecarver.random;
 
 
 import soot.Body;

@@ -1,4 +1,4 @@
-package com.ser.statecarver.xstreamcarver;
+package com.ser.assist.statecarver.xstreamcarver;
 
 import com.thoughtworks.xstream.converters.reflection.ReflectionProvider;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;

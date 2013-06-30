@@ -1,4 +1,4 @@
-package com.ser.statecarver.core;
+package com.ser.assist.statecarver.core;
 
 import soot.BooleanType;
 import soot.ByteType;

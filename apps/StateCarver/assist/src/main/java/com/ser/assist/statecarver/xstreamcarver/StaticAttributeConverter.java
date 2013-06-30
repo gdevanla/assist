@@ -1,4 +1,4 @@
-package com.ser.statecarver.xstreamcarver;
+package com.ser.assist.statecarver.xstreamcarver;
 
 import com.thoughtworks.xstream.converters.Converter;
 import com.thoughtworks.xstream.converters.MarshallingContext;
