@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>assist</artifactId>
+    <artifactId>Scratch2</artifactId>
     <dependencies>
         <dependency>
             <groupId>soot</groupId>
@@ -46,13 +46,6 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
         </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>2.1.1</version>
-        </dependency>
     </dependencies>
-
-
 
 </project>

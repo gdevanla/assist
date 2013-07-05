@@ -1,6 +1,5 @@
 package com.ser.assist;
 
-import soot.Body;
 import soot.Local;
 import soot.Unit;
 import soot.ValueBox;
@@ -17,8 +16,8 @@ import java.util.List;
  */
 public class SootHelper {
 
-    private final Body body;
-    public SootHelper(Body body){
+    private final soot.Body body;
+    public SootHelper(soot.Body body){
         this.body = body;
     }
 

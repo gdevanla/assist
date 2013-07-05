@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaScratch/JavaScratch.iml" filepath="$PROJECT_DIR$/JavaScratch/JavaScratch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scratch/Scratch.iml" filepath="$PROJECT_DIR$/Scratch/Scratch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Scratch2/Scratch2.iml" filepath="$PROJECT_DIR$/Scratch2/Scratch2.iml" />
       <module fileurl="file://$PROJECT_DIR$/StateCarver.iml" filepath="$PROJECT_DIR$/StateCarver.iml" />
       <module fileurl="file://$PROJECT_DIR$/TestArtifacts/TestArtifacts.iml" filepath="$PROJECT_DIR$/TestArtifacts/TestArtifacts.iml" />
       <module fileurl="file://$PROJECT_DIR$/assist/assist.iml" filepath="$PROJECT_DIR$/assist/assist.iml" />

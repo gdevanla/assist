@@ -38,7 +38,7 @@ public class Core extends BodyTransformer {
         this.clazzNameofMUT = clazzNameOfMUT;
         this.mutSignature = mutSignature;
         //this is a static instance and therefore has to be here
-        PackManager.v().getPack("jtp").add(new Transform("jtp."+ Math.random(), this));
+       // PackManager.v().getPack("jtp").add(new Transform("jtp."+ Math.random(), this));
 
     }
 
@@ -54,11 +54,13 @@ public class Core extends BodyTransformer {
     }
 
     public void  runAnalysis(int outputFormat, boolean verbose, String inputFileName){
+        soot.G.reset();
         //Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{inputFileName,
                 "-cp", config.sootClasspath};
-        //PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
+        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
+
         soot.Main.main(sootArguments);
 
     }
@@ -71,6 +73,9 @@ public class Core extends BodyTransformer {
         oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
 
         System.out.println("Body Name= " + body.getMethod().getName());
+        for (Unit unit:body.getUnits()){
+            System.out.println((Stmt)unit + "," + unit.getUseBoxes());
+        }
     }
 
     private boolean containsMUT(Body body){
@@ -99,9 +104,6 @@ public class Core extends BodyTransformer {
 
         return false;
     }
-
-
-
 
 
     public static void main(String[] args){

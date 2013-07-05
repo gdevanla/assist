@@ -9,13 +9,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-
 public class MethodInstrumenter {
 
-    SootClass methodTracerClass = Scene.v().forceResolve("MethodTracer", SootClass.SIGNATURES);
+    SootClass methodTracerClass = Scene.v().forceResolve("com.ser.assist.statecarver.core.MethodTracer", SootClass.SIGNATURES);
     SootMethod methodTracerWrite = methodTracerClass.getMethodByName("writeMethodTrace");
     SootClass xStreamStateCarverClass = Scene.v().forceResolve(
-            "XStreamStateCarver",
+            "com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver",
             SootClass.SIGNATURES);
     SootMethod xStreamSaveMethod = xStreamStateCarverClass.getMethodByName("saveState");
 
