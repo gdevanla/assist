@@ -6,9 +6,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
 class InnerTestObjectForXStream{
     public int a;
@@ -102,7 +100,7 @@ public class XStreamStateCarver {
             String fileName = getNameofStateFile();
             System.out.println("Writing to file =" + fileName);
             ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName, true));
-            out.writeObject(label);
+            //out.writeObject(label);
             out.writeObject(o);
             out.close();
         }
@@ -112,10 +110,30 @@ public class XStreamStateCarver {
         }
     }
 
+    private Object load(String filePath){
+        try{
+            ObjectInputStream in = xstream.createObjectInputStream(new FileReader(filePath));
+            Object o = in.readObject();
+            return o;
+        }
+        catch(IOException e){
+            System.out.println("Error while loading state from " + filePath);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error while loading state from " + filePath);
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+
+        return null;
+    }
+
     public static void saveState(Object o, String label) {
        System.out.println("Over here - this time");
        instance.save(o, label);
        System.out.println("Done saving file");
+    }
+
+    public static Object loadState(String filePath) {
+        return instance.load(filePath);
     }
 
 

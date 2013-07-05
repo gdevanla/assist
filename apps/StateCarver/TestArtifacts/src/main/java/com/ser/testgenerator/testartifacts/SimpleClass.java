@@ -2,6 +2,9 @@ package com.ser.testgenerator.testartifacts;
 
 public class SimpleClass {
 
+    int x;
+    String s;
+
     public int sayHello(){
         System.out.println("ClassName:" + this.getClass() + ":" + "MethodName" + this.getClass().getEnclosingMethod());
         return 10;

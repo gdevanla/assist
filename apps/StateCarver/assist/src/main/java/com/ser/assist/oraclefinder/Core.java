@@ -67,8 +67,14 @@ public class Core extends BodyTransformer {
 
     @Override
     protected void internalTransform(Body body, String s, Map map) {
+        if (body.getMethod().isConstructor()){
+            System.out.println("*****" + body.getMethod().getReturnType());
+        }
+
+
         if (!isTestMethod(body)) return;
         if (!containsMUT(body)) return;
+
 
         oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
 

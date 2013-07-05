@@ -41,13 +41,15 @@ public class Core {
        String testMethodName = "testSimpleReturn101";
 
        SootClass testClazz = createTestClazz(testClazzName);
+       addPublicConstructor(testClazz);
+
        SootMethod testMethod = createTestMethod(testMethodName, testClazz);
        testMethod.setActiveBody(Jimple.v().newBody(testMethod));
        testClazz.addMethod(testMethod);
 
-       generateMethodDefaultParameterStack(testClazz, testMethod.getActiveBody());
+       addThisReferenceToBody(testMethod.getActiveBody());
        generateSimpleReturnTest(testMethod.getActiveBody(), "com.ser.testgenerator.testartifacts.SimpleClass",
-               "int sayHello()");
+               "int sayHello()", "/tmp/0.xml");
 
        System.out.println(testMethod.getActiveBody().getUnits());
        writeAsJimple(testClazz);
@@ -55,7 +57,25 @@ public class Core {
 
    }
 
-   public void writeAsJimple(SootClass clazz) throws IOException {
+    private void addPublicConstructor(SootClass testClazz) {
+
+        SootClass superTestClazz = Scene.v().forceResolve("junit.framework.TestCase", SootClass.SIGNATURES);
+        SootMethod superTestClazzInit = superTestClazz.getMethod("void <init>()");
+
+        SootMethod testMethod = new SootMethod("<init>", new ArrayList(), VoidType.v(), Modifier.PUBLIC);
+        testMethod.setActiveBody(Jimple.v().newBody(testMethod));
+        testClazz.addMethod(testMethod);
+
+        Body body = testMethod.getActiveBody();
+        addThisReferenceToBody(body);
+        Local thisLocal = body.getThisLocal();
+        body.getUnits().addLast(Jimple.v().newInvokeStmt(
+                Jimple.v().newSpecialInvokeExpr(thisLocal, superTestClazzInit.makeRef())));
+        body.getUnits().addLast(Jimple.v().newReturnVoidStmt());
+
+    }
+
+    public void writeAsJimple(SootClass clazz) throws IOException {
 
        String fileName = SourceLocator.v().getFileNameFor(clazz, Options.output_format_jimple);
        OutputStream streamOut = new FileOutputStream(fileName);
@@ -79,10 +99,10 @@ public class Core {
        streamOut.close();
    }
 
-    public void generateMethodDefaultParameterStack(SootClass clazz, Body body){
+    public void addThisReferenceToBody(Body body){
        //com.ser.oraclefinder.testartifacts.Apples this;
        //this := @this: com.ser.oraclefinder.testartifacts.Apples;
-
+       SootClass clazz = body.getMethod().getDeclaringClass();
        Local l = Jimple.v().newLocal("this", RefType.v(clazz));
        body.getLocals().addFirst(l);
 
@@ -95,19 +115,33 @@ public class Core {
    }
 
 
-   public void generateSimpleReturnTest(Body body, String clazzName, String subSignature){
+   public void generateSimpleReturnTest(Body body, String mutDeclaringClazzName, String subSignature, String stateFileName){
 
-       SootClass clazz = Scene.v().forceResolve(clazzName, SootClass.SIGNATURES);
+       SootClass xStreamStateCarverClass = Scene.v().forceResolve(
+               "com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver",
+               SootClass.SIGNATURES);
+       SootMethod xStreamLoadMethod = xStreamStateCarverClass.getMethodByName("loadState");
+
+       SootClass clazz = Scene.v().forceResolve(mutDeclaringClazzName, SootClass.SIGNATURES);
        SootMethod mut = clazz.getMethod(subSignature);
 
+       Local localRecieverObject1 = Jimple.v().newLocal("recieverObject1", RefType.v(mutDeclaringClazzName));
+       body.getLocals().add(localRecieverObject1);
 
+       //Stmt newStmt = Jimple.v().newAssignStmt(l1, Jimple.v().newNewExpr(RefType.v(mutDeclaringClazzName)));
+       //body.getUnits().addLast(newStmt);
 
-       Local l1 = Jimple.v().newLocal("v1", RefType.v(clazzName));
-       body.getLocals().add(l1);
+       Local localObject = Jimple.v().newLocal("localObject", RefType.v("java.lang.Object"));
+       body.getLocals().add(localObject);
+       body.getUnits().addLast(Jimple.v().newAssignStmt(localObject,
+               Jimple.v().newStaticInvokeExpr(xStreamLoadMethod.makeRef(),
+               StringConstant.v(stateFileName))));
 
-       Stmt newStmt = Jimple.v().newAssignStmt(l1, Jimple.v().newNewExpr(RefType.v(clazzName)));
-       body.getUnits().addLast(newStmt);
-       body.getUnits().addLast(Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(l1, mut.makeRef())));
+       body.getUnits().addLast(Jimple.v().newAssignStmt(localRecieverObject1,
+               Jimple.v().newCastExpr(localObject, clazz.getType())));
+
+       body.getUnits().addLast(Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(localRecieverObject1, mut.makeRef())));
+       body.getUnits().addLast(Jimple.v().newReturnVoidStmt());
 
    }
 
@@ -118,7 +152,8 @@ public class Core {
                 + ":" + "/System/Library/Frameworks/JavaVM.framework/Classes/jce.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"
-                + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java";
+                + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java"
+                + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist/src/main/java";
 
         core.initSoot(sootClassPath);
         core.builder();
