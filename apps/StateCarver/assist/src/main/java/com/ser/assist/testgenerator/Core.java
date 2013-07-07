@@ -125,22 +125,22 @@ public class Core {
        SootClass clazz = Scene.v().forceResolve(mutDeclaringClazzName, SootClass.SIGNATURES);
        SootMethod mut = clazz.getMethod(subSignature);
 
-       Local localRecieverObject1 = Jimple.v().newLocal("recieverObject1", RefType.v(mutDeclaringClazzName));
-       body.getLocals().add(localRecieverObject1);
+       Local localReceiverObject = Jimple.v().newLocal("receiverObject1", RefType.v(mutDeclaringClazzName));
+       body.getLocals().add(localReceiverObject);
 
-       //Stmt newStmt = Jimple.v().newAssignStmt(l1, Jimple.v().newNewExpr(RefType.v(mutDeclaringClazzName)));
-       //body.getUnits().addLast(newStmt);
+       List<Value> args = new ArrayList<Value>();
+       args.add(StringConstant.v(stateFileName));
 
        Local localObject = Jimple.v().newLocal("localObject", RefType.v("java.lang.Object"));
        body.getLocals().add(localObject);
        body.getUnits().addLast(Jimple.v().newAssignStmt(localObject,
-               Jimple.v().newStaticInvokeExpr(xStreamLoadMethod.makeRef(),
-               StringConstant.v(stateFileName))));
+               Jimple.v().newStaticInvokeExpr(xStreamLoadMethod.makeRef(), args)));
+               //StringConstant.v(stateFileName))));
 
-       body.getUnits().addLast(Jimple.v().newAssignStmt(localRecieverObject1,
+       body.getUnits().addLast(Jimple.v().newAssignStmt(localReceiverObject,
                Jimple.v().newCastExpr(localObject, clazz.getType())));
 
-       body.getUnits().addLast(Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(localRecieverObject1, mut.makeRef())));
+       body.getUnits().addLast(Jimple.v().newInvokeStmt(Jimple.v().newVirtualInvokeExpr(localReceiverObject, mut.makeRef())));
        body.getUnits().addLast(Jimple.v().newReturnVoidStmt());
 
    }

@@ -3,6 +3,7 @@ package com.ser.assist.statecarver.core;
 import soot.*;
 import soot.jimple.*;
 import soot.jimple.internal.JimpleLocal;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -17,32 +18,63 @@ public class MethodInstrumenter {
             "com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver",
             SootClass.SIGNATURES);
     SootMethod xStreamSaveMethod = xStreamStateCarverClass.getMethodByName("saveState");
+    SootMethod xStreamStaticSaveMethod = xStreamStateCarverClass.getMethodByName("saveStaticState");
 
-    public void instrumentMethod(Body body, String s, Map map) {
+    Local methodCounter;
+
+    public void instrumentMethod(Body body, String s, Map map) throws Exception {
 
         if (filter(body))
             return;
 
         String currentClassName = body.getMethod().getDeclaringClass().getName();
         Stmt stmtToInsertBefore = getStatementToInsertBefore(body.getUnits());
+        List<Unit> methodCounterStmts = getMethodCounterStatements(body);
         Stmt methodTraceStmt = getMethodTracerStmt(body, currentClassName);
         List<Unit> parameterSavingStmts = getParameterSavingStatements(body);
         List<Unit> staticStateSavingStmts = getStaticStateSavingStatements(body);
 
+
         //Stmt thisObjectSavingStmt = getParameterSavingStatements(body);
         //Stmt staticFieldsSavingStatement = getParameterSavingStatements(body);
 
+        body.getUnits().insertBefore(methodCounterStmts, stmtToInsertBefore);
         body.getUnits().insertBefore(methodTraceStmt, stmtToInsertBefore);
-        body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
+
+        if (parameterSavingStmts.size()>0){
+            body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
+        }
 
         if ( staticStateSavingStmts.size()>0){
-            System.out.println("has static fields " + body);
             body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
         }
-        else
-        {
-           // System.out.println(body + " has no static fields");
-        }
+    }
+
+    private List<Unit> getMethodCounterStatements(Body body){
+        Local localMethodCounter = Jimple.v().newLocal("assist_method_counter", LongType.v());
+        Local atomicMethodCounterRef = Jimple.v().newLocal("atomic_method_counter_ref",
+                RefType.v("java.util.concurrent.atomic.AtomicLong"));
+        body.getLocals().add(localMethodCounter);
+        body.getLocals().add(atomicMethodCounterRef);
+
+        //TODO: temp, clean this shit up
+        methodCounter = localMethodCounter;
+
+        SootClass atomicCounterClass = Scene.v().forceResolve("com.ser.assist.statecarver.core.AtomicCounter", SootClass.SIGNATURES);
+        SootField methodCounterField = atomicCounterClass.getFieldByName("methodCounter");
+        Unit u1 = Jimple.v().newAssignStmt( atomicMethodCounterRef , Jimple.v().newStaticFieldRef(methodCounterField.makeRef()));
+
+        SootClass atomicLongClass = Scene.v().forceResolve("java.util.concurrent.atomic.AtomicLong", SootClass.SIGNATURES);
+        SootMethod getAndIncrementMethod = atomicLongClass.getMethod("long getAndIncrement()");
+
+        Unit u2 = Jimple.v().newAssignStmt(localMethodCounter,
+                Jimple.v().newVirtualInvokeExpr(atomicMethodCounterRef, getAndIncrementMethod.makeRef()));
+
+        List<Unit> units = new ArrayList<Unit>();
+        units.add(u1);
+        units.add(u2);
+
+        return units;
 
     }
 
@@ -50,35 +82,8 @@ public class MethodInstrumenter {
         return "fieldRef" + "_" + f.getDeclaringClass() + "_" + f.getName();
     }
 
-    private List<Unit> getStaticStateSavingStatements(Body body) {
 
-        List<Unit> savingStmts = new ArrayList<Unit>();
-        int i=0;
-        for ( SootField field : StaticStateOfApp.instance.getStaticFieldList()){
-            Type t = field.getType();
-            //add a local variable for the static field
-            Local local = Jimple.v().newLocal(getTempFieldName(field), field.getType());
-            body.getLocals().addLast(local);
-
-            AssignStmt stmt = Jimple.v().newAssignStmt(local , Jimple.v().newStaticFieldRef(field.makeRef()));
-            savingStmts.add(stmt);
-
-            if(Utils.isPrimitive(t)){
-                savingStmts.addAll(getXStreamSaveStateMethodInvokerForPrimitives(body, local));
-            }
-            else{
-                List<Object> args = new ArrayList<Object>();
-                args.add(local);
-                args.add(StringConstant.v(local.getName()));
-                savingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamSaveMethod.makeRef(),
-                        args)));
-            }
-        }
-        return savingStmts;
-
-    }
-
-    private List<Unit> getParameterSavingStatements(Body body) {
+    private List<Unit> getParameterSavingStatements(Body body) throws Exception {
 
         List<Unit> localArgSavingStmts = new ArrayList<Unit>();
         for (Unit unit : body.getUnits()) {
@@ -94,38 +99,70 @@ public class MethodInstrumenter {
         return localArgSavingStmts;
     }
 
-    private List<Unit> getXStreamSaveStateMethodInvoker(Body body,IdentityStmt unit) {
+    private List<Unit> getXStreamSaveStateMethodInvoker(Body body, IdentityStmt unit) throws Exception {
         List<Unit> savingStmts = new ArrayList<Unit>();
-        Local arg  = (JimpleLocal) ((IdentityStmt)unit).getLeftOp();
-        if (Utils.isPrimitive(arg.getType())){
-               savingStmts.addAll(getXStreamSaveStateMethodInvokerForPrimitives(body, arg));
+        Value arg = ((IdentityStmt)unit).getLeftOp();
+        Value rightArg = ((IdentityStmt)unit).getRightOp();
+
+        //TODO: Primitive types
+        if (rightArg instanceof ParameterRef){
+            if (Utils.isPrimitive(arg.getType())){
+                System.out.println(arg);
+                savingStmts.addAll(getXStreamSaveStateMethodInvokerForPrimitives(body, unit));
+            }
+            else{
+                List<Value> args = new ArrayList<Value>(2);
+                args.add(arg);
+                args.add(methodCounter);
+                args.add(StringConstant.v(Integer.valueOf(((ParameterRef)rightArg).getIndex()).toString()));
+                args.add(StringConstant.v(arg.getType().toString()));
+                savingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamSaveMethod.makeRef(),
+                        args)));
+            }
         }
-        else
-        {
-            List<Object> args = new ArrayList<Object>();
-            args.add(arg);
-            args.add(StringConstant.v(arg.getName()));
+        else if (rightArg instanceof ThisRef){
+            Value thisArg = ((IdentityStmt)unit).getLeftOp();
+            List<Value> args = new ArrayList<Value>(2);
+            args.add(thisArg);
+            args.add(methodCounter);
+            args.add(StringConstant.v("this"));
+            args.add(StringConstant.v(thisArg.getType().toString()));
             savingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamSaveMethod.makeRef(),
                     args)));
         }
+        else{
+            throw new Exception("Unexpected typ in identity stmt="+ unit.toString());
+        }
 
         return savingStmts;
+
     }
 
-    private List<Unit> getXStreamSaveStateMethodInvokerForPrimitives(Body body, Local arg) {
+    private List<Unit> getXStreamSaveStateMethodInvokerForPrimitives(Body body, Unit u){
+
         List<Unit> primitiveSavingStmts = new ArrayList<Unit>(2);
-        Type t = arg.getType();
-        SootMethod  boxingMethod = Utils.getSootMethodsForPrimitiveTypes(t);
-        Local nonPrimitiveLocal = Utils.getLocalForType("nonPrimitiveArgLocal"+ "_" + arg.getName(), t);
+
+        List<Unit> savingStmts = new ArrayList<Unit>();
+        Value arg = ((IdentityStmt)u).getLeftOp();
+        ParameterRef rightArg = (ParameterRef)((IdentityStmt)u).getRightOp();
+
+        Local nonPrimitiveLocal = Utils.getLocalForType("nonPrimitiveArgLocal"+ "_" + rightArg.getIndex(), arg.getType());
         body.getLocals().addLast(nonPrimitiveLocal);
 
+        SootMethod  boxingMethod = Utils.getSootMethodsForPrimitiveTypes(arg.getType());
         Stmt nonPrimAssStmt = Jimple.v().newAssignStmt(nonPrimitiveLocal, Jimple.v().newStaticInvokeExpr(boxingMethod.makeRef(), arg));
         primitiveSavingStmts.add(nonPrimAssStmt);
 
-        List<Object> args = new ArrayList<Object>();
+        List<Value> args = new ArrayList<Value>();
         args.add(nonPrimitiveLocal);
-        args.add(StringConstant.v(nonPrimitiveLocal.getName()));
+        args.add(methodCounter);
+        args.add(StringConstant.v(Integer.valueOf(rightArg.getIndex()).toString()));
+        args.add(StringConstant.v(arg.getType().toString()));
 
+
+        for ( Value v:args){
+            System.out.println(v + ":" + v.getType());
+        }
         primitiveSavingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamSaveMethod.makeRef(),
                 args)));
 
@@ -134,11 +171,12 @@ public class MethodInstrumenter {
 
 
     private Stmt getMethodTracerStmt(Body body, String currentClassName) {
-        List<Object> args = new ArrayList<Object>();
-        args.add(body.getMethod().getName());
-        args.add(currentClassName);
-        return Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(methodTracerWrite.makeRef(),
-                StringConstant.v(body.getMethod().getName()), StringConstant.v(currentClassName)));
+        List<Value> args = new ArrayList<Value>();
+        args.add(StringConstant.v(body.getMethod().getSubSignature()));
+        args.add(StringConstant.v(currentClassName));
+        args.add(methodCounter);
+        return Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(methodTracerWrite.makeRef(), args));
+
     }
 
     public boolean filter(Body body){
@@ -160,6 +198,66 @@ public class MethodInstrumenter {
         }
         return s;
     }
+
+    private List<Unit> getStaticStateSavingStatements(Body body) {
+
+        List<Unit> savingStmts = new ArrayList<Unit>();
+        int i=0;
+        for (SootField field : StaticStateOfApp.instance.getStaticFieldList()){
+            Type t = field.getType();
+            //add a local variable for the static field
+            Local local = Jimple.v().newLocal(getTempFieldName(field), field.getType());
+            body.getLocals().addLast(local);
+
+            AssignStmt stmt = Jimple.v().newAssignStmt(local , Jimple.v().newStaticFieldRef(field.makeRef()));
+            savingStmts.add(stmt);
+
+            if(Utils.isPrimitive(t)){
+                savingStmts.addAll(getXStreamStaticSaveStateMethodInvokerForPrimitives(body, field, local));
+            }
+            else{
+                List<Object> args = new ArrayList<Object>();
+                args.add(local);
+                args.add(methodCounter);
+                args.add(StringConstant.v(field.getDeclaringClass().getName()));
+                args.add(StringConstant.v(local.getType().toString()));
+                args.add(StringConstant.v(field.getName()));
+                savingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamStaticSaveMethod.makeRef(),
+                        args)));
+            }
+        }
+        return savingStmts;
+
+    }
+
+    private List<Unit> getXStreamStaticSaveStateMethodInvokerForPrimitives(Body body, SootField field, Local larg) {
+        List<Unit> primitiveSavingStmts = new ArrayList<Unit>(2);
+        Type t = field.getType();
+
+        Local nonPrimitiveLocal = Utils.getLocalForType("nonPrimitiveStaticVar"+ "_" + field.getName(), t);
+        body.getLocals().addLast(nonPrimitiveLocal);
+
+        SootMethod  boxingMethod = Utils.getSootMethodsForPrimitiveTypes(t);
+        Stmt nonPrimAssStmt = Jimple.v().newAssignStmt(nonPrimitiveLocal, Jimple.v().newStaticInvokeExpr(boxingMethod.makeRef(), larg));
+        primitiveSavingStmts.add(nonPrimAssStmt);
+
+        List<Value> args = new ArrayList<Value>();
+        args.add(nonPrimitiveLocal);
+        args.add(methodCounter);
+        args.add(StringConstant.v(field.getDeclaringClass().getName()));
+        args.add(StringConstant.v(nonPrimitiveLocal.getType().toString()));
+        args.add(StringConstant.v(larg.getName()));
+
+
+        for ( Value v:args){
+            System.out.println(v);
+        }
+        primitiveSavingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamStaticSaveMethod.makeRef(),
+                args)));
+
+        return primitiveSavingStmts;
+    }
+
 
 
 

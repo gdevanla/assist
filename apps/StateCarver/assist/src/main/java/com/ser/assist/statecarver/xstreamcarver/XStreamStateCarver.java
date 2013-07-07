@@ -76,31 +76,42 @@ class TestObjectForXStream{
     }
 }
 
+
+class ClassHavingStaticMember{
+    public  Integer I = new Integer(10);
+    public  int i;
+    public  String s = "static";
+    int instance_i;
+
+    public ClassHavingStaticMember(int y){
+        instance_i = y;
+    }
+}
+
 public class XStreamStateCarver {
 
     private XStream xstream;
-    private String fileName;
+  //  private String fileName;
 
    private static XStreamStateCarver instance = new XStreamStateCarver();
 
     public XStreamStateCarver(){
-        this.fileName = MethodTracer.getStateFileForMethod();
+       // this.fileName = MethodTracer.getStateFileForMethod();
         xstream = new XStream(new Sun14ReflectionProvider(),
                 new DomDriver());
         //TODO: Do I need to set a Marshalling Strategy?
 
-        xstream.registerConverter(new StaticAttributeConverter(
+       /* xstream.registerConverter(new StaticAttributeConverter(
                 xstream.getMapper(),
                 new StaticReflectionProvider()),
-                XStream.PRIORITY_LOW);
+                XStream.PRIORITY_LOW);*/
     }
 
-    private void save(Object o, String label){
+    private void save(Object o, String fileName){
         try{
-            String fileName = getNameofStateFile();
-            System.out.println("Writing to file =" + fileName);
-            ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(fileName, true));
-            //out.writeObject(label);
+            String filePath = getFilePath(fileName);
+            System.out.println("Writing to file =" + filePath);
+            ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(filePath, false));
             out.writeObject(o);
             out.close();
         }
@@ -126,26 +137,46 @@ public class XStreamStateCarver {
         return null;
     }
 
-    public static void saveState(Object o, String label) {
+    public static void saveState1(Object o, String fileName) {
        System.out.println("Over here - this time");
-       instance.save(o, label);
+       instance.save(o, fileName);
        System.out.println("Done saving file");
     }
+
+    public static void saveState(Object o, long methodCounter, String paramNumberOrThis, String type){
+        String fileName = "state" + "." + methodCounter + "." + paramNumberOrThis + "." + type;
+        instance.save(o, fileName);
+    }
+
+    public static void saveStaticState(Object o, long methodCounter, String enclosingClass,
+                                       String type, String variableName){
+        String fileName = "static" + "." + methodCounter + "." + enclosingClass +
+                "." + type + "." + variableName;
+        instance.save(o, fileName);
+
+    }
+
 
     public static Object loadState(String filePath) {
         return instance.load(filePath);
     }
 
 
-    private static String getNameofStateFile(){
+    private static String getFilePath(String fileName){
         //TODO: use proper path concatenation style
-        return new Configuration().getBaseFolder() + "/" + MethodTracer.getCurrentMethodCounter() + ".xml";
+        return new Configuration().getBaseFolder() + "/" + fileName + ".xml";
     }
 
     public static void main(String[] args){
-        TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
-        XStreamStateCarver x = new XStreamStateCarver();
-        x.saveState(o, o.toString());
-        x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
+       // TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
+        //ClassHavingStaticMember o = new ClassHavingStaticMember(1000);
+        //XStreamStateCarver.saveState(o, o.toString());
+        //x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
+
+         ClassHavingStaticMember o = (ClassHavingStaticMember)XStreamStateCarver.loadState("/tmp/0.xml");
+         System.out.println(o.s);
+
+
+
     }
 }

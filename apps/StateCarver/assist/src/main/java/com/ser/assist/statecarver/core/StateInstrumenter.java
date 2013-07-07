@@ -13,7 +13,6 @@ public class StateInstrumenter extends BodyTransformer {
     static final String sourceFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java";
 
     static final String sootClassPath = sourceFolder + ":" + appBaseFolder + "/" + "target/classes";
-
     private static StateInstrumenter instance = new StateInstrumenter();
     private StateInstrumenter() {}
 
@@ -27,7 +26,11 @@ public class StateInstrumenter extends BodyTransformer {
           StaticStateOfApp.init();
           staticFieldInitialized = true;
       }
-      new MethodInstrumenter().instrumentMethod(body, s, map);
+        try {
+            new MethodInstrumenter().instrumentMethod(body, s, map);
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     }
 
     public static StateInstrumenter v() { return instance;}
@@ -39,7 +42,7 @@ public class StateInstrumenter extends BodyTransformer {
 
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
         //Options.v().set_verbose(true);
-        //Options.v().set_output_format(Options.output_format_J);
+        Options.v().set_output_format(Options.output_format_J);
 
         //move this whole thing to mvn, can that be done?
         String[] sootArguments = new String[]{"-process-dir", sourceFolder,
