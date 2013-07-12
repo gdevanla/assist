@@ -26,6 +26,10 @@ public class TestPojo {
         System.out.println("new add");
     }
 
+    public int newadd1(int x){
+        return x*2;
+    }
+
     public int add(Integer x){
         int y = 10;
         private_int_x += x;

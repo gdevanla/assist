@@ -6,6 +6,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
+import javax.sound.midi.SysexMessage;
 import java.io.*;
 
 class InnerTestObjectForXStream{
@@ -143,19 +144,27 @@ public class XStreamStateCarver {
        System.out.println("Done saving file");
     }
 
+    public static String getParamStateFileName(long methodCounter, String paramNumberOrThis, String type){
+        return "state" + "." + methodCounter + "." + paramNumberOrThis + "." + type + ".xml";
+    }
+
     public static void saveState(Object o, long methodCounter, String paramNumberOrThis, String type){
-        String fileName = "state" + "." + methodCounter + "." + paramNumberOrThis + "." + type;
+        String fileName = getParamStateFileName(methodCounter, paramNumberOrThis, type);
         instance.save(o, fileName);
+    }
+
+    public static String getStaticStateFileName(long methodCounter, String enclosingClass,
+                                           String type, String variableName){
+        return "static" + "." + methodCounter + "." + enclosingClass +
+                ":" + type + ":" + variableName + ".xml";
     }
 
     public static void saveStaticState(Object o, long methodCounter, String enclosingClass,
                                        String type, String variableName){
-        String fileName = "static" + "." + methodCounter + "." + enclosingClass +
-                "." + type + "." + variableName;
+        String fileName = getStaticStateFileName(methodCounter, enclosingClass, type, variableName);
         instance.save(o, fileName);
 
     }
-
 
     public static Object loadState(String filePath) {
         return instance.load(filePath);
@@ -164,7 +173,7 @@ public class XStreamStateCarver {
 
     private static String getFilePath(String fileName){
         //TODO: use proper path concatenation style
-        return new Configuration().getBaseFolder() + "/" + fileName + ".xml";
+        return new Configuration().getBaseFolder() + "/" + fileName;
     }
 
     public static void main(String[] args){
@@ -173,10 +182,11 @@ public class XStreamStateCarver {
         //XStreamStateCarver.saveState(o, o.toString());
         //x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
 
-         ClassHavingStaticMember o = (ClassHavingStaticMember)XStreamStateCarver.loadState("/tmp/0.xml");
-         System.out.println(o.s);
+        Object o = XStreamStateCarver.loadState("/tmp/state.0.0.int.xml");
+        System.out.println(o.getClass());
 
-
+        // ClassHavingStaticMember o = (ClassHavingStaticMember)XStreamStateCarver.loadState("/tmp/state.0.0.int.xml");
+        // System.out.println(o.s);
 
     }
 }

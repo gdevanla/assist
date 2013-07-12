@@ -2,13 +2,6 @@ package com.ser.assist.statecarver.core;
 
 import java.io.*;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gdevanla
- * Date: 6/11/13
- * Time: 6:04 AM
- * To change this template use File | Settings | File Templates.
- */
 public class MethodTracer {
 
     public static int counter=0;

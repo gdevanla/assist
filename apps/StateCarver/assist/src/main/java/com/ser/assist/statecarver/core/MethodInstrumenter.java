@@ -169,10 +169,15 @@ public class MethodInstrumenter {
         return primitiveSavingStmts;
     }
 
+    private String buildMethodStringToSave(Body body, String currentClassName){
+        String returnType = body.getMethod().getReturnType().toString();
+        String subSignatureWithoutReturnType = body.getMethod().getSubSignature().replaceFirst(returnType, "");
+        return returnType + " " + currentClassName + "." + subSignatureWithoutReturnType.trim();
+    }
 
     private Stmt getMethodTracerStmt(Body body, String currentClassName) {
         List<Value> args = new ArrayList<Value>();
-        args.add(StringConstant.v(body.getMethod().getSubSignature()));
+        args.add(StringConstant.v(buildMethodStringToSave(body, currentClassName)));
         args.add(StringConstant.v(currentClassName));
         args.add(methodCounter);
         return Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(methodTracerWrite.makeRef(), args));
