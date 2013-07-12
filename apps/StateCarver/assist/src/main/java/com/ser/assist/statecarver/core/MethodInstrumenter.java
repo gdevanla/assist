@@ -2,8 +2,6 @@ package com.ser.assist.statecarver.core;
 
 import soot.*;
 import soot.jimple.*;
-import soot.jimple.internal.JimpleLocal;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,7 +16,9 @@ public class MethodInstrumenter {
             "com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver",
             SootClass.SIGNATURES);
     SootMethod xStreamSaveMethod = xStreamStateCarverClass.getMethodByName("saveState");
+    SootMethod xStreamSaveMethodPrimitiveInt = xStreamStateCarverClass.getMethodByName("savePrimitiveInt");
     SootMethod xStreamStaticSaveMethod = xStreamStateCarverClass.getMethodByName("saveStaticState");
+
 
     Local methodCounter;
 
@@ -47,6 +47,65 @@ public class MethodInstrumenter {
 
         if ( staticStateSavingStmts.size()>0){
             body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
+        }
+
+        if (!(body.getMethod().getReturnType() instanceof VoidType)){
+            List<Unit> allReturnStatements = collectReturnStatements(body);
+            for (Unit u:allReturnStatements){
+                if (!(u instanceof ReturnStmt)) continue;
+                ReturnStmt r = (ReturnStmt)u;
+                List<ValueBox> retValues = r.getUseBoxes();
+                if (retValues.size()>1)
+                    throw new Exception("Do not know what do with multiple uses in return statement");
+
+                List<Unit> returnValueSaveStatement = returnValueSaveStatement(body, retValues.get(0));
+                body.getUnits().insertBefore(returnValueSaveStatement, u);
+            }
+
+        }
+
+    }
+
+    private List<Unit> collectReturnStatements(Body body){
+        List<Unit> returnStatements = new ArrayList<Unit>();
+        for (Unit u: body.getUnits()){
+            if (!(u instanceof ReturnStmt)) continue;
+            returnStatements.add(u);
+        }
+        return returnStatements;
+    }
+
+    private List<Unit> returnValueSaveStatement(Body body, ValueBox retValueBox){
+
+        List<Unit> stmts = new ArrayList<Unit>();
+        if (Utils.isPrimitive(retValueBox.getValue().getType())){
+            return getSaveStmtForPrimitives(body, retValueBox.getValue().toString(), retValueBox.getValue(), "return");
+        }
+        else
+        {
+
+        List<Value> args = new ArrayList<Value>(2);
+        args.add(retValueBox.getValue());
+        args.add(methodCounter);
+        args.add(StringConstant.v("return"));
+        args.add(StringConstant.v(retValueBox.getValue().getType().toString()));
+
+
+        SootMethodRef saveMethodByType = getSaveMethodByType(retValueBox.getValue().getType());
+        stmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(saveMethodByType,
+                args)));
+        return stmts;
+        }
+    }
+
+    private SootMethodRef getSaveMethodByType(Type type) {
+
+        if (type.toString().equals("java.lang.int")){
+            return xStreamSaveMethodPrimitiveInt.makeRef();
+        }
+        else
+        {
+            return xStreamSaveMethod.makeRef();
         }
     }
 
@@ -108,7 +167,7 @@ public class MethodInstrumenter {
         if (rightArg instanceof ParameterRef){
             if (Utils.isPrimitive(arg.getType())){
                 System.out.println(arg);
-                savingStmts.addAll(getXStreamSaveStateMethodInvokerForPrimitives(body, unit));
+                savingStmts.addAll(getSaveStmtsForPrimitiveParams(body, unit));
             }
             else{
                 List<Value> args = new ArrayList<Value>(2);
@@ -138,15 +197,10 @@ public class MethodInstrumenter {
 
     }
 
-    private List<Unit> getXStreamSaveStateMethodInvokerForPrimitives(Body body, Unit u){
-
+    private List<Unit> getSaveStmtForPrimitives(Body body, String nonPrimitiveLocalName, Value arg, String paramOrThisOrReturn) {
         List<Unit> primitiveSavingStmts = new ArrayList<Unit>(2);
 
-        List<Unit> savingStmts = new ArrayList<Unit>();
-        Value arg = ((IdentityStmt)u).getLeftOp();
-        ParameterRef rightArg = (ParameterRef)((IdentityStmt)u).getRightOp();
-
-        Local nonPrimitiveLocal = Utils.getLocalForType("nonPrimitiveArgLocal"+ "_" + rightArg.getIndex(), arg.getType());
+        Local nonPrimitiveLocal = Utils.getLocalForType( "nonPrimitiveArgLocal_" + nonPrimitiveLocalName, arg.getType());
         body.getLocals().addLast(nonPrimitiveLocal);
 
         SootMethod  boxingMethod = Utils.getSootMethodsForPrimitiveTypes(arg.getType());
@@ -156,21 +210,29 @@ public class MethodInstrumenter {
         List<Value> args = new ArrayList<Value>();
         args.add(nonPrimitiveLocal);
         args.add(methodCounter);
-        args.add(StringConstant.v(Integer.valueOf(rightArg.getIndex()).toString()));
+        args.add(StringConstant.v(paramOrThisOrReturn));
         args.add(StringConstant.v(arg.getType().toString()));
 
-
-        for ( Value v:args){
-            System.out.println(v + ":" + v.getType());
-        }
         primitiveSavingStmts.add(Jimple.v().newInvokeStmt(Jimple.v().newStaticInvokeExpr(xStreamSaveMethod.makeRef(),
                 args)));
 
         return primitiveSavingStmts;
     }
 
+    private List<Unit> getSaveStmtsForPrimitiveParams(Body body, Unit u){
+        List<Unit> savingStmts = new ArrayList<Unit>();
+        Value arg = ((IdentityStmt)u).getLeftOp();
+        ParameterRef rightArg = (ParameterRef)((IdentityStmt)u).getRightOp();
+        return getSaveStmtForPrimitives(body, Integer.valueOf(rightArg.getIndex()).toString(), arg, Integer.valueOf(rightArg.getIndex()).toString());
+    }
+
     private String buildMethodStringToSave(Body body, String currentClassName){
         String returnType = body.getMethod().getReturnType().toString();
+        System.out.println(returnType);
+        returnType = returnType.replace("[", "\\[").replace("]", "\\]");
+
+
+        System.out.print(body.getMethod().getSubSignature());
         String subSignatureWithoutReturnType = body.getMethod().getSubSignature().replaceFirst(returnType, "");
         return returnType + " " + currentClassName + "." + subSignatureWithoutReturnType.trim();
     }

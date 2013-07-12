@@ -27,7 +27,28 @@ public class TestPojo {
     }
 
     public int newadd1(int x){
-        return x*2;
+       return x*2;
+    }
+
+    public int[] newadd2(int x){
+        return new int[]{1,2,3,4};
+    }
+
+    public int checkifandreturn(int x){
+        if (x>100){
+            return 200;
+        }
+        else if (x> 200)
+        {
+            return 50;
+        }
+        else
+        {
+            return -10;
+        }
+
+
+
     }
 
     public int add(Integer x){
@@ -45,7 +66,8 @@ public class TestPojo {
 
     public static void main(String[] args){
        TestPojo pojo =  new TestPojo(1,1,1,"test");
-        pojo.newadd(1);
+        pojo.newadd1(1);
+        pojo.newadd2(2);
         //pojo.add(new Integer(10));
         //pojo.public_int_x *=5;
         //pojo.add(20);

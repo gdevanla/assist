@@ -5,6 +5,13 @@ import soot.options.Options;
 
 import java.util.Map;
 
+//TODO:
+// Handle multiple return statements in code
+// Handle return statements of all types(int, int[], Integer[], Integer)
+// Save ref parameter? Save all parameters or the ones who may have defboxes associated with them.
+// exception handling, what do I need to do here?
+// Method calls inside loop, any special handling
+// save state before exception throw statements
 
 public class StateInstrumenter extends BodyTransformer {
 

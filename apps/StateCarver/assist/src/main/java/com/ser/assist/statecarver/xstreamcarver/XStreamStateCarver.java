@@ -148,8 +148,13 @@ public class XStreamStateCarver {
         return "state" + "." + methodCounter + "." + paramNumberOrThis + "." + type + ".xml";
     }
 
-    public static void saveState(Object o, long methodCounter, String paramNumberOrThis, String type){
-        String fileName = getParamStateFileName(methodCounter, paramNumberOrThis, type);
+    public static void saveState(Object o, long methodCounter, String paramNumberOrThisOrRet, String type){
+        String fileName = getParamStateFileName(methodCounter, paramNumberOrThisOrRet, type);
+        instance.save(o, fileName);
+    }
+
+    public static void savePrimitiveInt(int o, long methodCounter, String paramNumberOrThisOrRet, String type){
+        String fileName = getParamStateFileName(methodCounter, paramNumberOrThisOrRet, type);
         instance.save(o, fileName);
     }
 
