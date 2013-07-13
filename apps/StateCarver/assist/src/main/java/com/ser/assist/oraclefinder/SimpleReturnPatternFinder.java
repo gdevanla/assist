@@ -14,14 +14,10 @@ import soot.toolkits.scalar.SimpleLocalDefs;
 import java.util.LinkedList;
 import java.util.List;
 
-public class SimpleReturnPatternFinder{
-
-    public final Body body;
-    public final String mutSignature;
+public class SimpleReturnPatternFinder extends AbstractOracleFinder{
 
     public SimpleReturnPatternFinder(Body body, String mutSignature){
-        this.body =  body;
-        this.mutSignature = mutSignature;
+       super(body, mutSignature);
     }
 
     public List<Oracle> getAllOccurences(){
@@ -37,12 +33,11 @@ public class SimpleReturnPatternFinder{
             Stmt stmt = (Stmt)unit;
             if (!stmt.containsInvokeExpr()) continue;
 
-            InvokeExpr expr = (InvokeExpr)stmt.getInvokeExpr();
+            InvokeExpr expr = stmt.getInvokeExpr();
             if (!expr.getMethod().getName().startsWith("assert")) continue;
 
             Local local = getLocalUsedInAssert(unit);
             System.out.println(simpleLocalDefs.getDefsOfAt(local, unit));
-
 
             if (hasReachingDefinitionToMUT(simpleLocalDefs,unit,local)){
                 oraclesFound.add(new Oracle(Oracle.OraclePattern.ASSERT_EXPLICIT_RETURN_VALUE,
@@ -82,54 +77,10 @@ public class SimpleReturnPatternFinder{
         return false;
     }
 
-    private Local getLocalUsedInAssert(Unit unit) {
-        Stmt s = (Stmt)unit;
-        InvokeExpr expr = ((Stmt) unit).getInvokeExpr();
-        if (expr.getMethod().getSignature().equals("<junit.framework.Assert: void assertEquals(int,int)>")){
-            List<ValueBox> useBoxes = unit.getUseBoxes();
-            for (ValueBox b:useBoxes){
-                if (b.getValue().getClass().toString().equals("class soot.jimple.internal.JimpleLocal")){
-                    return (Local)b.getValue();
-                }
-            }
-        }
-
-        return null;
-
-    }
-
-    private boolean isSimpleAssignment(Unit u){
-        /* here we just look for one expressions that don't involve more
-        than one variable.
-         */
-        List<ValueBox> useBoxes = u.getUseBoxes();
-
-        int count = 0;
-        for(ValueBox box:useBoxes){
-            System.out.println(box + " .getValue()=" + box.getValue());
-            if (box.getValue() instanceof JimpleLocal){
-                // System.out.println(box + "is instance of " + (box.getValue() instanceof JimpleLocal));
-                count++;
-            }
-        }
-
-        if (count==1) return true;
-
-        return false;
-
-    }
 
 
-    private boolean haveWeReachedTheMUTYet(Unit u) {
-        Stmt stmt = (Stmt) u;
-        if (!stmt.containsInvokeExpr()) {
-            return false;
-        }
 
-        InvokeExpr expr = stmt.getInvokeExpr();
-        if (expr.getMethod().getSignature().equals(mutSignature)){
-            return true;
-        }
-        return false;
-    }
+
+
+
 }

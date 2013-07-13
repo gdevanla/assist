@@ -68,27 +68,33 @@ public class Core extends BodyTransformer {
     @Override
     protected void internalTransform(Body body, String s, Map map) {
         if (body.getMethod().isConstructor()){
-            System.out.println("*****" + body.getMethod().getReturnType());
+            System.out.println("*****" + body.getMethod());
+            return;
         }
 
 
         if (!isTestMethod(body)) return;
         if (!containsMUT(body)) return;
+        System.out.println("Ready for method, since it has MUT=" + body.getMethod());
 
-
-        oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
-
-        System.out.println("Body Name= " + body.getMethod().getName());
-        for (Unit unit:body.getUnits()){
-            System.out.println((Stmt)unit + "," + unit.getUseBoxes());
+        //oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
+        try {
+            oraclesFound.addAll(new AssertOnReturnObjectsMethod(body, this.mutSignature).getAllOccurences());
+        } catch (Exception e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
+
+
+        //System.out.println("Body Name= " + body.getMethod().getName());
+        //for (Unit unit:body.getUnits()){
+        //    System.out.println((Stmt)unit + "," + unit.getUseBoxes());
+        //}
     }
 
     private boolean containsMUT(Body body){
         for(Unit unit:body.getUnits()){
             if (((Stmt)unit).containsInvokeExpr()){
                 InvokeExpr expr = (InvokeExpr)((Stmt) unit).getInvokeExpr();
-
                 if (expr.getMethod().getSignature().equals(mutSignature)){
                     return true;
                 }

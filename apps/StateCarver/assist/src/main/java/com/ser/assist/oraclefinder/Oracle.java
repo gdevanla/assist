@@ -24,7 +24,7 @@ public class Oracle {
         ASSERT_EXPLICIT_RETURN_VALUE,
 
         // assert(r.MUT)
-        ASSERT_IMPLICIT_RETURN_VALUE,
+        ASSERT_ON_RETURN_OBJECTS_METHOD,
 
         //r.MUT(x), assert(x)
         ASSERT_MODIFIED_OBJECTS_VALUE,
