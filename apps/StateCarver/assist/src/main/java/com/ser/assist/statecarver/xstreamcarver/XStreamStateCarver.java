@@ -130,6 +130,7 @@ public class XStreamStateCarver {
         }
         catch(IOException e){
             System.out.println("Error while loading state from " + filePath);
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
             System.out.println("Error while loading state from " + filePath);
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

@@ -53,11 +53,4 @@ public class AssertOnReturnObjectMethod1Test extends TestCase {
         Integer z = Integer.valueOf(y);
         assertEquals(20, z.intValue());
     }
-
-
-
-
-
-
-
 }

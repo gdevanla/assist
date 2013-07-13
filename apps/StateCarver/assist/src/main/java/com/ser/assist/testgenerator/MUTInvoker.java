@@ -1,19 +1,14 @@
 package com.ser.assist.testgenerator;
 
 import com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.io.filefilter.IOFileFilter;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
-import polyglot.ext.jl.ast.Expr_c;
 
 import java.io.File;
 import java.io.FileFilter;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
@@ -26,14 +21,14 @@ import java.util.ArrayList;
 //    - handle multiple parameters
 // return the value from invoked method
 
-public class TestMethodGenerator {
+public class MUTInvoker {
 
     public final String clazzName;
     public final String mutSignature;
     public final int sequenceNumber ;
     public final String basePath;
 
-    public TestMethodGenerator(String clazzName, String mutSignature, int sequenceNumber, String basePath){
+    public MUTInvoker(String clazzName, String mutSignature, int sequenceNumber, String basePath){
         this.clazzName = clazzName;
         this.mutSignature = mutSignature;
         this.sequenceNumber = sequenceNumber;
@@ -149,7 +144,7 @@ public class TestMethodGenerator {
 
 
         Thread.currentThread().setContextClassLoader(urlCL);
-        TestMethodGenerator t = new TestMethodGenerator("com.ser.statecarver.testartifacts.TestPojo",
+        MUTInvoker t = new MUTInvoker("com.ser.statecarver.testartifacts.TestPojo",
                 "void com.ser.statecarver.testartifacts.TestPojo.newadd(int)", 0, "/tmp");
        // t.invokeMethod();
 

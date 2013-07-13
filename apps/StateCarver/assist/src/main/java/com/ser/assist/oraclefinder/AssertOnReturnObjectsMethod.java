@@ -4,9 +4,11 @@ import soot.Body;
 import soot.Local;
 import soot.Unit;
 import soot.ValueBox;
+import soot.jimple.AssignStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
+import soot.jimple.internal.JimpleLocal;
 import soot.toolkits.graph.UnitGraph;
 import soot.toolkits.graph.pdg.EnhancedUnitGraph;
 import soot.toolkits.scalar.SimpleLocalDefs;
@@ -18,20 +20,40 @@ import java.util.List;
 
 class UnitWrapper{
     public final Unit u;
-    public final UnitWrapper parentNode;
+    public final UnitWrapper reachingUseNode;
 
     public UnitWrapper(Unit u, UnitWrapper parentNode){
         this.u = u;
-        this.parentNode = parentNode;
+        this.reachingUseNode = parentNode;
     }
 
     public void printCallTree(){
-        if (this.parentNode==null) return;
-
-        this.parentNode.printCallTree();
+        if (this.reachingUseNode==null) return;
         System.out.println(this.u);
-
+        this.reachingUseNode.printCallTree();
     }
+
+    public String getCallTree(){
+        if (reachingUseNode == null){
+            return ""; //this will be the actual assert statement. #bad design, sorry!
+        }
+        String s = this.reachingUseNode.getCallTree();
+        if (!((Stmt)u).containsInvokeExpr()){
+            return s;
+        }
+        else
+        {
+            if ( s.length() > 0){
+                return ((Stmt)this.u).getInvokeExpr().getMethod().getName() + "." + s;
+            }
+            else{
+                return ((Stmt)this.u).getInvokeExpr().getMethod().getName() + "()";
+            }
+
+        }
+    }
+
+
 }
 
 public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
@@ -67,6 +89,7 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
         for (UnitWrapper uw:uws){
             System.out.println("Adding oracle with following trace:");
             uw.printCallTree();
+            System.out.println("Here is the call tree="+uw.reachingUseNode.getCallTree());
             //oraclesFound.add(new Oracle(Oracle.OraclePattern.ASSERT_MODIFIED_OBJECTS_VALUE,
             //        new Assertion(unit), this.mutSignature));
         }
@@ -85,7 +108,7 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
 
         //special handling for first node, which is an assert node
         Local local;
-        if ( uw.parentNode == null){
+        if ( uw.reachingUseNode == null){
             local = getLocalUsedInAssert(uw.u);
         }
         else

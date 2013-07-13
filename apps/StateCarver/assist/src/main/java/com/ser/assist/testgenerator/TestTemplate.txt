@@ -1,0 +1,32 @@
+package com.ser.assist.tests.$AUT$
+
+public class IntegrationTest$TEST_CLASS_NUM$ extends TestCase {
+
+    public void testTest$MUT$_$TEST_METHOD_NUM$() throws Exception{
+        String mutSignature = $MUT_SIGNATURE$;
+        String clazzName = $CLASS_DECLARING_MUT$;
+        int sequenceNumber = $METHOD_TRACE_SEQUENCE_NUMBER$;
+        String basePath = $BASE_PATH$;
+        boolean methodReturns = $METHOD_RETURNS$;
+
+        MUTInvoker mutInvoker = new MUTInvoker(clazzName,
+                                               mutSignature,
+                                               sequenceNumber,
+                                               basePath);
+
+        Object returnValue = null;
+        if (methodReturns){
+            returnValue = mutInvoker.invokeMethod();
+        }
+        else{
+            System.out.println("This kind of test not supported");
+        }
+
+        StateRetriever stateRetriever = new StateRetriever(mutSignature, clazzName, sequenceNumber, basePath);
+        $METHOD_RETURN_TYPE$ stateRetriever = ($METHOD_RETURN_TYPE)methodstateRetriever.getReturnValue()
+
+        $ASSERT_STATEMENT_SECTION$
+
+
+    }
+}

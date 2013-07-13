@@ -229,7 +229,7 @@ public class MethodInstrumenter {
     private String buildMethodStringToSave(Body body, String currentClassName){
         String returnType = body.getMethod().getReturnType().toString();
         System.out.println(returnType);
-        returnType = returnType.replace("[", "\\[").replace("]", "\\]");
+        returnType = returnType.replace("[]", "[]");
 
 
         System.out.print(body.getMethod().getSubSignature());
