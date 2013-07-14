@@ -65,7 +65,7 @@ public class StateRetriever {
         StateRetriever t = new StateRetriever("com.ser.statecarver.testartifacts.TestPojo",
                 "int[] com.ser.statecarver.testartifacts.TestPojo.newadd2(int)", 1, "/tmp");
         t.getReturnValue();
-    // t.invokeMethod();
+        // t.invokeMethod();
     }
 
 
