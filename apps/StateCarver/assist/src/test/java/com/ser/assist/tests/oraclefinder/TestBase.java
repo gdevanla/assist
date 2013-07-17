@@ -19,10 +19,10 @@ public class TestBase {
             + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"
             + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar";
 
-    OracleFinderConfiguration config;
+   // OracleFinderConfiguration config;
 
     public TestBase(){
-        config = new OracleFinderConfiguration(appBaseFolder, inputSourceFolder, sootClassPath);
+        //config = new OracleFinderConfiguration(appBaseFolder, inputSourceFolder, sootClassPath);
     }
 
 }

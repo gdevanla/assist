@@ -38,7 +38,7 @@ public class StaticStateOfApp {
 
     private void collectStaticFields(SootClass sootClazz){
 
-        if (!sootClazz.getJavaPackageName().startsWith(new Configuration().getAppClassesPrefix()))
+        if (!sootClazz.getJavaPackageName().startsWith(StateCarverConfiguration.v().getAppClassesPrefix()))
             return;
         System.out.println("Fetching static fields for" + sootClazz.getName());
         Chain<SootField> fields = sootClazz.getFields();

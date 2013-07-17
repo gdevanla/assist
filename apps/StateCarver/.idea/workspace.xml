@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f502390-c44b-4565-a8d4-a88480bf95e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assist/src/main/resources/assist.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/runacceptance.sh" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Configuration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt" afterPath="$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java" afterPath="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Core.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Core.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java" afterPath="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/assist.iml" afterPath="$PROJECT_DIR$/assist/assist.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/pom.xml" afterPath="$PROJECT_DIR$/assist/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -14,10 +27,10 @@
     <file path="/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373106224003" ignored="false" />
     <file path="/TestPojo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373659265533" ignored="false" />
     <file path="/StateInstrumentor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370601642620" ignored="false" />
-    <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373656449546" ignored="false" />
+    <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374018582107" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/soot/src/soot/JastAddInitialResolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370790253860" ignored="false" />
     <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373672883168" ignored="false" />
-    <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373745711402" ignored="false" />
+    <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968511040" ignored="false" />
     <file path="/StaticClassConverter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866263526" ignored="false" />
     <file path="/StaticReflectionProvider.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866473720" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749006" ignored="false" />
@@ -38,8 +51,8 @@
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
-    <file path="/MethodTracer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373227134511" ignored="false" />
-    <file path="/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371121353944" ignored="false" />
+    <file path="/MethodTracer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968335817" ignored="false" />
+    <file path="/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373926332068" ignored="false" />
     <file path="/Research.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371902499506" ignored="false" />
     <file path="/MethodInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373659883432" ignored="false" />
     <file path="/Utils.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371084931933" ignored="false" />
@@ -48,10 +61,10 @@
     <file path="/TestClassWithObjectArray.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371116729794" ignored="false" />
     <file path="/TestClassReferringToStaticClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371208218959" ignored="false" />
     <file path="/DummyStaticClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371208278019" ignored="false" />
-    <file path="/StaticStateOfApp.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371122030334" ignored="false" />
+    <file path="/StaticStateOfApp.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968716908" ignored="false" />
     <file path="/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373107556316" ignored="false" />
     <file path="/Simple.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371726207464" ignored="false" />
-    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373747400606" ignored="false" />
+    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373923187782" ignored="false" />
     <file path="/SimpleParameterMutationPattern.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818303353" ignored="false" />
     <file path="/ParameterMutationWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818448869" ignored="false" />
     <file path="/SimpleReturnPatternWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371727600323" ignored="false" />
@@ -61,8 +74,8 @@
     <file path="/testartifacts.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371817758537" ignored="false" />
     <file path="/core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371898796321" ignored="false" />
     <file path="/AssertOnReturnValue.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373676697652" ignored="false" />
-    <file path="/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373733116150" ignored="false" />
-    <file path="/OracleFinderConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371983790914" ignored="false" />
+    <file path="/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374018708508" ignored="false" />
+    <file path="/OracleFinderConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373972639983" ignored="false" />
     <file path="/AssistConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371983477100" ignored="false" />
     <file path="/Oracle.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373674338398" ignored="false" />
     <file path="/Assertion.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1372517361689" ignored="false" />
@@ -95,10 +108,14 @@
     <file path="/AbstractOracleFinder.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373731889090" ignored="false" />
     <file path="/a.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373673212950" ignored="false" />
     <file path="/AssertOnReturnObjectMethod1Test.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373737045286" ignored="false" />
-    <file path="/TestClassGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373821262904" ignored="false" />
+    <file path="/TestClassGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374019057323" ignored="false" />
     <file path="/Templates.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373742598513" ignored="false" />
     <file path="/StateRetriever.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373747320947" ignored="false" />
     <file path="/TestTemplate.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373753794004" ignored="false" />
+    <file path="/assist.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374020027896" ignored="false" />
+    <file path="/StateCarverConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374016903944" ignored="false" />
+    <file path="/TestGeneratorConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374013604516" ignored="false" />
+    <file path="/Assist.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374019898940" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,8 +130,8 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -160,70 +177,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="XStreamStateCarver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java">
+      <file leaf-file-name="assist.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/resources/assist.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="49" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.0">
+            <state line="25" column="40" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.65286">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MethodInstrumenter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
+      <file leaf-file-name="StaticStateOfApp.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="49" selection-start="9760" selection-end="9760" vertical-scroll-proportion="0.0">
+            <state line="8" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssertOnReturnValue.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="30" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="35" selection-start="947" selection-end="947" vertical-scroll-proportion="0.5501931">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MUTInvoker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="34" selection-start="6376" selection-end="6376" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateRetriever.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="13" selection-start="1261" selection-end="1492" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestClassGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="31" selection-start="6764" selection-end="6764" vertical-scroll-proportion="-10.16">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#6826#6834#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -231,16 +198,16 @@
       <file leaf-file-name="StateInstrumenter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+            <state line="65" column="7" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Templates.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Templates.java">
+      <file leaf-file-name="Assist.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0">
+            <state line="20" column="19" selection-start="667" selection-end="667" vertical-scroll-proportion="-5.4">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -248,11 +215,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestTemplate.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt">
+      <file leaf-file-name="Core.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Core.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
+            <state line="30" column="33" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestClassGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="185" column="31" selection-start="7532" selection-end="7725" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodTracer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="19" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateCarverConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="71" selection-start="1083" selection-end="1141" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodInstrumenter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="13" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestGeneratorConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="2" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -276,22 +294,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Oracle.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/SimpleReturnPatternFinder.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AbstractOracleFinder.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
-        <option value="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AssertOnReturnObjectsMethod.java" />
-        <option value="$PROJECT_DIR$/TestArtifacts/src/test/java/com/ser/oraclefinder/testartifacts/AssertOnReturnObjectMethod1Test.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestMethodGenerator.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Templates.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Configuration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java" />
+        <option value="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java" />
+        <option value="$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Core.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/resources/assist.properties" />
       </list>
     </option>
   </component>
@@ -308,6 +326,46 @@
         <PATH_ELEMENT>
           <option name="myItemId" value="" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="assist" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="commons-configuration:commons-configuration:1.6" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="assist" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Dependencies" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependenciesNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="commons-configuration:commons-configuration:1.6" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="commons-digester:commons-digester:1.8" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$DependencyNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -355,9 +413,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="818" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -458,6 +515,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -675,71 +733,71 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestArtifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TestArtifacts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="testartifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AssertOnMethodOfMutatedObjectTest.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestArtifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StateCarver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestArtifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -894,6 +952,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1030,86 +1092,6 @@
               <option name="myItemId" value="statecarver" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xstreamcarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="XStreamStateCarver.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xstreamcarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1149,96 +1131,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oraclefinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oraclefinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AssertOnReturnObjectsMethod.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="198" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="200" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="199" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="199" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestArtifacts/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="209" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="999" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="997" />
@@ -1248,13 +1157,13 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/assist/src/test/java/com/ser/assist" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
@@ -1263,8 +1172,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="Groovy.Shell.LastModule" value="assist" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1278,10 +1187,11 @@
       <recent name="com.ser.statecarver.xstreamcarver" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assist/src/main/resources" />
       <recent name="$PROJECT_DIR$/assist/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestClassGenerator">
+  <component name="RunManager" selected="Application.Assist">
     <configuration default="false" name="StateInstrumenter" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.ser.assist.statecarver.core.StateInstrumenter" />
       <option name="VM_PARAMETERS" />
@@ -1294,50 +1204,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="assist" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="TestPojo" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ser.statecarver.testartifacts.TestPojo" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="TestArtifacts" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="AssertOnReturnValue" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="assist" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.ser.assist.tests.oraclefinder" />
-      <option name="MAIN_CLASS_NAME" value="com.ser.assist.tests.oraclefinder.AssertOnReturnValue" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="" />
         <option name="TRANSPORT" value="0" />
@@ -1366,6 +1232,38 @@
     </configuration>
     <configuration default="false" name="TestClassGenerator" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.ser.assist.testgenerator.TestClassGenerator" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Core" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.oraclefinder.Core" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Assist" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.Assist" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1416,19 +1314,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1454,6 +1339,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1492,18 +1390,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
-      <item index="1" class="java.lang.String" itemvalue="Application.TestPojo" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AssertOnReturnValue" />
-      <item index="3" class="java.lang.String" itemvalue="Application.StateRetriever" />
-      <item index="4" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
+      <item index="1" class="java.lang.String" itemvalue="Application.StateRetriever" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Core" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Assist" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
-        <item index="1" class="java.lang.String" itemvalue="Application.StateRetriever" />
-        <item index="2" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TestPojo" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AssertOnReturnValue" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Assist" />
+        <item index="1" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Core" />
+        <item index="4" class="java.lang.String" itemvalue="Application.StateRetriever" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1583,7 +1481,11 @@
       <created>1373747407004</created>
       <updated>1373747407004</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Test Generator generates test, except for Oracle integration.">
+      <created>1373837083902</created>
+      <updated>1373837083902</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1607,25 +1509,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="818" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.8982808" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.9140401" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3452722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30595237" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26372316" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52163464" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20200573" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34289277" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22769953" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31779054" sideWeight="0.7765043" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12266858" sideWeight="0.7693267" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682927" sideWeight="0.83381087" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1661891" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29555237" sideWeight="0.7693267" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23067331" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1674,7 +1576,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestGenerator retrieves return values." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Generator generates test, except for Oracle integration." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1698,6 +1600,7 @@
     <MESSAGE value="Capture multiple return statements, primitive , arrays and objects also handled." />
     <MESSAGE value="Enhanced OracleFinder. Does computation of defuse chain to land on the MUT." />
     <MESSAGE value="TestGenerator retrieves return values." />
+    <MESSAGE value="Test Generator generates test, except for Oracle integration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1707,121 +1610,124 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TestArtifacts/src/main/java/com/ser/statecarver/testartifacts/TestInheritedClasses.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0">
+        <state line="41" column="5" selection-start="1785" selection-end="1785" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AssertOnReturnObjectsMethod.java">
+    <entry file="file://$PROJECT_DIR$/TestArtifacts/src/test/java/com/ser/oraclefinder/testartifacts/AssertOnMethodOfMutatedObjectTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="17" selection-start="3044" selection-end="3044" vertical-scroll-proportion="0.0">
+        <state line="19" column="13" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestArtifacts/src/test/java/com/ser/oraclefinder/testartifacts/AssertOnReturnObjectMethod1Test.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/xstreamstatecarver/TestXStreamStateCarver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="122" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0">
+        <state line="11" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestArtifacts/src/main/java/com/ser/statecarver/testartifacts/TestPojo.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="11" selection-start="1422" selection-end="1422" vertical-scroll-proportion="0.0">
+        <state line="9" column="25" selection-start="343" selection-end="343" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/SimpleReturnPatternTestGenerator.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="67" column="0" selection-start="2145" selection-end="2145" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="74" selection-end="74" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="49" selection-start="4132" selection-end="4132" vertical-scroll-proportion="0.0">
+        <state line="132" column="48" selection-start="5213" selection-end="5213" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="49" selection-start="9760" selection-end="9760" vertical-scroll-proportion="0.0">
+        <state line="10" column="13" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Templates.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0">
+        <state line="33" column="2" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="13" selection-start="1261" selection-end="1492" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="13" column="19" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="34" selection-start="6376" selection-end="6376" vertical-scroll-proportion="0.0">
+        <state line="8" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="7" selection-start="2523" selection-end="2523" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="31" selection-start="6764" selection-end="6764" vertical-scroll-proportion="-10.16">
+        <state line="185" column="31" selection-start="7532" selection-end="7725" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6826#6834#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/Core.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="30" selection-start="1886" selection-end="1886" vertical-scroll-proportion="0.0">
+        <state line="30" column="33" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="35" selection-start="947" selection-end="947" vertical-scroll-proportion="0.5501931">
+        <state line="38" column="71" selection-start="1083" selection-end="1141" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="19" selection-start="667" selection-end="667" vertical-scroll-proportion="-5.4">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/resources/assist.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.65286">
           <folding />
         </state>
       </provider>

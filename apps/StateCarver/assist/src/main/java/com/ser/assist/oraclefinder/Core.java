@@ -27,14 +27,12 @@ import java.util.*;
  */
 public class Core extends BodyTransformer {
 
-    public final OracleFinderConfiguration config;
     public final String clazzNameofMUT;
     public final String mutSignature;
 
     public final LinkedList<Oracle> oraclesFound = new LinkedList<Oracle>();
 
-    public Core(OracleFinderConfiguration config, String clazzNameOfMUT, String mutSignature){
-        this.config = config;
+    public Core(String clazzNameOfMUT, String mutSignature){
         this.clazzNameofMUT = clazzNameOfMUT;
         this.mutSignature = mutSignature;
         //this is a static instance and therefore has to be here
@@ -47,8 +45,8 @@ public class Core extends BodyTransformer {
         //Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{"-process-dir",
-                config.inputSourceFolder,
-                "-cp", config.sootClasspath};
+                OracleFinderConfiguration.v().getTestsSourceFolder(),
+                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
 
         soot.Main.main(sootArguments);
     }
@@ -58,7 +56,7 @@ public class Core extends BodyTransformer {
         //Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{inputFileName,
-                "-cp", config.sootClasspath};
+                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
 
         soot.Main.main(sootArguments);
@@ -77,7 +75,7 @@ public class Core extends BodyTransformer {
         if (!containsMUT(body)) return;
         System.out.println("Ready for method, since it has MUT=" + body.getMethod());
 
-        //oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
+        oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
         try {
             oraclesFound.addAll(new AssertOnReturnObjectsMethod(body, this.mutSignature).getAllOccurences());
         } catch (Exception e) {
@@ -129,10 +127,7 @@ public class Core extends BodyTransformer {
                 + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar";
 
-        OracleFinderConfiguration config =
-                new OracleFinderConfiguration(appBaseFolder, inputSourceFolder, sootClassPath);
-
-        Core c = new Core(config, "Apples", "<com.ser.oraclefinder.testartifacts.Apples: int add(int)>");
+        Core c = new Core("Apples", "<com.ser.oraclefinder.testartifacts.Apples: int add(int)>");
         c.runAnalysis(Options.output_format_J, true);
 
     }

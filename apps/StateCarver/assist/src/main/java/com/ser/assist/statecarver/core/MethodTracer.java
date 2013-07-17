@@ -12,7 +12,7 @@ public class MethodTracer {
             System.out.println("writeMethodTrace called" + methodName + ":" + className + ":" + methodCounter);
             pw = new PrintWriter(new BufferedWriter(
                     new FileWriter(
-                            new Configuration().getMethodTraceFileName(), true)));
+                            StateCarverConfiguration.v().getMethodTraceFileName(), true)));
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

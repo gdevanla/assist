@@ -16,10 +16,10 @@ import java.util.Map;
 public class StateInstrumenter extends BodyTransformer {
 
     /*move to configuration*/
-    static final String appBaseFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist";
-    static final String sourceFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java";
+    //static final String appBaseFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist";
+    //static final String sourceFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java";
+    //static final String sootClassPath = sourceFolder + ":" + appBaseFolder + "/" + "target/classes";
 
-    static final String sootClassPath = sourceFolder + ":" + appBaseFolder + "/" + "target/classes";
     private static StateInstrumenter instance = new StateInstrumenter();
     private StateInstrumenter() {}
 
@@ -42,22 +42,28 @@ public class StateInstrumenter extends BodyTransformer {
 
     public static StateInstrumenter v() { return instance;}
 
-    public static void main(String[] args){
-
-        //Create settings in Configuration
-        //TODO: Static fields need to be captured across the application
-
+    public static boolean run(){
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
-        //Options.v().set_verbose(true);
+
+        Options.v().set_verbose(true);
         //Options.v().set_output_format(Options.output_format_J);
+        Options.v().set_output_dir(StateCarverConfiguration.v().getSootOutputFolder());
+
+        String sourceFolder = StateCarverConfiguration.v().getProcessDir();
+        String sootClassPath = StateCarverConfiguration.v().getSootClassPath();
+
+        System.out.println(sourceFolder);
+        System.out.println(sootClassPath);
 
         //move this whole thing to mvn, can that be done?
-        String[] sootArguments = new String[]{"-process-dir", sourceFolder,
-                "-cp", sootClassPath + ":/System/Library/Frameworks/JavaVM.framework/Classes/classes.jar"
-                + ":" + "/System/Library/Frameworks/JavaVM.framework/Classes/jce.jar"
-                + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"};
+        String[] sootArguments = new String[]{"-process-dir", sourceFolder, "-cp", sootClassPath};
 
-        //loadBasicClasses();
         soot.Main.main(sootArguments);
+        return true;
+    }
+
+    public static void main(String[] args){
+       run();
+
     }
 }

@@ -1,12 +1,10 @@
 package com.ser.assist.statecarver.xstreamcarver;
 
-import com.ser.assist.statecarver.core.Configuration;
-import com.ser.assist.statecarver.core.MethodTracer;
+import com.ser.assist.statecarver.core.StateCarverConfiguration;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 
-import javax.sound.midi.SysexMessage;
 import java.io.*;
 
 class InnerTestObjectForXStream{
@@ -179,7 +177,7 @@ public class XStreamStateCarver {
 
     private static String getFilePath(String fileName){
         //TODO: use proper path concatenation style
-        return new Configuration().getBaseFolder() + "/" + fileName;
+        return StateCarverConfiguration.v().getTraceDestination() + "/" + fileName;
     }
 
     public static void main(String[] args){

@@ -2,13 +2,13 @@ package com.ser.assist.testgenerator;
 
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Strings;
 import org.apache.commons.lang.StringUtils;
-import soot.jimple.toolkits.annotation.callgraph.MethInfo;
+import soot.options.Options;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
@@ -27,7 +27,6 @@ class ClassDefinition{
     public String generateClassDefintion(String template){
          return template.replace(TEST_CLASS_NUM, this.testClassNum);
     }
-
 }
 
 class MethodDefinition{
@@ -119,22 +118,33 @@ public class TestClassGenerator {
     public final String PACKAGE_NAMES_GOES_HERE = "$PACKAGE_NAMES_GOES_HERE$";
     public final String METHOD_DEFINITION_GOES_HERE = "$METHOD_DEFINITION_GOES_HERE$" ;
 
-    public final String templateFile;
     public final ClassDefinition classDefinition;
     public final List<String> packageImports;
     public final MethodDefinition methodDefinition;
 
-    public TestClassGenerator(String templateFile, List<String> packageImports,
+    public TestClassGenerator(List<String> packageImports,
                               ClassDefinition classDefinition,
-                              MethodDefinition methodDefinition){
-        this.templateFile = templateFile;
+                              MethodDefinition methodDefinition) throws MalformedURLException {
         this.classDefinition = classDefinition;
         this.packageImports = packageImports;
         this.methodDefinition = methodDefinition;
+
+        initClassPath();
     }
 
+    private void initClassPath() throws MalformedURLException {
+        URL url = new URL("file://" + TestGeneratorConfiguration.v().getAppClassPath());
+        ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
+        //Thread.currentThread().getContextClassLoader().getResource()
+        URLClassLoader urlCL = URLClassLoader.newInstance(new URL[]{url}, contextCL);
+        Thread.currentThread().setContextClassLoader(urlCL);
+    }
+
+
     public String generateTest() throws IOException, ClassNotFoundException {
-        String template = com.google.common.io.Files.toString(new File(this.templateFile), Charset.defaultCharset());
+
+        URL url = this.getClass().getClassLoader().getResource("TestTemplate.template");
+        String template = com.google.common.io.Files.toString(new File(url.getFile()), Charset.defaultCharset());
 
         template = template.replace(PACKAGE_NAMES_GOES_HERE, Joiner.on("\n").join(packageImports));
         template = classDefinition.generateClassDefintion(template);
@@ -143,37 +153,47 @@ public class TestClassGenerator {
         return template;
     }
 
+    private void getOracles(){
+        com.ser.assist.oraclefinder.Core c = new
+                com.ser.assist.oraclefinder.Core(this.methodDefinition.clazzName,
+                this.methodDefinition.mutSignature);
+        //"<com.ser.oraclefinder.testartifacts.Apples: int add(int)>")
+        c.runAnalysis(Options.output_format_J, true);
+    }
+
     private String getClassDefinitionTemplate(String template){
        return StringUtils.substringBetween(template,BEGIN_CLASS_DEFINITION, END_CLASS_DEFINITION);
     }
 
+    public static boolean run(String clazzName, String mutName, String mutSignature,
+                              int sequenceNumber) throws IOException, ClassNotFoundException {
+        ArrayList<String> assertStatements =  new ArrayList<String>();
+        assertStatements.add("dummy assert statement");
 
+        MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName, "/tmp",1,sequenceNumber, true, assertStatements);
+        ClassDefinition classDefinition = new ClassDefinition("1");
+
+        TestClassGenerator generator = new TestClassGenerator(new ArrayList<String>(), classDefinition, methodDefinition);
+        String generatedTest = generator.generateTest();
+        System.out.println(generatedTest);
+        return true;
+
+    }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-
-        URL url = new URL("file:///Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/target/classes/");
-        ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
-
-        //Thread.currentThread().getContextClassLoader().getResource()
-        URLClassLoader urlCL = URLClassLoader.newInstance(new URL[]{url}, contextCL);
-        Thread.currentThread().setContextClassLoader(urlCL);
-
-        String templateFilePath = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist/src/main/java/com/ser/assist/testgenerator/TestTemplate.txt";
-
         String clazzName = "com.ser.statecarver.testartifacts.TestPojo";
         String mutSignature = "int[] com.ser.statecarver.testartifacts.TestPojo.newadd2(int)";
         int sequenceNumber = 1;
 
-
         ArrayList<String> assertStatements =  new ArrayList<String>();
-        assertStatements.add("dummy asssert statement");
+        assertStatements.add("dummy assert statement");
+
         MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName, "/tmp",1,sequenceNumber, true, assertStatements);
         ClassDefinition classDefinition = new ClassDefinition("1");
 
-        TestClassGenerator generator = new TestClassGenerator(templateFilePath, new ArrayList<String>(), classDefinition, methodDefinition);
+        TestClassGenerator generator = new TestClassGenerator(new ArrayList<String>(), classDefinition, methodDefinition);
         String generatedTest = generator.generateTest();
         System.out.println(generatedTest);
-
 
     }
 

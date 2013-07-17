@@ -36,14 +36,14 @@ public class AssertOnReturnValue extends TestBase {
 
     @Test
     public void testAssertOnReturnObjectsMethod1(){
-        Core c = new Core(config, "Kiwi", "<com.ser.oraclefinder.testartifacts.Kiwi: com.ser.oraclefinder.testartifacts.Kiwi anotherInstance()>");
+         Core c = new Core("Kiwi", "<com.ser.oraclefinder.testartifacts.Kiwi: com.ser.oraclefinder.testartifacts.Kiwi anotherInstance()>");
          c.runAnalysis(Options.output_format_J, true, "com.ser.oraclefinder.testartifacts.AssertOnReturnObjectMethod1Test");
        // assertEquals(1, c.oraclesFound.size());
     }
 
     @Test
     public void testAssertOnReturnObjectsMethod2(){
-        Core c = new Core(config, "Kiwi", "<com.ser.oraclefinder.testartifacts.Kiwi: int add(int)>");
+        Core c = new Core("Kiwi", "<com.ser.oraclefinder.testartifacts.Kiwi: int add(int)>");
         c.runAnalysis(Options.output_format_J, true, "com.ser.oraclefinder.testartifacts.AssertOnReturnObjectMethod1Test");
         // assertEquals(1, c.oraclesFound.size());
     }
