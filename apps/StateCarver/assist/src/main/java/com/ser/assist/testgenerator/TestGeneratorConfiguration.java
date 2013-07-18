@@ -50,4 +50,9 @@ public class TestGeneratorConfiguration {
     public String getAppClassPath(){
         return config.getString("testgenerator.app_classpath");
     }
+
+    public String getTraceSource(){
+        //the folder where state files can be read from
+        return config.getString("testgenerator.trace_destination");
+    }
 }

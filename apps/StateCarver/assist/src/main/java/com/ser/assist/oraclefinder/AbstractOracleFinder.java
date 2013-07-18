@@ -77,7 +77,9 @@ public class AbstractOracleFinder {
         }
 
         InvokeExpr expr = stmt.getInvokeExpr();
-        if (expr.getMethod().getSignature().equals(mutSignature)){
+
+
+        if (expr.getMethod().getSignature().contains(mutSignature)){
             return true;
         }
         return false;

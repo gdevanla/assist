@@ -45,7 +45,7 @@ public class Oracle {
             expectedValueVariableName = expectedValueVariableName + "." + methodCallTree;
         }
 
-        return String.format("assertEquals(%s, %s)", actualValueVariableName);
+        return String.format("assertEquals(%s, %s)", actualValueVariableName, expectedValueVariableName);
 
     }
 

@@ -16,7 +16,7 @@ public class AssertOnReturnValue extends TestBase {
 
     @Test
     public void testAssertOnReturnValue1(){
-       Core c = new Core("Apples", "<com.ser.oraclefinder.testartifacts.Apples: int add(int)>");
+       Core c = new Core("Apples", "com.ser.oraclefinder.testartifacts.Apples: int add(int)");
        c.runAnalysis(Options.output_format_J, true, "com.ser.oraclefinder.testartifacts.SimpleReturnPatternTest1");
        assertEquals(4, c.oraclesFound.size());
        for (Oracle o:c.oraclesFound){

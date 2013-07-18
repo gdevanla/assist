@@ -1,16 +1,17 @@
 $PACKAGE_NAMES_GOES_HERE$
 
+import junit.framework.TestCase;
 
 public class IntegrationTest$TEST_CLASS_NUM$ extends TestCase {
 
    public void testTest$MUT$_$TEST_METHOD_NUM$() throws Exception{
-        String mutSignature = $MUT_SIGNATURE$;
-        String clazzName = $CLASS_DECLARING_MUT$;
+        String mutSignature = "$MUT_SIGNATURE$";
+        String clazzName = "$CLASS_DECLARING_MUT$";
         int sequenceNumber = $METHOD_TRACE_SEQUENCE_NUMBER$;
-        String basePath = $BASE_PATH$;
+        String basePath = "$BASE_PATH$";
         boolean methodReturns = $METHOD_RETURNS$;
 
-        com.ser.assist.testgenerator.MUTInvoker mutInvoker = new MUTInvoker(clazzName,
+        com.ser.assist.testgenerator.MUTInvoker mutInvoker = new  com.ser.assist.testgenerator.MUTInvoker(clazzName,
                                                mutSignature,
                                                sequenceNumber,
                                                basePath);
@@ -23,12 +24,11 @@ public class IntegrationTest$TEST_CLASS_NUM$ extends TestCase {
             System.out.println("This kind of test not supported");
         }
 
-        com.ser.assist.testgenerator.StateRetriever stateRetriever = new StateRetriever(mutSignature, clazzName, sequenceNumber, basePath);
-        $METHOD_RETURN_TYPE$ stateRetriever = ($METHOD_RETURN_TYPE$)stateRetriever.getReturnValue()
+        com.ser.assist.testgenerator.StateRetriever stateRetriever = new com.ser.assist.testgenerator.StateRetriever(mutSignature, clazzName, sequenceNumber, basePath);
+        $METHOD_RETURN_TYPE$ expectedReturnValue = ($METHOD_RETURN_TYPE$)stateRetriever.getReturnValue();
 
-        //
-        $ASSERT_STATEMENTS_GOES_HERE$
+        $ASSERT_STATEMENTS_GOES_HERE$;
 
+     } //end of method
 
-
-     }
+} //end of class

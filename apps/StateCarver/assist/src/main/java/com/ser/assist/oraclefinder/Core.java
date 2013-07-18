@@ -42,11 +42,12 @@ public class Core extends BodyTransformer {
 
 
     public void  runAnalysis(int outputFormat, boolean verbose){
-        //Options.v().set_verbose(verbose);
+        Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{"-process-dir",
                 OracleFinderConfiguration.v().getTestsSourceFolder(),
                 "-cp", OracleFinderConfiguration.v().getSootClassPath()};
+        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
 
         soot.Main.main(sootArguments);
     }
@@ -72,6 +73,7 @@ public class Core extends BodyTransformer {
 
 
         if (!isTestMethod(body)) return;
+        System.out.println("Before checking for MUT");
         if (!containsMUT(body)) return;
         System.out.println("Ready for method, since it has MUT=" + body.getMethod());
 
@@ -93,7 +95,9 @@ public class Core extends BodyTransformer {
         for(Unit unit:body.getUnits()){
             if (((Stmt)unit).containsInvokeExpr()){
                 InvokeExpr expr = (InvokeExpr)((Stmt) unit).getInvokeExpr();
-                if (expr.getMethod().getSignature().equals(mutSignature)){
+                System.out.println(expr.getMethod().getSignature());
+                System.out.println(expr.getMethod().getSubSignature());
+                if (expr.getMethod().getSignature().contains(mutSignature)){
                     return true;
                 }
             }
@@ -128,8 +132,8 @@ public class Core extends BodyTransformer {
                 + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar";
          */
 
-        Core c = new Core("Apples", "<com.ser.oraclefinder.testartifacts.Apples: int add(int)>");
-        c.runAnalysis(Options.output_format_J, true);
+        Core c = new Core("Apples", "com.ser.oraclefinder.testartifacts.Apples.add(int)");
+        c.runAnalysis(Options.output_format_J, false);
         System.out.println(c.oraclesFound.size());
 
     }

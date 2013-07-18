@@ -2,9 +2,12 @@ package com.ser.assist.testgenerator;
 
 
 import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
+import com.ser.assist.oraclefinder.Oracle;
 import org.apache.commons.lang.StringUtils;
 import soot.options.Options;
 
+import javax.sound.midi.SysexMessage;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -13,6 +16,7 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 class ClassDefinition{
@@ -66,15 +70,30 @@ class MethodDefinition{
     }
 
     public final String generateMethodDefinition(String template) throws ClassNotFoundException {
+
+       System.out.println("Joining the asserts" + Joiner.on(";\n").join(assertStatements));
+
        return template.replace(MUT, this.mutName).replace(TEST_METHOD_NUM, Integer.valueOf(testmethodNum).toString())
                .replace(MUT_SIGNATURE, this.mutSignature)
                .replace(CLASS_DECLARING_MUT, this.clazzName)
                .replace(METHOD_TRACE_SEQUENCE_NUMBER, Integer.valueOf(sequenceNumber).toString())
                .replace(BASE_PATH, this.basePathofStateFiles)
                .replace(METHOD_RETURNS, Boolean.valueOf(mutReturns).toString())
-               .replace(ASSERT_STATEMENTS_GOES_HERE, Joiner.on("\n").join(assertStatements))
+               .replace(ASSERT_STATEMENTS_GOES_HERE, Joiner.on(";\n").join(assertStatements))
                .replace(METHOD_RETURN_TYPE, getMUTReturnTypeAsString());
+    }
 
+    private String convertMUTSignatureToOneUsedByJavaReflection(){
+        // classnamew : returnType methodname(type arg, type arg...)
+
+        Iterator<String> s = Splitter.on(":").trimResults().split(mutSignature).iterator();
+        String className = s.next();
+        String subSignature = s.next();
+
+        String returnTypeString = subSignature.substring(0, subSignature.indexOf(" "));
+        String restOfMethodSignature = subSignature.substring(subSignature.indexOf(" ")).trim();
+
+        return String.format("%s %s.%s", returnTypeString, className, restOfMethodSignature);
     }
 
     public Method getMUTMethod() throws ClassNotFoundException {
@@ -83,8 +102,9 @@ class MethodDefinition{
         Method[] methods = c.getDeclaredMethods();
         for (Method m:methods){
             System.out.println(m.toString());
-
-            if (m.toString().contains(mutSignature)){
+            System.out.println(mutSignature);
+            System.out.println(convertMUTSignatureToOneUsedByJavaReflection());
+            if (m.toString().contains(convertMUTSignatureToOneUsedByJavaReflection())){
                 return m;
             }
         }
@@ -98,7 +118,7 @@ class MethodDefinition{
             strReturnType = returnType.getComponentType().toString() + "[]";
         }
 
-        return strReturnType;
+        return strReturnType.split(" ")[1]; //get rid of "class"
     }
 }
 
@@ -133,10 +153,15 @@ public class TestClassGenerator {
     }
 
     private void initClassPath() throws MalformedURLException {
-        URL url = new URL("file://" + TestGeneratorConfiguration.v().getAppClassPath());
         ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
-        //Thread.currentThread().getContextClassLoader().getResource()
-        URLClassLoader urlCL = URLClassLoader.newInstance(new URL[]{url}, contextCL);
+
+        String[] appClassPaths = TestGeneratorConfiguration.v().getAppClassPath().split(":");
+        List<URL> urls = new ArrayList<URL>();
+        for(String cp:appClassPaths){
+            urls.add(new URL("file://" + cp));
+        }
+
+        URLClassLoader urlCL = URLClassLoader.newInstance(urls.toArray(new URL[]{}), contextCL);
         Thread.currentThread().setContextClassLoader(urlCL);
     }
 
@@ -181,14 +206,29 @@ public class TestClassGenerator {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String clazzName = "com.ser.statecarver.testartifacts.TestPojo";
-        String mutSignature = "int[] com.ser.statecarver.testartifacts.TestPojo.newadd2(int)";
+/*
+        String clazzName =  "com.ser.oraclefinder.testartifacts.Apples"; //"com.ser.statecarver.testartifacts.TestPojo";
+        String mutSignature =  "com.ser.oraclefinder.testartifacts.Apples: int add(int)"; //"int[] com.ser.statecarver.testartifacts.TestPojo.newadd2(int)";
         int sequenceNumber = 1;
+        int testMethodNumber = 999;
+*/
+
+        String clazzName =  "com.ser.oraclefinder.testartifacts.Kiwi2"; //"com.ser.statecarver.testartifacts.TestPojo";
+        String mutSignature =  "com.ser.oraclefinder.testartifacts.Kiwi2: com.ser.oraclefinder.testartifacts.Kiwi2 anotherInstance()"; //"int[] com.ser.statecarver.testartifacts.TestPojo.newadd2(int)";
+        int sequenceNumber = 1;
+        int testMethodNumber = 999;
+
 
         ArrayList<String> assertStatements =  new ArrayList<String>();
-        assertStatements.add("dummy assert statement");
+        com.ser.assist.oraclefinder.Core c = new  com.ser.assist.oraclefinder.Core(clazzName, mutSignature);
+        c.runAnalysis(Options.output_format_J, false);
+        for(Oracle o:c.oraclesFound){
+            assertStatements.add(o.generateAssertStatement("expectedReturnValue", "returnValue"));
+        }
 
-        MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName, "/tmp",1,sequenceNumber, true, assertStatements);
+
+        MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName,
+                TestGeneratorConfiguration.v().getTraceSource(),testMethodNumber,sequenceNumber, true, assertStatements);
         ClassDefinition classDefinition = new ClassDefinition("1");
 
         TestClassGenerator generator = new TestClassGenerator(new ArrayList<String>(), classDefinition, methodDefinition);
