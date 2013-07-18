@@ -75,7 +75,7 @@ public class Core extends BodyTransformer {
         if (!containsMUT(body)) return;
         System.out.println("Ready for method, since it has MUT=" + body.getMethod());
 
-        oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
+        //oraclesFound.addAll(new SimpleReturnPatternFinder(body, this.mutSignature).getAllOccurences());
         try {
             oraclesFound.addAll(new AssertOnReturnObjectsMethod(body, this.mutSignature).getAllOccurences());
         } catch (Exception e) {
@@ -118,7 +118,7 @@ public class Core extends BodyTransformer {
 
     public static void main(String[] args){
 
-        String appBaseFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist";
+       /* String appBaseFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist";
         String inputSourceFolder =  "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/test/java";
         String sootClassPath = appBaseFolder + "/" + "target/classes" + ":" + inputSourceFolder;
 
@@ -126,9 +126,11 @@ public class Core extends BodyTransformer {
                 + ":" + "/System/Library/Frameworks/JavaVM.framework/Classes/jce.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar";
+         */
 
         Core c = new Core("Apples", "<com.ser.oraclefinder.testartifacts.Apples: int add(int)>");
         c.runAnalysis(Options.output_format_J, true);
+        System.out.println(c.oraclesFound.size());
 
     }
 

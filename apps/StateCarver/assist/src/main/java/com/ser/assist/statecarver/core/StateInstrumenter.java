@@ -32,7 +32,7 @@ public class StateInstrumenter extends BodyTransformer {
       if (!staticFieldInitialized){
           StaticStateOfApp.init();
           staticFieldInitialized = true;
-      }
+       }
         try {
             new MethodInstrumenter().instrumentMethod(body, s, map);
         } catch (Exception e) {
@@ -45,7 +45,7 @@ public class StateInstrumenter extends BodyTransformer {
     public static boolean run(){
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
 
-        Options.v().set_verbose(true);
+        //Options.v().set_verbose(true);
         //Options.v().set_output_format(Options.output_format_J);
         Options.v().set_output_dir(StateCarverConfiguration.v().getSootOutputFolder());
 

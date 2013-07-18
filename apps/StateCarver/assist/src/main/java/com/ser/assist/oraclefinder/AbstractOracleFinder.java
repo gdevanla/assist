@@ -6,6 +6,7 @@ import soot.jimple.Stmt;
 import soot.jimple.internal.JimpleLocal;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,19 +25,29 @@ public class AbstractOracleFinder {
         this.mutSignature = mutSignature;
     }
 
-    protected Local getLocalUsedInAssert(Unit unit) {
+    protected List<Local> getLocalUsedInAssertEquals(Unit unit) {
+        List<Local> localsUsed = new ArrayList<Local>();
         Stmt s = (Stmt)unit;
         InvokeExpr expr = ((Stmt) unit).getInvokeExpr();
-        if (expr.getMethod().getSignature().equals("<junit.framework.Assert: void assertEquals(int,int)>")){
+        if (expr.getMethod().getSignature().contains("junit.framework.Assert: void assertEquals")){
+            System.out.println("Found assertEquals=" + expr.getUseBoxes());
             List<ValueBox> useBoxes = unit.getUseBoxes();
             for (ValueBox b:useBoxes){
+                System.out.println(b + "," + b.getValue() + "," + b.getValue().getClass());
                 if (b.getValue().getClass().toString().equals("class soot.jimple.internal.JimpleLocal")){
-                    return (Local)b.getValue();
+                    localsUsed.add((Local)b.getValue());
                 }
             }
         }
 
-        return null;
+        return localsUsed;
+    }
+
+    protected boolean hasInvokeExpr(Unit u) {
+        if (((Stmt)u).containsInvokeExpr()) return true;
+
+        return false;
+
     }
 
     protected boolean hasInvokeExprWithNoArgs(Unit u) {
@@ -76,6 +87,9 @@ public class AbstractOracleFinder {
         /* here we just look for one expressions that don't involve more
         than one variable.
          */
+
+        if (hasInvokeExpr(u)) return false;
+
         List<ValueBox> useBoxes = u.getUseBoxes();
 
         int count = 0;

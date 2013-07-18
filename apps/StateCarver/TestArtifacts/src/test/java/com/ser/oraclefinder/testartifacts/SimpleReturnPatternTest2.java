@@ -27,7 +27,8 @@ public class SimpleReturnPatternTest2 extends TestCase {
         }
 
         int y = z;
-        assertEquals(20, y);
+        int a = 200;
+        assertEquals(a, y);
     }
 
 }

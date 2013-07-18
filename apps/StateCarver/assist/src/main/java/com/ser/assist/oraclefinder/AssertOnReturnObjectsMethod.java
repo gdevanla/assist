@@ -4,7 +4,6 @@ import soot.Body;
 import soot.Local;
 import soot.Unit;
 import soot.ValueBox;
-import soot.jimple.AssignStmt;
 import soot.jimple.InvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
@@ -33,18 +32,18 @@ class UnitWrapper{
         this.reachingUseNode.printCallTree();
     }
 
-    public String getCallTree(){
+    public String getCallTreeWithOutMUT(){
         if (reachingUseNode == null){
             return ""; //this will be the actual assert statement. #bad design, sorry!
         }
-        String s = this.reachingUseNode.getCallTree();
+        String s = this.reachingUseNode.getCallTreeWithOutMUT();
         if (!((Stmt)u).containsInvokeExpr()){
             return s;
         }
         else
         {
             if ( s.length() > 0){
-                return ((Stmt)this.u).getInvokeExpr().getMethod().getName() + "." + s;
+                return ((Stmt)this.u).getInvokeExpr().getMethod().getName() + "()." + s;
             }
             else{
                 return ((Stmt)this.u).getInvokeExpr().getMethod().getName() + "()";
@@ -53,7 +52,10 @@ class UnitWrapper{
         }
     }
 
-
+    public String getCallTree(){
+        if ( this.reachingUseNode == null) return "";
+        return this.reachingUseNode.getCallTreeWithOutMUT();
+    }
 }
 
 public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
@@ -70,35 +72,42 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
         LinkedList<Oracle> oraclesFound = new LinkedList<Oracle>();
         System.out.println("getAllOccurences="+body.getMethod().getName());
         //SimpleLocalUses localUses = new SimpleLocalUses(cfg, localVarDefs);
-        List<UnitWrapper> uws = new ArrayList<UnitWrapper>();
+        List<List<UnitWrapper>> uwss = new ArrayList<List<UnitWrapper>>();
+
         for (Unit unit: body.getUnits()){
 
             Stmt stmt = (Stmt)unit;
             if (!stmt.containsInvokeExpr()) continue;
 
             InvokeExpr expr = stmt.getInvokeExpr();
-            if (!expr.getMethod().getName().startsWith("assert")) continue;
+            if (!expr.getMethod().getName().startsWith("assertEquals")) continue;
+            List<Local> localsInAssert = getLocalUsedInAssertEquals(unit);
 
 
-            UnitWrapper uw = new UnitWrapper(unit, null);
-
-            System.out.println("Collecting oracles from method="+body.getMethod().getName());
-            collectAllMethodCallChains(simpleLocalDefs, uw, uws);
+            for (Local l:localsInAssert){
+                List<UnitWrapper> uws = new ArrayList<UnitWrapper>();
+                System.out.println("Collecting oracles from method="+body.getMethod().getName());
+                UnitWrapper uw = new UnitWrapper(unit, null);
+                collectAllMethodCallChains(simpleLocalDefs, uw, uws, l);
+                uwss.add(uws);
+            }
         }
 
-        for (UnitWrapper uw:uws){
-            System.out.println("Adding oracle with following trace:");
-            uw.printCallTree();
-            System.out.println("Here is the call tree="+uw.reachingUseNode.getCallTree());
-            //oraclesFound.add(new Oracle(Oracle.OraclePattern.ASSERT_MODIFIED_OBJECTS_VALUE,
-            //        new Assertion(unit), this.mutSignature));
+        for (List<UnitWrapper> uws:uwss){
+            for(UnitWrapper uw:uws){
+            oraclesFound.add(new Oracle(
+                    body.getMethod().getDeclaringClass().getName(),
+                    body.getMethod().getName(),
+                    Oracle.OraclePattern.ASSERT_MODIFIED_OBJECTS_VALUE,
+                    new Assertion(uw.u), this.mutSignature, uw));
+            }
         }
 
         return oraclesFound;
     }
 
     public void collectAllMethodCallChains(SimpleLocalDefs simpleLocalDefs,
-                                                   UnitWrapper uw, List<UnitWrapper> uws) throws Exception {
+                                                   UnitWrapper uw, List<UnitWrapper> uws, Local startNode) throws Exception {
 
         if (haveWeReachedTheMUTYet(uw.u)){
             System.out.println("Reached Method with"+uw.u);
@@ -106,15 +115,16 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
             return;
         }
 
+
         //special handling for first node, which is an assert node
         Local local;
-        if ( uw.reachingUseNode == null){
-            local = getLocalUsedInAssert(uw.u);
+        if ( startNode != null){
+            local = startNode;
         }
         else
         {
             //for all other units, check if it makes sense to proceed
-            if (hasInvokeExprsWithArgs(uw.u) || !isSimpleAssignment(uw.u)
+            if (hasInvokeExprsWithArgs(uw.u)
                     || isStaticInvokeExpression(uw.u))
             {
                 System.out.println("Continuing...");
@@ -134,7 +144,12 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
             }
 
             System.out.println("getting local from usebox="+useBoxes.get(0));
-            local = (Local)useBoxes.get(0).getValue();
+
+            if ( useBoxes.get(0).getValue() instanceof JimpleLocal)
+                local = (Local)useBoxes.get(0).getValue();
+            else
+                return; // we just saw an assignment of local to a constant, perhaps!
+
         }
 
         if (simpleLocalDefs.hasDefsAt(local, uw.u) ){
@@ -144,7 +159,7 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
                 //System.out.print("Found localDefs for local="+local+"at"+u);
 
                 UnitWrapper nextUw = new UnitWrapper(u, uw);
-                collectAllMethodCallChains(simpleLocalDefs, nextUw, uws);
+                collectAllMethodCallChains(simpleLocalDefs, nextUw, uws, null);
             }
         }
 

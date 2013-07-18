@@ -36,12 +36,19 @@ public class SimpleReturnPatternFinder extends AbstractOracleFinder{
             InvokeExpr expr = stmt.getInvokeExpr();
             if (!expr.getMethod().getName().startsWith("assert")) continue;
 
-            Local local = getLocalUsedInAssert(unit);
-            System.out.println(simpleLocalDefs.getDefsOfAt(local, unit));
+            System.out.println(unit);
+            System.out.println(unit.getUseBoxes());
+            List<Local> locals = getLocalUsedInAssertEquals(unit);
+//           System.out.println(simpleLocalDefs.getDefsOfAt(local, unit));
 
-            if (hasReachingDefinitionToMUT(simpleLocalDefs,unit,local)){
-                oraclesFound.add(new Oracle(Oracle.OraclePattern.ASSERT_EXPLICIT_RETURN_VALUE,
-                        new Assertion(unit), this.mutSignature));
+            for(Local local:locals){
+                if (hasReachingDefinitionToMUT(simpleLocalDefs,unit,local)){
+                    oraclesFound.add(new Oracle(
+                            body.getMethod().getDeclaringClass().getName(),
+                            body.getMethod().getName(),
+                            Oracle.OraclePattern.ASSERT_EXPLICIT_RETURN_VALUE,
+                            new Assertion(unit), this.mutSignature, null));
+                }
             }
         }
 
@@ -51,19 +58,19 @@ public class SimpleReturnPatternFinder extends AbstractOracleFinder{
 
     private boolean hasReachingDefinitionToMUT(SimpleLocalDefs simpleLocalDefs, Unit unit, Local local) {
         LinkedList<Unit> reachingLocals = new LinkedList<Unit>();
-        List<Unit> reachingUnits = simpleLocalDefs.getDefsOfAt(local, unit);
-        reachingLocals.addAll(reachingUnits);
+        System.out.println(local);
+        if (simpleLocalDefs.hasDefsAt(local, unit)){
+            reachingLocals.addAll(simpleLocalDefs.getDefsOfAt(local, unit));
+        }
 
         while (!reachingLocals.isEmpty()){
             Unit u = reachingLocals.remove();
-            if (!isSimpleAssignment(u)) continue;
-
             if (haveWeReachedTheMUTYet(u)){
                 System.out.println("Before adding to oracle" + unit);
-
                return true;
             }
 
+            if (!isSimpleAssignment(u)) continue;
             List<ValueBox> useBoxes = u.getUseBoxes();
             for (ValueBox vb:useBoxes){
                 if ( vb.getValue() instanceof JimpleLocal){

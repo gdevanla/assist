@@ -26,8 +26,10 @@ public class Assist {
 
 
     public static void runAcceptanceTests() throws IOException {
+        System.out.println("Running Acceptance Test");
         ProcessBuilder pb = new ProcessBuilder(config.getString("acceptancetest.command"));
         pb.start();
+        System.out.println("Complete running acceptance tests");
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {

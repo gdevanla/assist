@@ -1,19 +1,52 @@
 package com.ser.assist.oraclefinder;
 
-import soot.SootField;
-import soot.SootMethod;
+import org.apache.commons.lang.StringUtils;
+import soot.jimple.Stmt;
 
 public class Oracle {
 
-    OraclePattern pattern;
-    Assertion assertion;
-    String mutSignature;
+    public final String testMethodClass;
+    public final String testMethodName;
+    public final OraclePattern pattern;
+    public final Assertion assertion;
+    public final String mutSignature;
+    public final UnitWrapper uw;
 
-
-    public Oracle(OraclePattern pattern, Assertion assertion, String mutSignature){
+    public Oracle(String testMethodClass, String testMethodName, OraclePattern pattern, Assertion assertion, String mutSignature, UnitWrapper uw){
+        this.testMethodName = testMethodName;
+        this.testMethodClass = testMethodClass;
         this.pattern = pattern;
         this.assertion = assertion;
         this.mutSignature = mutSignature;
+        this.uw = uw;
+    }
+
+    public String getAssertionMethod(){
+        return ((Stmt)this.assertion).getInvokeExpr().getMethod().getName();
+    }
+
+    public String getMutSignature(){
+        return mutSignature;
+    }
+
+    public String getMethodCallTreeInTest(){
+        if (uw==null){
+            return "";
+        }
+        else
+        {
+            return uw.getCallTree();
+        }
+    }
+
+    public String generateAssertStatement(String expectedValueVariableName, String actualValueVariableName){
+        String methodCallTree = getMethodCallTreeInTest();
+        if (StringUtils.isNotEmpty(methodCallTree)){
+            expectedValueVariableName = expectedValueVariableName + "." + methodCallTree;
+        }
+
+        return String.format("assertEquals(%s, %s)", actualValueVariableName);
+
     }
 
     //String mutSignature;
@@ -51,5 +84,17 @@ public class Oracle {
         }
         return false;
     }
+
+    public String getAssertMethodUsed(){
+        return "";
+    }
+
+    public String getAssertArgsUser(){
+        return "";
+    }
+
+
+
+
 
 }

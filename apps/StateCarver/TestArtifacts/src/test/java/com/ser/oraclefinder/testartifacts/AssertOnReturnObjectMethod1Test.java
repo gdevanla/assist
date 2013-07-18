@@ -53,4 +53,12 @@ public class AssertOnReturnObjectMethod1Test extends TestCase {
         Integer z = Integer.valueOf(y);
         assertEquals(20, z.intValue());
     }
+
+    public void testTest5(){
+        /* Here MUT is add*/
+        Kiwi x = new Kiwi();
+        assertEquals(20, x.add(12));
+    }
+
+
 }
