@@ -1,8 +1,13 @@
 package com.ser.assist.statecarver.core;
 
+import com.sun.tools.internal.ws.processor.util.DirectoryUtil;
+import org.apache.commons.io.FileUtils;
 import soot.*;
+import soot.JastAddJ.FileNamesPart;
 import soot.options.Options;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 //TODO:
@@ -42,8 +47,11 @@ public class StateInstrumenter extends BodyTransformer {
 
     public static StateInstrumenter v() { return instance;}
 
-    public static boolean run(){
+    public static boolean run() throws IOException {
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
+
+        //create required folders
+        FileUtils.forceMkdir(new File(StateCarverConfiguration.v().getTraceDestination()));
 
         //Options.v().set_verbose(true);
         //Options.v().set_output_format(Options.output_format_J);
@@ -62,7 +70,7 @@ public class StateInstrumenter extends BodyTransformer {
         return true;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
        run();
 
     }

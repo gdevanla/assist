@@ -44,15 +44,7 @@ public class StateCarverConfiguration extends AssistConfiguration {
         }
     }
 
-    private String METHOD_TRACE_FILE_NAME = "MethodTrace.log";
 
-    public String getMethodTraceFileName(){
-        return FilenameUtils.concat(getTraceDestination(), METHOD_TRACE_FILE_NAME);
-    }
-
-    public String getTraceDestination(){
-        return config.getString("assist.trace_destination");
-    }
 
     // The following properties are used during static analysis
 

@@ -1,10 +1,22 @@
 package com.ser.assist.statecarver.core;
 
+import org.apache.commons.io.FileUtils;
+
 import java.io.*;
 
 public class MethodTracer {
 
     public static int counter=0;
+    static{
+        try {
+            //dirty way to create a new file
+            new FileWriter(
+                    StateCarverConfiguration.v().getMethodTraceFileName(), false);
+            FileUtils.cleanDirectory(new File(StateCarverConfiguration.v().getTraceDestination()));
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
 
     public static void writeMethodTrace(String methodName, String className, long methodCounter){
        PrintWriter pw = null;

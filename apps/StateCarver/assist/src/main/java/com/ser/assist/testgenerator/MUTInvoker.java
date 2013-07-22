@@ -78,7 +78,7 @@ public class MUTInvoker {
             FileFilter fileFilter = new WildcardFileFilter("state."+sequenceNumber+"."+i+"*");
             File[] files = dir.listFiles(fileFilter);
             if (files.length == 0) break;
-            if (files.length > 1) throw new Exception("Found more than one file for a given param" + i);
+            if (files.length > 1) throw new Exception("Found more than one file for a given param" + i + "in folder" + basePath);
 
             File f = files[0];
 

@@ -46,9 +46,4 @@ public class TestGeneratorConfiguration extends AssistConfiguration {
       super();
     }
 
-    public String getTraceSource(){
-        //the folder where state files can be read from
-        return config.getString("aut.trace_destination");
-    }
-
 }

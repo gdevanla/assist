@@ -5,6 +5,7 @@ import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.ser.assist.oraclefinder.Oracle;
 import com.ser.assist.statecarver.core.Utils;
+import com.sun.tools.internal.ws.processor.util.DirectoryUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
@@ -37,7 +38,7 @@ class ClassDefinition{
     }
 
     public String getClassName(){
-        return "IntegrationTest"+testClassNum;
+        return "IntegrationTest"+testClassNum+"Test";
     }
 }
 
@@ -91,15 +92,13 @@ class MethodDefinition{
                .replace(METHOD_RETURN_TYPE, getMUTReturnTypeAsString());
     }
 
-
-
     public Method getMUTMethod() throws ClassNotFoundException {
         ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
         Class<?> c = contextCL.loadClass(clazzName);
         Method[] methods = c.getDeclaredMethods();
         for (Method m:methods){
-            System.out.println(m.toString());
-            System.out.println(mutSignature);
+            System.out.println("Current Method="+m.toString());
+            System.out.println("MUT Signature="+mutSignature);
             System.out.println(Utils.convertMUTSignatureToOneUsedByJavaReflection(mutSignature));
             if (m.toString().contains(Utils.convertMUTSignatureToOneUsedByJavaReflection(mutSignature))){
                 return m;
@@ -109,6 +108,7 @@ class MethodDefinition{
     }
 
     public String getMUTReturnTypeAsString() throws ClassNotFoundException {
+
         Class<?> returnType = getMUTMethod().getReturnType();
         String strReturnType = returnType.toString();
         if (returnType.isArray()){
@@ -182,6 +182,7 @@ public class TestClassGenerator {
 
     public void saveTest(String code) throws IOException {
 
+        //TODO: create directoty if not present.
         String fileName = FilenameUtils.concat(TestGeneratorConfiguration.v().getIntegrationTestDest(),
                 this.classDefinition.getClassName()+".java");
         Writer w = com.google.common.io.Files.newWriter(new File(fileName), Charset.defaultCharset());
@@ -205,6 +206,8 @@ public class TestClassGenerator {
     public static boolean run(String clazzName, String mutName, String mutSignature,
                               int sequenceNumber) throws IOException, ClassNotFoundException {
 
+        FileUtils.forceMkdir(new File(TestGeneratorConfiguration.v().getIntegrationTestDest()));
+
         ArrayList<String> assertStatements =  new ArrayList<String>();
         com.ser.assist.oraclefinder.Core c = new  com.ser.assist.oraclefinder.Core(clazzName, mutSignature);
         c.runAnalysis(Options.output_format_J, false);
@@ -212,13 +215,13 @@ public class TestClassGenerator {
             assertStatements.add(o.generateAssertStatement("expectedReturnValue", "returnValue"));
         }
 
-        MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName, "/tmp",1,sequenceNumber, true, assertStatements);
-        ClassDefinition classDefinition = new ClassDefinition("1");
+        MethodDefinition methodDefinition = new MethodDefinition(mutSignature, "MUTEE", clazzName, TestGeneratorConfiguration.v().getTraceDestination() ,1,sequenceNumber, true, assertStatements);
+        ClassDefinition classDefinition = new ClassDefinition(Integer.valueOf(sequenceNumber).toString());
 
         TestClassGenerator generator = new TestClassGenerator(new ArrayList<String>(), classDefinition, methodDefinition);
         String generatedTest = generator.generateTest();
         generator.saveTest(generatedTest);
-        System.out.println(generatedTest);
+       // System.out.println(generatedTest);
         return true;
 
     }

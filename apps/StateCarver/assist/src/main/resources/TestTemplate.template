@@ -2,7 +2,7 @@ $PACKAGE_NAMES_GOES_HERE$
 
 import junit.framework.TestCase;
 
-public class IntegrationTest$TEST_CLASS_NUM$ extends TestCase {
+public class IntegrationTest$TEST_CLASS_NUM$Test extends TestCase {
 
    public void testTest$MUT$_$TEST_METHOD_NUM$() throws Exception{
         String mutSignature = "$MUT_SIGNATURE$";

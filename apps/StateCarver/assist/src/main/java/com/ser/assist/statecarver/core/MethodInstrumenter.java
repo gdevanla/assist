@@ -234,7 +234,7 @@ public class MethodInstrumenter {
 
         System.out.print(body.getMethod().getSubSignature());
         String subSignatureWithoutReturnType = body.getMethod().getSubSignature().replaceFirst(returnType, "");
-        return returnType + " " + currentClassName + "." + subSignatureWithoutReturnType.trim();
+        return returnType + " " + subSignatureWithoutReturnType.trim();
     }
 
     private Stmt getMethodTracerStmt(Body body, String currentClassName) {

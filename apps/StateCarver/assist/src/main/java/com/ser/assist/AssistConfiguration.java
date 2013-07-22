@@ -4,6 +4,7 @@ package com.ser.assist;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.io.FilenameUtils;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,6 +14,9 @@ import org.apache.commons.configuration.PropertiesConfiguration;
  * To change this template use File | Settings | File Templates.
  */
 public class AssistConfiguration {
+
+    private final String traceFolder = "trace";
+    private final String METHOD_TRACE_FILE_NAME = "MethodTrace.log";
 
     public final static String config_properties_fname = "hellochicago.assist.properties";
     protected Configuration config;
@@ -25,6 +29,16 @@ public class AssistConfiguration {
         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         System.out.println("Unable to load config file assist.properties. Please make sure it is in the classpath.");
     }
+    }
+
+
+
+    public String getMethodTraceFileName(){
+        return FilenameUtils.concat(getTraceDestination(), METHOD_TRACE_FILE_NAME);
+    }
+
+    public String getTraceDestination(){
+        return FilenameUtils.concat(config.getString("assist.trace_destination"), traceFolder);
     }
 
     public String getAppSourceFolder() {
