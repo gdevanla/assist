@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f502390-c44b-4565-a8d4-a88480bf95e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloChicago/HelloChicago.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloChicago/src/main/java/com/ser/hellochicago/HelloChicago.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloWorldApp/HelloWorldApp.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compile_integration_tests.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/HelloChicago/pom.xml" />
+    <list default="true" id="9f502390-c44b-4565-a8d4-a88480bf95e9" name="Default" comment="A full run with HelloChicago&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template" afterPath="$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/resources/assist.properties" afterPath="$PROJECT_DIR$/assist/src/main/resources/assist.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties" afterPath="$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StateCarver.iws" />
@@ -32,7 +19,7 @@
     <file path="/StateInstrumentor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370601642620" ignored="false" />
     <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374018582107" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/soot/src/soot/JastAddInitialResolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370790253860" ignored="false" />
-    <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374234641085" ignored="false" />
+    <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374516048876" ignored="false" />
     <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968511040" ignored="false" />
     <file path="/StaticClassConverter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866263526" ignored="false" />
     <file path="/StaticReflectionProvider.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866473720" ignored="false" />
@@ -67,7 +54,7 @@
     <file path="/StaticStateOfApp.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968716908" ignored="false" />
     <file path="/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373107556316" ignored="false" />
     <file path="/Simple.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371726207464" ignored="false" />
-    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374493594054" ignored="false" />
+    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374515179396" ignored="false" />
     <file path="/SimpleParameterMutationPattern.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818303353" ignored="false" />
     <file path="/ParameterMutationWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818448869" ignored="false" />
     <file path="/SimpleReturnPatternWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371727600323" ignored="false" />
@@ -77,9 +64,9 @@
     <file path="/testartifacts.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371817758537" ignored="false" />
     <file path="/core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371898796321" ignored="false" />
     <file path="/AssertOnReturnValue.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374141038921" ignored="false" />
-    <file path="/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374509233477" ignored="false" />
-    <file path="/OracleFinderConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374509623091" ignored="false" />
-    <file path="/AssistConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371983477100" ignored="false" />
+    <file path="/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374516820728" ignored="false" />
+    <file path="/OracleFinderConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374516785455" ignored="false" />
+    <file path="/AssistConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374517656772" ignored="false" />
     <file path="/Oracle.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374147239064" ignored="false" />
     <file path="/Assertion.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1372517361689" ignored="false" />
     <file path="/SimpleReturnPatternTest.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1372505239859" ignored="false" />
@@ -111,14 +98,14 @@
     <file path="/AbstractOracleFinder.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374147156938" ignored="false" />
     <file path="/a.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374074466834" ignored="false" />
     <file path="/AssertOnReturnObjectMethod1Test.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373737045286" ignored="false" />
-    <file path="/TestClassGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374511498886" ignored="false" />
+    <file path="/TestClassGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374517119630" ignored="false" />
     <file path="/Templates.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373742598513" ignored="false" />
     <file path="/StateRetriever.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374513058984" ignored="false" />
     <file path="/TestTemplate.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373753794004" ignored="false" />
     <file path="/assist.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374509526942" ignored="false" />
-    <file path="/StateCarverConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374016903944" ignored="false" />
-    <file path="/TestGeneratorConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374499708708" ignored="false" />
-    <file path="/Assist.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374499379606" ignored="false" />
+    <file path="/StateCarverConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374516323387" ignored="false" />
+    <file path="/TestGeneratorConfiguration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374517434097" ignored="false" />
+    <file path="/Assist.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374518133045" ignored="false" />
     <file path="$USER_HOME$/temp/src/Test.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374073077598" ignored="false" />
     <file path="$PROJECT_DIR$/../../../../assist/.idea/workspace.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374073839377" ignored="false" />
     <file path="/TestsMethodHavingMultipleAsserts.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374100059797" ignored="false" />
@@ -126,7 +113,7 @@
     <file path="/HelloWorld.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374234513663" ignored="false" />
     <file path="/HelloChicago.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374235364344" ignored="false" />
     <file path="/TestHelloChicago.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374496830260" ignored="false" />
-    <file path="/hellochicago.assist.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374515089758" ignored="false" />
+    <file path="/hellochicago.assist.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374518103871" ignored="false" />
     <file path="/MUTInvoker.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374513661982" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +185,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" line="182" class="com.ser.assist.testgenerator.TestClassGenerator" package="com.ser.assist.testgenerator">
+      <breakpoint url="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" line="184" class="com.ser.assist.testgenerator.TestClassGenerator" package="com.ser.assist.testgenerator">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -213,7 +200,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" line="217" class="com.ser.assist.testgenerator.TestClassGenerator" package="com.ser.assist.testgenerator">
+      <breakpoint url="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" line="219" class="com.ser.assist.testgenerator.TestClassGenerator" package="com.ser.assist.testgenerator">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -239,100 +226,144 @@
     <favorites_list name="StateCarver" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TestClassGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="12" selection-start="4175" selection-end="4656" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloChicago/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="19" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="51" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestHelloChicago.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateRetriever.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="30" selection-start="2189" selection-end="2189" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestTemplate.template" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="36" selection-start="432" selection-end="432" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assist.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/resources/assist.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="125" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hellochicago.assist.properties" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="101" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.59210527">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestGeneratorConfiguration.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="2248" selection-end="2248" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MUTInvoker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="41" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5453834">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="TestClassGenerator.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="161" column="64" selection-start="6319" selection-end="6319" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="assist.properties" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/resources/assist.properties">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="19" column="125" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="hellochicago.assist.properties" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="16" selection-start="178" selection-end="178" vertical-scroll-proportion="0.16260162">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ProcessBuilder.class" pinned="false" current="false" current-in-tab="false">
+            <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/ProcessBuilder.class">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="OracleFinderConfiguration.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="47" column="60" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Assist.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="69" column="65" selection-start="2660" selection-end="2660" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Core.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="48" column="71" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StateCarverConfiguration.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TestGeneratorConfiguration.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="37" column="0" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MUTInvoker.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="115" column="41" selection-start="4621" selection-end="4621" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="StateCarverConfiguration.java" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="38" column="13" selection-start="1150" selection-end="1150" vertical-scroll-proportion="1.0331633">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StateInstrumenter.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="15" column="13" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StaticStateOfApp.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="8" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="AssistConfiguration.java" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="52" column="34" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -351,21 +382,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HelloWorldApp/src/com/ser/testapp/HelloWorld.java" />
         <option value="$PROJECT_DIR$/HelloChicago/src/main/java/HelloChicago.java" />
         <option value="$PROJECT_DIR$/HelloChicago/src/main/java/com/ser/hellochicago/HelloChicago.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
         <option value="$PROJECT_DIR$/HelloChicago/src/test/java/TestHelloChicago.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" />
         <option value="$PROJECT_DIR$/assist/src/main/resources/assist.properties" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java" />
         <option value="$PROJECT_DIR$/assist/src/main/resources/TestTemplate.template" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/MUTInvoker.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
         <option value="$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties" />
       </list>
     </option>
@@ -1169,6 +1200,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/com/ser/statecarver/oracefinder/test/testartifacts" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ser.assist" />
       <recent name="com.ser.assist.oraclefinder" />
       <recent name="com.ser.statecarver.testartifacts" />
       <recent name="com.ser.assist.tests.oraclefinder" />
@@ -1184,50 +1216,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Assist">
-    <configuration default="false" name="TestClassGenerator" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ser.assist.testgenerator.TestClassGenerator" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="assist" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Core" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ser.assist.oraclefinder.Core" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="assist" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="Assist" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.ser.assist.Assist" />
       <option name="VM_PARAMETERS" />
@@ -1290,6 +1278,38 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="StateInstrumenter" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.statecarver.core.StateInstrumenter" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Core" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.oraclefinder.Core" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -1405,19 +1425,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Core" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Assist" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.AssertOnReturnValue" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Assist" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.AssertOnReturnValue" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
+      <item index="3" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Core" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Assist" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
-        <item index="3" class="java.lang.String" itemvalue="Application.TestClassGenerator" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AssertOnReturnValue" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Core" />
+        <item index="2" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1513,7 +1533,11 @@
       <created>1374190951502</created>
       <updated>1374190951502</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="A full run with HelloChicago&#10;">
+      <created>1374515161552</created>
+      <updated>1374515161552</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1549,13 +1573,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52163464" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36571428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3653618" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22769953" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23133415" sideWeight="0.6915777" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22337821" sideWeight="0.6915777" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3084223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21787025" sideWeight="0.54092526" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45907474" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26309523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1605,7 +1629,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestGenerator generates a full working test!" />
+    <option name="LAST_COMMIT_MESSAGE" value="A full run with HelloChicago&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1633,6 +1657,7 @@
     <MESSAGE value="Wrapper class running full workflow." />
     <MESSAGE value="Added more tests to oracle finder. Cleaned up a lot in oracle finder." />
     <MESSAGE value="TestGenerator generates a full working test!" />
+    <MESSAGE value="A full run with HelloChicago&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1642,82 +1667,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="37" selection-start="2760" selection-end="2760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="58" selection-start="2384" selection-end="2384" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloChicago/src/main/java/com/ser/hellochicago/HelloChicago.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="281" selection-end="281" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="33" selection-start="1759" selection-end="1759" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="18" selection-start="4706" selection-end="4706" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloChicago/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="19" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="51" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="13" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2248" selection-end="2248" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="12" selection-start="4175" selection-end="4656" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1742,6 +1697,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="71" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/ProcessBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1613" selection-end="1613" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/resources/assist.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="125" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0">
@@ -1749,9 +1718,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestGeneratorConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="34" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="60" selection-start="1669" selection-end="1669" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="64" selection-start="6319" selection-end="6319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="65" selection-start="2660" selection-end="2660" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/resources/hellochicago.assist.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="101" selection-start="1579" selection-end="1579" vertical-scroll-proportion="0.59210527">
+        <state line="4" column="16" selection-start="178" selection-end="178" vertical-scroll-proportion="0.16260162">
           <folding />
         </state>
       </provider>

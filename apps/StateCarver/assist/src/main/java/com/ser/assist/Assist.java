@@ -15,14 +15,7 @@ import java.io.IOException;
 
 public class Assist {
 
-    public static Configuration config;
-    static{
-        try {
-            config = new PropertiesConfiguration("hellochicago.assist.properties");
-        } catch (ConfigurationException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
+    static AssistConfiguration config = new AssistConfiguration();
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -33,6 +26,7 @@ public class Assist {
         //runSequenceMiner();
         runIntegrationTestGenerator();
         compileIntegrationTests();
+        runIntegrationTests();
     }
 
     private static void runIntegrationTestGenerator() throws IOException, ClassNotFoundException {
@@ -57,23 +51,23 @@ public class Assist {
 
     public static void runAcceptanceTests() throws IOException {
         System.out.println("Running Acceptance Test:");
-        ProcessBuilder pb = new ProcessBuilder(config.getString("acceptancetest.command"));
+        ProcessBuilder pb = new ProcessBuilder(config.getAcceptanceTestCommand());
         pb.start();
         System.out.println("Complete running acceptance tests");
     }
 
     public static void compileIntegrationTests() throws IOException {
         System.out.println("Running Acceptance Test");
-        ProcessBuilder pb = new ProcessBuilder(config.getString("compile.integrationtest.command"));
+        ProcessBuilder pb = new ProcessBuilder(config.getCompileIntegrationTestCommand());
         pb.start();
         System.out.println("Complete compiling new integration tests");
     }
 
     public static void runIntegrationTests() throws IOException {
-        System.out.println("Running Acceptance Test");
-        ProcessBuilder pb = new ProcessBuilder(config.getString("run.integrationtest.command"));
+        System.out.println("Running Integration Tests Test");
+        ProcessBuilder pb = new ProcessBuilder(config.getIntegrationTestsRunCommand());
         pb.start();
-        System.out.println("Complete running acceptance tests");
+        System.out.println("Complete running integration tests");
     }
 
 }

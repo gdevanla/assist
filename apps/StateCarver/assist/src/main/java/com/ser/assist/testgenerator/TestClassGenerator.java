@@ -156,7 +156,9 @@ public class TestClassGenerator {
     private void initClassPath() throws MalformedURLException {
         ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
 
-        String[] appClassPaths = TestGeneratorConfiguration.v().getAppClassPath().split(":");
+        String[] appClassPaths = new String[]{
+                TestGeneratorConfiguration.v().getAppTestsSourceFolder(),
+                TestGeneratorConfiguration.v().getAppClasspath()};
         List<URL> urls = new ArrayList<URL>();
         for(String cp:appClassPaths){
             urls.add(new URL("file://"+cp));

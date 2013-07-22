@@ -46,7 +46,7 @@ public class Core extends BodyTransformer {
         Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{"-process-dir",
-                OracleFinderConfiguration.v().getTestsSourceFolder(),
+                OracleFinderConfiguration.v().getAppTestsSourceFolder(),
                 "-cp", OracleFinderConfiguration.v().getSootClassPath()};
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
 

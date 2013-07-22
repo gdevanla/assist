@@ -2,6 +2,7 @@ package com.ser.assist.oraclefinder;
 
 import com.google.common.base.Joiner;
 import com.google.inject.Singleton;
+import com.ser.assist.AssistConfiguration;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -19,15 +20,12 @@ import java.util.concurrent.locks.Lock;
  * To change this template use File | Settings | File Templates.
  */
 
-public class OracleFinderConfiguration {
-
-
+public class OracleFinderConfiguration extends AssistConfiguration {
 
     private static class Loader {
         public static OracleFinderConfiguration oracleFinderConfiguration = new OracleFinderConfiguration();
     }
 
-    private Configuration config;
     private static OracleFinderConfiguration oracleFinderConfiguration=null;
 
     public static OracleFinderConfiguration v(){
@@ -37,7 +35,7 @@ public class OracleFinderConfiguration {
     private OracleFinderConfiguration(){
         try {
             //config = new PropertiesConfiguration("assist.properties");
-            config = new PropertiesConfiguration("hellochicago.assist.properties");
+            config = new PropertiesConfiguration(AssistConfiguration.config_properties_fname);
 
         } catch (ConfigurationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -45,32 +43,14 @@ public class OracleFinderConfiguration {
         }
     }
 
-    public String getTestsSourceFolder(){
-        return config.getString("oraclefinder.tests_folder");
-    }
-
     public String getSootClassPath(){
-
-        Iterator i = config.getKeys();
-        // while (i.hasNext()){
-        //  Object s = i.next();
-        //  System.out.println(s);
-        //  System.out.println(config.getString((String)s));
-        // }
 
         return Joiner.on(":").join(config.getString("global.assist_classpath"),
                 config.getString("global.xstreamjar"),
                 config.getString("global.jcejar"),
                 config.getString("global.classesjar"),
-                getTestsSourceFolder(),
-                getApplicationSourceFolder(),
+                getAppTestsSourceFolder(),
+                getAppClasspath(),
                 config.getString("global.junitjar"));
-
     }
-
-
-    public String getApplicationSourceFolder(){
-        return config.getString("oraclefinder.app_folder");
-    }
-
 }
