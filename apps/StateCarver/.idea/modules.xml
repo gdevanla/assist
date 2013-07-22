@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HelloChicago/HelloChicago.iml" filepath="$PROJECT_DIR$/HelloChicago/HelloChicago.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HelloWorldApp/HelloWorldApp.iml" filepath="$PROJECT_DIR$/HelloWorldApp/HelloWorldApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaScratch/JavaScratch.iml" filepath="$PROJECT_DIR$/JavaScratch/JavaScratch.iml" />
       <module fileurl="file://$PROJECT_DIR$/Scratch/Scratch.iml" filepath="$PROJECT_DIR$/Scratch/Scratch.iml" />
       <module fileurl="file://$PROJECT_DIR$/Scratch2/Scratch2.iml" filepath="$PROJECT_DIR$/Scratch2/Scratch2.iml" />

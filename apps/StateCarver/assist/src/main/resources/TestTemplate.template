@@ -9,23 +9,26 @@ public class IntegrationTest$TEST_CLASS_NUM$ extends TestCase {
         String clazzName = "$CLASS_DECLARING_MUT$";
         int sequenceNumber = $METHOD_TRACE_SEQUENCE_NUMBER$;
         String basePath = "$BASE_PATH$";
-        boolean methodReturns = $METHOD_RETURNS$;
+        boolean methodReturns = true;
 
         com.ser.assist.testgenerator.MUTInvoker mutInvoker = new  com.ser.assist.testgenerator.MUTInvoker(clazzName,
                                                mutSignature,
                                                sequenceNumber,
                                                basePath);
 
+        System.out.println("Before setting values");
         Object returnValue = null;
         if (methodReturns){
             returnValue = mutInvoker.invokeMethod();
+            System.out.println("Actual Return value was="+returnValue);
         }
         else{
             System.out.println("This kind of test not supported");
         }
 
-        com.ser.assist.testgenerator.StateRetriever stateRetriever = new com.ser.assist.testgenerator.StateRetriever(mutSignature, clazzName, sequenceNumber, basePath);
+        com.ser.assist.testgenerator.StateRetriever stateRetriever = new com.ser.assist.testgenerator.StateRetriever(clazzName, mutSignature, sequenceNumber, basePath);
         $METHOD_RETURN_TYPE$ expectedReturnValue = ($METHOD_RETURN_TYPE$)stateRetriever.getReturnValue();
+        System.out.println("Expected Return value was="+expectedReturnValue);
 
         $ASSERT_STATEMENTS_GOES_HERE$;
 

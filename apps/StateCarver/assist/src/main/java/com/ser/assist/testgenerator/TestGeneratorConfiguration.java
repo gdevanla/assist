@@ -27,6 +27,10 @@ import java.util.concurrent.locks.Lock;
 
 public class TestGeneratorConfiguration {
 
+    public String getIntegrationTestDest() {
+        return config.getString("testgenerator.integration_test_destination");
+    }
+
     private static class Loader {
         public static TestGeneratorConfiguration testGeneratorConfiguration = new TestGeneratorConfiguration();
     }
@@ -40,7 +44,8 @@ public class TestGeneratorConfiguration {
 
     private TestGeneratorConfiguration(){
         try {
-            config = new PropertiesConfiguration("assist.properties");
+            //config = new PropertiesConfiguration("assist.properties");
+            config = new PropertiesConfiguration("hellochicago.assist.properties");
         } catch (ConfigurationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             System.out.println("Unable to load config file assist.properties. Please make sure it is in the classpath.");
@@ -48,6 +53,7 @@ public class TestGeneratorConfiguration {
     }
 
     public String getAppClassPath(){
+        System.out.println("App Class Path=" +  config.getString("testgenerator.app_classpath"));
         return config.getString("testgenerator.app_classpath");
     }
 
@@ -55,4 +61,8 @@ public class TestGeneratorConfiguration {
         //the folder where state files can be read from
         return config.getString("testgenerator.trace_destination");
     }
+
+
+
+
 }

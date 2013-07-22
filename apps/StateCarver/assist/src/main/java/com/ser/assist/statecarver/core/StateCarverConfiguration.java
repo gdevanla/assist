@@ -21,8 +21,6 @@ import java.util.concurrent.locks.Lock;
 
 public class StateCarverConfiguration {
 
-
-
     private static class Loader {
         public static StateCarverConfiguration stateCarverConfiguration = new StateCarverConfiguration();
     }
@@ -36,7 +34,8 @@ public class StateCarverConfiguration {
 
     private StateCarverConfiguration(){
         try {
-            config = new PropertiesConfiguration("assist.properties");
+            //config = new PropertiesConfiguration("assist.properties");
+            config = new PropertiesConfiguration("hellochicago.assist.properties");
         } catch (ConfigurationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             System.out.println("Unable to load config file assist.properties. Please make sure it is in the classpath.");

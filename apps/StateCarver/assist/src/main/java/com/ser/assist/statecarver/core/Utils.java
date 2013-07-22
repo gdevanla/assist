@@ -1,5 +1,6 @@
 package com.ser.assist.statecarver.core;
 
+import com.google.common.base.Splitter;
 import soot.BooleanType;
 import soot.ByteType;
 import soot.CharType;
@@ -14,6 +15,8 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
 import soot.jimple.Jimple;
+
+import java.util.Iterator;
 
 public class Utils {
 
@@ -109,6 +112,19 @@ public class Utils {
         }
 
         return method;
+    }
+
+    public static String convertMUTSignatureToOneUsedByJavaReflection(String mutSignature){
+        // classnamew : returnType methodname(type arg, type arg...)
+
+        Iterator<String> s = Splitter.on(":").trimResults().split(mutSignature).iterator();
+        String className = s.next();
+        String subSignature = s.next();
+
+        String returnTypeString = subSignature.substring(0, subSignature.indexOf(" "));
+        String restOfMethodSignature = subSignature.substring(subSignature.indexOf(" ")).trim();
+
+        return String.format("%s %s.%s", returnTypeString, className, restOfMethodSignature);
     }
 
 }

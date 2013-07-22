@@ -42,6 +42,7 @@ public class Core extends BodyTransformer {
 
 
     public void  runAnalysis(int outputFormat, boolean verbose){
+        soot.G.reset();
         Options.v().set_verbose(verbose);
         Options.v().set_output_format(outputFormat);
         String[] sootArguments = new String[]{"-process-dir",

@@ -36,7 +36,9 @@ public class OracleFinderConfiguration {
 
     private OracleFinderConfiguration(){
         try {
-            config = new PropertiesConfiguration("assist.properties");
+            //config = new PropertiesConfiguration("assist.properties");
+            config = new PropertiesConfiguration("hellochicago.assist.properties");
+
         } catch (ConfigurationException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             System.out.println("Unable to load config file assist.properties. Please make sure it is in the classpath.");
@@ -61,7 +63,14 @@ public class OracleFinderConfiguration {
                 config.getString("global.jcejar"),
                 config.getString("global.classesjar"),
                 getTestsSourceFolder(),
+                getApplicationSourceFolder(),
                 config.getString("global.junitjar"));
 
     }
+
+
+    public String getApplicationSourceFolder(){
+        return config.getString("oraclefinder.app_folder");
+    }
+
 }

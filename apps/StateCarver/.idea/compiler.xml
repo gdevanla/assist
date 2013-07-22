@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="assist" />
+        <module name="HelloChicago" />
         <module name="Scratch2" />
         <module name="TestArtifacts" />
       </profile>

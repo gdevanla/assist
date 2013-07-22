@@ -1,6 +1,7 @@
 package com.ser.assist.testgenerator;
 
 
+import com.ser.assist.statecarver.core.Utils;
 import com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver;
 import org.apache.commons.io.FilenameUtils;
 
@@ -24,28 +25,38 @@ public class StateRetriever {
 
     public Method getMUTMethod() throws ClassNotFoundException {
         ClassLoader contextCL = Thread.currentThread().getContextClassLoader();
+        System.out.println("Looking for class="+clazzName);
         Class<?> c = contextCL.loadClass(this.clazzName);
         Method[] methods = c.getDeclaredMethods();
         for (Method m:methods){
             System.out.println(m.toString());
 
-            if (m.toString().contains(mutSignature)){
+            if (m.toString().contains(Utils.convertMUTSignatureToOneUsedByJavaReflection(mutSignature))){
                 return m;
             }
         }
         return null;
     }
 
-    public Object getReturnValue() throws ClassNotFoundException {
+    public String getMUTReturnTypeAsString() throws ClassNotFoundException {
         Class<?> returnType = getMUTMethod().getReturnType();
         String strReturnType = returnType.toString();
         if (returnType.isArray()){
             strReturnType = returnType.getComponentType().toString() + "[]";
         }
 
-        String fileName = XStreamStateCarver.getParamStateFileName(this.sequenceNumber, "return", strReturnType);
+        if ( strReturnType.contains("class"))
+            return strReturnType.split(" ")[1]; //get rid of "class"
+        else
+            return strReturnType;
+
+    }
+
+    public Object getReturnValue() throws ClassNotFoundException {
+        String fileName = XStreamStateCarver.getParamStateFileName(this.sequenceNumber, "return", getMUTReturnTypeAsString());
         Object o = XStreamStateCarver.loadState(FilenameUtils.concat(basePath, fileName));
         System.out.println(o.getClass());
+        System.out.println(o);
         return o;
     }
 

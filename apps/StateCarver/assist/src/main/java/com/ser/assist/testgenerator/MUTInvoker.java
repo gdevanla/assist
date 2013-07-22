@@ -1,5 +1,6 @@
 package com.ser.assist.testgenerator;
 
+import com.ser.assist.statecarver.core.Utils;
 import com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
@@ -92,7 +93,7 @@ public class MUTInvoker {
         Class<?> c = Thread.currentThread().getContextClassLoader().loadClass(this.clazzName);
         String fileName = XStreamStateCarver.getParamStateFileName(this.sequenceNumber, "this", this.clazzName);
         Object o = XStreamStateCarver.loadState(FilenameUtils.concat(basePath, fileName));
-        System.out.println(o);
+
         return o;
     }
 
@@ -102,8 +103,8 @@ public class MUTInvoker {
         Method[] methods = c.getDeclaredMethods();
         for (Method m:methods){
             System.out.println(m.toString());
-
-            if (m.toString().contains(mutSignature)){
+            System.out.println("Looking for ="+mutSignature);
+            if (m.toString().contains(Utils.convertMUTSignatureToOneUsedByJavaReflection(mutSignature))){
                 return m;
             }
         }
@@ -121,14 +122,14 @@ public class MUTInvoker {
         ArrayList<Object> params = loadParams();
         ArrayList<Class> argTypes = new ArrayList<Class>();
         for (Object o:params){
+            System.out.println("params="+o);
             argTypes.add(o.getClass());
         }
         Method m = getMutMethod();
-        //if (m.toString().equals(this.mutSignature)){
-        System.out.println(m.invoke(i, params.toArray()));
-        //}
-
-        return null;
+        System.out.println("method being invoked="+m);
+        Object returnValue = m.invoke(i, params.toArray());
+        System.out.println(returnValue);
+        return returnValue;
     }
 
     public static void main(String[] args) throws Exception {
