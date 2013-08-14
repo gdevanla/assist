@@ -1,0 +1,87 @@
+displaying statements where there is cross boundary interactions
+statement : report = virtualinvoke $r0.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.Report compare(java.lang.String[],java.lang.String[])>($r1, $r2)
+End of Cross Boundary Analysis
+-------------------------------
+----------def-use chain---
+End of Def-use Analysis
+------------------------------
+------------FINAL CHAIN AND STATEMENTS-------------------
+Chain Size 1---------------
+report = virtualinvoke $r0.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.Report compare(java.lang.String[],java.lang.String[])>($r1, $r2)
+Associated statements size37
+if lineNum >= $i0 goto return 0
+className:com.saxman.textdiff.FileInfo  MethodName: isValidLineNum SourceLineNumber: 66
+if $z0 == 0 goto $z0 = virtualinvoke newLineInfo.<com.saxman.textdiff.LineInfo: boolean isNewOnly()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 34
+if line < $i1 goto $r0 = this.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.SymbolCollection symbols>
+className:com.saxman.textdiff.TextDiff  MethodName: createSymbols SourceLineNumber: 64
+if $z0 != 0 goto $r0 = this.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.FileInfo oldFileInfo>
+className:com.saxman.textdiff.TextDiff  MethodName: stretchOneMatch SourceLineNumber: 128
+lOldLineNum = lOldLineNum + whichWay
+className:com.saxman.textdiff.TextDiff  MethodName: stretchOneMatch SourceLineNumber: 125
+if $z0 == 0 goto line = line + 1
+className:com.saxman.textdiff.TextDiff  MethodName: createLineInfo SourceLineNumber: 83
+if lineBlock == null goto return lineBlock
+className:com.saxman.textdiff.FileInfo  MethodName: nextBlock SourceLineNumber: 38
+line = line + 1
+className:com.saxman.textdiff.TextDiff  MethodName: createLineInfo SourceLineNumber: 77
+$i0 = thruLineNum - fromLineNum
+className:com.saxman.textdiff.LineBlock  MethodName: <init> SourceLineNumber: 17
+line = line + 1
+className:com.saxman.textdiff.TextDiff  MethodName: stretchMatches SourceLineNumber: 97
+lineNum = lineNum + 1
+className:com.saxman.textdiff.FileInfo  MethodName: getBlockAt SourceLineNumber: 52
+if lineNum < 0 goto return 0
+className:com.saxman.textdiff.FileInfo  MethodName: isValidLineNum SourceLineNumber: 66
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isOldOnly()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 31
+if lineNum < $i0 goto fromLineNum = lineNum
+className:com.saxman.textdiff.FileInfo  MethodName: getBlockAt SourceLineNumber: 45
+if blockNum == $i0 goto lineNum = lineNum + 1
+className:com.saxman.textdiff.FileInfo  MethodName: getBlockAt SourceLineNumber: 49
+if $i0 != $i1 goto this.<com.saxman.textdiff.MatchCommand: java.lang.String command> = "Move"
+className:com.saxman.textdiff.MatchCommand  MethodName: <init> SourceLineNumber: 14
+if $i0 != 0 goto line = line + 1
+className:com.saxman.textdiff.TextDiff  MethodName: stretchMatches SourceLineNumber: 100
+if lineNum < $i0 goto $r2 = this.<com.saxman.textdiff.FileInfo: com.saxman.textdiff.LineInfo[] lineInfo>
+className:com.saxman.textdiff.FileInfo  MethodName: lineInfoAt SourceLineNumber: 29
+if symbol != null goto return symbol
+className:com.saxman.textdiff.SymbolCollection  MethodName: getSymbolFor SourceLineNumber: 16
+thruLineNum = lineNum - 1
+className:com.saxman.textdiff.FileInfo  MethodName: getBlockAt SourceLineNumber: 54
+if $z0 == 0 goto return
+className:com.saxman.textdiff.TextDiff  MethodName: stretchOneMatch SourceLineNumber: 127
+if $z0 == 0 goto $z0 = virtualinvoke newLineInfo.<com.saxman.textdiff.LineInfo: boolean isMatch()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 43
+$i0 = $i0 + $i1
+className:com.saxman.textdiff.FileInfo  MethodName: nextBlock SourceLineNumber: 39
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isEOF()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 28
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isEOF()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 28
+if $z0 == 0 goto return
+className:com.saxman.textdiff.TextDiff  MethodName: stretchOneMatch SourceLineNumber: 127
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isOldOnly()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 31
+if $z0 == 0 goto oldLineInfo = virtualinvoke oldFileInfo.<com.saxman.textdiff.FileInfo: com.saxman.textdiff.LineInfo currentLineInfo()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 46
+if line < $i0 goto $r0 = new com.saxman.textdiff.LineInfo
+className:com.saxman.textdiff.TextDiff  MethodName: createLineInfo SourceLineNumber: 77
+if $z0 == 0 goto $z0 = virtualinvoke newLineInfo.<com.saxman.textdiff.LineInfo: boolean isNewOnly()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 34
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isMatch()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 40
+if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isOldOnly()>()
+className:com.saxman.textdiff.Report  MethodName: <init> SourceLineNumber: 37
+if $z0 != 0 goto $r0 = fileInfo.<com.saxman.textdiff.FileInfo: com.saxman.textdiff.LineInfo[] lineInfo>
+className:com.saxman.textdiff.TextDiff  MethodName: stretchMatches SourceLineNumber: 97
+$i0 = aFile + 1
+className:com.saxman.textdiff.Symbol  MethodName: countLine SourceLineNumber: 28
+if $z0 == 0 goto line = line + 1
+className:com.saxman.textdiff.TextDiff  MethodName: stretchMatches SourceLineNumber: 100
+lNewLineNum = lNewLineNum + whichWay
+className:com.saxman.textdiff.TextDiff  MethodName: stretchOneMatch SourceLineNumber: 126
+$i0 = $i0 + 1
+className:com.saxman.textdiff.LineBlock  MethodName: <init> SourceLineNumber: 17
+------------------
+-------------------------------------------------------

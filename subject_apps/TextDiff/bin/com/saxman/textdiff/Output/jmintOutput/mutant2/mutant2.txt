@@ -1,0 +1,7 @@
+Trying to Inject mutant for Method Name : stretchOneMatch in class  com.saxman.textdiff.TextDiff
+Source Line Number: 127
+Jimple Statement considered for mutant injection:  if $z0 == 0 goto return
+Successfully injected mutant!!!
+Correspondent Mutant is if $z0 != 0 goto return
+Successfully injected mutant!!!
+Correspondent Mutant is if $z0 != 0 goto return

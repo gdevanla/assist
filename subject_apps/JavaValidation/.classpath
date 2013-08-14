@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="LIB/commons-configuration-1.8.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="LIB/commons-validator-1.4.0.jar"/>
+	<classpathentry kind="lib" path="LIB/ognl-2.6.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saranya/Desktop/My FILES/eclipse/plugins/org.apache.commons.logging_1.0.4.v201101211617.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

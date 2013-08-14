@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: HTML/XHTML / Allgemeine Regeln für HTML / Zeichenvorrat, Sonderzeichen und HTML-eigene Zeichen</title>
+<meta name="description"    content="Was Sie über Zeichen in HTML-Texten wissen sollten, wie Sie deutsche Umlaute und scharfes S umschreiben, wie Sie das Euro-Zeichen in HTML notieren können und welche HTML-eigenen Zeichen Sie in jedem Fall umschreiben müssen.">
+<meta name="keywords"       content="SELFHTML, HTML, Zeichen, Zeichenkodierung, Unicode, ISO 8859-1, Latin-1, ISO 10646, Umlaute, Sonderzeichen, Euro, Euro-Zeichen, Eurozeichen, Euro-Symbol, HTML-eigene Zeichen">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-11-16T01:48:05+01:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/html/allgemein/editieren.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="Allgemeine Regeln für HTML" href="index.htm">
+<link rel="next" title="Farben definieren in HTML" href="farben.htm">
+<link rel="prev" title="Regeln beim Editieren von HTML" href="editieren.htm">
+<link rel="first" title="Textauszeichnung" href="textauszeichnung.htm">
+<link rel="last" title="Guter HTML-Stil" href="stil.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Allgemeine Regeln für HTML</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Zeichenvorrat, Sonderzeichen und HTML-eigene Zeichen</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#allgemeines">Allgemeines zu Zeichen in HTML</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#umlaute">Deutsche Umlaute und scharfes S</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#euro">Das Euro-Zeichen in HTML</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#html_eigene">HTML-eigene Zeichen maskieren</a><br>
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="allgemeines">Allgemeines zu Zeichen in HTML</a></h2>
+
+<p>Wenn Sie Ihre Texte - sagen wir in deutscher Sprache - einfach in einen HTML-Editor eintippen, den Text mit Hilfe von HTML-Elementen strukturieren und sich das Ganze dann im Web-Browser anzeigen lassen, wird in der Regel der gesamte eingegebene Text korrekt angezeigt. Das klingt selbstverständlich - ist es aber nicht. In der HTML-Datei stehen nämlich nicht Ihre eingegebenen Buchstaben und anderen Zeichen, sondern nur Bytes, also letztlich Einsen und Nullen.</p>
+
+<p>Beim Speichern der Buchstaben muss Ihr HTML-Editor nun einen bestimmten Algorithmus anwenden, um die Zeichen in Bytes umzuwandeln. Der Web-Browser muss dieselbe Methode rückwärts anwenden, um alle Zeichen im HTML-Dokument korrekt zu erkennen. Diese Methode wird <b>Zeichenkodierung</b> genannt. Es gibt viele verschiedene davon, z.B. speziell zur Speicherung von westeuropäischen, kyrillischen oder arabischen Zeichen. Genaueres über Zeichenkodierungen erfahren Sie im Kapitel <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/sprache.htm">Computer und geschriebene Sprache</a>.</p>
+
+<p>Eine solche Zeichenkodierung greift auf eine Übersetzungstabelle (<b>Codetabelle</b>) zurück, die jedem Zeichen, das verwendet werden kann, eine fortlaufende Nummer (einen <b>Code</b>) zuweist. So hat z.B. der lateinische Buchstabe "a" in der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/unicode.htm">Unicode</a>-Zeichentabelle die (dezimale) Nummer 97, "b" 98, "c" 99 und so weiter. Die Menge der Zeichen in einer solchen Tabelle wird <b>Zeichenvorrat</b> genannt.</p>
+
+<p>Da unzählige Kodierungen für HTML-Dateien verwendet werden können, ist es unbedingt notwendig, dass der Browser diejenige Kodierung anwendet, mit welcher der Editor die HTML-Datei gespeichert hat. Sie sollten daher einen Editor verwenden, in dem Sie beim Speichern die Kodierung wählen können. Zudem sollte die HTML-Datei eine Angabe zur verwendeten Zeichenkodierung enthalten oder sie sollte zumindest durch den Webserver in der HTTP-Antwort übermittelt werden. Wenn eine solche Angabe fehlt, dann ist die HTML-Datei gemäß dem HTML-Standard fehlerhaft. Ein Web-Browser darf die verwendete Kodierung strenggenommen nicht "erraten".</p>
+
+<p>Allerdings sind die Browser in diesem Punkt äußerst tolerant und greifen zumeist auf die voreingestellte Kodierung zurück. In Ihrem Browser, der wahrscheinlich eine englische oder deutschsprachige Benutzerführung hat, ist vermutlich 
+<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/zeichenkodierungen.htm">ISO 8859-1</a> (Latin-1) eingestellt, die verbreitete Kodierung für westeuropäische Sprachen. Weil der Editor, den Sie beim Eintippen benutzen, vermutlich ebenfalls ISO 8859-1 beim Abspeichern verwendet, klappt scheinbar alles problemlos. Nun kann es aber, wenn Ihre Seiten im Web stehen, auch passieren, dass Besucher aus Osteuropa, Asien usw. vorbeikommen, deren Browser standardmäßig eine andere Kodierung annehmen. Solche Besucher werden dann lauter Zeichen aus der Codetabelle ihres eigenen, vertrauten Zeichencodes sehen - aber es wird ein wilder, sinnloser Zeichensalat sein.</p>
+
+<p>HTML bietet Ihnen deshalb die Möglichkeit an, dem Browser mitzuteilen, welche Zeichenkodierung die Datei verwendet. Im Kopf einer HTML-Datei notieren Sie dazu in einem so genannten Meta-Tag eine <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../kopfdaten/meta.htm#zeichenkodierung">Angabe zur Zeichenkodierung</a>. Eine solche Angabe ist unbedingt zu empfehlen, da Sie dem Browser die Entscheidung leichter macht, wie die Bytes der HTML-Datei in Zeichen umzuwandeln sind. Dann liegt es am Browser, die von Ihnen gemeinten Zeichen auf dem Bildschirm beispielsweise eines Seitenbesuchers aus Fernost so anzuzeigen, wie Sie sie eingetippt haben.</p>
+
+<p>Die verbreiteten ISO-Kodierungen arbeiten mit einem Zeichenvorrat von 256 Zeichen. Dies hat den Vorteil, dass ein Zeichen immer genau mit einem Byte dargestellt wird. Somit lassen sich mit solchen Kodierungen nur 256 unterschiedliche Zeichen speichern. Trotzdem ist der Zeichenvorrat von HTML - das heißt die Menge aller verwendbaren Zeichen, unabhängig von der Art, wie sie in Bytes gespeichert werden - nicht auf den Zeichenvorrat der verwendeten Kodierung beschränkt. In einem HTML-Dokument können grundsätzlich alle Zeichen aus <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/unicode.htm">Unicode</a> verwendet werden. Fortschrittliche Kodierungen wie UTF-8 können alle Zeichen des Unicode-Standards direkt in Bytes bzw. Byteketten kodieren.</p>
+
+<p>Wenn Sie im Text einzelne Zeichen eingeben wollen, die nicht im Zeichenvorrat der verwendeten Kodierung enthalten sind, können Sie zwischen zwei Möglichkeiten wählen: Entweder Sie verwenden eine spezielle numerische Notation. Für häufiger verwendete Sonderzeichen stellt HTML aber auch so genannte <b>benannte Zeichen</b> zur Verfügung. Für beide Möglichkeiten sollten Sie sich mit der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../referenz/zeichen.htm">HTML-Zeichenreferenz</a> beschäftigen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="umlaute">Deutsche Umlaute und scharfes S</a></h2>
+
+<p>Wenn Sie Kodierungen wie ISO 8859-1 oder UTF-8 verwenden, können Sie die deutschen Umlaute direkt in Ihrem Editor eintippen. Sofern Sie die besagte Angabe zur Zeichenkodierung im Kopf der HTML-Datei notieren, können Sie davon ausgehen, dass aktuelle und auch ältere Browser die Datei korrekt verarbeiten.</p>
+
+<p>Dennoch gibt es einige Sonderfälle, in denen es sinnvoll ist, sich auf die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/zeichenkodierungen.htm#iso8859">ASCII-Zeichen</a> zu beschränken, um mögliche Probleme bei der Verarbeitung zu vermeiden. In diesem Fall können Sie deutsche Umlaute sowie das scharfe S durch <b>benannte Zeichen</b> umschreiben. Das gilt für den gesamten Inhalt einer HTML-Datei.</p>
+
+
+<table class="reftable" cellpadding="3" cellspacing="0" border="1">
+<tr>
+<th>Zeichen</th>
+<th>Ersetzung</th>
+</tr>
+<tr>
+<td class="tabxpl"><code>ä</code></td>
+<td class="code"><code>&amp;auml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>Ä</code></td>
+<td class="code"><code>&amp;Auml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>ö</code></td>
+<td class="code"><code>&amp;ouml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>Ö</code></td>
+<td class="code"><code>&amp;Ouml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>ü</code></td>
+<td class="code"><code>&amp;uuml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>Ü</code></td>
+<td class="code"><code>&amp;Uuml;</code></td>
+</tr>
+<tr>
+<td class="tabxpl"><code>ß</code></td>
+<td class="code"><code>&amp;szlig;</code></td>
+</tr>
+</table>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+In M&amp;uuml;nchen steht ein Hofbr&amp;auml;uhaus.
+Dort gibt es Bier aus Ma&amp;szlig;kr&amp;uuml;gen.
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Die deutschen Sonderzeichen werden durch die entsprechenden benannten Zeichen ersetzt. Auch wenn die Zeichenfolgen irritieren mögen - keine Sorge, die Web-Browser verstehen das und zeigen die Zeichen korrekt an.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Es gibt eine Menge weiterer Sonderzeichen, die durch solche Umschreibungen dargestellt werden sollten. Diese finden Sie in der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../referenz/zeichen.htm">HTML-Zeichenreferenz</a> aufgelistet.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="euro">Das Euro-Zeichen in HTML</a></h2>
+
+<p>Auch für das Euro-Zeichen gibt es ein <b>benanntes Zeichen</b> in HTML. Das Euro-Zeichen ist nicht im Zeichenvorrat von ISO 8859-1 enthalten, sodass Sie das benannte Zeichen an dessen Stelle nutzen müssen, wenn Sie diese Kodierung verwenden möchten.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+Preis: &amp;euro; 199,-
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Notieren Sie an der Stelle, wo das Euro-Zeichen stehen soll, die Zeichenfolge <code>&amp;euro;</code>.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Wenn Sie unter Microsoft Windows das Euro-Zeichen über die Tastenkombination <kbd>AltGr + e</kbd> in die HTML-Datei eintippen, sollten Sie vorsichtig sein. Einige Editoren nutzen standardmäßig die Kodierung Windows 1252. Diese gleicht ISO 8859-1 weitestgehend. Doch an der Stelle der Codetabelle, wo in ISO 8859-1 einige in HTML nicht verwendete Steuerzeichen liegen, liegen in Windows 1252 unter anderem typographische Anführungszeichen, Gedankenstriche und eben das Euro-Zeichen. Ein Browser, der Windows-1252-kodierte HTML-Dateien gemäß ISO 8859-1 verarbeitet, wird nämlich kein Euro-Zeichen anzeigen, sondern z.B. ein Fragezeichen oder ein kleines Quadrat. Denn an der Stelle des Euro-Zeichens in Windows 1252 liegt in der Codetabelle von ISO 8859-1 ein nicht druckbares Steuerzeichen.</p>
+
+<p>Wenn Sie ISO 8859-1 verwenden wollen und Ihre HTML-Dateien eine entsprechende Angabe zu Kodierung enthalten, sollten Sie es daher vermeiden, das Euro-Zeichen direkt einzugeben. Verwenden Sie entweder beim Speichern eine Kodierung, in deren Zeichenvorrat das Euro-Zeichen vorkommt (z.B. UTF-8 oder ISO 8859-15), sowie einen Editor, der diese Kodierungen korrekt anwendet. Andernfalls können Sie einfach das oben beschriebene <code>&amp;euro;</code> notieren. Eine weitere Alternative ist die numerische Notation. Im Unicode-Standard hat das Euro-Zeichen den Dezimalwert 8364 oder den Hexadezimalwert 20AC. In HTML können Sie das Euro-Zeichen demnach numerisch so referenzieren: <code>&amp;#8364;</code> oder <code>&amp;#x20AC;</code>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="html_eigene">HTML-eigene Zeichen maskieren</a></h2>
+
+<p>Wenn in Ihrem Text Zeichen vorkommen, die in HTML eine bestimmte Bedeutung haben,
+müssen Sie diese Zeichen maskieren. Die folgenden Zeichen müssen Sie
+wie folgt maskieren:</p>
+
+<p>Ersetzen Sie das Zeichen <code>&amp;</code> durch die Zeichenfolge <code>&amp;amp;</code> ("Ampersand")<br>
+Ersetzen Sie das Zeichen <code>&lt;</code> durch die Zeichenfolge <code>&amp;lt;</code> ("lower than")<br>
+Ersetzen Sie das Zeichen <code>&gt;</code> durch die Zeichenfolge <code>&amp;gt;</code> ("greater than")</p>
+
+<p>Des Weiteren ist es ratsam, an bestimmten Stellen das Zeichen <code>"</code> durch die Zeichenfolge <code>&amp;quot;</code> ("Quote") zu ersetzen. Dies ist vor allem in Attributwerten sinnvoll.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+Das ist ein &amp;lt;HTML-Tag&amp;gt;
+GmbH &amp;amp; Co. KG
+&lt;strong title="bekannt durch den Ausspruch &amp;quot;Ich wei&amp;szlig;, dass ich nichts wei&amp;szlig;!&amp;quot;"&gt;
+der griechische Philosoph Sokrates&lt;/strong&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Ersetzen Sie die HTML-eigenen Zeichen wie im obigen Beispiel durch die entsprechenden Zeichenfolgen.</p>
+
+<h3 class="xpl">Beachten Sie:</h3>
+
+<p>Am gefährlichsten ist die spitze öffnende Klammer (<code>&lt;</code>). Wenn Sie dieses Zeichen nicht wie vorgeschrieben maskieren, bringen Sie den Web-Browser mit ziemlicher Sicherheit durcheinander, weil er glaubt, nun würde ein HTML-Tag folgen. Die anderen HTML-eigenen Zeichen führen zwar meistens nicht zu Anzeigefehlern, dennoch sollten Sie sie möglichst maskieren.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="farben.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="farben.htm">Farben definieren in HTML</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="grundgeruest.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="editieren.htm">Regeln beim Editieren von HTML</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Allgemeine Regeln für HTML</a></td>
+</tr></table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

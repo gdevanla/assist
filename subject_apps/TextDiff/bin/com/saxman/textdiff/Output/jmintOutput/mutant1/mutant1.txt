@@ -1,0 +1,5 @@
+Trying to Inject mutant for Method Name : stretchOneMatch in class  com.saxman.textdiff.TextDiff
+Source Line Number: 128
+Jimple Statement considered for mutant injection:  if $z0 != 0 goto $r0 = this.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.FileInfo oldFileInfo>
+Successfully injected mutant!!!
+Correspondent Mutant is if $z0 == 0 goto $r0 = this.<com.saxman.textdiff.TextDiff: com.saxman.textdiff.FileInfo oldFileInfo>

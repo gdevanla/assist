@@ -1,0 +1,554 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: HTML/XHTML / HTML-Kopfdaten / Meta-Angaben zum Inhalt</title>
+<meta name="description"    content="Wie Sie Angaben zu einer HTML-Datei notieren können, die für Suchmaschinen gedacht sind oder den Web-Brwoser zu bestimmten Aktionen oder Interpretationen der HTML-Datei veranlassen.">
+<meta name="keywords"       content="SELFHTML, HTML, XHTML, Meta-Angaben, Meta-Tags, Metadaten, meta, Autor, Stichworte, Stichwörter, Beschreibung, Sprache, Zeichenkodierung, automatische Weiterleitung, Robots, Refresh, Dublin Core">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-10-31T14:21:30+01:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/html/kopfdaten/meta.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="HTML-Kopfdaten" href="index.htm">
+<link rel="next" title="Adressbasis und Zielfensterbasis" href="basis.htm">
+<link rel="prev" title="Titel einer HTML-Datei" href="titel.htm">
+<link rel="first" title="Titel einer HTML-Datei" href="titel.htm">
+<link rel="last" title="Durchsuchbarkeit mit Server-Kommunikation" href="durchsuchbarkeit.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">HTML-Kopfdaten</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Meta-Angaben zum Inhalt</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#allgemeines">Allgemeines zu Meta-Angaben</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#beschreibung">Beschreibung, Autor, Stichwörter, Datum</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#sprache">Mehrsprachige Meta-Angaben</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#profil">Metadaten-Profil in separater Datei</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#schema">Schema zu einer Meta-Angabe</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dublin_core">Meta-Angaben nach Dublin Core</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#robots">Auslesen erlauben/verbieten</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#zeichenkodierung">Angabe zur Zeichenkodierung</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#script_style">Angaben zu Default-Sprachen für Scripts und Stylesheets</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#laden">Datei von Originaladresse laden</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#weiterleitung">Automatische Weiterleitung zu anderer Adresse (Forwarding)</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#pics">Angaben zu PICS</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#diverse">Diverse Meta-Angaben</a><br>
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></td></tr>
+</table>
+
+
+
+<h2><img src="../../src/html20.gif" width="30" height="30" alt="HTML 2.0" title="HTML 2.0"><img src="../../src/xhtml10.gif" width="30" height="30" alt="XHTML 1.0" title="XHTML 1.0">&nbsp;<a class="an" name="allgemeines">Allgemeines zu Meta-Angaben</a></h2>
+
+<p>In Meta-Angaben können Sie verschiedene nützliche Anweisungen für Web-Server, Web-Browser und automatische Suchprogramme im Internet ("Robots") notieren. Meta-Angaben können Angaben zum Autor und zum Inhalt der Datei enthalten. Sie können aber auch HTTP-Befehle absetzen, zum Beispiel zum automatischen Weiterleiten des Web-Browsers zu einer anderen Adresse.</p>
+
+<p>Meta-Angaben sind <b>nicht</b> für persönliche Anmerkungen oder Kommentare zum Quelltext der HTML-Datei gedacht. Für solche Angaben können Sie <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../allgemein/kommentare.htm">Kommentare</a> definieren.</p>
+
+<p>Der HTML-Standard seit Version 4.0 schreibt keine konkreten Meta-Angaben mehr vor, sondern definiert lediglich den grundsätzlichen Aufbau einer Meta-Angabe. Zur Standardisierung von Meta-Angaben arbeitet das W3-Konsortium stattdessen an einer Sprache namens Resource Description Framework (RDF). Auf den Web-Seiten des W3-Konsortiums finden Sie <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/RDF/">Informationen zum Resource Description Framework</a>.</p>
+
+<p>Für jede Meta-Angabe notieren Sie ein Meta-Tag im HTML-Dateikopf. Es ist also kein Problem, mehrere Meta-Tags zu notieren.</p>
+
+<h3 class="xmp">Beispiele:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta name="author" content="Anna Lyse"&gt;
+&lt;meta http-equiv="expires" content="Sat, 01 Dec 2001 00:00:00 GMT"&gt;
+  &lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Eine Meta-Angabe steht in einem Standalone-Tag namens <code>meta</code>. Jedes Meta-Tag hat dann in der Regel zwei Attribute. Das eine Attribut lautet entweder <code>name</code> oder <code>http-equiv</code>, und das andere lautet stets <code>content</code>. Durch die beiden Attribute lassen sich typische "Konfigurationsdaten" vom Typ "Eigenschaft=Wert" erzeugen. Im obigen Beispiel wird auf diese Weise z.B. mit <code>name</code> eine Eigenschaft <code>"author"</code> angegeben, der mit <code>content</code> ein Wert <code>Anna Lyse</code> zugewiesen wird. In der zweiten Meta-Angabe des Beispiels wird einer Eigenschaft namens <code>expires</code> der Wert <code>Sat, 01 Dec 2001 00:00:00 GMT</code> zugewiesen. In dem zweiten Beispiel wird die Eigenschaft jedoch mit <code>http-equiv</code> definiert.</p>
+
+<p>Eigenschaften, die mit <code>name</code> definiert werden, richten sich überwiegend an auslesende Client-Programme, also an Web-Browser, aber auch an Suchmaschinen-Robots, die Web-Seiten zum Füttern ihrer Suchmaschinendatenbank auslesen.</p>
+
+<p>Eigenschaften, die mit <code>http-equiv</code> definiert werden, sind dagegen ursprünglich für den Web-Server gedacht. Die Idee dahinter ist, dass der Web-Server, wenn er von einem aufrufenden Browser die Anfrage erhält, diese HTML-Datei zu übermitteln, die Meta-Tags vorher ausliest und Angaben, die mit <code>http-equiv</code> definiert wurden, in den HTTP-Header einbaut, den er an den aufrufenden Web-Browser schickt. Dies soll dem Autor der HTML-Datei ermöglichen, die Kommunikation zwischen Web-Server und Web-Browser zu beeinflussen. Angaben dieser Art bewirken jedoch selten das Gewünschte, da die gängigen Web-Server die Daten vor dem Übertragen der Datei an den Browser standardmäßig nicht auslesen. Somit liegt es am Browser, solche Meta-Angaben wie HTTP-Header zu interpretieren.</p>
+
+<p>Für Wertzuweisungen an <code>content</code> gelten alle Regeln für <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../allgemein/zeichen.htm">Zeichenvorrat, Sonderzeichen und HTML-eigene Zeichen</a>.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Mit Meta-Angaben wird leider auch viel Missbrauch getrieben. Da die meisten Meta-Angaben keine unmittelbar nachvollziehbare Wirkung am Bildschirm haben und andererseits mit Suchdiensten zu tun haben, regen sie offenbar magisch die Phantasie mancher Geister an, die meinen, mit einem Mammutaufgebot irgendwo aufgeschnappter Meta-Angaben würden sie über Nacht zum Superstar, da ihre Homepage dann immer ganz oben bei den Suchtreffern eines Suchdienstes erscheint. Nachdem Seitenautoren massenhaft widersinnige und irreführende Meta-Angaben verwendet hatten, sind die namhaften Suchdienste dazu übergegangen, Meta-Angaben keine besondere Bedeutung mehr zuzumessen. Stattdessen legen sie Wert auf den Inhalt und berechnen die Relevanz einer Seite anhand der Anzahl der fremden Seiten, die auf diese verweisen. Eine Homepage kann daher nicht durch Meta-Angaben, sondern durch die Qualität der Inhalte erfolgreich werden. Zu einer sauber gemachten Homepage gehört aber auch der sinnvolle Einsatz von Meta-Angaben.</p>
+
+<p>Wenn Sie <b>XHTML-Standard-konform</b> arbeiten, müssen Sie das <code>meta</code>-Element als inhaltsleer kennzeichnen. Dazu notieren Sie das alleinstehende Tag in der Form <code>&lt;meta name="Eigenschaft" content="Wert"&nbsp;/&gt;</code>. Weitere Informationen finden Sie im Kapitel <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../xhtml/index.htm">XHTML und HTML</a>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="beschreibung">Beschreibung, Autor, Stichwörter, Datum</a></h2>
+
+<p>Die hier beschriebenen Meta-Angaben sind am verbreitetsten, sie wurden einst von fast allen großen Suchmaschinen im Web ausgelesen. Die heutigen populären Suchmaschinen berücksichtigen sie teilweise immer noch. Insbesondere für seiteninterne Suchprogramme, die sich auf die Korrektheit der Metadaten verlassen können, sind die Angaben nach wie vor wichtig.</p>
+
+<p>Sie können Ihre Autorenschaft, eine Kurzbeschreibung des Inhalts, charakteristische Stichwörter und das Publikationsdatum notieren. Insbesondere die Kurzbeschreibung wird in manchen Suchmaschinen angezeigt, wenn ein Anwender nach etwas sucht und diese Datei zu den Treffern gehört. Es ist also sinnvoll, diese Meta-Angaben in allen inhaltlich relevanten HTML-Dateien zu notieren und dabei redaktionell genauso sorgfältig zu sein wie bei dem Text, der im Browser-Fenster angezeigt wird.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta name="description" content="Dieser Beschreibungstext soll einem
+Anwender im Suchdienst bei Auffinden dieser Datei erscheinen."&gt;
+&lt;meta name="author" content="Rainer Wahnsinn"&gt;
+&lt;meta name="keywords" content="HTML, Meta-Informationen,
+Suchprogramme, HTTP-Protokoll"&gt;
+&lt;meta name="date" content="2001-12-15T08:49:37+02:00"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta name="description" content="Beschreibungstext"&gt;</code> bestimmen Sie einen Beschreibungstext (<i>meta = "über", name = Name, description = Beschreibung, content = Inhalt</i>).</p>
+
+<p>Mit <code>&lt;meta name="author" content="Autorenname"&gt;</code> teilen Sie den Namen des Autors (d.h.: des inhaltlich Verantwortlichen) für die HTML-Datei mit (<i>author = Autor</i>).</p>
+
+<p>Mit <code>&lt;meta name="keywords" content="[Wortliste]"&gt;</code> bestimmen Sie Stichwörter für ein Suchprogramm. Ein Anwender, der in der Suchdatenbank des Suchprogramms nach einem dieser Stichwörter sucht, soll die aktuelle HTML-Datei bevorzugt als Suchtreffer angezeigt bekommen, da das Stichwort in dieser Datei ein zentrales Thema ist (<i>keywords = Schlüsselwörter</i>). Trennen Sie die einzelnen Schlüsselwörter durch Kommata. Ein Schlüsselwort kann durchaus aus zwei oder mehreren Einzelwörtern bestehen. Halbe oder ganze Sätze gehören hier allerdings nicht hin, denn dafür gibt es den Beschreibungstext, den Sie bei <code>name="description"</code> notieren können.</p>
+
+<p>Mit <code>&lt;meta name="date" content="[Datum/Uhrzeit]"&gt;</code> geben Sie an, wann die Datei publiziert wurde. Die Zeitangabe sollte einem standardisierten Schema folgen. Im obigen Beispiel ist <code>2001</code> die Jahreszahl, <code>12</code> der Monat (Dezember), <code>15</code> der Tag, <code>08</code> die Stunden, <code>49</code> die Minuten und <code>37</code> die Sekunden. Die Angabe <code>02:00</code> hinter dem Pluszeichen ist die Abweichung von der koordinierten Weltzeit (UTC) in Stunden und Minuten, im Beispiel zwei Stunden. Dies entspricht der Mitteleuropäischen Sommerzeit. Wenn Sie nur das Datum, aber keine Uhrzeit angeben wollen, notieren Sie nur den Teil der Datumsangabe bis vor dem großen T (für <i>Time</i>).</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="sprache">Mehrsprachige Meta-Angaben</a></h2>
+
+<p>Sie können mehrere gleichartige Meta-Angaben notieren und dabei zwischen verschiedenen Sprachen trennen. Inbesondere Stichwörter und Kurzbeschreibungen des Inhalts können Sie mehrsprachig angeben.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta name="keywords" lang="de" content="Ferien, Griechenland, Sonnenschein"&gt;
+&lt;meta name="keywords" lang="en-us" content="vacation, Greece, sunshine"&gt;
+&lt;meta name="keywords" lang="en" content="holiday, Greece, sunshine"&gt;
+&lt;meta name="keywords" lang="fr" content="vacances, Gr&amp;egrave;ce, soleil"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<p>Im Beispiel werden die gleichen Stichwörter in den Sprachen Deutsch, US-Englisch, Britisch-Englisch und Französisch definiert. Dabei wird das Attribut <code>lang</code> benutzt, um die Sprache anzugeben. Als Angabe ist ein <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/sprachenlaenderkuerzel.htm">Sprachenkürzel</a> erlaubt, z.B. <code>de</code> für deutsch, <code>en</code> für englisch, <code>fr</code> für französisch, <code>it</code> für italienisch oder <code>es</code> für spanisch.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Das Attribut <code>lang</code> gehört zu den <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../attribute/index.htm">Universalattributen</a> in HTML. Wenn Sie <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../xhtml/index.htm">XHTML</a>-konform arbeiten, sollten Sie zusätzlich das XML-Universalattribut <code>xml:lang</code> angeben.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="profil">Metadaten-Profil in separater Datei</a></h2>
+
+<p>Sie können ein externes "Profil" bzw. Schema für Meta-Angaben angeben, an das Sie sich halten.</p>
+
+<p>Es kann sich dabei um allgemein bekannte Profile handeln, die bestimmte Internet-Adressen als Heimat haben. Denkbar ist eine solche Adresse beispielsweise für <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dublin_core">Dublin Core</a>. Ebenso ist es aber auch möglich, ein eigenes Profil mit eigenen Meta-Definitionen anzugeben.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head profile="http://example.org/profil.html"&gt;
+&lt;meta name="Kategorie" content="A.1.B"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Um ein Profil einzubinden, notieren Sie im einleitenden <code>&lt;head&gt;</code>-Tag das Attribut <code>profile</code>. Als Wert weisen Sie einen URI zu, unter dem die Profildatei abgelegt ist. Wie diese Profildatei auszusehen hat, ist nicht vorgeschrieben. Üblicherweise wird eine HTML-Datei angegeben, die die Meta-Eigenschaften tabellarisch auflistet und definiert. Das W3-Konsortium möchte die angegebene Adresse eher als "global eindeutigen Namen" verstanden wissen. Web-Browser oder Suchmaschinen, die das entsprechende Profil kennen, brauchen dann gar nichts auszulesen, sondern erfahren auf diese Weise einfach, dass die nachfolgenden Meta-Angaben diesem Profil gemäß zu interpretieren sind.</p>
+
+<p>In dem Beispiel wird ein Profil zugrunde gelegt, das auf der Internet-Adresse <var>http://example.org/profil.html</var> abgelegt ist. Es wird angenommen, dass in dem Profil eine Meta-Eigenschaft mit dem Namen <code>Kategorie</code> definiert wird. Diese Eigenschaft kann dann mit <code>&lt;meta name="Kategorie" content="..."&gt;</code> benutzt werden.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Die Meta-Angaben selbst können Sie nicht auslagern, nur das Schema, nach dem diese Angaben erfolgen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="schema">Schema zu einer Meta-Angabe</a></h2>
+
+<p>Damit Ihre Metadaten automatisch verarbeitet werden können, sollten die Werte, die Sie beim <code>content</code>-Attribut einer Meta-Angabe notieren, in einem bekannten Format abgefasst sein - vorausgesetzt, ein passendes existiert. Mit Hilfe eines zusätzlichen Attributs können Sie ein solches Schema angeben.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head profile="http://example.org/profil.html"&gt;
+&lt;meta name="Typ" scheme="MIME-Typ" content="image/svg+xml"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>In dem Beispiel wird ein Profil zugrunde gelegt, das auf der Internet-Adresse <code>http://example.org/profil.html</code> abgelegt ist. Es wird angenommen, dass in dem Profil eine Eigenschaft mit dem Namen <code>Typ</code> definiert wird. Diese Eigenschaft kann dann in einer Meta-Angabe mit <code>name="Typ"</code> bezeichnet werden. Das <code>scheme</code>-Attribut stellt den Versuch dar, der auslesenden Software einen Hinweis zu geben, wie der zugehörige Wert beim <code>content</code> zu verstehen ist. Im Beispiel wird mit <code>scheme="MIME-Typ"</code> versucht, der Software mitzuteilen, dass die Angabe bei <code>content</code> einen <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> meint.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Die Art und Weise, wie auf ein Schema verwiesen wird, ist nicht festgelegt. Dadurch entsteht das Problem, das die Schema-Angabe lösen soll, letztlich auch beim <code>scheme</code>-Attribut selbst. Moderne Metadaten-Profile wie <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dublin_core">Dublin Core</a> definieren daher nicht nur Eigenschaften, sondern geben gleichzeitig Bezeichner für mögliche Schemata vor.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="dublin_core">Meta-Angaben nach Dublin Core</a></h2>
+
+<p>Eine internationale Gruppe von Experten, unter dem Namen <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://dublincore.org/">Dublin Core Metadata Initiative</a> vereint, hat ein allgemeines System für Meta-Angaben entwickelt. Damit lassen sich nicht nur Informationen über HTML-Dokumente ausdrücken, es ist auch möglich, zum Beispiel Bilder, Filme, Termine und sogar physische Gegenstände damit zu beschreiben. Das System ist einfach zu handhaben und berücksichtigt alle wichtigen Angaben, die zu einem Dokument im WWW gemacht werden können. Die Meta-Angaben von Dublin Core werden auch vom W3-Konsortium begrüßt, welches vor allem bei RDF Gebrauch davon macht.</p>
+
+<p>Dublin Core definiert im Wesentlichen 15 Eigenschaften, sogenannte Elemente, denen gewisse Werte zugeordnet werden können. Zusätzliche Unterelemente erlauben speziellere Meta-Angaben. Eine vollständige Auflistung und Beschreibung der Elemente finden Sie unter <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://dublincore.org/documents/dcmi-terms/">DCMI Metadata Terms</a>. Der Dublin-Core-Standard schlägt für einige Angaben passende <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#schema">Schemata</a> vor, unter anderem für <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">Medientypen</a>, <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/sprachenlaenderkuerzel.htm">Sprachenkürzel</a> und Datumsangaben.</p>
+
+<p>Die Spezifikation <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://dublincore.org/documents/dcq-html/">Expressing Dublin Core in HTML/XHTML meta and link elements</a> beschreibt, wie Sie solche Meta-Angaben in HTML-Dateien einbinden können: Der Elementname wird im <code>name</code>-Attribut des Meta-Tags untergebracht, der zugehörige Wert wie gewohnt im <code>content</code>-Attribut. Optional können Sie im <code>scheme</code>-Attribut das Datenformat angeben, dem der Wert entspricht.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head profile="http://dublincore.org/documents/dcq-html/"&gt;
+&lt;link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"&gt;
+&lt;link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"&gt;
+&lt;meta name="DC.title" content="SELFHTML: Meta-Angaben"&gt;
+&lt;meta name="DC.creator" content="Stefan M&amp;uuml;nz"&gt;
+&lt;meta name="DC.subject" content="Meta-Angaben"&gt;
+&lt;meta name="DC.description" content="Heute bekannte Meta-Angaben in HTML"&gt;
+&lt;meta name="DC.publisher" content="TeamOne"&gt;
+&lt;meta name="DC.contributor" content="Wolfgang Nefzger"&gt;
+&lt;meta name="DC.date" content="2001-12-15T08:49:37+02:00" scheme="DCTERMS.W3CDTF"&gt;
+&lt;meta name="DC.type" content="Text" scheme="DCTERMS.DCMIType"&gt;
+&lt;meta name="DC.format" content="text/html" scheme="DCTERMS.IMT"&gt;
+&lt;meta name="DC.identifier"
+      content="http://de.selfhtml.org/html/kopfdaten/meta.htm"
+      scheme="DCTERMS.URI"&gt;
+&lt;meta name="DC.source"
+      content="http://www.w3.org/TR/html401/struct/global.html#h-7.4.4"
+      scheme="DCTERMS.URI"&gt;
+&lt;meta name="DC.language" content="de" scheme="DCTERMS.RFC3066"&gt;
+&lt;meta name="DC.relation" content="http://dublincore.org/" scheme="DCTERMS.URI"&gt;
+&lt;meta name="DC.coverage" content="Munich" scheme="DCTERMS.TGN"&gt;
+&lt;meta name="DC.rights" content="Alle Rechte liegen beim Autor"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Für verarbeitete Programme wie Suchmaschinen können Sie ausdrücklich angeben, dass Ihr Dokument der Dublin-Core-Spezifikation zum Einbetten von Metadaten in HTML entspricht. Dazu geben Sie die Adresse <var>http://dublincore.org/documents/dcq-html/</var> als <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#profil">Metadaten-Profil</a> an.</p>
+
+<p>Bei Meta-Angaben, die einem bestimmten öffentlichen System angehören, wird dem Namen einer Meta-Angabe eine Kurzbezeichnung für das System vorangestellt. Bei den 15 wichtigsten Elementen von Dublin Core lautet dieses Präfix <code>DC</code>, bei den Unterelementen und den Schemata müssen Sie <code>DCTERMS</code> notieren. Dahinter folgt, durch einen Punkt getrennt, der Elementname beziehungsweise der Bezeichner des Datenformates. Um eindeutig herauszustellen, dass alle Meta-Angaben mit diesem Präfix zum Dublin-Core-System gehören, wird mittels <code>link</code>-Verweisen auf die sogenannten <em>Namensräume</em> für Dublin Core verwiesen. Somit ist Eindeutigkeit gewährleistet, selbst wenn andere Metadaten-Systeme ebenfalls mit diesen Kürzeln arbeiten sollten.</p>
+
+<p>Mit <code>&lt;meta name="DC.title" content="Titel"&gt;</code> können Sie einen Titel für die Datei angeben, ähnlich wie im <code>title</code>-Element von HTML (<i>title = Titel</i>).</p>
+
+<p>Mit <code>&lt;meta name="DC.creator" content="Name"&gt;</code> weisen Sie den geistigen Urheber des Inhalts der Datei aus (<i>Creator = Ersteller</i>).</p>
+
+<p>Mit <code>&lt;meta name="DC.subject" content="Text"&gt;</code> geben Sie das Thema an, das in der Datei behandelt wird (<i>Subject = Thema</i>).</p>
+
+<p>Mit <code>&lt;meta name="DC.description" content="Text"&gt;</code> können Sie eine Kurzbeschreibung des Datei-Inhalts notieren (<i>Description = Beschreibung</i>).</p>
+
+<p>Mit <code>&lt;meta name="DC.publisher" content="Name"&gt;</code> können Sie angeben, wer für die Publikation der Datei verantwortlich ist. Das kann der Autor selbst sein, aber auch etwa ein Verlag oder der Nachfahre eines verstorbenen Autors (<i>Publisher = Veröffentlicher</i>).</p>
+
+<p>Mit <code>&lt;meta name="DC.contributor" content="Name"&gt;</code> können Sie Co-Autoren oder Personen angeben, die neben dem Hauptautor maßgeblich am Inhalt beteiligt sind, z.B. Grafiker, Musiker, Übersetzer (<i>Contributor = Beitragender</i>). Falls mehrere Co-Autoren beteiligt waren, notieren Sie mehrere Meta-Tags mit <code>name="DC.contributor"</code>.</p>
+
+<p>Mit <code>&lt;meta name="DC.date" content="Datum"&gt;</code> können Sie angeben, wann die Datei publiziert wurde. Das Datum sollte einem der in <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/TR/NOTE-datetime">Date and Time Formats</a> angegebenen Formate entsprechen. Das im Beispiel verwendete Format wird im Zusammenhang mit der <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#beschreibung">herkömmlichen Datums-Angabe</a> beschrieben. Mit dem Attribut <code>scheme="DCTERMS.W3CDTF"</code> können Sie ausdrücklich notieren, dass die Zeitangabe einem solchen standardisierten Schema entspricht.</p>
+
+<p>Mit <code>&lt;meta name="DC.type" content="Typ"&gt;</code> können Sie den Typ des Inhalts angeben, über den Sie die Meta-Angaben machen. Folgende Typen sind erlaubt:<br>
+<code>Collection</code> = wenn der Inhalt ein Verzeichnis mit Verweisen zu Unterseiten ist und die Meta-Angaben das Verzeichnis als solches beschreiben.<br>
+<code>Dataset</code> = wenn die enthaltene Information datensatzartig vorliegt, z.B. in einer Tabelle.<br>
+<code>Event</code> = wenn der Inhalt für ein zeitliches Ereignis steht, z.B. eine Ausstellung oder eine Hochzeitsfeier.<br>
+<code>Image</code> = wenn der Inhalt eine visuelle Darstellung ist, z.B. ein Foto, eine Zeichnung oder auch eine Animation oder ein Film.<br>
+<code>InteractiveResource</code> = wenn der Zweck der Seite in der Interaktion mit dem Anwender liegt, z.B. wenn es sich um ein Anmeldeformular handelt oder ein Java-Applet eingebettet ist, das einen Chat realisiert.<br>
+<code>PhysicalObject</code> = wenn es sich beim Inhalt der Seite um einen beliebigen physischen Gegenstand handelt. Da dies bei HTML-Dateien nicht möglich ist, hat es wenig Sinn, diesen Typ zu notieren. Falls es sich um eine visuelle Wiedergabe eines solchen Gegenstandes handelt, wählen Sie den Typ <code>Image</code>, bei einer textuellen Beschreibung den Typ <code>Text</code> und bei einer Audio-Aufnahme den Type <code>Sound</code>.<br>
+<code>Service</code> = wenn die Seite eine Dienstleistung realisiert, z.B. einen Online-Banking-Dienst.<br>
+<code>Software</code> = wenn der Inhalt Software anbietet, z.B. zum Download, und sich die Meta-Angaben auf diese Software beziehen.<br>
+<code>Sound</code> = wenn der Inhalt primär akustisch ist, z.B. ein eingebettetes MP3-Musikstück zum Abspielen anbietet oder einen laufenden Radiosender über Real Audio einbettet.<br>
+<code>Text</code> = wenn der Inhalt textorientiert ist - egal ob es sich um Sachtexte, Literatur, Witze, Nachrichten oder wissenschaftliche Abhandlungen handelt.<br>
+Um ausdrücklich anzugeben, dass Sie einen dieser vordefinierten Typen verwenden, notieren Sie das Attribut <code>scheme="DCTERMS.DCMIType"</code>.</p>
+
+<p>Mit <code>&lt;meta name="DC.format" content="Typ"&gt;</code> können Sie das Datenformat bzw. den Medientyp der Datei angeben. Als Wert können Sie einen <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> angeben. Der MIME-Typ für HTML lautet <code>text/html</code>. Mit dem Attribut <code>scheme="DCTERMS.IMT"</code> können Sie verdeutlichen, dass es sich bei der Angabe um einen Medientyp nach dem offiziellen Schema handelt.</p>
+
+<p>Mit <code>&lt;meta name="DC.identifier" content="Wert"&gt;</code> können Sie eine eindeutige Nummer oder Bezugsadresse für die Datei angeben  (<i>identifier = eindeutiger Bezeichner</i>). Bei Web-Seiten ist das beispielsweise der Original-URI. Mit dem Zusatz <code>scheme="DCTERMS.URI"</code> machen Sie darauf aufmerksam, dass der Wert ein gültiger URI ist.</p>
+
+<p>Mit <code>&lt;meta name="DC.source" content="Quelle"&gt;</code> können Sie eine Quelle nennen, von der die aktuelle Datei abgeleitet ist (<i>source = Quelle</i>). Im obigen Beispiel wurde eine Webseite als Quelle angegeben. Sie können jedoch auch den Titel einer Offline-Publikation nennen. Das kann beispielsweise der Fall sein, wenn eine HTML-Datei Auszüge aus einem Buch beinhaltet. Wenn es sich bei der Quellenangabe um einen URI handelt, können Sie dies mit dem Attribut <code>scheme="DCTERMS.URI"</code> betonen.</p>
+
+<p>Mit <code>&lt;meta name="DC.language" content="Sprache"&gt;</code> können Sie die Sprache angeben, in der der Inhalt der Datei verfasst ist (<i>language = Sprache</i>). Als Angabe bei <code>content</code> wird ein <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/sprachenlaenderkuerzel.htm">Sprachenkürzel nach RFC 3066</a> erwartet.</p>
+
+<p>Mit <code>&lt;meta name="DC.relation" content="Quelle"&gt;</code> können Sie angeben, welche Beziehung zwischen der aktuellen Datei und einem zugehörigen Editionsprojekt bestehen (<i>Relation = Bezug</i>). Der Wert bei <code>content</code> kann z.B. eine verbale Beschreibung sein, welcher Art der Bezug ist.</p>
+
+<p>Mit <code>&lt;meta name="DC.coverage" content="Text"&gt;</code> können Sie einen zeitlichen oder geografischen Bezugspunkt für den Inhalt der Datei angeben (<i>coverage = Erfassung, Berichterstattung</i>). Das kann bei geografischen Angaben etwa ein Ort, eine Längen-/Breitengradangabe oder eine Region sein, bei zeitlichen Angaben ein Datum oder ein Zeitalter. Im obigen Beispiel wird ein Stadtname aus dem <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.getty.edu/research/conducting_research/vocabularies/tgn/">Getty Thesaurus of Geographic Names</a> verwendet. Als Datenformat ist daher <code>scheme="DCTERMS.TGN"</code> notiert.</p>
+
+<p>Mit <code>&lt;meta name="DC.rights" content="Text"&gt;</code> können Sie eine Angabe zum Copyright des Datei-Inhalts machen (<i>rights = Rechte</i>). Sie können dabei aber auch einen URI angeben, unter dem die genauen rechtlichen Bestimmungen aufgeführt sind. In diesem Fall sollten Sie mit <code>scheme="DCTERMS.URI"</code> darauf hinweisen, dass es sich bei dem Wert um einen URI handelt.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Sie müssen nicht alle Meta-Angaben des Dublin-Core-Satzes verwenden. Es ist kein Problem, wenn Sie nur zu denjenigen etwas notieren, wo Sie sinnvolle Angaben machen können. Auch die Angabe der Datenformate im <code>scheme</code>-Attribut ist nicht unbedingt notwendig, aber empfehlenswert, sofern ein entsprechendes Schema existiert.</p>
+
+<p>Obwohl Dublin Core ein bekanntes und ausgereiftes Metadaten-System darstellt, erscheint der praktische Nutzen solcher Meta-Angaben auf den ersten Blick gering. Die führenden Suchmaschinen im Web ignorieren sie mittlerweile völlig. Dies ist als Reaktion auf den Missbrauch zu verstehen, der mit Meta-Angaben in der Vergangenheit getrieben wurde. Der Nutzen von Dublin-Core-Metadaten ist also eher dort anzusiedeln, wo verarbeitende Programme den Metadaten vertrauen können. Bei umfangreichen Web-Angeboten eignen sich derartige Metadaten zum Beispiel für die interne Verwaltung, für dynamisch generierte Inhaltsverzeichnisse und für seiteninterne Suchfunktionen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="robots">Auslesen erlauben/verbieten</a></h2>
+
+<p>Die folgenden Angaben werden von den meisten Suchmaschinen-Robots beachtet.</p>
+
+<p>Wenn Sie eine HTML-Datei zwar im Web anbieten, aber trotzdem verhindern möchten, dass die Datei über öffentliche Suchdienste auffindbar sein soll, können Sie eine entsprechende Anweisung als Meta-Information für Suchprogramme notieren. Sie können solchen Suchprogrammen aber auch mit einer entsprechenden Eingabe signalisieren, dass Sie ein Auslesen der Datei und aller Dateien, die darin über Verweise erreichbar sind, ausdrücklich wünschen.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta name="robots" content="noindex"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta name="robots" content="noindex"&gt;</code> verbieten Sie einem Suchprogramm, Inhalte aus der HTML-Datei an seine Suchdatenbank zu übermitteln (<i>robots = Suchprogramme, content =  Inhalt, noindex = keine Indizierung</i>).</p>
+
+<p>Daneben sind folgende weitere Angaben möglich:</p>
+
+<p><code>&lt;meta name="robots" content="index"&gt;</code>. Damit erlauben Sie einem Suchprogramm ausdrücklich, Inhalte aus der aktuellen HTML-Datei an seine Suchdatenbank zu übermitteln (<i>index = Indizierung</i>).<br>
+<code>&lt;meta name="robots" content="nofollow"&gt;</code>. Damit verbieten dem Suchprogramm, untergeordnete Dateien Ihres Projekts, zu denen Verweise führen, zu besuchen (<i>nofollow = nicht folgen</i>). Inhalte aus der aktuellen HTML-Datei darf es jedoch an seine Suchdatenbank übermitteln. Um auch dies zu verbieten, können Sie <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> notieren.<br>
+<code>&lt;meta name="robots" content="all"&gt;</code>. Damit erlauben Sie einem Suchprogramm ausdrücklich, Inhalte aus der aktuellen HTML-Datei und aus untergeordneten Dateien Ihres Projekts, zu denen Verweise führen, zu besuchen und an seine Suchdatenbank zu übermitteln.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Wenn Sie sich für das Erlauben und Verbieten von Inhalten für Such-Robots interessieren, sollten Sie auch den Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/robots.htm">robots.txt - Robots kontrollieren</a> lesen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="zeichenkodierung">Angabe zur Zeichenkodierung</a></h2>
+
+<p>Sie können mit Hilfe einer Meta-Angabe angeben, welche Zeichenkodierung die HTML-Datei verwendet. Diese Angabe ist für den Web-Browser besonders wichtig, denn sie teilt ihm mit, nach welcher Kodierung die Bytes der Datei in Zeichen umgewandelt werden müssen. Näheres zu Zeichenkodierungen finden Sie unter <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../allgemein/zeichen.htm">Allgemeines zu Zeichen in HTML</a> und <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/sprache.htm">Computer und geschriebene Sprache</a>.</p>
+
+<p>Wichtig ist die Angabe vor allem dann, wenn Sie innerhalb der HTML-Datei z.B. deutsche Umlaute nicht <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../allgemein/zeichen.htm#umlaute">über benannte Zeichen maskieren</a>.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Die Angabe der verwendeten Zeichenkodierung wird mit <code>http-equiv="content-type"</code> definiert. Dies weist darauf hin, dass eine Angabe gemacht wird, die normalerweise vom Web-Server in dem HTTP-Header <code>Content-Type</code> an den Web-Browser gesendet wird. Bei <code>content</code> geben Sie zunächst den <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> an, der für HTML-Dateien immer <code>text/html</code> lautet. Darauf folgt, durch einen Strichpunkt getrennt, die Angabe der Kodierung nach dem Schema <code>charset</code> zusammen mit dem eindeutigen Namen der Kodierung. Im obigen Beispiel wird die Kodierung <code>ISO-8859-1</code> angegeben, die für westeuropäische Sprachen, darunter Deutsch genutzt wird. Erlaubt sind Kodierungsangaben, wie sie auf der Web-Adresse <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.iana.org/assignments/character-sets">http://www.iana.org/assignments/character-sets</a> angegeben sind. Informationen über ISO 8859-1 und andere Kodierungen finden Sie im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/zeichenkodierungen.htm">Zeichenkodierungen (ISO-8859-Familie und andere)</a>.</p>
+
+<h3>Beachten Sie:</h3>
+
+<p>Sie werden sich vielleicht fragen, warum die Angabe zur Kodierung hinter <code>charset</code> erfolgt. Aus historischen Gründen wird in vielen technischen Standards, darunter HTTP, der Begriff "Zeichensatz" (englisch <i>character set</i>, abgekürzt <i>charset</i>) anstelle von "Kodierung" verwendet. Diese Bezeichnung wird in SELFHTML vermieden. Diese Begrifflichkeiten werden unter <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/sprache.htm#bits_bytes_zeichen">Bits, Bytes und Zeichen</a> erklärt.</p>
+
+<p>Im Konfliktfall, also wenn der Webserver im HTTP-Header eine hiervon abweichende Angabe sendet, wird üblicherweise die Angabe des HTTP-Headers verwendet.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="script_style">Angaben zu Default-Sprachen für Scripts und Stylesheets</a></h2>
+
+<p>Über das Attribut <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/formate/einbinden.htm#innerhalb_element">style</a> sowie die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../attribute/eventhandler.htm">Event-Handler-Attribute</a> bietet HTML die Möglichkeit, Formatierungen und Scriptcode direkt in einzelnen Elementen zu notieren. Auch wenn CSS die übliche Stylesprache und JavaScript die übliche Script-Sprache ist, lässt der HTML-Standard offen, welche Ergänzungssprachen 
+in diesen Attributen notiert werden können. Damit ein Web-Browser sicher weiß, welche Stylesheet-Sprache bzw. welche Script-Sprache Sie nutzen, können Sie angeben, welche Sprachen Sie innerhalb der HTML-Datei verwenden.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="Content-Script-Type" content="text/javascript"&gt;
+&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Die Angaben der Default-Script-Sprache und der Default-Stylesprache haben einen einheitlichen Aufbau. Die Angabe zur bevorzugten Script-Sprache leiten Sie mit <code>&lt;meta http-equiv="Content-Script-Type"</code> ein, die Angabe zur bevorzugten Stylesprache mit <code>http-equiv="Content-Style-Type"</code>. Bei dem Attribut <code>content</code> müssen Sie dann den <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> der gewünschten Sprache angeben. Beispiele sind <code>text/css</code> für <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../css/index.htm">Stylesheets</a> und <code>text/javascript</code> für <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../javascript/index.htm">JavaScript</a>.</p>
+
+<p>Wenn eine Angabe zur Stylesprache fehlt und Sie dennoch <code>style</code>-Attribute verwenden, so muss ein Browser standardmäßig von CSS als Stylesprache ausgehen. Eine ausdrückliche Angabe der Default-Stylesprache ist daher in der Regel nicht nötig. Anders verhält es sich bei der Script-Sprache in Event-Handler-Attributen: Ein Browser darf strenggenommen nicht JavaScript annehmen, wenn keine Angabe gemacht wurde. Gemäß dem HTML-Standard müssen Sie die Default-Script-Sprache wie erläutert angeben, sobald Sie Event-Handler-Attribute einsetzen. In der Praxis wird darauf aber meist verzichtet - auch SELFHTML verzichtet konsequent auf eine solche Angabe.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="laden">Datei von Originaladresse laden</a></h2>
+
+<p>Häufig abgerufene Web-Seiten werden im Web auf so genannten Proxy-Servern zwischengespeichert. Das ist dann ein so genannter Proxy-Cache. Auch Browser speichern aufgerufene Seiten, und zwar lokal auf dem Rechner des Anwenders. Dabei spricht man vom Browser-Cache. Die Cache-Speicher sparen in vielen Fällen Leitungswege und Ressourcen. Ein Nachteil ist jedoch, dass dem Anwender möglicherweise Daten angezeigt werden, die gar nicht mehr aktuell sind, weil auf der Originaladresse mittlerweile neue Daten liegen.
+Sie können mit Hilfe einer Meta-Angabe erzwingen, dass die Daten nicht aus einem Cache-Speicher serviert werden, sondern vom Original-Server. Zu empfehlen ist diese Angabe, wenn Sie die Daten einer HTML-Datei häufig ändern und neu ins Web hochladen.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="expires" content="0"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta http-equiv="expires" content="0"&gt;</code> veranlassen Sie, dass diese HTML-Datei in jedem Fall von der Originaladresse geladen wird (<i>expires = fällig werden</i>).</p>
+
+<p>Bei <code>content</code> können Sie anstelle der <code>0</code> in diesem Zusammenhang aber auch ein bestimmtes Datum und eine bestimmte Uhrzeit angeben. Dadurch bewirken Sie, dass die Daten dieser Datei nach dem angegebenen Zeitpunkt auf jeden Fall vom Original-Server geladen werden sollen. Datum und Uhrzeit müssen Sie im internationalen Format angeben. Beispiel: <code>content="Sat, 15 Dec 2001 12:00:00 GMT"</code>. Notieren Sie den Zeitpunkt so wie im Beispiel mit allen Leerzeichen, Doppelpunkten zwischen Stunden, Minuten und Sekunden sowie der Angabe <code>GMT</code> am Ende. Als Wochentagnamen sind erlaubt <code>Mon</code> (Montag), <code>Tue</code> (Dienstag), <code>Wed</code> (Mittwoch), <code>Thu</code> (Donnerstag), <code>Fri</code> (Freitag), <code>Sat</code> (Samstag) und <code>Sun</code> (Sonntag). Als Monatsnamen sind erlaubt <code>Jan</code> (Januar), <code>Feb</code> (Februar), <code>Mar</code> (März), <code>Apr</code> (April), <code>May</code> (Mai), <code>Jun</code> (Juni), <code>Jul</code> (Juli), <code>Aug</code> (August), <code>Sep</code> (September), <code>Oct</code> (Oktober), <code>Nov</code> (November) und <code>Dec</code> (Dezember).</p>
+
+<p>Anstelle der <code>0</code> können Sie auch eine Zahl angeben. Diese Zahl bedeutet dann die Anzahl Sekunden, nach deren Ablauf der Web-Browser eine Datei, die er im Cache hat, auf jeden Fall wieder vom Server lädt. Mit <code>content="43200"</code> stellen Sie beispielsweise einen Wert von 12 Stunden ein.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="weiterleitung">Automatische Weiterleitung zu anderer Adresse (Forwarding)</a></h2>
+
+<p>Diese Angabe ist zwar ziemlich eingebürgert, weshalb sie hier auch beschrieben wird. Automatische Weiterleitungen dieser Art werden jedoch oft kritisiert mit dem Argument, dass die Zielseite für einige Besucher unzugänglich sei. Die meisten Browser unterstützen solche Weiterleitungen zwar, dennoch können verschiedene Browser sie je nach Einstellung ignorieren. Ebenso folgen viele Suchmaschinen-Robots den Weiterleitungen nicht. Eine weiteres Problemfeld ist die Zeitdauer, nach der die Weiterleitung erfolgen soll. Enthält die Seite mit der Weiterleitung noch einen erklärenden Hinweis, benötigen die Besucher eine unbestimmte Zeit zum lesen, bevor sie der Weiterleitung folgen können. In vielen Fällen ohne einen solchen Hinweis wird die ohne Wartezeit auf <code>0</code> gesetzt, sodass die Weiterleitung sofort erfolgt. Dies ist besonders problematisch: Nutzt der Besucher nämlich die Zurück-Navigationsfunktion (Back-Button), wird er direkt wieder nach vorne katapultiert. Somit hängt er auf einer Seite fest.</p>
+
+<p>Benutzt wird diese Angabe in der Praxis oft für das automatische Weiterleiten eines Seitenbesuchers von einer alten Adresse Ihres Web-Projekts zu einer neuen Adresse. In den meisten Fällen ist es allerdings vorteilhafter, eine "echte" Weiterleitung mit <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../servercgi/server/httpstatuscodes.htm">HTTP-Status-Codes</a> zu benutzen. Dies ist allerdings nur mit serverseitigen Techniken möglich, siehe etwa <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../perl/module/cgi.htm#redirects">Automatische Umleitungen (Redirects) mit dem CGI-Modul</a> und das Apache-Modul <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://httpd.apache.org/docs-2.0/mod/mod_alias.html">mod_alias</a>.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="refresh" content="5; URL=http://de.selfhtml.org/"&gt;
+&lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta http-equiv="refresh" content="..."&gt;</code> veranlassen Sie die Weiterleitung zu einer anderen Adresse. Mit <code>content="5;</code> bestimmen Sie, nach wie viel Sekunden die Weiterleitung starten soll. Die <code>5</code> im Beispiel bedeutet also, dass die aktuelle Seite, nachdem sie geladen ist, 5 Sekunden lang angezeigt wird. Danach wird die Adresse aufgerufen, die mit <code>url=..."</code> angegeben wird. Notieren Sie das gesamte Element inklusive der etwas ungewohnten Stellung der Anführungszeichen so wie im Beispiel oben angegeben. Setzen Sie Ihre gewünschte Anzeigedauer und den Namen der aufzurufenden Adresse ein. Bei lokalen Adressen auf dem gleichen Server können Sie absolute oder relative Pfadangaben ohne Angabe von <code>http://</code> und Domain notieren. Bei Weiterleitung zu Dateien im gleichen Verzeichnis genügt der Dateiname. Bei einer Wartezeit von <code>0</code> wird die angegebene nächste Datei sofort geladen.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Verlassen Sie sich nicht darauf, dass diese Angabe funktioniert. Wenn Sie etwa eine Weiterleitung zu einer neuen Adresse eingeben, notieren Sie am besten auf der gleichen Seite zur Sicherheit noch einen normalen Verweis zu der neuen Adresse. So finden auch Anwender, bei denen die Meta-Angabe nicht funktioniert, über den Verweis den Weg zu Ihrer neuen Heimat. Achten Sie auch darauf, keine zu kurze Wartezeit anzugeben. Nutzen Sie möglichst Weiterleitungen über HTTP anstelle eines solchen Meta-Tags.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="pics">Angaben zu PICS</a></h2>
+
+<p>PICS steht für "<b>P</b>latform for <b>I</b>nternet <b>C</b>ontent <b>S</b>election". Es handelt sich dabei um ein standardisiertes Schema zum Bezeichnen von Internet-Inhalten. Das Schema wurde ins Leben gerufen, um jugendfreie Internet-Inhalte als solche auszuzeichnen. Es gibt so genannte PICS-Labels, also Auszeichnungen. Anbieter von Web-Seiten können ihre Seiten entweder freiwillig und nach eigenem Ermessen mit einem PICS-Label versehen, oder - und das ist wohl eher Sinn der Sache - sie nehmen einen unabhängigen PICS-Service in Anspruch, der PICS-Zertifikate für Inhalte ausstellt.</p>
+
+<p>Auf Einzelheiten des PICS-Systems wird hier nicht näher eingegangen. Informationen im Web finden Sie auf der <img src="../../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/PICS/">PICS-Seite des W3-Konsortiums</a>. Moderne Browser können PICS-Inhalte erkennen. Dazu lassen sich software-seitig Einstellungen vornehmen, zum Beispiel durch Eltern von surfenden Kindern. So kann der Browser bei Seiten mit PICS-Labeln durch Vergleichen der Konfiguration mit dem Label erkennen, ob der Inhalt angezeigt werden darf oder nicht.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="PICS-Label" content='
+ (PICS-1.1 "http://www.gcf.org/v2.5"
+  labels on "1994.11.05T08:15-0500"
+  until "1995.12.31T23:59-0000"
+  for "http://w3.org/PICS/Overview.html"
+  ratings (suds 0.5 density 0 color/hue 1))'&gt;
+  &lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Durch die Meta-Angabe <code>http-equiv="PICS-Label"</code> können Sie eine PICS-Auszeichnung für eine HTML-Datei notieren. Hinter <code>content</code> folgt die PICS-Auszeichnung. Die gesamte Auszeichnung wird in einfache Anführungszeichen gesetzt. Die Syntax der PICS-Auszeichnung wird innerhalb davon in runde Klammern eingeschlossen. Innerhalb der runden Klammern stehen zunächst die Pflichtangabe zur PICS-Version und die Angabe des URI, wo die Inhaltskategorisierung definiert wird, auf die hier Bezug genommen wird. Die Angaben <code>labels on</code>, <code>until</code> und <code>for</code> sind optional. Entscheidend ist aber auf jeden Fall die Angabe <code>ratings</code>, in der die eigentliche Inhaltskategorisierung notiert wird. Die Kategorisierung wird dabei nochmals in runde Klammern eingeschlossen. Die einzelnen dort möglichen Angaben und ihre Bedeutung muss der PICS-Service bereitstellen, der die PICS-Zertifikate
+verteilt.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="diverse">Diverse Meta-Angaben</a></h2>
+
+<p>Die folgenden Meta-Angaben sind verstreute "Sammlerstücke". Oft sind es Angaben, die mit bestimmten Web-Servern oder Browsern oder Suchmaschinen-Robots funktionieren, oder Angaben, die von Bearbeitungs-Software eingetragen werden. Manchmal sind es aber möglicherweise auch nur Erfindungen von Leuten, die an magische Kräfte in ihren HTML-Dateien glauben. Hier eine kleine Auswahl solcher Meta-Angaben:</p>
+
+<p><code>&lt;meta http-equiv="content-language" content="de"&gt;</code><br>
+Sprache des Datei-Inhalts. Im <code>content</code>-Attribut wird ein <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/sprachenlaenderkuerzel.htm">Sprachenkürzel nach RFC 1766</a> angegeben.</p>
+
+<p><code>&lt;meta name="generator" content="MS FrontPage 2000"&gt;</code><br>
+<code>&lt;meta name="generator" content="Netscape Composer"&gt;</code><br>
+Wird von HTML-Editoren, vor allem von WYSIWYG-Editoren, ohne Wissen des Autors eingefügt. Software-Hersteller können so prima das Web durchsuchen und feststellen, wo und wie viel mit ihrer Software gearbeitet wird.</p>
+
+<p><code>&lt;meta http-equiv="set-cookie"
+content="cookiename=cookiewert; expires=Sun, 01 Jan 2006 00:00:00 GMT; path=/;"&gt;</code><br>
+Cookie setzen</p>
+
+<p><code>&lt;meta http-equiv="cache-control" content="no-cache"&gt;</code><br>
+Anweisung an den Browser: keinen Cache benutzen, sondern von Originalseite laden.</p>
+
+<p><code>&lt;meta http-equiv="pragma" content="no-cache"&gt;</code><br>
+An Proxy-Agenten: Datei bitte nicht auf Proxy-Server speichern!</p>
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="basis.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="basis.htm">Adressbasis und Zielfensterbasis</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="titel.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="titel.htm">Titel einer HTML-Datei</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">HTML-Kopfdaten</a></td>
+</tr></table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

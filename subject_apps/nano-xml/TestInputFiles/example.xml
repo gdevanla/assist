@@ -1,0 +1,8 @@
+<!DOCTYPE student SYSTEM "example.dtd">
+<student>
+	<id>1</id>
+	<surname>world</surname>
+	<firstname>hello</firstname>
+	<dob>November 13th 1880</dob>
+	<subject>Computer</subject>
+</student>

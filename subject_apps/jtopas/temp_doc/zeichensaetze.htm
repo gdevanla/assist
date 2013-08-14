@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Internationalisierung / Zeichenkodierungen (ISO-8859-Familie und andere)</title>
+<link rel="stylesheet" type="text/css" href="../src/selfhtml.css">
+<meta name="description"    content="Wie die Kodierungen der ISO-8859-Norm belegt sind und welche herkömmlichen Zeichenkodierungen es sonst noch gibt.">
+<meta name="keywords"       content="SELFHTML, Internationalisierung, Zeichen, Zeichenkodierung, ISO-8859, ISO-Latin, ASCII">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-08-22T21:21:39+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/inter/zeichenkodierungen.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../src/favicon.ico">
+<link rel="author" title="Impressum" href="../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../index.htm">
+<link rel="up" title="Internationalisierung" href="index.htm">
+<link rel="next" title="Das Unicode-System" href="unicode.htm">
+<link rel="prev" title="Computer und geschriebene Sprache" href="sprache.htm">
+<link rel="first" title="Computer und geschriebene Sprache" href="sprache.htm">
+<link rel="last" title="Downloadbare Schriftarten" href="downloadschriftarten.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Internationalisierung</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../index.htm"><img src="../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Zeichenkodierungen (ISO-8859-Familie und andere)</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#iso8859">Die ISO-8859-Zeichenkodierungen</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#iso8859_liste">Liste der ISO-8859-Zeichenkodierungen</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#alle">Alle offiziellen Zeichenkodierungen</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="iso8859">Die ISO-8859-Zeichenkodierungen</a></h2>
+
+<p>Die ISO-8859-Familie wurde vom <var>European Computer Manufacturer's Association (ECMA)</var> entwickelt. Es handelt sich um ein Set von standardisierten Zeichenkodierungen für alphabetische Schriften. Dazu gehören die lateinischen Schriften, auf denen die meisten Sprachen Westeuropas und Amerikas beruhen, oder etwa die kyrillischen Schriften.</p>
+
+<p>Alle Kodierungen dieser Familie basieren auf der Speicherung eines Zeichens mit genau einem Byte. Das heißt, die Codetabellen, auf denen diese Kodierungen aufbauen, enthalten 256 mögliche Zeichen. Bei allen Codetabellen sind die ersten 128 Zeichen, also die Zeichen mit den Werten 0 bis 127, identisch mit der <var>ASCII</var>-Codetabelle. Das hat den Vorteil, dass die üblichen lateinischen Groß- und Kleinbuchstaben, die arabischen Ziffern und die üblichen Sonderzeichen wie Satzzeichen oder kaufmännische Zeichen bei diesen Kodierungen immer zur Verfügung stehen.</p>
+
+<p><img src="ascii.gif" width="289" height="302" alt="ASCII-Codetabelle"></p>
+
+<p>Oberhalb sind die darstellbaren Zeichen der ASCII-Codetabelle abgebildet. Diese Zeichen haben die Werte zwischen 32 und 126. Wert 32 ist das Leerzeichen. Alle ISO-8859-Codetabellen enthalten diese Codes.</p>
+
+<h4>Zur Lesart dieser und der folgenden Codetabellen:</h4>
+
+<p>Den Wert eines Zeichens, auch Codenummer genannt, ermitteln Sie, indem Sie die Werte aus Spalten- und Zeilenüberschrift des Zeichens addieren. Ein großes K hat in dieser Tabelle beispielsweise den Zeilenwert 70 und den Spaltenwert 5. Daraus ergibt sich der Wert 75 für dieses Zeichen. Falls Sie nicht den Dezimalwert eines Zeichens benötigen, sondern den Hexadezimalwert, können Sie den <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../helferlein/dezhex.htm">Dezimal/Hexadezimal-Umrechner</a> benutzen.</p>
+
+<p>So wie in der ASCII-Codetabelle die ersten 32 Zeichen (Zeichenwerte 0 bis 31) und das Zeichen 127 für Steuerzeichen reserviert sind, sparen auch die erweiterten Codetabellen der ISO-8859-Kodierungen einen Bereich von Zeichen aus. Es handelt sich um die ersten 32 Zeichen oberhalb des ASCII-Bereichs, also um die Zeichenwerte 128 bis 159. Die Tabellen zu den einzelnen Kodierungen weiter unten bilden daher die verbleibenden Zeichenwerte 160 bis 255 ab. Das Zeichen mit dem Wert 160 ist in all diesen Tabellen ein erzwungenes Leerzeichen.</p>
+
+<p>Viele der Codetabellen der ISO-8859-Kodierungen überlappen sich. Das ist Absicht. Die Kodierungen sind so optimiert, dass sich mit einer möglichst alle Zeichen möglichst vieler Schriften speichern lassen. Zeichen, die in mehreren Codetabellen der ISO-8859-Kodierungen vorkommen, haben in der Regel immer den gleichen Wert, d.h. sie befinden sich in den unterschiedlichen Codetabellen an der gleichen Stelle.</p>
+
+<p>Sechs der ISO-8859-Kodierungen beziehen sich auf Schriften, die im Kern auf der lateinischen Schrift basieren. Diese Kodierungen haben daher die Beinamen <var>Latin-1</var> bis <var>Latin-6</var>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="iso8859_liste">Liste der ISO-8859-Kodierungen</a></h2>
+
+<p>Die folgenden Tabellen zeigen die einzelnen Codetabellen der ISO-8859-Kodierungen. Wenn Sie diese Kodierungen in HTML einsetzen möchten, benötigen Sie einen HTML-Editor, der Ihnen das Speichern der HTML-Datei mit eben diesen Kodierungen ermöglicht. Zusätzlich sollten Sie eine<img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../html/kopfdaten/meta.htm#zeichenkodierung">Meta-Angabe zur Zeichenkodierung</a> nicht vergessen. Die blau dargestellten Namen sind jene Bezeichnungen, die Sie in einer solchen Kodierungsangabe notieren können.</p>
+
+<h3><a class="an" name="iso8859_1"><var>ISO-8859-1</var></a> (Latin-1)</h3>
+
+<p>Die Codetabelle dieser Kodierung enthält die schriftspezifischen Zeichen für westeuropäische und amerikanische Sprachen. Der Zeichenvorrat deckt die Sprachen Albanisch, Dänisch, Deutsch, Englisch, Färöisch, Finnisch, Französisch, Galizisch, Irisch, Isländisch, Italienisch, Katalanisch, Niederländisch, Norwegisch, Portugiesisch, Schwedisch und Spanisch ab. Lediglich einzelne Zeichen wie das niederländische &#307;, die französischen Ligaturen &oelig; und &OElig; oder die deutschen Anführungszeichen &#8222;&#8220; fehlen.</p>
+
+<p><img src="iso8859_1.gif" width="289" height="302" alt="ISO-8859-1"></p>
+
+<h3><a class="an" name="iso8859_2"><var>ISO-8859-2</var></a> (Latin-2)</h3>
+
+<p>Die Codetabelle dieser Kodierung enthält die schriftspezifischen Zeichen für die meisten mitteleuropäischen und slawischen Sprachen. Sie deckt die Sprachen Kroatisch, Polnisch, Rumänisch, Slowakisch, Slowenisch, Tschechisch und Ungarisch ab.</p>
+
+<p><img src="iso8859_2.gif" width="289" height="302" alt="ISO-8859-2"></p>
+
+<h3><a class="an" name="iso8859_3"><var>ISO-8859-3</var></a> (Latin-3)</h3>
+
+<p>Die Codetabelle dieser Kodierung deckt die Sprachen Esperanto, Galizisch, Maltesisch und Türkisch ab.</p>
+
+<p><img src="iso8859_3.gif" width="289" height="302" alt="ISO-8859-3"></p>
+
+<h3><a class="an" name="iso8859_4"><var>ISO-8859-4</var></a> (Latin-4)</h3>
+
+<p>Die Codetabelle dieser Kodierung enthält einige Zeichen der Sprachen Estnisch, Lettisch und Litauisch. Vergleichen Sie diese Kodierung auch mit ISO 8859-10, deren Codetabelle sehr ähnlich ist.</p>
+
+<p><img src="iso8859_4.gif" width="289" height="302" alt="ISO-8859-4"></p>
+
+<h3><a class="an" name="iso8859_5"><var>ISO-8859-5</var></a></h3>
+
+<p>Die Codetabelle dieser Kodierung enthält kyrillische Zeichen. Sie deckt weitgehend die Sprachen Bulgarisch, Mazedonisch, Russisch, Serbisch und Ukrainisch ab.</p>
+
+<p><img src="iso8859_5.gif" width="289" height="302" alt="ISO-8859-5"></p>
+
+<h3><a class="an" name="iso8859_6"><var>ISO-8859-6</var></a></h3>
+
+<p>Die Codetabelle dieser Kodierung enthält Zeichen arabischer Schrift. Die Darstellung der Zeichen in der folgenden Tabelle ist jedoch "abstrakt", da die Zeichen in der Schriftpraxis variieren, je nachdem, ob sie am Anfang, in der Mitte oder am Ende eines Wortes oder einzeln stehen. Arabisch zeichnet sich weiterhin dadurch aus, dass die Schriftrichtung von rechts nach links ist.</p>
+
+<p><img src="iso8859_6.gif" width="289" height="302" alt="ISO-8859-6"></p>
+
+<h3><a class="an" name="iso8859_7"><var>ISO-8859-7</var></a></h3>
+
+<p>Die Codetabelle dieser Kodierung enthält die Zeichen der neugriechischen Schrift.</p>
+
+<p><img src="iso8859_7.gif" width="289" height="302" alt="ISO-8859-7"></p>
+
+<h3><a class="an" name="iso8859_8"><var>ISO-8859-8</var></a></h3>
+
+<p>Die Codetabelle dieser Kodierung enthält die Zeichen der hebräischen Schrift. Wie bei der arabischen Schrift ist dabei die Schriftrichtung von rechts nach links.</p>
+
+<p><img src="iso8859_8.gif" width="289" height="302" alt="ISO-8859-8"></p>
+
+<h3><a class="an" name="iso8859_9"><var>ISO-8859-9</var></a> (Latin-5)</h3>
+
+<p>Diese Kodierung ist speziell für Türkisch gedacht. Die Codetabelle basiert auf ISO 8859-1, enthält jedoch anstelle der isländischen Sonderzeichen türkische Zeichen.</p>
+
+<p><img src="iso8859_9.gif" width="289" height="302" alt="ISO-8859-9"></p>
+
+<h3><a class="an" name="iso8859_10"><var>ISO-8859-10</var></a> (Latin-6)</h3>
+
+<p>Die Codetabelle dieser Kodierung enthält speziell Zeichen für die Sprachen Grönländisch (Inuit) und Lappisch (Sami).</p>
+
+<p><img src="iso8859_10.gif" width="289" height="302" alt="ISO-8859-10"></p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="alle">Alle offiziellen Kodierungen</a></h2>
+
+<p>Es gibt etliche andere, zum Teil schon ältere Kodierungen, die Konventionen für einzelne Schriften oder Schriftfamilien definieren, häufig landesspezifisch. Unter der folgenden Web-Adresse werden die Namen dieser Kodierungen gesammelt:</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.iana.org/assignments/character-sets">http://www.iana.org/assignments/character-sets</a></p>
+
+<p>Diejenigen Kodierungsnamen, die dort in der Liste jeweils hinter <code>Name:</code> oder <code>Alias:</code> aufgelistet sind, können Sie in HTML in der <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../html/kopfdaten/meta.htm#zeichenkodierung">Meta-Angabe zur verwendeten Zeichenkodierung</a> verwenden. Bevorzugt sollten Sie jene Namen verwenden, die in der Liste mit dem Zusatz <code>preferred MIME name</code> gekennzeichnet sind.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="unicode.htm"><img src="../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="unicode.htm">Das Unicode-System</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="sprache.htm"><img src="../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache.htm">Computer und geschriebene Sprache</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Internationalisierung</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+
+
+</body>
+</html>

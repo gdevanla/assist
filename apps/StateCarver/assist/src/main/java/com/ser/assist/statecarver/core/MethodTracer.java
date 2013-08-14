@@ -25,10 +25,14 @@ public class MethodTracer {
             pw = new PrintWriter(new BufferedWriter(
                     new FileWriter(
                             StateCarverConfiguration.v().getMethodTraceFileName(), true)));
+            System.out.println("Got the printer");
+            pw.write("counter: " + methodCounter + ":" + className + ": " + methodName + "\n");
+            pw.close();
+            System.out.println("closed it");
         } catch (IOException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            System.err.println("Error in write Method Trace");
+            System.exit(-1);
         }
-        pw.write("counter: " + methodCounter + ":" + className + ": " + methodName + "\n");
-        pw.close();
     }
 }

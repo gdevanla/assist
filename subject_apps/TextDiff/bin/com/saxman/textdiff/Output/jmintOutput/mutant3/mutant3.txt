@@ -1,0 +1,5 @@
+Trying to Inject mutant for Method Name : getBlockAt in class  com.saxman.textdiff.FileInfo
+Source Line Number: 54
+Jimple Statement considered for mutant injection:  thruLineNum = lineNum - 1
+Successfully injected mutant!!!
+Correspondent Mutant is thruLineNum = lineNum / 1

@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Perl / Perl lokal auf einem PC einrichten</title>
+<meta name="description"    content="Wie Sie den Perl-Interpreter auf Ihrem Rechner installieren, um CGI-Scripts mit Perl auszutesten.">
+<meta name="keywords"       content="SELFHTML, CGI, Perl, Perl-Interpreter">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-11-09T00:29:27+01:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/perl/intro.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="stylesheet" type="text/css" href="../src/selfhtml.css">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../src/favicon.ico">
+<link rel="author" title="Impressum" href="../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../index.htm">
+<link rel="up" title="Perl" href="index.htm">
+<link rel="next" title="CGI-notwendige Anweisungen in Perl" href="sprache/cginotwendig.htm">
+<link rel="prev" title="Bilderbuch zum Umblättern" href="../dhtml/beispiele/bilderbuch.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Perl</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../index.htm"><img src="../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Einführung in Perl</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#perlinterpreter">Der Perl-Interpreter</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#installieren">Perl-Interpreter installieren</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#testen">Perl-Interpreter mit CGI-Script testen</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#aufruf">Aufrufmöglichkeiten des Perl-Interpreters</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#erstezeile">Erste Zeile eines Perl-Scripts</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#anweisungen">Anweisungen notieren</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#anweisungsbloecke">Anweisungsblöcke notieren</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#kommentare">Kommentare in Perl</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#namensvergabe">Regeln für selbst vergebene Namen</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#programmierstil">Sauberer Programmierstil</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="perlinterpreter">Der Perl-Interpreter</a></h2>
+
+<p>Der Perl-Interpreter ist freie Software nach dem Recht der Artistic License (<img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.perl.com/language/misc/Artistic.html">http://www.perl.com/language/misc/Artistic.html</a>) und für etliche Betriebssysteme verfügbar. Außerdem ist der Quellcode des Interpreters verfügbar, sodass Sie ihn, wenn Sie einen C-Compiler haben, für Ihren Rechner compilieren können. Sie können den Perl-Interpreter aus dem WWW downloaden.</p>
+
+<p>Im Link-Verzeichnis des Online-Angebots von SELFHTML aktuell finden Sie weitere Links zu den Downloadmöglichkeiten des Perl-Interpreters:</p>
+
+<p><img src="../src/serverdok.gif" width="15" height="10" alt="Online-Seite">&nbsp;<a target="_top" href="http://aktuell.de.selfhtml.org/links/cgiperl.htm">SELFHTML-Linkverzeichnis: Perl</a></p>
+
+<p>Für Windows-Anwender ist das Angebot <strong>ActivePerl</strong> von <img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.activestate.com">ActiveState</a> zu empfehlen, da es sehr einfach zu installieren ist und die umfangreiche Perl-Originaldokumentation im HTML-Format zum Lesen im Browser mitgeliefert wird.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="installieren">Perl-Interpreter installieren</a></h2>
+
+<p>Je nach Betriebssystemumgebung müssen Sie den Perl-Interpreter manuell installieren, oder ein automatisch aufgerufenes Installationsprogramm führt für Sie alle nötigen Kopiervorgänge und Einstellungen durch. Wenn es kein ausführbares Installationsprogramm gibt, finden Sie nach dem Entpacken des heruntergeladenen Sourcen-Archivs auf jeden Fall Hilfedateien vor, in denen beschrieben wird, wie der Interpreter zu installieren ist.</p>
+
+<p>Wenn Sie den Perl-Interpreter für die <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href=" ../intro/schnittstellen/cgi.htm">CGI-Schnittstelle</a> Ihres eigenen Webservers nutzen wollen, müssen Sie beim <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../servercgi/server/allgemein.htm">Einrichten des eigenen WWW-Servers</a> je nach Betriebssystemumgebung und Server-Software eventuell den vollständigen Pfadnamen der ausführbaren Perl-Interpreter-Datei angeben. Nach einer typischen Installation des Perl-Interpreters liegt diese im Programmunterverzeichnis <var>bin</var> und heißt <var>perl</var> oder (unter Windows) <var>perl.exe</var>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="testen">Perl-Interpreter mit CGI-Script testen</a></h2>
+
+<p>Wenn Sie einen <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../servercgi/server/allgemein.htm">lokalen Webserver</a> installiert und in dessen Einstellungen ein CGI-Verzeichnis bestimmt haben, können Sie nach der Installation des Perl-Interpreters Ihr erstes eigenes lokales CGI-Script ausführen. Den Quellcode des folgenden Perl-Scripts können Sie mit einem Texteditor im eingestellten CGI-Verzeichnis beispielsweise unter dem Namen <var>test.pl</var> abspeichern. Angenommen, Ihr CGI-Verzeichnis heißt wie üblich <var>cgi-bin</var> und der Webserver ist gestartet, dann können Sie das Script im Browser mit der Adresse <var>http://127.0.0.1/cgi-bin/test.pl</var> oder auch mit der Adresse <var>http://localhost/cgi-bin/test.pl</var> aufrufen.</p>
+
+<h3 class="xmp"><a class="an" name="intro1">Beispiel: Datei <var>test.pl</var></a></h3>
+
+<p><img src="../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="http://de.selfhtml.org/cgi-bin/812/intro1.pl">Anzeigebeispiel: So sieht's aus</a> (Zum Aufruf des Scripts ist eine Internet-Verbindung erforderlich)</p>
+
+<pre>
+#!/usr/bin/perl -w
+
+use strict;
+
+print "Content-type: text/html\n\n";
+print '&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;', "\n";
+print "&lt;html&gt;&lt;head&gt;&lt;title&gt;Test-Ausgabe&lt;/title&gt;&lt;/head&gt;&lt;body&gt;\n";
+print "&lt;h1&gt;Hurra, es klappt!&lt;/h1&gt;\n";
+print "&lt;/body&gt;&lt;/html&gt;\n";
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das Script gibt, wenn es aufgerufen wird, einfach ein wenig HTML-Code aus. Auf die Perl-Anweisungen wird an dieser Stelle noch nicht näher eingegangen. Nur die <img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#erstezeile">erste Zeile des Scripts</a> (die so genannte <i>shebang</i>)  müssen Sie möglicherweise anpassen. Dort, wo im Beispiel <code>#!/usr/bin/perl</code> steht, müssen Sie, falls Sie beim Aufruf eine Fehlermeldung wie <i>Internal Server Error</i> erhalten, den kompletten Pfad zur ausführbaren Datei, also zum Perl-Interpreter, angeben. Wenn Sie den Perl-Interpreter unter Windows beispielsweise in <var>c:\programme\perl</var> installiert haben, lautet Ihre erste Script-Zeile also:
+<br><code>#!c:/programme/perl/bin/perl</code><br>
+Die Dateinamen-Erweiterung <i>.exe</i> können Sie ohne weiteres weglassen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="aufruf">Aufrufmöglichkeiten des Perl-Interpreters</a></h2>
+
+<p>Um eigene Perl-Scripts auszuführen bzw. zu testen müssen Sie den <img src="../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#perlinterpreter">Perl-Interpreter</a> installiert haben. Um Perl als Sprache für CGI-Scripts einzusetzen, muss außerdem ein <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../servercgi/server/index.htm">Webserver</a> installiert sein.</p>
+
+<p>Bei CGI-Scripts fordert der aufrufende Browser vom Webserver über HTTP eine Datei an, die der Webserver als auszuführendes Script erkennt. Um zu erfahren, ob die vom Browser angeforderte Datei ein auszuführendes CGI-Script ist, prüft der Webserver verschiedene Kriterien:</p>
+
+<ul>
+<li>Das Script liegt in einem Verzeichnis, das aus Sicht des Webservers als mögliches Verzeichnis für CGI-Scripts definiert ist (z.B. <var>cgi-bin</var> und dessen Unterverzeichnisse).</li>
+<li>Bei der Scriptdatei sind die Zugriffsrechte so gesetzt, dass der Benutzer, unter dem der Webserver läuft, das Recht hat, die Datei auszuführen. Dies gilt vor allem für Unix-basierte Systeme.</li>
+<li>Die Scriptdatei hat eine Dateiendung, die vom System als Endung für Perl-Scripts erkannt wird, z.B. <var>.pl</var> oder <var>.cgi</var>.</li>
+<li>Die erste Zeile des Perl-Scripts enthält eine so genannte "Shebang"-Anweisung (Slang, auszusprechen als <i>schibäng</i>). Diese Anweisung ist für einen auslesenden Prozess (das kann ein Serverprogramm sein oder eine Shell) der Hinweis darauf, welches Programm für die Interpretation des Quelltextes dieser Scriptdatei aufgerufen werden soll. Siehe auch <img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#erstezeile">Erste Zeile eines Perl-Scripts</a>.</li>
+</ul>
+
+<p>Diese Faktoren bewirken, dass, wenn der Browser ein Perl-Script im CGI-Verzeichnis aufruft, der Webserver entsprechend reagiert und den Quelltext des Scripts nicht einfach an den Browser sendet, sondern den Perl-Interpreter bittet, die im CGI-Script enthaltenen Anweisungen auszuführen und das Ergebnis an ihn zur Auslieferung an den Browser zurückzugeben.</p>
+
+<p>Perl ist ursprünglich nicht für CGI-Scripts entwickelt worden, sondern dafür, in einem Unix-basierten System komplexe Installations-, Wartungs- und Informationsaufgaben zu erfüllen. Dass es auch über die CGI-Schnittstelle angesprochen werden kann, war in seiner Entwicklung eher ein zufälliger Nebeneffekt. Perl-Scripts können also zahllose Aufgaben auf einem Rechner übernehmen, z.B. Backups organisieren, die Rechnerauslastung analysieren, in Dateien nach etwas suchen und es durch etwas anderes ersetzen usw. Um Perl-Scripts auszuführen, die nicht als CGI-Scripts eingesetzt werden, müssen Sie einen Zugang zu einer Shell oder Kommandozeile auf dem Rechner haben. Am lokalen PC und unter Windows können Sie ein DOS-Fenster (Eingabeaufforderung) öffnen. Dann können Sie den Perl-Interpreter vom Prompt aus aufrufen. Bei Unix-basierten Systemen benötigen Sie einen Zugang als Benutzer. Nach dem Anmelden am System erhalten Sie eine Shell, also eine benutzereigene Kommandozeile. Von dort aus können Sie den Perl-Interpreter aufrufen, vorausgesetzt, Sie haben die Rechte dazu. Wenn Sie Perl-Scripts über die Kommandozeile auf einem entfernten Rechner ausführen wollen, also etwa auf einem öffentlichen Server, auf dem Sie Web-Speicherplatz gemietet haben, dann brauchen Sie einen Telnet- oder SSH-Zugang zu diesem Rechner. Außerdem benötigen Sie ein Telnet- oder SSH-Programm (im Online-Angebot des SELFHTML-Linkverzeichnisses finden Sie <img src="../src/serverdok.gif" width="15" height="10" alt="Online-Seite">&nbsp;<a target="_top" href="http://aktuell.de.selfhtml.org/links/telnet-ssh-programme.htm">WWW-Links zu Telnet- und SSH-Programmen</a>). Mit einem solchen Programm können Sie sich aus der Ferne an einem Rechner anmelden und erhalten eine Shell zum Eingeben von Kommandos. Fragen Sie gegebenenfalls Ihren Provider danach, ob Sie Telnet- oder SSH-Zugang zum Server haben!</p>
+
+<p>Von der Kommandozeile aus können Sie den Perl-Interpreter mit einem Perl-Script, also einer Datei mit Perl-Code, aufrufen. Solche Dateien haben die Standard-Dateinamenendung <var>.pl</var>. Der Perl-Interpreter wird normalerweise einfach durch Eingabe von <kbd>perl</kbd> gestartet. Wenn Sie beispielsweise ein Perl-Script namens <var>hallowelt.pl</var> haben, können Sie dieses Script mit <kbd>perl hallowelt.pl</kbd> starten. Gegebenenfalls müssen Sie sowohl den Perl-Interpreter als auch das Perl-Script mit den korrekten Pfadnamen aufrufen, unter Windows also z.B. <kbd>c:\programme\perl\bin\perl.exe c:\scripts\perl\hallowelt.pl</kbd>, unter Unix-basierten Systemen z.B. <kbd>/usr/bin/perl /scripts/perl/hallowelt.pl</kbd>.</p>
+
+<p>Neben der reinen Angabe einer Perl-Datei gibt es Optionen beim Aufruf des Perl-Interpreters. Die Optionen folgen unmittelbar hinter dem Programmdateinamen und vor dem Namen des Perl-Scripts, also etwa <kbd>perl -c test.pl</kbd>. Sie können auch mehrere Optionen aneinanderhängen. Notieren Sie dazu nur ein Minuszeichen mit allen gewünschten Optionsbuchstaben hintereinander, z.B. <kbd>perl -cwT test.pl</kbd>. Auf Unix-basierten Systemen können Sie bei Bedarf zusätzlich so genannte pipelines nutzen.</p>
+
+<p>Die folgende Tabelle enthält einige Optionen, die beim Aufruf des Perl-Interpreters Anwendung finden können.</p>
+
+<table class="reftable" cellpadding="3" cellspacing="0" border="1">
+<tr>
+<th nowrap="nowrap">Option</th>
+<th nowrap="nowrap">Bedeutung</th>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-c</code></td>
+<td class="tabxpl">Das Perl-Script wird nicht ausgeführt, sondern nur in einen perl-internen Syntaxbaum kompiliert und so auf syntaktische Richtigkeit überprüft.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-d</code></td>
+<td class="tabxpl">Das Perl-Script wird im Debug-Modus ausgeführt. Der Debug-Modus erlaubt das systematische Austesten des Perl-Scripts. Im Debug-Modus stehen etliche Befehle zum Kontrollieren und Überprüfen des Script-Ablaufs bereit.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-h</code></td>
+<td class="tabxpl">Wenn Sie Perl mit dieser Option ohne Angabe eines Scripts aufrufen, gibt der Perl-Interpreter eine Übersicht aller verfügbaren Optionen aus.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-S</code></td>
+<td class="tabxpl">Das Script braucht nur als Dateiname ohne Pfad angegeben zu werden. Wenn es in einem der Verzeichnisse liegt, die in der <var>PATH</var>-Variablen des Betriebssystems genannt sind, findet der Perl-Interpreter das Script auch ohne Pfadangabe.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-T</code></td>
+<td class="tabxpl">Das Script wird im so genannten "tainted"-Modus ausgeführt. Das heißt, alle Daten, die das Perl-Script von außen bekommt, werden vom Perl-Interpreter besonders gekennzeichnet und müssen vom Script bei kritischen Operationen speziell bearbeitet werden, bevor sie benutzt werden können.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-v</code></td>
+<td class="tabxpl">Gibt die Version und den genauen Stand des Perl-Interpreters aus.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>-w</code></td>
+<td class="tabxpl">Bewirkt, dass der Perl-Interpreter nicht nur offensichtliche Fehlermeldungen bei Syntaxfehlern ausgibt, sondern auch Warnungen bei möglichen Fehlern, logisch zweifelhaften Anweisungsfolgen, undefinierten Zuweisungen usw.</td>
+</tr>
+</table>
+&nbsp;
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="erstezeile">Erste Zeile eines Perl-Scripts</a></h2>
+
+<p>In der ersten Zeile eines Perl-Scripts, der so genannten "Shebang-Zeile", muss eine Anweisung stehen, die angibt, wo sich die ausführbare Datei des Perl-Interpreters befindet.</p>
+
+<h3 class="xmp"><a class="an" name="intro2">Beispiel eines vollständigen Perl-Scripts:</a></h3>
+
+<p><img src="../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="http://de.selfhtml.org/cgi-bin/812/intro2.pl">Anzeigebeispiel: So sieht's aus</a> (Zum Aufruf des Scripts ist eine Internet-Verbindung erforderlich)</p>
+
+<pre>
+#!/usr/bin/perl
+print "Hallo Welt\n";
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Die Anweisung zur Lage des Perl-Interpreters auf dem Rechner beginnt mit den Zeichen <code>#!</code>, der so genannten shebang, gefolgt von der Pfadangabe und dem Namen des Perl-Interpreters. Ab der zweiten Zeile können Sie Perl-Code notieren, wie im Beispiel die Ausgabe der beiden Wörter <code>Hallo Welt</code>.</p>
+
+<p>Die Anweisung zur Lage des Perl-Interpreters auf dem Rechner wird vor allem von Unix-basierten Systemen ausgewertet, und zwar dann, wenn die Perl-Datei auf den Modus "ausführbar" gesetzt ist. Die Datei kann dann direkt aufgerufen werden und startet den Perl-Interpreter. Wenn Sie unter anderen Umgebungen als Unix arbeiten, notieren Sie einfach die übliche Zeile mit der üblichen Pfadangabe (<code>#!/usr/bin/perl</code>) in der ersten Zeile Ihres Perl-Scripts. Sollte das Script dann nicht ausgeführt werden bzw. eine Fehlermeldung produzieren, notieren Sie den genauen Pfad der ausführbaren Datei des Perl-Interpreters. Trennen Sie dabei die Verzeichnisse durch einfache Schrägstriche. Eine typische Angabe unter Windows ist beispielsweise<br>
+<code>#!C:/programme/perl/bin/perl.exe</code>.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Bei Webservern mit CGI-Unterstützung hängt es vom Webserver-Produkt ab, ob die Zeile für die Lage des Perl-Interpreters ausgelesen wird. Zu den <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../servercgi/server/allgemein.htm#grundeinstellungen">Grundeinstellungen eines Webservers</a> gehört mittlerweile auch die Angabe des Pfades zum Perl-Interpreter. Wenn dann bei laufendem Webserver ein Perl-Script über das HTTP-Protokoll ausgeführt wird, ruft der Webserver den Perl-Interpreter entsprechend seiner Konfiguration auf.</p>
+
+<p>Wenn der Perl-Interpreter im Suchpfad für ausführbare Programme liegt, der z.B. in der Umgebungsvariablen <var>PATH</var> gespeichert ist, dann genügt es, in der ersten Zeile des Perl-Scripts zu notieren:<br>
+<code>#!perl</code></p>
+
+<p>Wenn Ihr Webserver ein Apache ist und Sie uneingeschränkten Zugang zu seiner Konfigurationsdatei (<var>httpd.conf</var>) haben, können Sie dort auch die Anweisung <code>ScriptInterpreterSource registry</code> notieren. Eine solche Anweisung bewirkt, dass Apache in der Windows-registry nach dem Pfad sucht, mit dem der Perl-Interpreter angesprochen werden kann und die "shebang" umgeht. Das funktioniert jedoch nur dann, wenn in der registry unter HKEY_CLASSES_ROOT eine entsprechende Dateinamensendung, beispielsweise .pl, eingetragen ist und für diese Dateinamensendung auch ein Schlüssel <kbd>Shell\ExecCGI\Command</kbd> oder <kbd>Shell\Open\Command</kbd> existiert. Ist kein solcher Schlüssel vorhanden, wird zuletzt auf die "shebang" zurückgegriffen, und wenn dort dann ein nicht zutreffender Pfad eingetragen ist, erfolgt eine Fehlermeldung an den aufrufenden Browser.</p>
+
+<p>Hinter der Pfadangabe zum Perl-Interpreter kann, durch Leerraum getrennt, auch noch eine Aufrufoption folgen wie in der Tabelle bei den <img src="../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#aufruf">Aufrufmöglichkeiten des Perl-Interpreters</a> beschrieben. So können Sie beispielsweise notieren:<br>
+<code>#!/usr/bin/perl -w</code><br>
+Damit weisen Sie den Perl-Interpreter an, neben Fehlern auch Warnungen zu melden. Diese Option wird von Perl-Programmierern gerne empfohlen (siehe auch <img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#programmierstil">Sauberer Programmierstil</a>).</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="anweisungen">Anweisungen notieren</a></h2>
+
+<p>Perl-Scripts bestehen, wie die Scripts anderer Programmiersprachen auch, aus einer kontrollierten Anordnung von Anweisungen. Das sind Befehle, die der Perl-Interpreter bewertet und in einen Maschinencode übersetzt (kompiliert), der auf dem betreffenden Rechner ausführbar ist.</p>
+
+<p>Es gibt einfache und komplexere Anweisungen.</p>
+
+<h3 class="xmp"><a class="an" name="intro3">Beispiel eines vollständigen Perl-Scripts:</a></h3>
+
+<p><img src="../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="http://de.selfhtml.org/cgi-bin/812/intro3.pl">Anzeigebeispiel: So sieht's aus</a> (Zum Aufruf des Scripts ist eine Internet-Verbindung erforderlich)</p>
+
+<pre>
+#!/usr/bin/perl
+
+$Zahl = 42;
+$Quadrat = $Zahl * $Zahl;
+print "Das Quadrat von ", $Zahl, " = ", $Quadrat, "\n";
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Eine Anweisung besteht in Perl aus einem Befehl, der normalerweise mit einem Semikolon <code>;</code> abgeschlossen wird. Der Befehl kann an verschiedene Bedingungen gebunden sein.</p>
+
+<p>Eine Anweisung ist es zum Beispiel:</p>
+<ul>
+<li>wenn Sie einer Variablen einen Wert zuweisen, wie oben in Beispiel in der Anweisung <code>$Zahl = 42;</code>.</li>
+<li>wenn Sie mit Variablen oder Werten eine Operation durchführen, wie oben in der zweiten Anweisung.</li>
+<li>wenn Sie eine <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="funktionen/index.htm">Perl-Funktion</a> aufrufen, wie oben in der dritten Anweisung die Funktion <code>print</code>.</li>
+</ul>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="anweisungsbloecke">Anweisungsblöcke notieren</a></h2>
+
+<p>Ein Anweisungsblock besteht aus einer oder mehreren einzelnen <img src="../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#anweisungen">Anweisungen</a>, die innerhalb einer übergeordneten Anweisung stehen. So können Anweisungsblöcke beispielsweise innerhalb einer <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/bedingt.htm">bedingten Anweisung</a> oder innerhalb einer <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/schleifen.htm">Schleife</a> stehen. Auch alle Anweisungen, die innerhalb einer <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/subroutinen.htm">Subroutine</a> stehen, bilden einen Anweisungsblock.</p>
+
+<h3 class="xmp">Beispiel 1:</h3>
+
+<pre>
+if($Zahl &gt; 1000) {
+  $Zahl = 0;
+}
+</pre>
+
+<h3 class="xmp">Beispiel 2:</h3>
+
+<pre>
+for(my $i = 1;$i &lt;= 99;$i = $i + 1) {
+  print "Das Quadrat von ", $i, " ist ", $i * $i, "\n";
+}
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Ein Anweisungsblock wird durch eine öffnende geschweifte Klammer <code>{</code> begonnen und durch eine schließende geschweifte Klammer <code>}</code> beendet.</p>
+
+<p>Bei bedingten Anweisungen (wie in Beispiel 1) oder bei Schleifen (wie in Beispiel 2) müssen Sie solche Anweisungsblöcke notieren, auch wenn nur eine einzige Anweisung von der Bedingung oder der Schleifenbedingung abhängig ausgeführt werden soll.</p>
+
+<p>Anweisungsblöcke können auch verschachtelt werden.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="kommentare">Kommentare in Perl</a></h2>
+
+<p>Wie jede bessere Programmiersprache erlaubt Perl das Notieren von Kommentaren. Kommentare werden nicht als Code interpretiert, sondern erläutern das Script oder machen den Code für den Programmierer besser lesbar.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+#=========================================
+# es folgt die Ausgabe der Quadratzahlen
+# von 1 bis 99
+#=========================================
+for(my $i = 1;$i &lt;= 99;$i = $i + 1) {
+  # Hier wird das Quadrat der Zahlen ausgegeben
+  print "Das Quadrat von ", $i, " ist ", $i * $i, "\n";
+}
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Kommentare in Perl beginnen mit einem Gatterzeichen <code>#</code>. Alles, was hinter dem Gatterzeichen bis zum Ende der Zeile steht, wird von Perl ignoriert. Beginnt eine Zeile mit dem Gatterzeichen, ist die gesamte Zeile ein Kommentar. Viele Perl-Programmierer nutzen die Kommentartechnik auch, um ihre Scripts optisch kunstvoll zu gestalten. Das obige Beispiel zeigt solch ein optisches Konstrukt mit Gleichheitszeichen.</p>
+
+<h3 class="inf">Beachten Sie</h3>
+
+<p>Neben der einfachen Auskommentierung besteht auch die Möglichkeit, größere Abschnitte des Scripts als Dokumentation auszuweisen. Solche Dokumentationen können mit dem Programm <var>perldoc</var>, das zum Lieferumfang des Perl-Interpreters gehört, separat gelesen werden. Bei komplexeren Scripts können Sie so die Dokumentation gleich zum Script mit dazuliefern. Im Zusammenhang mit Modulen wird im Abschnitt <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="module/intro.htm#perldoc">Moduldokumentationen lesen mit perldoc</a> beschrieben, wie solche Abschnitte aussehen. Was dort für Module beschrieben wird, funktioniert in jedem Perl-Script.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="namensvergabe">Regeln für selbst vergebene Namen</a></h2>
+
+<p>An vielen Stellen in Perl müssen Sie selbst Namen vergeben, zum Beispiel für Variablen wie <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/skalare.htm">Skalare</a>, <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/listen.htm">Arrays</a> oder <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/hashes.htm">Hashes</a>, sowie für <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/subroutinen.htm">Subroutinen</a>.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+my $Daten = $ENV{'QUERY_STRING'};
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im Beispiel ist <code>Daten</code> ein selbst vergebener Name. Bei selbst vergebenen Namen gelten folgende Regeln:</p>
+<ul>
+<li>Sie dürfen keine Leerzeichen enthalten.</li>
+<li>Sie müssen mit einem Buchstaben oder einem Unterstrich <code>_</code> beginnen. Mit einer Ziffer oder einem anderen Zeichen dürfen sie nicht beginnen.</li>
+<li>Es sind Groß- und Kleinbuchstaben erlaubt. Groß- und Kleinschreibung wird aber auch unterschieden. Das heißt, zwei Variablennamen wie <code>$user</code> und <code>$User</code> bezeichnen unterschiedliche Variablen!</li>
+<li>Sie dürfen keine deutschen Umlaute oder scharfes S enthalten, nur die Buchstaben A bis Z und a bis z und die Ziffern 0 - 9.</li>
+<li>Sie dürfen Unterstriche <code>_</code> enthalten.</li>
+</ul>
+
+<p>Vergeben Sie sprechende Namen, die Ihnen auch ein halbes Jahr, nachdem Sie das Perl-Script geschrieben haben, noch signalisieren, welche Bedeutung sie haben. Es dürfen ruhig auch deutschsprachige Wörter sein, solange die genannten Regeln eingehalten werden.</p>
+
+<h3>Beachten Sie:</h3>
+
+<p>Seit Perl-Version 5.6.0 können Perl-Scripts auch in Unicode notiert werden. Damit ist es möglich, auch beispielsweise Umlaute in Variablennamen zu verwenden. Die Perl-Scripts müssen dann UTF-8-kodiert sein. In einem Editor, der diese Kodierung nicht beherrscht, sieht dann eine Variable <code>$Straße</code> beispielsweise so aus: <code>$Stra&#195;&#159;e</code></p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="programmierstil">Sauberer Programmierstil</a></h2>
+
+<p>Es gibt ein paar Dinge, die ein sauber geschriebenes Perl-Script enthalten sollte. Ohne diese Dinge funktionieren die meisten Perl-Scripts zwar genauso gut, aber kritische (mehrdeutige) Anweisungen im Quelltext fallen dann nicht auf und können leichter zu Fehlern führen. Das folgende kleine Perl-Script enthält ein paar Dinge, die von Perl-Programmierern zum sauberen Programmieren empfohlen werden.</p>
+
+<h3 class="xmp"><a class="an" name="intro4">Beispiel eines vollständigen CGI-Scripts in Perl:</a></h3>
+
+<p><img src="../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="http://de.selfhtml.org/cgi-bin/812/intro4.pl">Anzeigebeispiel: So sieht's aus</a> (Zum Aufruf des Scripts ist eine Internet-Verbindung erforderlich)</p>
+
+<pre>
+#!/usr/bin/perl -w
+
+use strict;
+use CGI::Carp qw(fatalsToBrowser);
+
+my $headline = "Ein sauberes Script!";
+
+print "Content-type: text/html\n\n";
+print '&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;', "\n";
+print "&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;&lt;/head&gt;&lt;body&gt;\n";
+print "&lt;h1&gt;$headline&lt;/h1&gt;\n";
+print "&lt;p&gt;nur auf das CGI-Modul wurde hier verzichtet ;-)&lt;/p&gt;\n";
+print "&lt;/body&gt;&lt;/html&gt;\n";
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Zu den empfohlenen Maßnahmen sauberer Programmierung zählt auf jeden Fall die Verwendung der Aufrufoption <code>-w</code> in der ersten Zeile des Scripts. Dadurch gibt der Perl-Interpreter Warnungen zu zweifelhaften Befehlen aus, bevor er das Script ausführt. Manche Unsauberkeiten im Quellcode werden so ohne zeitraubende Suche erkannt.</p>
+
+<p>In die gleiche Richtung zielt die Anweisung <code>use strict;</code>. Damit wird ein spezielles <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="module/standardmodule.htm#pragma_module">Pragma-Modul</a> eingebunden, das bewirkt, dass der Perl-Interpreter keine unsicheren Konstrukte akzeptiert, bevor er das Script ausführt. Das können zum Beispiel nicht definierte Variablen sein. Auch damit lassen sich Fehler vermeiden, die durch unachtsames oder schlampiges Programmieren entstehen können und bei einer toleranteren Interpretation des Quelltextes nicht auffallen.</p>
+
+<p>Die Anweisung <code>use CGI::Carp qw(fatalsToBrowser);</code> wird Programmierern, die Perl-Scripts für die CGI-Schnittstelle entwickeln wollen, dringend empfohlen. Sie bindet eine Funktion eines speziellen Modul ein, das beim ungewollten Abbruch des Scripts aufgrund eines Syntaxfehlers oder einer Anweisung wie <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="funktionen/kontrolle.htm#die">die</a> die Fehlerursache in HTML umwandelt und direkt auf die Standardausgabe schreibt, also an den aufrufenden Browser übergibt. Auf diese Weise ersparen es sich CGI-Programmierer, beim Scriptabbruch in der meist langen Error-Log-Datei des Webservers nach der Fehlermeldung zu suchen. Diese Anweisung nutzt jedoch nichts, wenn bereits Fehler auftreten, bevor der Perl-Interpreter ausgeführt werden kann, also etwa, wenn die erste Zeile des Perl-Scripts eine falsche Lage des Perl-Interpreters ausweist.</p>
+
+<p>Wenn Sie <code>use strict;</code> angeben, zwingt Perl Sie dazu, alle Ihre Variablen vor der ersten Verwendung zu deklarieren (z.B. mit <code>my</code>). Im obigen Beispiel ist dies bei der Initialisierung von <code>$headline</code> der Fall. Dies hat den Vorteil, dass ein Programmabbruch erfolgt, wenn Sie im weiteren Verlauf des Scripts einen Variablennamen falsch geschrieben haben. Die Verwendung von <code>my</code> bewirkt, dass eine Variable nur in der aktuellen Datei oder im aktuellen Anweisungsblock gültig ist. Näheres dazu bei der Beschreibung des Befehls <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="funktionen/kontrolle.htm#my">my</a>.</p>
+
+<p>Wie Sie dem Quellcode des obigen Beispiels entnehmen können, gibt das Script in seiner Ausgabe an den aufrufenden Browser mit einem verschmitzten Lächeln zu, dass es das <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="module/cgi.htm">CGI-Modul</a> nicht verwendet. Tatsächlich sollten Sie sich, wenn Sie CGI-Scripts schreiben wollen, mit diesem Modul und seiner Syntax beschäftigen. Es hält für viele CGI-Scripts nützliche Funktionen bereit und soll an dieser Stelle ausdrücklich empfohlen werden.</p>
+
+<p>Generell ist es empfehlenswert, auf vorhandene und bewährte Ressourcen zurückzugreifen. Perl wird ja nicht nur alleine als Perl-Interpreter ausgeliefert, sondern mit einer ganzen Reihe von fertigen Modulen, die viele Programmieraufgaben erleichtern und die möglichen Fehlerquellen verringen. Nachdem Sie sich mit den Sprachelementen und eingebauten Funktionen von Perl etwas vertraut gemacht haben, sollten Sie sich daher auf jeden Fall auch mit den <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="module/index.htm">Perl-Modulen</a> beschäftigen.</p>
+
+<p>Bei größeren Scripts sollten Sie den Quellcode auf <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/subroutinen.htm">Subroutinen</a> verteilen. Mit dieser Technik können Sie Anweisungsblöcke definieren, die bestimmte Aufgaben übernehmen und von verschiedenen anderen Stellen im Script aus aufgerufen werden können. Ferner können Sie die Technik der Subroutinen dazu nutzen, um den Script-Ablauf in Teilprozeduren zu zerlegen und nur bestimmte Teile des Scripts auszuführen.</p>
+
+<p>Seit Version 5 des Interpreters erlaubt Perl auch <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/objekte.htm">objektorientiertes Programmieren</a>. Das ist zwar für Neulinge zunächst erheblich schwieriger zu begreifen, aber wenn man es sich angewöhnt, werden größere Anwendungen in Perl letztlich einfacher zu programmieren sein, und der Code sieht deutlich besser (menschen-)lesbar aus. Dem Perl-Interpreter ist es eigentlich egal; objektorientierte Programmierung kann die Ausführung Ihrer Scripts jedoch teilweise erheblich beschleunigen.</p>
+
+<p>Zum "sauberen Programmieren" gehören schließlich folgende allgemeine Empfehlungen:</p>
+
+<ul>
+<li><img src="../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#kommentare">Kommentieren</a> Sie alle nicht-trivialen Anweisungen oder Anweisungsblöcke Ihres Scripts. Sie sollten allerdings darauf achten, dass Sie auch nicht zu viel kommentieren. Ein Script, in dem auf eine Code-Zeile zehn Zeilen Kommentar kommen, ist schlecht lesbar.</li>
+<li>Notieren Sie den Quelltext so, dass er übersichtlich wirkt. Dazu gehören Leerzeilen zwischen logischen Abschnitten im Script sowie Einrückungen, die vor allem bei <img src="../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#anweisungsbloecke">Anweisungsblöcken</a> erkennen lassen, was zum Anweisungsblock gehört und was außerhalb davon steht. Vor allem sollte die schließende geschweifte Klammer eines Blocks in der gleichen Textspalte stehen wie das erste Zeichen des Wortes, das den Block einleitet.</li>
+<li>Verwenden Sie ein einheitliches Schema bei der Namensvergabe. Es sieht besser aus, wenn eine Reihe von Variablen die Namen <code>$name</code>, <code>$telephone</code>, <code>$mail</code> und <code>$homepage</code> haben, als wenn diese <code>$name</code>, <code>$Telefonnummer</code>, <code>$mail_Adresse</code> und <code>$Homepage</code> lauten.</li>
+</ul>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="sprache/cginotwendig.htm"><img src="../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="sprache/cginotwendig.htm">CGI-notwendige Anweisungen in Perl</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../dhtml/beispiele/bilderbuch.htm"><img src="../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../dhtml/beispiele/bilderbuch.htm">Bilderbuch zum Umblättern</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Perl</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

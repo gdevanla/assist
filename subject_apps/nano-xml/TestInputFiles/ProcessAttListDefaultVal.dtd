@@ -1,0 +1,1 @@
+<!ATTLIST person number CDATA #FIXED "12">

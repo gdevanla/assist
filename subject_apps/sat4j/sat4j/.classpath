@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="org.sat4j.core/src/main/java"/>
+	<classpathentry kind="src" path="org.sat4j.core/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/icewariya/Downloads/sat4j-core-v20111030/org.sat4j.core.jar"/>
+	<classpathentry kind="lib" path="/Users/icewariya/Desktop/eclipse 3/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar"/>
+	<classpathentry kind="lib" path="/Users/icewariya/Downloads/mockito-1.9.5/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

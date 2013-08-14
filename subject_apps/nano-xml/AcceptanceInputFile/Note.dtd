@@ -1,0 +1,11 @@
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ELEMENT heading (#PCDATA)>
+<!ATTLIST heading tag CDATA "h1">
+<!ELEMENT body (#PCDATA)>
+<!ATTLIST body tag CDATA "content">
+<!ATTLIST body style CDATA "main">
+]>

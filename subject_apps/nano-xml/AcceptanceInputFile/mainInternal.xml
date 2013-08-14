@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note
+[
+<!ELEMENT note (to,from,heading,body)>
+<!ATTLIST note fixed CDATA #FIXED "name">
+<!ATTLIST note required CDATA #REQUIRED>
+<![ IGNORE [
+
+<!ATTLIST note tag CDATA "title">
+
+]]>
+<!ELEMENT to (#PCDATA)>
+
+<!ENTITY % final "IGNORE">
+<![%final;[
+<!ATTLIST to tag CDATA "toAddress">
+]]>
+
+<![ INCLUDE [
+
+<!ATTLIST from include CDATA "yes">
+
+]]>
+<!ATTLIST to title CDATA "toAddress">
+
+<!ELEMENT from (#PCDATA)>
+
+<!ELEMENT heading (#PCDATA)>
+<!ATTLIST heading markUp (h1|h2) "h2">
+<!-- <!ATTLIST heading tag CDATA "h1"> -->
+<!ELEMENT body (#PCDATA)>
+<!ENTITY text "with proper text">
+<!ENTITY con "this is content &text;">
+
+]>
+<note>
+	<to>Tove</to>
+	<from>Jani</from>
+	<heading>Reminder</heading>
+	<body>&con;</body>
+	<script>
+ 	 	<![CDATA[
+			<js>javascript</js>
+ 		 ]]>
+	</script>
+
+</note>
+

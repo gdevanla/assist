@@ -38,11 +38,11 @@ public class StateInstrumenter extends BodyTransformer {
           StaticStateOfApp.init();
           staticFieldInitialized = true;
        }
-        try {
+        /*try {
             new MethodInstrumenter().instrumentMethod(body, s, map);
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+        } */
     }
 
     public static StateInstrumenter v() { return instance;}

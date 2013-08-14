@@ -40,14 +40,14 @@ public class Assist {
         runStateInstrumentor();
 
         //run acceptance test
-        runAcceptanceTests();
+        //runAcceptanceTests();
         //runSequenceMiner();
 
-        List<MutId> methodTuples = runSequenceMiner();
-        runIntegrationTestGenerator(methodTuples);
+       // List<MutId> methodTuples = runSequenceMiner();
+       // runIntegrationTestGenerator(methodTuples);
 
-        compileIntegrationTests();
-        runIntegrationTests();
+        //compileIntegrationTests();
+        //runIntegrationTests();
     }
 
     private static List<MutId> runSequenceMiner() throws IOException {

@@ -1,0 +1,510 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Dynamisches HTML / DHTML-Modelle / Das Document Object Model (DOM)</title>
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<meta name="description"    content="Wie Sie das Document Object Model (DOM) für Dynamisches HTML einsetzen können">
+<meta name="keywords"       content="SELFHTML, Dynamisches HTML, Dynamic HTML, DHTML, Document Object Model, DOM, W3-Konsortium">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-10-28T20:44:22+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/dhtml/modelle/dom.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="DHTML-Modelle" href="index.htm">
+<link rel="next" title="Das ältere DHTML-Modell von Microsoft" href="microsoft.htm">
+<link rel="prev" title="Allgemeines zu Dynamischem HTML" href="../intro.htm">
+<link rel="last" title="Dynamische Filter (nur Microsoft)" href="dynamische_filter.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Dynamisches HTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">DHTML-Modelle</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Das Document Object Model (DOM)</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#allgemeines">Allgemeines zum DOM</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#elementinhalte">Elementinhalte dynamisch ändern</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#html_attribute">HTML-Attribute dynamisch ändern</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#css_eigenschaften">CSS-Eigenschaften dynamisch ändern</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#neue_knoten">Neue Knoten erzeugen und in Baumstruktur einhängen</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#event_handling">Event-Handling beim DOM</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="allgemeines">Allgemeines zum DOM</a></h2>
+
+<p>Das Document Object Model (DOM) ist eine vom W3-Konsortium verabschiedete Norm, die zunächst einmal den Programmiersprachen-Zugriff auf beliebige Elemente eines Auszeichnungssprachen-Dokuments beschreibt. Das DOM ist also weder selber eine eigene Programmiersprache, noch ist es auf HTML beschränkt. Es definiert lediglich Objekte, Eigenschaften und Methoden, die eine Programmiersprache umsetzen sollte, wenn sie sich DOM-fähig bezeichnen will. Anwendbar sollen diese Objekte, Eigenschaften und Methoden auf alle Dokumente sein, die in einer <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../xml/index.htm">XML</a>-gerechten Auszeichnungssprache geschrieben sind. Das W3-Konsortium betont ausdrücklich, dass das DOM nicht einfach nur eine Norm für "Dynamic HTML" sein soll. Das DOM ist auch nicht auf die Client-Seite, also etwa den Web-Browser beschränkt. Ebensogut lässt es sich in serverseitigen Programmen, z.B. in <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../servercgi/cgi/cgihtml.htm">CGI</a>-Scripten einsetzen, um Dokumente dynamisch zu erzeugen.</p>
+
+<p>Wie auch immer - das DOM ist die willkommene Lösung auch für das, was hier unter dynamischem HTML verstanden wird, also das nachträgliche dynamische Verändern von Inhalten einer im Browser-Fenster angezeigten Web-Seite. 1998 erstmals als offizielle W3C-Empfehlung herausgegeben, wurde es im Internet Explorer 5.0 und in dem von der Mozilla-Entwicklergemeinde völlig neu programmierten Netscape-Browser, den Netscape selber unter der Version 6.0 anbot, implementiert (JavaScript-Version 1.5). Die Implementierung ist in den heutigen Browsern noch nicht vollständig. Immer wieder wird man als Programmierer auf rätselhafte Verhaltensweisen im einen oder anderen Browser stoßen. Dennoch ist die Richtung damit vorgegeben, wie Dynamisches HTML in Zukunft programmiert werden wird.</p>
+
+<p>Eine Auszeichnungssprache wie HTML oder auch jede andere, XML-basierte Sprache ist als hierarchische <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../xml/regeln/baumstruktur.htm">Baumstruktur</a> abbildbar.
+Die einzelnen Bestandteile einer solchen Baumstruktur werden als <b>Knoten</b> bezeichnet. Das zentrale Objekt des DOM ist deshalb das Objekt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/node.htm">node</a> (<i>node = Knoten</i>). Es gibt verschiedene Knotentypen. Innerhalb eines gewöhnlichen HTML-Dokuments gibt es auf jeden Fall drei wichtige Knotentypen, die Sie unterscheiden müssen: <b>Elementknoten, Attributknoten und Textknoten</b>.</p>
+
+<p>Betrachten Sie zum Verständnis das folgende einfache HTML-Konstrukt:<br>
+<code>&lt;h1 align="center"&gt;Hallo Welt&lt;/h1&gt;</code><br>
+In diesem Konstrukt gibt es einen Elementknoten, nämlich den Elementknoten des <code>h1</code>-Elements. Ferner gibt es einen Attributknoten, nämlich den des <code>align</code>-Attributs. Und schließlich gibt es so genannte "Zeichendaten", die an zwei Stellen vorkommen: nämlich einmal als Inhalt des <code>h1</code>-Elements, und einmal bei der Wertzuweisung an das <code>align</code>-Attribut. Diese Zeichendaten stellen selbst Knoten dar, nämlich Textknoten.</p>
+
+<p>Ein weiteres Beispiel-Konstrukt soll das Verständnis vertiefen:<br>
+<code>&lt;h1 align="center"&gt;Hallo &lt;i&gt;Welt&lt;/i&gt;&lt;/h1&gt;</code><br>
+In diesem Beispiel ist die Kursiv-Auszeichnung um das Wort <code>Welt</code> hinzugekommen. Wichtig ist dabei nun zu verstehen, wie die Knotenhierarchie aussieht:<br>
+Das <code>h1</code>-Element ist in diesem kleinen Strukturbaum-Ausschnitt der Ausgangsknoten. Dieser Knoten hat nach den Regeln des DOM zwei <b>Kindknoten</b> und einen <b>assoziierten Knoten</b>: die Kindknoten sind zum einen der Textknoten mit dem Wort <code>Hallo</code> und dem Leerzeichen dahinter, sowie der Elementknoten des <code>i</code>-Elements. Das <code>align</code>-Attribut im einleitenden <code>&lt;h1&gt;</code>-Tag ist dagegen kein Kindknoten, sondern ein assoziierter Knoten. Der Attributknoten hat jedoch selbst wiederum einen Kindknoten, nämlich den zugewiesenen Wert (<code>center</code>). Auch der Elementknoten des <code>i</code>-Elements hat wieder einen Kindknoten, nämlich den Textknoten seines Zeicheninhalts, also das Wort <code>Welt</code>.</p>
+
+<p>Die Baumstruktur einer komplexen Web-Seite kann, wie sich aus diesen einfachen Beispielen erschließt, sehr umfangreich und tief verschachtelt sein. In einer Script-Sprache muss es aber möglich sein, möglichst schnell und effizient auf einzelne Knoten zugreifen zu können. Im DOM gibt es daher drei wichtige Methoden des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/document.htm">document</a>-Objekts, um zumindest auf jeden beliebigen Elementknoten direkt zugreifen zu können:<br>
+<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/document.htm#get_element_by_id">getElementById()</a> kann auf Elemente zugreifen, die ein dokumentweit eindeutiges <code>id</code>-Attribut enthalten, z.B.<br>
+<code>&lt;p id="derAbsatz"&gt;hier steht der Text&lt;/p&gt;</code><br>
+<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/document.htm#get_elements_by_name">getElementsByName()</a> kann auf Elemente zugreifen, die einen Namen besitzen (er muss nicht unbedingt eindeutig sein), z.B.<br>
+<code>&lt;input name="Eingabefeld" type="text" size="40"&gt;</code><br>
+<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/document.htm#get_elements_by_name">getElementsByTagName()</a> kann auf alle Elemente zugreifen in der Form: "liefere mir das 27. <code>td</code>-Element im Dokument".</p>
+
+<p>Ausgehend von einem ermittelten Elementknoten lässt sich dann schnell auf dessen Attribute und Inhalt zugreifen. Auch dafür stellt das DOM Eigenschaften und Methoden bereit. Dabei gibt es jedoch bei HTML-basierten Web-Seiten zwei Varianten. Einmal können Sie die Eigenschaften und Methoden des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/node.htm">node</a>-Objekts dazu verwenden, um auf Kindknoten und assoziierte Knoten eines Elements zuzugreifen. Zum anderen können Sie aber auch die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/htmlelemente.htm">HTML-Elementobjekte</a> benutzen. Vor allem für den Zugriff auf einzelne Attribute eines Elements sind die HTML-Elementobjekte gut geeignet.</p>
+
+<p>Dynamisches HTML kann aber auch darin bestehen, neue Elemente mit Inhalten und Formatierungen zur Anzeigezeit einer Web-Seite neu zu erzeugen. Für diesen Zweck hält das DOM ebenfalls Methoden bereit.</p>
+
+<p>In der Version 1.0 des DOM wurde nur der Zugriff auf Knoten geregelt. Der Zugriff auf zugewiesene Style-Eigenschaften und von Event-Handling ist dort noch ausgespart. In der DOM-Version 2.0 vom November 2000 sind jedoch auch diese für dynamische Web-Seiten wichtigen Gebiete behandelt. Es ist deshalb auf jeden Fall empfehlenswert, bei neu zu erstellenden dynamischen Web-Seiten von den im DOM geregelten Techniken auszugehen. Die älteren Modelle von <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="microsoft.htm">Microsoft</a> und <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="netscape.htm">Netscape</a> sollten derzeit noch aus Gründen der Rückwärtskompatibilität eingesetzt werden, auf die Dauer jedoch langsam aus der Welt verschwinden, damit endlich ein einheitlicher Sprachenstandard das Entwickeln dynamischer Web-Seiten erleichtert.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/dom10.gif" width="30" height="30" alt="DOM 1.0" title="DOM 1.0"><img src="../../src/js15.gif" width="30" height="30" alt="JavaScript 1.5" title="JavaScript 1.5"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie55.gif" width="30" height="30" alt="MS IE 5.5" title="MS IE 5.5"><img src="../../src/op7.gif" width="30" height="30" alt="Opera 7" title="Opera 7"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="elementinhalte">Elementinhalte dynamisch ändern</a></h2>
+
+<p>Es gibt viele sinnvolle Anwendungsfälle zum dynamischen Ändern von zunächst angezeigten HTML-Elementen. Das folgende Beispiel zeigt einen davon. In dem Beispiel wird eine nummerierte Liste von Großstädten zunächst alphabetisch sortiert ausgegeben. Unterhalb der Liste kann der Anwender jedoch mit Hilfe zweier Formular-Buttons zwischen alphabetischer Sortierung oder geographischer Sortierung wechseln.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/staedte.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+var geoArray = new Array(6, 7, 0, 1, 4, 3, 8, 9, 2, 5, 11, 12, 10);
+var Art = "ABC";
+
+function ABC () {
+  if (Art == "ABC")
+    return;
+  Art = "ABC";
+  var Staedte = new Array();
+  for (var i = 0; i &lt; document.getElementsByTagName("li").length; i++)
+    Staedte[Staedte.length] = document.getElementsByTagName("li")[i].firstChild.nodeValue;
+  Staedte.sort();
+  for (i = 0; i &lt; document.getElementsByTagName("li").length; i++)
+    document.getElementsByTagName("li")[i].firstChild.nodeValue = Staedte[i];
+  document.getElementById("Art").firstChild.nodeValue = "alphabetisch von A bis Z";
+}
+
+function GEO () {
+  if (Art == "GEO")
+    return;
+  Art = "GEO";
+  var Staedte = new Array();
+  for (var i = 0; i &lt; document.getElementsByTagName("li").length; i++)
+    Staedte[Staedte.length] = document.getElementsByTagName("li")[i].firstChild.nodeValue;
+  for (i = 0; i &lt; document.getElementsByTagName("li").length; i++)
+    document.getElementsByTagName("li")[i].firstChild.nodeValue = Staedte[geoArray[i]];
+  document.getElementById("Art").firstChild.nodeValue = "geographisch von Nord nach Süd";
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Große Städte &lt;span id="Art"&gt;alphabetisch von A bis Z&lt;/span&gt;&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;Berlin&lt;/li&gt;
+&lt;li&gt;Dortmund&lt;/li&gt;
+&lt;li&gt;Dresden&lt;/li&gt;
+&lt;li&gt;Düsseldorf&lt;/li&gt;
+&lt;li&gt;Essen&lt;/li&gt;
+&lt;li&gt;Frankfurt&lt;/li&gt;
+&lt;li&gt;Hamburg&lt;/li&gt;
+&lt;li&gt;Hannover&lt;/li&gt;
+&lt;li&gt;Köln&lt;/li&gt;
+&lt;li&gt;Leipzig&lt;/li&gt;
+&lt;li&gt;München&lt;/li&gt;
+&lt;li&gt;Nürnberg&lt;/li&gt;
+&lt;li&gt;Stuttgart&lt;/li&gt;
+&lt;/ol&gt;
+&lt;form name="Formular" action=""&gt;
+&lt;input type="button" name="abc" value="alphabetisch" onclick="ABC()"&gt;
+&lt;input type="button" name="geo" value="geographisch" onclick="GEO()"&gt;
+&lt;/form&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im Beispiel ist die nummerierte Liste zunächst mit den Städtenamen in alphabetischer Sortierfolge notiert. In dem Formular unterhalb der Liste sind zwei Klick-Buttons notiert. Der eine ruft die Funktion <code>ABC()</code> auf, der andere die Funktion <code>GEO()</code>. Ein Klick auf <code>ABC()</code> bringt natürlich nichts, da die Liste ohnehin alphabetisch sortiert ist. Also empfiehlt sich zunächst der Klick auf den Button mit der Aufschrift <code>geographisch</code>. Die Funktion <code>GEO()</code>, die er aufruft, prüft zunächst über die Variable <code>Art</code>, ob die Liste bereits geographisch sortiert ist. Wenn dies der Fall ist, wird die Funktion vorzeitig mit <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/sprache/funktionen.htm#rueckgabewert">return</a> ohne Rückgabewert beendet. Andernfalls erfolgt die Sortierung. Dazu wird mit zuerst <code>var Staedte = new Array();</code> ein neuer, leerer <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/array.htm">Array</a> definiert. Das Vorhaben ist, diesen Array mit den Städtenamen aus der Liste zu füllen. Dazu greift die Funktion der Reihe nach in einer <code>for</code>-Schleife alle Elemente vom Typ <code>li</code> ab, die in dem Dokument vorkommen.</p>
+
+<p>Der Zugriff erfolgt mit <code>document.getElementsByTagName("li")</code>.</p>
+
+<p>Über <code>document.getElementsByTagName("li").length</code> kann die Anzahl der <code>li</code>-Elemente im Dokument ermittelt werden. Diese Information benutzt die Funktion als Abbruchbedingung für die <code>for</code>-Schleife. Innerhalb der Schleife wird dem Array der Inhalt des jeweils aktuellen <code>li</code>-Elements hinzugefügt.</p>
+
+<p>Mit <code>document.getElementsByTagName("li")[i].firstChild.nodeValue</code> wird dabei auf den Inhalt des jeweiligen <code>li</code>-Elements zugegriffen. Aus DOM-Sicht ist <code>document.getElementsByTagName("li")[i]</code> ein Knoten, nämlich der <code>i</code>.te <code>li</code>-Elementknoten im Dokument. <code>firstChild</code> ist eine Eigenschaft des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/node.htm">node</a>-Objekts. Über diese Eigenschaft können Sie auf den ersten Kindknoten eines Knotens zugreifen. Der erste Kindknoten aller <code>li</code>-Elemente im Dokument ist deren Textinhalt, also jeweils ein Städtenamen. Die Eigenschaft <code>firstChild</code> liefert aber noch nicht den Inhalt des Elements, sondern nur das Objekt des Inhalts. Um tatsächlich an den Inhalt heranzukommen, also an den konkreten Städtenamen, muss eine weitere Eigenschaft des <code>node</code>-Objekts bemüht werden, nämlich die Eigenschaft <code>nodeValue</code>. Die Kombination <code>firstChild.nodeValue</code> können Sie sich ruhig merken. Diese Kombination werden Sie häufig verwenden, um an den Inhalt eines Elements zu kommen.</p>
+
+<p>Nachdem der Array mit den Städtenamen gefüllt ist, macht die Funktion <code>GEO()</code> einfach das Umgekehrte und schreibt den Array wieder zurück in die Liste - ebenfalls in einer <code>for</code>-Schleife.<br>
+Der Ausdruck <code>document.getElementsByTagName("li")[i].firstChild.nodeValue</code> steht diesmal links von der Zuweisung. Dadurch wird dem Inhalt des Listenelements dynamisch ein neuer Wert zugewiesen. Im Beispiel ist das der etwas vertrackst aussehende Wert <code>Staedte[geoArray[i]]</code>. Die Städte sollen ja geographisch ausgegeben werden. Nun gibt es keinen Algorithmus, der die Geographie kennt. Ganz oben im Script-Bereich ist daher ein Array namens <code>geoArray</code> notiert. Die Zahlen, mit denen er initialisiert wird, sind einfach die Indexnummern der alphabetisch sortierten Städte. So hat <code>geoArray[0]</code> beispielsweise den Wert <code>6</code>. Dank dieser Information weiß die Funktion <code>GEO()</code>, dass die nördlichste der Städte diejenige ist, die in der alphabetischen Sortierung die Indexnummer 6 hat (Hamburg). Mit <code><code>Staedte[geoArray[i]]</code></code> benutzt die Funktion als aktuellen Index für die Stadt, die in die Liste geschrieben werden soll, also einfach den Zugriff auf <code>geoArray</code>.</p>
+
+<p>Die Funktion <code>ABC()</code> geht ganz genauso vor wie die Funktion <code>GEO()</code>. Sie unterscheidet sich nur dadurch von letzterer, dass sie nach dem Einlesen des <code>Staedte</code>-Arrays die Objektmethode <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/array.htm#sort">sort()</a> auf den Array anwendet, um die Einträge zu sortieren. Dann schreibt sie den sortierten Array einfach zurück in die nummerierte Liste.</p>
+
+<p>Ein weiteres Element wird von beiden Funktionen ebenfalls noch geändert: nämlich das <code>span</code>-Element innerhalb der Überschrift. Da für dieses Element im HTML-Code mit <code>id="Art"</code> ein ID-Wert notiert ist, lässt sich mit <code>document.getElementById("Art")</code> bequem darauf zugreifen. Mit der üblichen Syntax <code>firstChild.nodeValue</code> wird der Text des Elements angesprochen und dynamisch geändert.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/dom10.gif" width="30" height="30" alt="DOM 1.0" title="DOM 1.0"><img src="../../src/js15.gif" width="30" height="30" alt="JavaScript 1.5" title="JavaScript 1.5"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie55.gif" width="30" height="30" alt="MS IE 5.5" title="MS IE 5.5"><img src="../../src/op7.gif" width="30" height="30" alt="Opera 7" title="Opera 7"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="html_attribute">HTML-Attribute dynamisch ändern</a></h2>
+
+<p>Durch das dynamische Hinzufügen, Ändern oder Löschen von HTML-Attributen lassen sich interessante Effekte, aber auch nützliche Zwecke erreichen. Das folgende Beispiel zeigt, wie Sie Verweise dynamisch ändern können.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/toplinks.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+var TopLinks = new Array("http://www.spiegel.de/",
+                         "http://www.heise.de/newsticker/",
+                         "http://www.encarta.msn.de/",
+                         "http://paperball.fireball.de/",
+                         "http://kochbuch.unix-ag.uni-kl.de/");
+var aktuellerLink = 0;
+
+function TopLink () {
+  document.getElementsByName("Ziel")[0].href = TopLinks[aktuellerLink];
+  document.getElementsByName("Ziel")[0].firstChild.nodeValue = TopLinks[aktuellerLink];
+  aktuellerLink += 1;
+  if (aktuellerLink &gt;= TopLinks.length)
+    aktuellerLink = 0;
+}
+
+function TopLinksFenster (Fenster) {
+  document.getElementsByName("Ziel")[0].target = Fenster;
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;p&gt;&lt;a name="Ziel" href="#Ziel"&gt;Top-Link?&lt;/a&gt;&lt;br&gt;
+&lt;a href="javascript:TopLink()"&gt;Nächster Top-Link!&lt;/a&gt;&lt;br&gt;
+TopLinks: &lt;a href="javascript:TopLinksFenster('_blank')"&gt;in neues Fenster laden!&lt;/a&gt; oder
+&lt;a href="javascript:TopLinksFenster('_self')"&gt;ins aktuelle Fenster laden!&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das Beispiel enthält im sichtbaren Bereich einen "Top-Link", der zunächst auf sich selbst verweist (<code>name="Ziel" href="#Ziel"</code>). Unterhalb davon sind drei weitere Verweise notiert. Der erste verspricht den jeweils nächsten Top-Link zu präsentieren, und die beiden darunter erlauben es dem Anwender festzulegen, wie er die Links öffnen will - ob im gleichen oder in einem neuen Fenster. Alle diese drei Verweise rufen JavaScript-Funktionen auf, die im Dateikopf notiert sind. Der Verweis, der den nächsten Top-Link verspricht, ruft die Funktion <code>TopLink()</code> auf.</p>
+
+<p>Diese Funktion greift mit <code>document.getElementsByName("Ziel")[0]</code> auf das erste Element im Dokument zu, bei dem als Attribut <code>name="Ziel"</code> notiert ist. Das ist im Beispiel bei dem Verweis der Fall, der die TopLinks anzeigen soll und aber bislang auf sich selbst verweist. Geändert werden sollen bei diesem Verweis sowohl sein <code>href</code>-Attribut als auch sein sichtbarer Verweistext. Der Zugriff auf das <code>href</code>-Attribut ist ganz einfach, weil nach der DOM-Syntax der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/htmlelemente.htm">HTML-Elementobjekte</a> jedes denkbare Attribut eines HTML-Elements einfach eine Eigenschaft des entsprechenden HTML-Objekts darstellt. Um auf HTML-Attribute zuzugreifen, brauchen Sie also nur auf das gewünschte Element zuzugreifen und dahinter, durch Punkt getrennt, den Attributnamen als Eigenschaft notieren. Beachten Sie dabei aber die besondere Groß-/Kleinschreibung bei verschiedenen Attributen wie <code>bgColor</code>, <code>vSpace</code> oder <code>cellPadding</code>.<br>
+Mit <code>document.getElementsByName("Ziel")[0].href</code> wird im Beispiel also direkt auf den Wert des <code>href</code>-Attributs des gewünschten Verweises zugegriffen. Durch Zuweisung eines Wertes wird das Attribut dynamisch geändert. Im Beispiel wird jeweils ein neuer Wert aus dem weiter oben im Script notierten <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/array.htm">Array</a> namens <code>TopLinks</code> zugewiesen. Als Indexzähler wird die ebenfalls zuvor schon definierte Variable <code>aktuellerLink</code> verwendet. Diese wird anschließend um 1 erhöht, damit beim nächsten Aufruf der Funktion der nächste Top-Link aus dem Array gesetzt wird. Wenn der Wert von <code>aktuellerLink</code> zu hoch wird, um noch einen Eintrag in dem Array zu finden, wird die Variable wieder auf 0 gesetzt, und beim nächsten Klick wird wieder der erste Eintrag aus dem Array serviert.<br>
+Der Zugriff auf den Verweistext erfolgt wieder über <code>firstChild.value</code>.</p>
+
+<p>Die Verweise, die regeln, in welchem Fenster die Top-Links geöffnet werden sollen, rufen jeweils die Funktion <code>TopLinksFenster()</code> auf und übergeben ihr als Parameter den gewünschten Zielfensternamen. Übergeben werden die reservierten Fensternamen <code>_self</code> (Öffnen im eigenen Fenster) bzw. <code>_blank</code> (Öffnen in neuem Fenster). Die Funktion <code>TopLinksFenster()</code> benutzt wieder den bequemen Weg über die HTML-Elementobjekte, um direkt auf die <code>target</code>-Eigenschaft des <code>a</code>-Elements zuzugreifen und das entsprechende Attribut zu setzen. Es ist also kein Problem, Attribute zu setzen, die im HTML-Quelltext eines Elements nicht notiert sind.</p>
+
+<p>Falls Sie mal ein Attribut löschen wollen, haben Sie zwei Möglichkeiten: entweder Sie setzen seinen Wert auf <code>""</code> (leere Zeichenkette), oder - und das ist sauberer - Sie arbeiten mit der Methode <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/node.htm#remove_attribute">removeAttribute()</a> des <code>node</code>-Objekts.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/dom20.gif" width="30" height="30" alt="DOM 2.0" title="DOM 2.0"><img src="../../src/js15.gif" width="30" height="30" alt="JavaScript 1.5" title="JavaScript 1.5"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie55.gif" width="30" height="30" alt="MS IE 5.5" title="MS IE 5.5"><img src="../../src/op7.gif" width="30" height="30" alt="Opera 7" title="Opera 7"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="css_eigenschaften">CSS-Eigenschaften dynamisch ändern</a></h2>
+
+<p>Seit der DOM-Version 2.0 wird auch geregelt, wie auf Stylesheet-Angaben zugegriffen wird. Dabei hat man sich weitgehend an das seinerzeit von Microsoft eingeführte <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/style.htm">style</a>-Objekt angelehnt.<br>
+Das folgende Beispiel zeigt, wie Sie mit Hilfe der DOM-Technik typisches, klassisches dynamisches HTML mit Bewegung positionierter Elemente schreiben. Dazu dient die Möglichkeit, Elemente mit Hilfe von CSS-Eigenschaften absolut zu positionieren.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/ichkreis.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+var rp, bp, ich;
+var rpGeschw = 10, bpGeschw = 20;
+var rpGrad = 0, bpGrad = 0;
+var rpX = 170, rpY = 170, bpX = 170, bpY = 170;
+var rpRadius = 150, bpRadius = 150;
+
+function Init () {
+  rp = document.getElementById("roterPunkt");
+  bp = document.getElementById("blauerPunkt");
+  ich = document.getElementById("ich");
+  rp.style.position = "absolute";
+  rp.style.top = 20 + "px";
+  rp.style.left = 320 + "px";
+  bp.style.position = "absolute";
+  bp.style.top = 320 + "px";
+  bp.style.left = 320 + "px";
+  ich.style.position = "absolute";
+  ich.style.top = 110 + "px";
+  ich.style.left = 90 + "px";
+  ich.style.fontFamily = "Courier New,Courier";
+  ich.style.fontSize = "96px";
+  ich.style.fontWeight = "bold";
+  ich.style.color = "#009900";
+  rpKreis();
+  bpKreis();
+}
+
+function rpKreis () {
+  rpGrad += rpGeschw / 1000;
+  if (rpGrad &gt; 360)
+    rpGrad = 0;
+  rp.style.top = Math.round(rpY + (rpRadius * Math.cos(rpGrad))) + "px";
+  rp.style.left = Math.round(rpX + (rpRadius * Math.sin(rpGrad))) + "px";
+  window.setTimeout("rpKreis()", 100 / rpGeschw);
+}
+
+function bpKreis () {
+  bpGrad += bpGeschw / 1000;
+  if (bpGrad &gt; 360)
+    bpGrad = 0;
+  bp.style.top = Math.round(bpY + (bpRadius * Math.cos(bpGrad))) + "px";
+  bp.style.left = Math.round(bpX + (bpRadius * Math.sin(bpGrad))) + "px";
+  window.setTimeout("bpKreis()", 100 / bpGeschw);
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body onload="Init()"&gt;
+
+&lt;div id="roterPunkt"&gt;&lt;img src="ichkreis1.gif" width="20" height="20" border="0" alt="roter Punkt"&gt;&lt;/div&gt;
+&lt;div id="blauerPunkt"&gt;&lt;img src="ichkreis2.gif" width="20" height="20" border="0" alt="blauer Punkt"&gt;&lt;/div&gt;
+&lt;div id="ich"&gt;ICH&lt;/div&gt;
+
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Innerhalb des <code>body</code>-Bereichs werden im Beispiel einfach nur drei <code>div</code>-Bereiche ohne weitere Formatierungen notiert. Die ersten beiden enthalten jeweils eine kleine Grafik - <code>ichkreis1.gif</code> ist ein roter Punkt, <code>ichkreis2.gif</code> ein blauer Punkt. Beide Grafiken haben einen transparenten Hintergrund, was wichtig ist, da sich die Punkte im späteren Verlauf des Geschehens öfter überlagern werden.</p>
+
+<p>Im einleitenden <code>&lt;body&gt;</code>-Tag ist der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/sprache/eventhandler.htm">Event-Handler</a> <code>onload</code> notiert. Dieser tritt in Aktion, sobald die Datei vollständig im Browser geladen ist. Dann wird die Funktion <code>Init()</code> aufgerufen, die im Dateikopf notiert ist. Diese Funktion speichert zunächst einmal Referenzen auf die drei <code>div</code>-Elemente in den drei Variablen <code>rp</code>, <code>bp</code> und <code>ich</code>, um die darauffolgenden Zugriffe auf diese Elemente zu verkürzen. Da alle drei <code>div</code>-Bereiche ein <code>id</code>-Attribut haben, ist der Zugriff auf den entsprechenden Elementknoten mit <code>getElementById("roterPunkt")</code> usw. möglich. Anschließend lässt sich mit <code>rp</code> usw. genauso arbeiten, als wenn man jedesmal wieder <code>document.getElementById("roterPunkt")</code> notieren würde.</p>
+
+<p>Über die Variablen <code>rp</code>, <code>bp</code> und <code>ich</code> ist dann auch das <code>style</code>-Objekt ansprechbar. Die Funktion <code>Init()</code> stattet die drei <code>div</code>-Bereiche erst einmal mit anfänglichen CSS-Eigenschaften aus. Alle drei Bereiche werden mit <code>style.position = "absolute"</code> absolut positioniert. Die linke obere Ecke jedes Bereichs wird mit <code>style.left</code> und <code>style.top</code> bestimmt. Der Inhalt des <code>ich</code>-Bereichs, also das Wort <code>ICH</code>, wird groß und auffällig formatiert.</p>
+
+<p>Am Ende ruft die Funktion <code>Init()</code> die beiden anderen Funktionen <code>rpKreis()</code> und <code>bpKreis()</code> auf. Jede dieser beiden Funktionen kontrolliert die Kreisbewegung jeweils eines der beiden Punkte, indem sie letztlich die linke obere Ecke des <code>div</code>-Bereichs, der die jeweilige Grafik enthält, neu berechnet. Dabei kommen die Kreisfunktionen für Sinus (<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/math.htm#sin">Math.sin()</a>) und Cosinus (<img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/math.htm#cos">Math.cos()</a>) zum Einsatz. Am Ende ruft jede der beiden Funktionen sich selber rekursiv mit <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/window.htm#set_timeout">window.setTimeout()</a> wieder auf, um die nächste Position des <code>div</code>-Bereichs mit der Grafik zu setzen. Die Variablen wie <code>bpGrad</code>, <code>bpGeschw</code> usw., mit denen diese Funktionen arbeiten, wurden zuvor im globalen Bereich des Scripts initialisiert.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/dom10.gif" width="30" height="30" alt="DOM 1.0" title="DOM 1.0"><img src="../../src/js15.gif" width="30" height="30" alt="JavaScript 1.5" title="JavaScript 1.5"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie55.gif" width="30" height="30" alt="MS IE 5.5" title="MS IE 5.5"><img src="../../src/op7.gif" width="30" height="30" alt="Opera 7" title="Opera 7"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="neue_knoten">Neue Knoten erzeugen und in Baumstruktur einhängen</a></h2>
+
+<p>Dynamisches HTML nach DOM bedeutet nicht nur, auf bereits in HTML vorhandene Elemente zuzugreifen, sondern auch neue zu erzeugen und in den Strukturbaum einzuhängen. Wie das funktioniert, zeigt das folgende Beispiel. Es stellt einen primitiven HTML-Editor dar.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/editor.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;style type="text/css"&gt;
+body { color:#000000; background-color:#FFFFFF; }
+#User { background-color:#FFFFC0; padding:10px; }
+form { background-color:#EEEEEE; padding:10px; }
+h1 { font-family:Arial,sans-serif; font-size:2.2em; font-weight:normal; border-bottom:2px solid red; }
+h2 { font-family:Arial,sans-serif; font-size:1.8em; font-weight:normal; border-bottom:1px solid red; }
+h3 { font-family:Arial,sans-serif; font-size:1.1em; font-weight:bold; }
+p { font-family:Arial,sans-serif; font-size:1em; }
+&lt;/style&gt;
+&lt;script type="text/javascript"&gt;
+function Hinzufuegen () {
+  var Typ = document.Formular.Elementtyp.options[document.Formular.Elementtyp.selectedIndex].value;
+  var Elementknoten = document.createElement(Typ);
+  if (Typ != "hr") {
+    var Textknoten = document.createTextNode(document.Formular.Elementinhalt.value);
+    Elementknoten.appendChild(Textknoten);
+  }
+  document.getElementById("User").appendChild(Elementknoten);
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+
+&lt;form name="Formular" action=""&gt;
+&lt;select name="Elementtyp" size="1"&gt;
+&lt;option value="h1"&gt;Überschrift 1&lt;/option&gt;
+&lt;option value="h2"&gt;Überschrift 2&lt;/option&gt;
+&lt;option value="h3"&gt;Überschrift 3&lt;/option&gt;
+&lt;option value="p"&gt;Textabsatz&lt;/option&gt;
+&lt;option value="hr"&gt;Trennlinie&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type="text" name="Elementinhalt" size="50"&gt;
+&lt;input type="button" value="Hinzufügen" onclick="Hinzufuegen()"&gt;
+&lt;/form&gt;
+
+&lt;div id="User"&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das Beispiel enthält im sichtbaren HTML-Bereich ein Formular mit einer Auswahlliste, einem Eingabefeld und einem Klick-Button. Unterhalb ist noch ein <code>div</code>-Bereich notiert, der jedoch noch keinen konkreten Inhalt hat. In der Auswahlliste des Formulars kann der Anwender einen HTML-Elementtyp auswählen - in den <code>value</code>-Attributen der <code>option</code>-Elemente sind die tatsächlichen HTML-Elementnamen der jeweiligen Auswahl gespeichert. Im Eingabefeld des Formulars kann der Anwender den Textinhalt für das ausgewählte Element eingeben. Wenn er dann auf den Button klickt, wird die Funktion <code>Hinzufuegen()</code> aufgerufen, die im Dateikopf in einem JavaScript-Bereich notiert ist.</p>
+
+<p>Dort wird erst einmal der lange, umständliche Ausdruck <code>document.Formular.Elementtyp.options[document.Formular.Elementtyp.selectedIndex].value</code> in der Variablen <code>Typ</code> gespeichert. Der lange Ausdruck bzw. die Variable speichert den vom Anwender im Formular ausgewählten HTML-Elementtyp, also z.B. <code>"h1"</code> oder <code>"p"</code>.</p>
+
+<p>Mit <code>document.createElement(Typ)</code> wird dann ein leeres, neues Element vom Typ <code>Typ</code> erzeugt, also je nach Wert der Variablen <code>Typ</code> z.B. ein <code>h1</code>-Element oder ein <code>p</code>-Element. Damit wird das Element aber noch nicht angezeigt. <code>document.createElement()</code> erzeugt lediglich den Elementknoten, hängt ihn aber noch nicht in den Strukturbaum des Dokuments ein. Im Folgenden muss das Script zwischen Elementen unterscheiden, die einen Textinhalt haben, und solchen, die keinen haben. Das <code>hr</code>-Element für Trennlinien, das der Anwender ebenfalls auswählen kann, kann keinen Textinhalt haben. Alle anderen auswählbaren Elemente dagegen können Textinhalt haben. Durch eine <code>if</code>-Anweisung wird daher abgefragt, ob die Variable <code>Typ</code> den Wert <code>"hr"</code> besitzt. Nur wenn dies nicht der Fall ist, wird der Textknoten mit der Methode <code>document.createTextNode()</code> erzeugt. Als Parameter erhält diese Methode den Text, den der Anwender ins Eingabefeld des Formulars eingegeben hat. Danach wird der Textknoten an den erzeugten Elementknoten gehängt, sodass der Text letztendlich auch sichtbar ist. In allen Fällen wird schließlich das neu erzeugte und in der Variablen <code>Elementknoten</code> gespeicherte Element in den Dokumentbaum eingehängt.</p>
+
+<p>Für alle "Einhäng"-Vorgänge wird die Methode <code>appendChild()</code> des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/node.htm">node</a>-Objekts verwendet. Anwendbar ist die Methode auf ein Knotenobjekt, das Kindknoten haben darf. Also beispielsweise Elementknoten. Als Parameter erwartet die Methode einen Knoten, der als Kindknoten eingehängt werden soll.<br>
+Wenn im Beispiel also steht: <code>Elementknoten.appendChild(Textknoten);</code><br>
+Dann ist <code>Elementknoten</code> eine Variable, in der zuvor durch <code>createElement()</code> ein Elementobjekt erzeugt wurde, und <code>Textknoten</code> ist eine Variable, die zuvor durch Aufruf von <code>createTextNode()</code> einen Textknoten gespeichert hat.<br>
+Mit der Anweisung <code>document.getElementById("User").appendChild(Elementknoten)</code> wird auf den zunächst leeren <code>div</code>-Bereich im Dokument zugegriffen. Diesem Element wird der neu erzeugte Elementknoten hinzugefügt.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/dom20.gif" width="30" height="30" alt="DOM 2.0" title="DOM 2.0"><img src="../../src/js15.gif" width="30" height="30" alt="JavaScript 1.5" title="JavaScript 1.5"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/op7.gif" width="30" height="30" alt="Opera 7" title="Opera 7"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="event_handling">Event-Handling beim DOM</a></h2>
+
+<p>Die Normierung des Event-Handling im DOM war zum Redaktionszeitpunkt dieses Dokuments noch nicht abgeschlossen - so fehlte beispielsweise noch die Implementierung von Tastaturereignissen. Der Internet Explorer interpretiert auch noch keine Events nach DOM-Syntax, Netscape 6 dagegen schon. Das folgende Beispiel zeigt das Prinzip, nach dem Event-Handling nach DOM-Syntax funktioniert.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/domevents.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script type="text/javascript"&gt;
+function Ausgeben(Text) {
+  var LogEintrag = document.createElement("li");
+  var neuerText = document.createTextNode(Text);
+  LogEintrag.appendChild(neuerText);
+  document.getElementById("Log").appendChild(LogEintrag);
+}
+
+function handleEingabefeldClick (Event) {
+  var Text = "Sie haben in das Eingabefeld geklickt. " +
+    "Event-Typ = " + Event.type + ", " +
+    "Event-Target-Elementname = " + Event.target.nodeName + ".";
+  Ausgeben(Text);
+}
+
+function handleBereichMove (Event) {
+  var Text = "Sie haben die Maus im Bereich bewegt. " +
+    "X-Position = " + Event.clientX + ", " +
+    "Y-Position = " + Event.clientY + ".";
+  Ausgeben(Text);
+}
+
+function handleBereichClick (Event) {
+  var Text = "Sie haben in den Bereich geklickt. " +
+    "X-Position = " + Event.clientX + ", " +
+    "Y-Position = " + Event.clientY + ".";
+  Ausgeben(Text);
+}
+
+function Init () {
+  document.getElementById("Eingabe").addEventListener("click", handleEingabefeldClick, false);
+  document.getElementById("Bereich").addEventListener("mousemove", handleBereichMove, false);
+  document.getElementById("Bereich").addEventListener("click", handleBereichClick, false);
+}
+&lt;/script&gt;
+&lt;style type="text/css"&gt;
+#Formular { background-color:#EEEEEE; padding:10px }
+#Bereich { background-color:#FF0000; color:#FFFFFF; font-weight:bold; width:100px; }
+#Log { font-family:Arial,sans-serif; font-size:80%; }
+&lt;/style&gt;
+&lt;/head&gt;&lt;body onload="Init()"&gt;
+
+&lt;form name="Formular" id="Formular" action=""&gt;
+&lt;input type="text" name="Eingabe" id="Eingabe" size="50"&gt;
+&lt;/form&gt;
+
+&lt;div id="Bereich"&gt;Ein Bereich&lt;/div&gt;
+
+&lt;ol id="Log"&gt;
+&lt;li&gt;Ereignisliste&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im sichtbaren Bereich der HTML-Datei ist ein Formular mit einem Eingabefeld notiert, ferner ein <code>div</code>-Bereich, und schließlich eine leere, nummerierte Liste. Im einleitenden <code>&lt;body&gt;</code>-Tag ist der Event-Handler <code>onload</code> notiert, der jedoch noch nichts mit Event-Handling nach DOM-Syntax zu tun hat. Dort wird einfach erst mal die Funktion <code>Init()</code> aufgerufen, die im Dateikopf notiert ist.</p>
+
+<p>Innerhalb der Funktion <code>Init()</code> geht es jedoch in Sachen DOM-Event-Handling zur Sache. Event-Handling besteht beim DOM zunächst einmal darin, für einen beliebigen Knoten im Dokument eine Ereignisüberwachung zu registrieren. Dazu gibt es die Methode <code>addEventListener()</code>. Mit dem Teil davor, im Beispiel etwa <code>document.getElementById("Eingabe")</code>, wird derjenige Knoten im Dokument angesprochen, für den eine Ereignisüberwachung registriert werden soll. Im Beispiel der Funktion <code>Init()</code> werden insgesamt drei Ereignisüberwachungen angestoßen: eine für das Eingabefeld des Formulars, und zwei für den <code>div</code>-Bereich.</p>
+
+<p>Die Methode <code>addEventListener()</code> erwartet drei Parameter. Der erste Parameter gibt an, welcher Ereignistyp überwacht werden soll. Bei Mausereignissen sind das weitgehend die aus dem JavaScript-Objekt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/event.htm">event</a> bekannten Ereignistypen wie <code>click</code>, <code>mouseover</code>, <code>mousedown</code>, <code>mouseup</code>, <code>mousemove</code>. Dazu kommen im DOM Event-Typen wie <code>DOMFocusIn</code> (Knoten erhält den Fokus), <code>DOMFocusOut</code> (Knoten verliert den Fokus), <code>DOMActivate</code> (Knoten wird durch Mausklick oder Tastendruck aktiviert), sowie anwenderunabhängige Ereignisse wie <code>DOMSubtreeModified</code> (Strukturbaum geändert), <code>DOMNodeInserted</code> (Knoten in Strukturbaum eingefügt) oder <code>DOMNodeRemoved</code> (Knoten aus Strukturbaum entfernt). Der Name des gewünschten Ereignistyps muss bei der Parameterangabe in Anführungszeichen stehen.</p>
+
+<p>Der zweite Parameter, den <code>addEventListener()</code> erwartet, ist der Name einer Funktion, die beim Eintreten des Events aufgerufen werden soll. Der Name der Funktion wird ohne Anführungszeichen angegeben. Die angegebene Funktion bekommt automatisch ein Ereignisobjekt übergeben und kann dann damit anfangen was sie will. Dazu weiter unten mehr.</p>
+
+<p>Die Ereignisse werden beim DOM-Event-Handling in drei Phasen verarbeitet: 1. die <i>Capture-Phase</i> (engl. <i>einfangen</i>), 2. die <i>Target-Phase</i> (engl. <i>Ziel</i>) und 3. die <i>Bubbling-Phase</i> (engl. <i>aufsteigen</i>). In der Capture-Phase läuft das Ereignis von dem äußersten Element des DOM-Baums (dem <code>html</code>-Element) zu dem Ziel-Element, für das das Ereignis bestimmt ist. Auf diesem Weg werden alle Event-Handler ausgelöst, die für die passierten Elemente für die Capture-Phase registriert sind. In der Target-Phase werden alle Event-Handler ausgelöst, die für das Ziel-Element registriert sind. In der Bubbling-Phase schließlich wandert das Ereignis schließlich vom Ziel-Element über dessen Eltern-Elemente zurück zum äußersten Element. In dieser Phase werden alle Event-Handler ausgelöst, die für die passierten Elemente für die Bubbling-Phase registriert sind. Nicht bei allen Ereignistypen steigen die Ereignisse auf (Bubbling).</p>
+
+<p>Mit dem dritten Parameter von <code>addEventListener()</code> können Sie bestimmen, in welcher Phase ein Event-Handler aktiv wird. Mit <code>true</code> wird die Handler-Funktion in der Capture-Phase aufgerufen, mit <code>false</code> in der Target- oder Bubbling-Phase. In der Regel sollten Sie <code>false</code> wählen. Dieses Verhalten stellt einen Kompromiss zwischen der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="microsoft.htm#event_bubbling">Vererbung bei Events (Event-Bubbling)</a> bei dem <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="microsoft.htm">älteren DHTML-Modell von Microsoft</a> und der Funktion <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/objekte/window.htm#capture_events">captureEvents()</a> bei dem <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="netscape.htm">älteren DHTML-Modell von Netscape</a> dar.</p>
+
+<p>Für jedes Ereignis, das Sie überwachen wollen, benötigen Sie eine Funktion, die auf das Ereignis reagiert - die sogenannte <i>Handler-Funktion</i>. Es ist die Funktion mit dem Namen, der bei <code>addEventListener()</code> als zweiter Parameter angegeben wird. Im obigen Beispiel sollen drei Ereignisse überwacht werden. Deshalb gibt es drei ähnliche Funktionen - mit den Namen <code>handleEingabefeldClick()</code>, <code>handleBereichMove()</code> und <code>handleBereichClick()</code>. Alle drei Funktionen bekommen beim automatischen Aufruf, der beim Eintritt des Ereignisses passiert, das Ereignis als Objekt übergeben. Die Funktionen im Beispiel erwarten deshalb einen Parameter <code>Event</code>. Dieses Ereignisobjekt besitzt Eigenschaften, die Informationen zum Ereignis bereitstellen, und Methoden, mit denen sich die Ereignisverarbeitung steuern lässt. Bei Mausereignissen gibt es beispielsweise Eigenschaften wie <code>clientX</code> (Anzahl Pixel vom linken Rand des sichtbaren Knotenbereichs), <code>clientY</code> (Anzahl Pixel vom oberen Rand des sichtbaren Knotenbereichs), <code>screenX</code> (Anzahl Pixel vom linken Bildschirmrand) oder <code>screenY</code> (Anzahl Pixel vom oberen Bildschirmrand).</p>
+
+<p>Im Beispiel stellen die Funktionen, die ein Ereignis überwachen, einfach nur einen Text zusammen und rufen dann die Funktion <code>Ausgeben()</code> mit dem zusammengestellten Text auf. Die Funktion <code>Ausgeben()</code> erzeugt zuerst mit <code>document.createElement("li")</code> ein neues HTML-Element vom Typ <code>li</code>. Dann erzeugt sie mit <code>document.createTextNode(Text)</code> einen neuen Textknoten mit dem übergebenen Text. Schließlich hängt sie den Textknoten mit <code>appendChild()</code> als Kindknoten in den erzeugten <code>li</code>-Elementknoten ein, und diesen in die im Dokument notierte nummerierte Liste. Auf diese Weise füllt sich die nummerierte Liste dynamisch mit jedem Ereignis, das erkannt wurde.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Noch nicht alle Browser, die prinzipiell Ereignisüberwachung nach DOM-Syntax unterstützen, führen Handler-Funktionen, die für die Capture-Phase registriert sind, korrekt aus. Solche Handler-Funktionen werden nur aktiviert, wenn sich das Ziel-Element des Ereignisses unterhalb des Elements befindet, bei dem die Handler-Funktion für die Capture-Phase registriert wurde. Mozilla Firefox und Safari rufen die Funktion irrtümlicherweise trotzdem auf.</p>
+
+<p>Im Beispiel wurde die herkömmliche Methode <code>onload="Init()"</code> verwendet, um die Funktion <code>Init()</code> beim abgeschlossenen Laden der HTML-Datei aufzurufen, um darin die restliche Ereignisüberwachung zu starten. Diese ist theoretisch durch folgende Konstruktion ersetzbar:</p>
+
+<pre>
+document.addEventListener("load", Init, false);
+</pre>
+
+<p>Allerdings passiert im Mozilla Firefox 1.5 kein <code>load</code>-Ereignis am <code>document</code>-Objekt, obwohl dies im DOM-Standard so vorgeschrieben ist. Eine Alternative wäre die Verwendung von <code>window.addEventListener("load", Init, false)</code>. Dies wird zwar breiter unterstützt, allerdings liegt das <code>window</code>-Objekt außerhalb des DOM-Standards.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="microsoft.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="microsoft.htm">Das ältere DHTML-Modell von Microsoft</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../intro.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../intro.htm">Allgemeines zu Dynamischem HTML</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Dynamisches HTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">DHTML-Modelle</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

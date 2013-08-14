@@ -1,0 +1,3 @@
+<![ IGNORE [
+<!ELEMENT book (comments*,title,author,summary)>
+]]>

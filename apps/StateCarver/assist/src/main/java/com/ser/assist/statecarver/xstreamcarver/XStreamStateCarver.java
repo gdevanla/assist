@@ -107,17 +107,19 @@ public class XStreamStateCarver {
     }
 
     private void save(Object o, String fileName){
-        try{
+        //try{
             String filePath = getFilePath(fileName);
             System.out.println("Writing to file =" + filePath);
-            ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(filePath, false));
-            out.writeObject(o);
-            out.close();
-        }
-        catch(IOException e){
+           // ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(filePath, false));
+           // out.writeObject(o);
+           // out.close();
+        //}
+        //catch(IOException e){
             //I need a better logger here
-            System.out.println("Error while saving state " + o.toString() + o.getClass() + e);
-        }
+          //  System.err.println("Error while saving state " + o.toString() + o.getClass() + e);
+          //  System.err.println("Error in write Method Trace");
+          //  System.exit(-1);
+        //}
     }
 
     private Object load(String filePath){

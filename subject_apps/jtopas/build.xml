@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  JTopas - Java tokenizer and parser tools
+
+  Build file used by the Jakarta Ant utility.
+  Visit: http://jakarta.apache.org
+
+  Remarks:
+    1. To build the target "compile_junit" You need to have the
+       junit.jar archive in Your CLASSPATH environment variable
+-->
+<project basedir="." default="help" name="JTopas">
+
+  <!-- Target Names -->
+  <property name="project.archive" value="jtopas"/>
+  <property name="project.version" value="0.8"/>
+  <property name="JTopasLib"       value="jtopas"/>
+  <property name="JTopas-JTLib"    value="jtopas-jt"/>
+
+  <!-- Structure Property Definitions -->
+  <property name="src.dir"      value="src"/>
+  <property name="junit.dir"    value="junit"/>
+  <property name="build.dir"    value="build"/>
+  <property name="lib.dir"      value="${build.dir}/${ant.java.version}/lib"/>
+  <property name="doc.dir"      value="${build.dir}/doc"/>
+  <property name="javadoc.dir"  value="${doc.dir}"/>
+<!--  <property name="classes.dir"
+            value="${build.dir}/${ant.java.version}"/>-->
+  <property name="classes.dir"
+            value="/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/experiments/results/jtopas/sootOutput"/>
+  <property name="export.dir"   value="/tmp"/>
+  <property name="export.tag"   value=""/>
+  <property name="archive.name" value="${project.archive}-${project.version}"/>
+  <property name="CVSModule"    value="jtopas"/>
+
+  <!-- JUnit related properties -->
+  <property name="main.class"   value="de.susebox.SuseboxTestSuite"/>
+  <property name="junit.ui"     value="textui"/>
+
+  <!-- Ant context properties -->
+  <condition property="context.debug" value="on">
+    <isset property="netbeans.home"/>
+  </condition>
+  <condition property="context.debug" value="off">
+    <not><isset property="netbeans.home"/></not>
+  </condition>
+
+  <!-- File and pattern sets -->
+  <patternset id="src.pattern">
+    <exclude name="**/*Test*"/>
+  </patternset>
+  <patternset id="junit.pattern">
+    <include name="**/*Test*"/>
+  </patternset>
+
+  <!-- Paths -->
+  <path id="project.classpath">
+    <fileset dir="${lib.dir}"/>
+    <pathelement path="${java.class.path}"/>
+  </path>
+
+  <path id="project.sourcepath">
+    <pathelement path="${src.dir}"/>
+    <pathelement path="${junit.dir}"/>
+  </path>
+
+  <!-- Target: help -->
+  <target name="help">
+    <echo message="The following targets are available:"/>
+    <echo message="  prepare:       setup destination directory structure &apos;${build.dir}&apos;"/>
+    <echo message="  clean:         remove destination directory structure &apos;${build.dir}&apos;"/>
+    <echo message="  compile:       DEFAULT - compile the java sources into .class files"/>
+    <echo message="  compile_junit: compile the JUnit test cases"/>
+    <echo message="                 (You need to have the junit archive in Your CLASSPATH)"/>
+    <echo message="  javadoc:       generate Java API documentation into ${javadoc.dir}"/>
+    <echo message="  jar:           build all jar archives (jar_all + jar_core + jar_compat + jar_junit)"/>
+    <echo message="  jar_junit:     archive the compiled test classes into ${JTopas-JTLib}.jar"/>
+    <echo message="  all:           build all targets shown above"/>
+    <echo message=" "/>
+    <echo message="Special deployment targets:"/>
+    <echo message="  archive:       make target &apos;all&apos; and build a tar&apos;ed and gnu-zipped archive(.tgz)"/>
+    <echo message="  archive_only:  build a tar&apos;ed and gnu-zipped archive(.tgz)"/>
+    <echo message=" "/>
+    <echo message="Special targets for CVS:"/>
+    <echo message="  checkin:       commit checked-out source files into the repository"/>
+    <echo message="  checkout:      checkout sources from the repository"/>
+    <echo message="  export:        get a copy of the current version from the repository"/>
+    <echo message=" "/>
+    <echo message="Running test cases:"/>
+    <echo message="  run_junit:     run the test cases (use -Dmain.class and -Djunit.ui to customize)"/>
+  </target>
+
+  <!-- Target: prepare -->
+  <target name="prepare">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${classes.dir}"/>
+    <mkdir dir="${lib.dir}"/>
+    <mkdir dir="${doc.dir}"/>
+    <mkdir dir="${javadoc.dir}"/>
+  </target>
+
+  <!-- Target: clean -->
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <!-- Target: compile -->
+  <target name="compile" depends="prepare">
+    <doCompile sourcepath.root="${src.dir}" compile.debug="${context.debug}"/>
+  </target>
+
+  <!-- Target: compile_junit -->
+  <target name="compile_junit" depends="compile">
+    <doCompile sourcepath.root="${junit.dir}" compile.debug="${context.debug}"/>
+  </target>
+
+  <!-- Target: javadoc -->
+  <target name="javadoc" depends="prepare">
+    <javadoc author="true"
+	     bottom="Copyright 2001 - 2004 Heiko Blau. All rights reserved."
+	     destdir="${javadoc.dir}"
+	     packagenames="de.susebox.*"
+	     sourcepath="${src.dir}"
+	     splitindex="true"
+	     use="true"
+	     version="true"
+	     windowtitle="JTopas - Java tokenizer and parser tools"/>
+  </target>
+
+  <!-- Target: jar -->
+  <target name="jar">
+    <doJar jar.name="${JTopasLib}" pattern.id="src.pattern"/>
+  </target>
+
+  <!-- Target: jar_junit -->
+  <target name="jar_junit" depends="compile_junit">
+    <doJar jar.name="${JTopas-JTLib}" pattern.id="junit.pattern"/>
+  </target>
+
+  <!-- Target: run_junit -->
+  <target name="run_junit" depends="jar,jar_junit">
+    <java classname="${main.class}" fork="true" maxmemory="128m" failonerror="true">
+      <classpath>
+        <path refid="project.classpath"/>
+        <pathelement location="${junit.dir}"/>
+      </classpath>
+      <arg value="${junit.ui}"/>
+    </java>
+  </target>
+
+  <!-- Target: all -->
+  <target name="all" depends="jar,jar_junit"/>
+
+  <!-- Target: archive_only -->
+  <target name="archive_only" depends="all">
+    <tar basedir=".." includes="jtopas/**" excludes="**/*.class,**/*~,**/.*,**/CVS/*,**/CVSROOT/*,**/CVSROOT,**/deploy.sh" tarfile="../${archive.name}.tar"/>
+    <gzip src="../${archive.name}.tar" zipfile="../${archive.name}.tar.gz"/>
+    <delete file="../${archive.name}.tar"/>
+  </target>
+
+
+  <!-- Target: archive -->
+  <target name="archive" depends="all,archive_only"/>
+
+  <!-- Target: checkout -->
+  <target name="checkout">
+    <cvs dest="." package="${CVSModule}"/>
+  </target>
+
+  <!-- Target: checkin -->
+  <target name="checkin">
+    <cvs command="commit"/>
+  </target>
+
+  <!-- Target: export -->
+  <target name="export">
+    <cvs command="export ${export.tag}" dest="${export.dir}" package="${CVSModule}"/>
+  </target>
+
+
+  <!-- ================================
+       Targets for the NetBeans 4.0 IDE
+       ================================ -->
+
+  <!-- Target: debug -->
+  <target name="debug" depends="compile" if="netbeans.home" description="Debug Project">
+    <nbjpdastart  name="${main.class}"
+                  addressproperty="jpda.address"
+                  transport="dt_socket">
+      <classpath refid="project.classpath.debug"/>
+      <sourcepath refid="project.sourcepath"/>
+    </nbjpdastart>
+    <java fork="true" classname="${main.class}">
+      <jvmarg value="-Xdebug"/>
+      <jvmarg value="-Xnoagent"/>
+      <jvmarg value="-Djava.compiler=none"/>
+      <jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+      <classpath refid="project.classpath.debug"/>
+    </java>
+  </target>
+
+  <!-- Target compile-single -->
+  <target name="compile-single-src" depends="prepare" if="netbeans.home">
+    <fail unless="compile.src.files">Must set property 'compile.src.files'</fail>
+    <doCompile sourcepath.root="${src.dir}" compile.files="${compile.src.files}" compile.debug="on"/>
+  </target>
+
+  <target name="compile-single-junit" depends="prepare" if="netbeans.home">
+    <fail unless="compile.junit.files">Must set property 'compile.junit.files'</fail>
+    <doCompile sourcepath.root="${junit.dir}" compile.files="${compile.junit.files}" compile.debug="on"/>
+  </target>
+
+  <target name="debug-single" depends="jar, jar_junit" if="netbeans.home">
+    <fail unless="debug.classname">Must set property 'debug.classname'</fail>
+    <nbjpdastart name="${debug.classname}" addressproperty="jpda.address" transport="dt_socket">
+      <classpath  refid="project.classpath"/>
+      <sourcepath refid="project.sourcepath"/>
+    </nbjpdastart>
+    <java classname="${debug.classname}" fork="true">
+      <jvmarg value="-Xdebug"/>
+      <jvmarg value="-Xnoagent"/>
+      <jvmarg value="-Djava.compiler=none"/>
+      <jvmarg value="-Xrunjdwp:transport=dt_socket,address=${jpda.address}"/>
+      <classpath refid="project.classpath"/>
+    </java>
+  </target>
+
+
+  <!-- ================================
+       MacroDefs
+       ================================ -->
+
+  <!-- Macro: doJar - Building jar files -->
+  <macrodef name="doJar">
+    <attribute name="jar.name"    description="Name for the java archive to build in ${lib.dir}"/>
+    <attribute name="pattern.id"  description="Id of a pattern set for the class files to include/exclude"/>
+    <sequential>
+      <tstamp>
+        <format property="timestamp.display" pattern="dd.MM.yyyy, HH:mm:ss,SSS"/>
+        <format property="timestamp.version" pattern="yyyyMMDddHHmmss"/>
+      </tstamp>
+      <jar jarfile="${lib.dir}/@{jar.name}.jar">
+        <manifest>
+          <attribute name="Specification-Title"    value="${ant.project.name}"/>
+          <attribute name="Specification-Version"  value="${project.version}"/>
+          <attribute name="Specification-Vendor"   value="Susebox"/>
+          <attribute name="Implementation-Title"   value="${ant.project.name}"/>
+          <attribute name="Implementation-Version" value="${project.version}/${timestamp.version}/${java.version}"/>
+          <attribute name="Implementation-Vendor"  value="Susebox"/>
+          <attribute name="Built-By"               value="${user.name} on ${os.name} ${os.version} (${os.arch})"/>
+          <attribute name="Built-Time"             value="${timestamp.display}"/>
+        </manifest>
+        <fileset dir="${classes.dir}">
+          <patternset refid="@{pattern.id}"/>
+        </fileset>
+      </jar>
+    </sequential>
+  </macrodef>
+
+  <!-- Macro: doCompile - compiling files given via a pattern -->
+  <macrodef name="doCompile">
+    <attribute name="sourcepath.root" description="Pattern for the source root directories."/>
+    <attribute name="compile.files"   description="Pattern for the files to compile." default="**/*.java"/>
+    <attribute name="classpath.id"    description="ID of a path-like structure (see Ant manual) for the class dirs / jar files to use for compilation." default="project.classpath"/>
+    <attribute name="compile.debug"   description="Debug switch for the compiler (Ant boolean)." default="off"/>
+    <sequential>
+      <javac  deprecation="on"
+              srcdir="@{sourcepath.root}"
+              destdir="${classes.dir}"
+              includes="@{compile.files}"
+              debug="@{compile.debug}">
+        <classpath  refid="@{classpath.id}"/>
+      </javac>
+    </sequential>
+  </macrodef>
+
+</project>

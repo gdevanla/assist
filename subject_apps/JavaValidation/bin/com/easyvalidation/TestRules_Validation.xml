@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validations SYSTEM "easy-validation.dtd"><validations>
+<properties locale="EN">
+<file>I:\proj30\JavaValidation\src\test\resources\error_messages_en.properties</file>
+</properties>
+<properties locale="FR">
+<file>I:\proj30\JavaValidation\src\test\resources\error_messages_fr.properties</file>
+</properties>
+<validation name="userFormValidation">
+<rule type="required" fieldName="firstName">
+<!--<message>FirstName is required</message>-->
+<message key="firstName.required"></message>
+</rule> 
+<rule type="stringlength" fieldName="firstName">
+<param min="10" max="5"/> 
+<message useAttributePlaceHolder="true">${fieldName1} should be between ${min} and ${max}</message>
+</rule>
+<rule type="stringlength" fieldName="firstName1">
+<param min="10" max="5"/> 
+<message useAttributePlaceHolder="true">${fieldName} should be between ${min} and ${max}</message>
+</rule>
+<rule type="required" fieldName="firstName2">
+<!--<message>FirstName is required</message>-->
+<message key="firstName.required"></message>
+</rule> 
+<rule type="date" fieldName="startdatetest1">
+<param min="01.14.2013" max="31.04.2013" dateformat="dd.MM.yy"/>
+<message>Date is not within range</message>
+</rule>
+</validation>
+</validations>

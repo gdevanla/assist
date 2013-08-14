@@ -1,0 +1,288 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: HTML/XHTML / Allgemeine Regeln für HTML / Grundgerüst einer HTML-Datei</title>
+<meta name="description"    content="Welche Elemente jede HTML-Datei enthalten sollte.">
+<meta name="keywords"       content="SELFHTML, HTML, Grundgerüst, html, head, title, body DOCTYPE, Dokumenttyp, Strict, Transitional, Frameset, HTML Strict, HTML Transitional, HTML Frameset, XHTML">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-11-16T01:48:05+01:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/html/allgemein/grundgeruest.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="Allgemeine Regeln für HTML" href="index.htm">
+<link rel="next" title="Regeln beim Editieren von HTML" href="editieren.htm">
+<link rel="prev" title="Textauszeichnung" href="textauszeichnung.htm">
+<link rel="first" title="Textauszeichnung" href="textauszeichnung.htm">
+<link rel="last" title="Guter HTML-Stil" href="stil.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Allgemeine Regeln für HTML</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Grundgerüst einer HTML-Datei</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#html">Grundgerüst einer HTML-Datei</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#xhtml">Grundgerüst einer XHTML-Datei</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dokumenttyp">Dokumenttyp-Deklaration</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#hinweis">Hinweis für die Praxis</a><br>
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="html">Grundgerüst einer HTML-Datei</a></h2>
+
+<p>Eine gewöhnliche HTML-Datei besteht grundsätzlich aus folgenden Teilen:</p>
+<ul>
+<li>Dokumenttyp-Deklaration (Angabe zur verwendeten HTML-Version)</li>
+<li>Das HTML-Wurzelelement <code>&lt;html&gt;</code>, und darin </li>
+<li>Header (Kopfdaten. z.B. Angaben zu Titel u.ä.)</li>
+<li>Body (Körper - anzuzeigender Inhalt, also Text mit Überschriften, Verweisen, Grafikreferenzen usw.)</li>
+</ul>
+
+<h3 class="xmp">Schema:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Beschreibung der Seite&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Die erste Zeile sieht für Anfänger zunächst verwirrend aus. Diese etwas komplizierte Angabe ist eine Dokumenttyp-Deklaration. Einzelheiten dazu weiter unten bei <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dokumenttyp">Dokumenttyp-Deklaration</a>.</p>
+
+<p>Der gesamte übrige Inhalt einer HTML-Datei wird in die Tags <code>&lt;html&gt;</code>
+bzw. <code>&lt;/html&gt;</code> eingeschlossen. Das <code>html</code>-Element wird auch als <b>Wurzelelement</b> einer HTML-Datei bezeichnet. Hinter dem einleitenden HTML-Tag folgt das einleitende Tag für den Kopf <code>&lt;head&gt;</code>. Zwischen diesem Tag und seinem
+Gegenstück <code>&lt;/head&gt;</code> werden die <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../kopfdaten/index.htm">Kopfdaten einer HTML-Datei</a> notiert. Die wichtigste dieser Angaben ist der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../kopfdaten/titel.htm">Titel der HTML-Datei</a>, markiert
+durch <code>&lt;title&gt;</code> bzw. <code>&lt;/title&gt;</code>. Unterhalb davon folgt der Textkörper, begrenzt durch <code>&lt;body&gt;</code> bzw. <code>&lt;/body&gt;</code>. Dazwischen wird dann der eigentliche Inhalt der Datei notiert, also das, was im Anzeigefenster des WWW-Browsers angezeigt werden soll.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Wenn Sie <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../frames/index.htm">Frames</a> (mehrere Bildschirmfenster) einsetzen wollen, sieht das Grundgerüst von Dateien, in denen ein Frameset definiert wird, anders aus. Dies wird im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../frames/definieren.htm#grundgeruest">Grundgerüst einer HTML-Datei mit Framesets</a> beschrieben. Befassen Sie sich mit Frames aber erst, wenn Sie mit den Grundlagen von HTML schon etwas vertrauter sind.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="xhtml">Grundgerüst einer XHTML-Datei</a></h2>
+
+<p>Wenn Sie XHTML-gerechtes HTML schreiben wollen, sieht das Grundgerüst ähnlich aus. Nur am Anfang ist einiges anders.</p>
+
+<h3 class="xmp">Schema:</h3>
+
+<pre>
+&lt;?xml version="1.0" ?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;title&gt;Beschreibung der Seite&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Noch vor der Dokumenttyp-Deklaration sollte bei XHTML-Dateien der Bezug zu XML hergestellt werden. Dazu dient die erste Zeile mit den Fragezeichen hinter der öffnenden spitzen Klammer und vor der schließenden spitzen Klammer. Notieren Sie diese Zeile so wie im Beispiel angegeben. Es handelt sich um eine so genannte <b>XML-Deklaration</b>.</p>
+
+<p>Bei der Dokumenttyp-Deklaration muss ein für XHTML gültiger Dokumenttyp angegeben werden. Einzelheiten dazu weiter unten im Abschnitt <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#dokumenttyp">Dokumenttyp-Deklaration</a>.</p>
+
+<p>Im einleitenden <code>&lt;html&gt;</code>-Tag muss der verwendete XML-Namensraum mit einem Attribut namens <code>xmlns</code> angegeben werden. Benutzen Sie die Angabe wie im obigen Beispiel.</p>
+
+<p>Damit ist die Datei als XHTML-Datei deklariert. Der weitere Quelltext ist im Prinzip normales HTML, allerdings müssen Sie die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../xhtml/unterschiede.htm">Unterschiede zwischen XHTML und HTML</a> beachten. Befassen Sie sich mit diesen Unterschieden aber erst, wenn Sie schon etwas vertrauter mit HTML sind.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="dokumenttyp">Dokumenttyp-Deklaration</a></h2>
+
+<p>HTML ist innerhalb der Familie der Auszeichnungssprachen nur eine von vielen, wenn auch die prominenteste. HTML selbst hat außerdem bereits eine mehrjährige Geschichte und ist in verschiedenen, recht unterschiedlichen Versionen normiert worden. Mit der Dokumenttyp-Deklaration bestimmen Sie, welche Auszeichnungssprache in welcher Version Sie verwenden. Eine auslesende Software, etwa ein Web-Browser, kann sich an dieser Angabe orientieren.</p>
+
+<p>Die Regeln für HTML sind mit Hilfe von SGML formuliert, die Regeln für XHTML mit Hilfe von XML. Nach den Regeln einer SGML- oder XML-basierten Auszeichnungssprache ist eine HTML-Datei oder eine XHTML-Datei erst dann eine <b>gültige</b> (<b>valide</b>) Datei, wenn sie einen bestimmten Dokumenttyp angibt und sich dann innerhalb des restlichen Quelltextes genau an die Regeln hält, die für diesen Dokumenttyp definiert sind. Denn hinter jeder Dokumenttyp-Deklaration stecken so genannte <b>Dokumenttyp-Definitionen</b> (<b>DTD</b>). Auch für HTML gibt es solche Dokumenttyp-Definitionen. Dort ist geregelt, welche Elemente ein Dokument vom Typ HTML enthalten darf, welche Elemente innerhalb von welchen anderen vorkommen dürfen, welche Attribute zu einem Element gehören, ob die Angabe dieser Attribute Pflicht ist oder freiwillig usw.</p>
+
+<p>Als HTML-Anfänger mag Ihnen der Aufwand, der da betrieben wird, vielleicht nicht ganz einleuchten. Doch genau diese Dokumenttypen, mit deren Hilfe sich Regeln für Sprachen wie HTML genau definieren lassen, sind ein riesiger Fortschritt in der EDV. Denn nur so lässt sich das Konzept der software-unabhängigen, aber regelgerechten Dateiformate konsequent durchsetzen. Ohne den Bezug auf die offiziellen Regeln wären Sprachen wie HTML unverbindliche Konventionen, die schnell in Dialekten verwässern würden. Das ist genauso wie bei natürlichen Sprachen: ohne eine gewisse Regelung der "Rechtschreibung" würde eine Schriftsprache im Laufe der Zeit so stark zersetzt, dass am Ende kaum jemand mehr verstehen kann, was der andere mit dem, was er geschrieben hat, meint. Da Software außerdem noch viel dümmer ist, als Menschen, und viel genauere Vorgaben benötigt, um zu "verstehen", was man ihr mitteilt, ist das Beziehen auf Regeln dort sogar noch wesentlich wichtiger.</p>
+
+<h3 class="xmp"><a class="an" name="dokumenttyp_beispiel">Beispiel einer Dokumenttyp-Deklaration:</a></h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Notieren Sie die Dokumenttyp-Deklaration am Anfang der HTML-Datei vor dem einleitenden <code>&lt;html&gt;</code>-Tag in Großbuchstaben so, wie angegeben. Hinter der startenden spitzen Klammer folgt ein Ausrufezeichen. Dahinter folgt die Angabe <code>DOCTYPE HTML PUBLIC</code>. Das bedeutet, dass Sie sich auf die öffentlich verfügbare HTML-DTD beziehen. Die folgende Angabe, die in Anführungszeichen steht, ist wie folgt zu verstehen:</p>
+
+<p><code>W3C</code> ist der Herausgeber der DTD, also das W3-Konsortium. Eine Angabe wie <code>DTD HTML 4.01 Transitional</code> bedeutet, dass Sie in der Datei den Dokumenttyp "HTML" verwenden, und zwar in der Sprachversion 4.01 und deren Variante Transitional. Das <code>EN</code> ist ein Sprachenkürzel und steht für die Sprache, in diesem Fall Englisch. Die Angabe bezieht sich darauf, in welcher natürlichen Sprache die Element- und Attributnamen der Tagsprache definiert wurden, nicht auf den Inhalt Ihrer Datei. Benutzen Sie also immer <code>EN</code>, da die Namen von HTML-Elementen und -Attributen auf der englischen Sprache basieren. Die Schrägstriche notieren Sie so wie im obigen Beispiel.</p>
+
+<p>Ferner enthält die Dokumenttyp-Deklaration die Web-Adresse der Dokumenttyp-Definition (DTD). Die Angabe dieser Adresse ist nicht zwingend nötig. Eine Angabe wie:</p>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+</pre>
+
+<p>ist also ebenfalls erlaubt. Über die angegebene Web-Adresse kann eine auslesende Software die Dokumenttyp-Definitionen aufrufen und in den darin notierten Regeln "nachgucken". Die meisten heutigen Browser tun das bei HTML allerdings nicht, weil die verbreiteten Dokumenttypen bereits implementiert sind. Da sie ferner bei vielen Web-Seiten mit übelsten Sprachverunstaltungen rechnen müssen, besitzen sie die Fähigkeit, auch nicht regelgerechtes HTML halbwegs ordentlich auf den Bildschirm zu bringen, allerdings oft mit nicht unerheblichen Abweichungen. Das eigentlich gewünschte Verhalten ist allerdings, dass ein Browser dann, wenn eine HTML-Datei eine Dokumenttyp-Deklaration enthält, auch auf der Einhaltung der Regeln dieses Dokumenttyps besteht. Bei XML-Dokumenten ist es durchaus üblich, dass ein <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../allgemein/textauszeichnung.htm#html_parser">Parser</a> bei einem Regelverstoß abbricht - anstelle der Web-Seite erscheint dann nur eine trockene Fehlermeldung, dass das Dokument nicht gültig (valide) sei. Bei XHTML-Seiten, die mit dem <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> <code>application/xhtml+xml</code> ausgeliefert werden, ist das bereits der Fall.</p>
+
+<p>Zum Redaktionszeitpunkt dieses Dokuments ist die HTML-Version 4.01 aktuell. Bei dieser HTML-Version gibt es drei Sprachvarianten. Für eine davon müssen Sie sich entscheiden und den entsprechenden Dokumenttyp angeben:</p>
+
+<h3><a class="an" name="html4_strict">Die Variante Strict für HTML:</a></h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd"&gt;
+</pre>
+
+<p>Benutzen Sie diese Angabe, wenn Sie gemäß bestimmte Elemente und Attribute nicht mehr verwenden wollen, die in früheren HTML-Standards eingefügt wurden, aber mittlerweile durch andere Möglichkeiten (vor allem durch <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../css/index.htm">Stylesheets</a>)
+ersetzbar sind. Ferner sind die Verschachtelungsregeln für HTML-Elemente in der Strict-Variante strenger und im Sinne strukturierter Inhalte sauberer formuliert. So ist es in dieser Variante beispielsweise nicht erlaubt, zwischen <code>&lt;body&gt;</code> und <code>&lt;/body&gt;</code> einfach nur Text zu notieren. Alle Inhalte müssen in so genannten Block-Elementen stehen, z.B. in Überschriften, Textabsätzen, Tabellen usw.</p>
+
+<h3><a class="an" name="html4_transitional">Die Variante Transitional für HTML:</a></h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+          "http://www.w3.org/TR/html4/loose.dtd"&gt;
+</pre>
+
+<p>Benutzen Sie diese Angabe, wenn Sie einige der in der Strict-Variante nicht erlaubten Elemente und Attribute verwenden wollen oder müssen. In der Variante Transitional sind zum Beispiel die Regeln für die Elementverschachtelung etwas milder. Es ist nach dieser Variante erlaubt, zwischen <code>&lt;body&gt;</code> und <code>&lt;/body&gt;</code> "nackten Text" außerhalb eines weiteren Elements zu notieren. Außerdem benötigen Sie diese Variante, wenn Sie in <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../verweise/definieren.htm">Links</a> mit dem <code>target</code>-Attribut arbeiten wollen, beispielsweise um <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../frames/verweise.htm">Framesets</a> korrekt anzusteuern.</p>
+
+<h3><a class="an" name="html4_frameset">Die Variante Frameset für HTML:</a></h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+        "http://www.w3.org/TR/html4/frameset.dtd"&gt;
+</pre>
+
+<p>Diese Angabe ist nur für spezielle HTML-Dateien gedacht, in denen Framesets definiert werden. Siehe dazu den Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../frames/definieren.htm">Framesets und Frames definieren</a>.</p>
+
+<h3><a class="an" name="xhtml1_strict">Entsprechende Dokumenttyp-Deklarationen für XHTML:</a></h3>
+
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</pre>
+
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+</pre>
+
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;
+</pre>
+
+<p>Auch für XHTML 1.0 gibt es die drei Varianten Strict, Transitional und Frameset. Am Beginn der Dokumenttyp-Deklaration wird "html" <strong>klein</strong> geschrieben, im Mittelteil muss bei Version 1.0 von XHTML <code>XHTML 1.0</code> notiert werden. Auch die Web-Adressen der DTDs sind andere als bei HTML.</p>
+
+<p>Es gibt auch eine Sprachversion 1.1 von XHTML, die intern anders organisiert ist als XHTML 1.0. In XHTML 1.1 gibt es keine Sprachvarianten mehr. XHTML 1.1 entspricht nur noch der Sprachvariante Strict von XHTML 1.0.</p>
+
+<h3><a class="an" name="xhtml11">Dokumenttyp-Deklaration für XHTML 1.1:</a></h3>
+
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+</pre>
+
+
+
+<h3><a class="an" name="html_alt">Ältere Dokumenttyp-Deklarationen:</a></h3>
+
+<p>In manchen Ausnahmefällen kann es sinnvoll sein, sich auch auf eine ältere HTML-Version zu beziehen. Tun Sie dies jedoch nur, wenn irgendwelche technischen Gründe es erfordern. Folgende ältere Angaben gibt es:</p>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
+</pre>
+
+<p>Benutzen Sie diese Dokumenttyp-Deklaration, wenn Sie sich auf HTML 2.0 beziehen wollen.</p>
+
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN"&gt;
+</pre>
+
+<p>Benutzen Sie diese Dokumenttyp-Deklaration, wenn Sie sich auf HTML 3.2 beziehen wollen.</p>
+
+<p>Dokumenttyp-Deklarationen anderer HTML-Versionen sind nicht mehr im Gebrauch.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="hinweis">Hinweis für die Praxis</a></h2>
+
+<p>Wenn Sie nun entmutigt sind durch das ganze Wirrwarr von HTML und XHTML, HTML-Sprachvarianten, XML- und Dokumenttyp-Deklarationen - lassen Sie sich davon nicht zu sehr beeindrucken. Das Wirrwarr ist dadurch entstanden, dass es auf dem Gebiet der Auszeichnungssprachen viele Entwicklungen gibt und dass bei dieser Entwicklung auch nur mit Wasser gekocht wird. Vieles war zunächst unausgereift, und heute ist man bemüht, einen Spagat zu machen zwischen den fröhlichen Anfängen von HTML und den wachsenden Anforderungen, die an HTML gestellt werden, wenn es für professionelle Datenverarbeitung verwendet werden soll.</p>
+
+<p>Benutzen Sie für Ihre ersten Schritte in HTML zunächst einfach mal das oben vorgestellte <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#html">Grundgerüst einer HTML-Datei</a> so wie es dort notiert ist, und lernen Sie den Umgang mit weiteren HTML-Elementen und ihren Attributen, sowie den Umgang mit Stylesheets. Wenn Sie erst einmal vertrauter sind mit diesen Sprachen, werden Sie auch besser verstehen, welchen Sinn und Zweck die Unterschiede zwischen HTML und XHTML und die Unterschiede zwischen Sprachvarianten wie Strict, Transitional und Frameset haben.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Die Darstellung ist in den meisten Browsern in vielen Belangen von den hier vorgestellten Dokumenttyp-Deklarationen abhängig. Beim Erlernen von Stylesheets kann es von Vorteil sein, sich vorzugsweise mit Dokumenten der Variante Strict zu beschäftigen. Weitere Informationen hierzu finden Sie im Abschnitt über das <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/formate/box_modell.htm">CSS-Box-Modell</a>.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="editieren.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="editieren.htm">Regeln beim Editieren von HTML</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="textauszeichnung.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="textauszeichnung.htm">Textauszeichnung</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Allgemeine Regeln für HTML</a></td>
+</tr></table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

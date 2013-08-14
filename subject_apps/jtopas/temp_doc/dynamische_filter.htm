@@ -1,0 +1,537 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Dynamisches HTML / DHTML-Modelle / Dynamische Filter (nur Microsoft)</title>
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<meta name="description"    content="Wie Sie fließende Bild-, Text- und Seitenübergänge mit dem Internet Explorer ab 4.x realisieren können.">
+<meta name="keywords"       content="SELFHTML, Dynamisches HTML, Dynamic HTML, DHTML, Microsoft, Internet Explorer, Filter, dynamische Filter">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-10-28T20:44:22+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/dhtml/modelle/dynamische_filter.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="DHTML-Modelle" href="index.htm">
+<link rel="next" title="Allgemeine DHTML-Bibliothek" href="../beispiele/dhtml_bibliothek.htm">
+<link rel="prev" title="Datenanbindung (nur Microsoft)" href="datenanbindung.htm">
+<link rel="first" title="Das Document Object Model (DOM)" href="dom.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Dynamisches HTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">DHTML-Modelle</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Dynamische Filter (nur Microsoft)</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#allgemeines">Allgemeines zu dynamischen Filtern</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#aendern">Einfaches Dynamisches Ändern von Filterwerten</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#blend_trans">Fließende Übergänge mit dem blendTrans-Filter</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#reveal_trans">Fließende Übergänge mit dem revealTrans-Filter</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#ein_ausblenden">Ein-/Ausblendeffekte</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#seitenuebergaenge">Fließende Seitenübergänge</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><img src="../../src/msjs.gif" width="30" height="30" alt="MS JScript" title="MS JScript"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0">&nbsp;<a class="an" name="allgemeines">Allgemeines zu dynamischen Filtern</a></h2>
+
+<p>Der Internet Explorer unterstützt ab der Version 4.x spezielle CSS-Eigenschaften, die so genannten <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/eigenschaften/filter.htm">Filter</a>. Mit Hilfe solcher Filter sind grafische Effekte möglich, wie sie aus professionellen Grafikprogrammen bekannt sind: Schatteneffekte für Texte oder auch Transparenzdefinitionen für Grafiken, die auf einer WWW-Seite angezeigt werden, gehören zum Repertoire der möglichen Angaben. Als reine CSS-Eigenschaften sind diese Filter statisch. Mit Hilfe von Scripts können Sie die entsprechenden Angaben zu den Filtern jedoch dynamisch beeinflussen. Ferner gibt es zwei Spezialfilter für Blend- und diverse Übergangseffekte. Mit etwas Programmier-Wissen und ästhetischem Gefühl können dabei so ziemlich alle Träume wahr werden, die Web-Designer heimlich immer schon geträumt haben: Grafiken, die sich wie von Geisterhand langsam ein- und ausblenden, fließende Übergänge zwischen Elementen, Texte, die verschwimmen usw.</p>
+
+<p>Der Script-Zugriff auf definierte Filter erfolgt über das filter-Objekt in JScript/JavaScript. Die Beispiele hier können nicht alle Möglichkeiten des Filter-Objekts behandeln. Sie dienen nur zur Veranschaulichung, wie Filter sich durch ein Script dynamisch verändern lassen.</p>
+
+<p>Die Filter-Technik von Microsoft ist jedoch nie ein Standard geworden, und es ist fraglich, ob sie je zum Standard gehören werden.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/msjs.gif" width="30" height="30" alt="MS JScript" title="MS JScript"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0">&nbsp;<a class="an" name="aendern">Einfaches Dynamisches Ändern von Filterwerten</a></h2>
+
+<p>Durch zeitgesteuertes Ändern der CSS-Filtereigenschaften können Sie interessante Effekte erzielen.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/zittertext.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;div id="Zittertext" style="width:100%; font-size:96px; font-weight:bold; color:#FF6666;
+filter:Wave(freq=5, light=0, phase=80, strength=1);"&gt;Leicht gest&amp;ouml;rt&lt;/div&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+function DynWave () {
+  if (document.all.Zittertext.filters[0].freq &gt; 30)
+    document.all.Zittertext.filters[0].freq = 5;
+  document.all.Zittertext.filters[0].freq += 1;
+
+  if (document.all.Zittertext.filters[0].phase &gt; 100)
+    document.all.Zittertext.filters[0].phase = 0;
+  document.all.Zittertext.filters[0].phase += 10;
+
+  if (document.all.Zittertext.filters[0].strength &gt; 10)
+    document.all.Zittertext.filters[0].strength = 1;
+  document.all.Zittertext.filters[0].strength += 1;
+
+  window.setTimeout("DynWave()", 100);
+}
+
+DynWave();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im Beispiel wird in einem <code>&lt;div&gt;</code>-Bereich der zugehörige Text (<code>leicht gest&amp;ouml;rt</code>) mit Hilfe von <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../css/eigenschaften/index.htm">CSS-Eigenschaften</a> formatiert. Zu den Formatierungen gehört auch die Anwendung des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/eigenschaften/filter.htm">Filters</a> <code>Wave()</code>. Damit wird der Effekt des Filters zwar bereits angezeigt, aber es bewegt sich noch nichts. In einem Script unterhalb des so definierten <code>&lt;div&gt;</code>-Bereichs werden die Angaben dieses Filters dynamisch verändert. Da ein Endlos-Effekt mit immer neuen Werten und Kombinationen eingebaut ist, entsteht ein Zitter-Effekt.</p>
+
+<p>Die JavaScript-Funktion wird im obigen Beispiel unterhalb des Bereichs, auf den sie sich bezieht, definiert. Der Grund ist, dass die JavaScript-Anweisungen sofort ausgeführt werden. Der <code>&lt;div&gt;</code>-Bereich, auf dessen Daten die Anweisungen dynamisch zugreifen, sollte zu diesem Zeitpunkt bereits eingelesen und dem Browser bekannt sein. Deshalb steht das Script unterhalb des <code>&lt;div&gt;</code>-Bereichs. Ansonsten könnte es zu Fehlermeldungen kommen.</p>
+
+<p>Innerhalb des Script-Bereichs wird zunächst eine <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/sprache/funktionen.htm">Funktion</a> mit dem Namen <code>DynWave()</code> definiert. Diese Funktion ändert die Parameter <code>freq</code>, <code>phase</code> und <code>strength</code> des Wave-Filters, der bei dem <code>&lt;div&gt;</code>-Bereich definiert wurde. Am Ende ruft sich die Funktion selbst wieder auf. Dadurch entsteht ein Endlos-Effekt. Der Aufruf erfolgt zeitverzögert um 100 Millisekunden. Das ist wichtig, da der Selbstaufruf der Funktion sonst "unendlich schnell" wäre und ein Problem im Arbeitsspeicher verursachen würde (Selbstaufrufe von Funktionen sind nämlich nicht ganz unkritisch, da für jeden Funktionsaufruf neuer Arbeitsspeicherplatz reserviert werden muss).</p>
+
+<p>Da die Funktion zu Beginn überhaupt erst einmal aufgerufen werden muss (sonst würde gar nichts passieren), steht am Ende des Script-Bereichs - außerhalb der Funktion <code>DynWave()</code> - der einmalige Funktionsaufruf <code>DynWave();</code>.</p>
+
+<p>Innerhalb der Funktion im Beispiel können Sie erkennen, wie auf Filter dynamisch zugegriffen wird. Der Zugriff geschieht mit Hilfe des <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="microsoft.htm#all_objekt">all-Objekts</a>. Bezug ist die Angabe <code>id="Zittertext"</code>, die im <code>&lt;div&gt;</code>-Tag vergeben wird. Mit <code>document.all.Zittertext</code> ist dann der Zugriff auf dieses HTML-Element möglich.</p>
+
+<p>Zwei Besonderheiten sind bei Filtern jedoch zu beachten:<br>
+Mit einem Ausdruck wie <code>document.all.Zittertext.filters[0].strength</code> greifen Sie auf den Wert zu, der beim ersten definierten Filter des HTML-Elements bei der Angabe <code>strength</code> als Parameter notiert ist. Da die Filter zu den Stylesheet-Angaben gehören, müsste eigentlich <code>document.all.Zittertext.style.filters[0].strength</code> notiert werden. Dies führt beim Internet Explorer jedoch zu Fehlermeldungen. Lassen Sie die Angabe <code>style</code> in der Mitte also weg.<br>
+Da ein Element mehrere Filter haben kann, müssen Sie genau angeben, welchen Filter Sie dynamisch ansprechen wollen. Im obigen Beispiel wird mit <code>filters[0]</code> der erste definierte Filter angesprochen. Falls im gleichen <code>&lt;div&gt;</code>-Tag noch einen zweiter Filter definiert wäre, könnten Sie diesen mit <code>filters[1]</code> ansprechen. Also einfach bei 0 zu zählen beginnen. Microsoft erlaubt auch weitere Notationsmöglichkeiten, für das obige Beispiel etwa <code>document.all.Zittertext.filters["wave"].strength</code> oder <code>document.all.Zittertext.filters.wave.strength</code>.</p>
+
+<p>Das hier beschriebene Schema zum Zugreifen auf Filterwerte können Sie auf alle anderen Filter ebenso anwenden. Auch auf solche, die vor allem in Verbindung mit Grafiken sinnvoll sind.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/msjs.gif" width="30" height="30" alt="MS JScript" title="MS JScript"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0">&nbsp;<a class="an" name="blend_trans">Fließende Übergänge mit dem blendTrans-Filter</a></h2>
+
+<p>Der blendTrans-Filter ist ein spezieller Filter, der nur in Verbindung mit Scripts sinnvoll ist. Er erlaubt es, einen fließenden Übergang von einer Grafik zu einer anderen Grafik oder von einem Textinhalt zu einem anderen Textinhalt zu definieren. Dadurch werden Effekte wie bei professionellen Dia-Shows oder wie bei Fernsehbildern auf WWW-Seiten möglich.</p>
+
+<h3 class="xmp">Beispiel für Grafiken:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/madrid.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+Bild1 = new Image();
+Bild1.src = "madrid1.jpg";
+Bild2 = new Image();
+Bild2.src = "madrid2.jpg";
+var Bild = 1;
+function Bildwechsel () {
+  if (Bild == 1) {
+    Bild = 2;
+    document.all.Madrid.filters.blendTrans.Apply();
+    document.all.Madrid.src = Bild2.src;
+    document.all.Madrid.filters.blendTrans.Play();
+  } else {
+    Bild = 1;
+    document.all.Madrid.filters.blendTrans.Apply();
+    document.all.Madrid.src = Bild1.src;
+    document.all.Madrid.filters.blendTrans.Play();
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;p&gt;Klicken Sie auf das Bild, nachdem es vollständig angezeigt ist.&lt;/p&gt;
+&lt;img id="Madrid" src="madrid1.jpg" style="cursor:hand; filter:blendTrans(Duration=4, Transition=16)" onclick="Bildwechsel()" width="433" height="278" border="0" alt="Das ist Madrid"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das Beispiel bewirkt, dass beim Klicken auf ein Bild dieses Bild langsam in ein anderes übergeht. Wird das andere Bild dann angeklickt, geht es langsam wieder in das erste über.</p>
+
+<p>Dazu wird zunächst bei der Definition des Bildes mit <code>&lt;img...&gt;</code> eine spezielle Stylesheet-Angabe notiert: der Filter <code>blendTrans(...)</code>. Dieser Filter erwartet einen Parameter, nämlich die Angabe zu <code>Duration</code>. Damit können Sie angeben, wie lange der Übergang von dem Bild zu seinem Nachfolger dauern soll. Im Beispiel wird 4 angegeben - das steht für 4 Sekunden. Sie können auch Bruchwerte bis zu tausendstel Sekunden angeben, etwa 2.450 (Dezimalzeichen ist ein Punkt!).</p>
+
+<p>Damit ist der Übergangseffekt jedoch nur "registriert". Um ihn tatsächlich auszuführen, ist ein Script erforderlich. Im obigen Beispiel wird im Dateikopf ein JavaScript-Bereich definiert. Dort werden zunächst mit Hilfe des Bildobjekts <code>image</code> beide betroffenen Bilder als Objekte (<code>Bild1</code> und <code>Bild2</code>) definiert. Der Eigenschaft <code>src</code> der Bildobjekte werden die gewünschten Grafikdateien zugewiesen. Diese Vorarbeit mit dem image-Objekt ist zwar nicht zwingend notwendig, hat aber den Vorteil, dass alle betroffenen Bilder bereits in den Arbeitsspeicher geladen sind, wenn der Übergang angestoßen wird.</p>
+
+<p>Innerhalb der Funktion <code>Bildwechsel()</code> findet dann der eigentliche Übergang statt. Diese Funktion wird aufgerufen, wenn der Anwender auf das Bild klickt. Dazu ist im <code>&lt;img&gt;</code>-Tag der <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../javascript/sprache/eventhandler.htm">Event-Handler</a> <code>onclick</code> notiert.</p>
+
+<p>In der Funktion <code>Bildwechsel()</code> wird zunächst die Methode <code>Apply()</code> des blendTrans-Filters aufgerufen. Dieser Aufruf ist notwendig, um dasjenige Objekt zu identifizieren, das in ein anderes übergehen soll. Im Beispiel ist das die Grafik, angesprochen über das all-Objekt und den vergebenen id-Namen <code>DynBild</code>. Als nächster Befehl wird der Grafik diejenige neue Grafik zugeordnet, durch die sie ersetzt werden soll. Erst dann sind alle Voraussetzungen erfüllt, um den eigentlichen Übergang zu starten. Dazu wird die Methode <code>Play()</code> des filter-Objekts benutzt.</p>
+
+<p>Die Variable <code>Bild</code> und der else-Zweig in der Beispielfunktion dienen dazu, den Wechseleffekt sicherzustellen. Mit den beschriebenen Befehlen findet der Übergang ansonsten genau einmal statt.</p>
+
+<p>Der Übergangs-Effekt ist nicht nur bei Grafiken möglich, sondern auch bei Text.</p>
+
+<h3 class="xmp"><a class="an" name="blend_trans2">Beispiel für Text:</a></h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/wernichtehrt.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+var NormalText = "Wer HTML nicht ehrt";
+var AndererText = "ist des Dynamischen nicht wert";
+var Text = 1;
+function Wechsel () {
+  if (Text == 1) {
+    Text = 2;
+    document.all.MeinText.filters.blendTrans.Apply();
+    document.all.MeinText.innerText = AndererText;
+    document.all.MeinText.filters.blendTrans.Play();
+  } else {
+    Text = 1;
+    document.all.MeinText.filters.blendTrans.Apply();
+    document.all.MeinText.innerText = NormalText;
+    document.all.MeinText.filters.blendTrans.Play();
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;p&gt;Klicken Sie auf den folgenden Text:&lt;/p&gt;
+
+&lt;div id="MeinText" style="cursor:hand; margin-bottom:100px; font-size:2.6em; color:red; width:14em; filter:blendTrans(Duration=0.5)" onclick="Wechsel()"&gt;
+Wer HTML nicht ehrt&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Anwendbar ist der blendTrans-Filter bei Text auf die HTML-Elemente:<br>
+<code>&lt;body&gt;</code>...<code>&lt;/body&gt;</code><br>
+<code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code><br>
+<code>&lt;span&gt;</code>...<code>&lt;/span&gt;</code><br>
+<code>&lt;input&gt;</code><br>
+<code>&lt;button&gt;</code><br>
+<code>&lt;textarea&gt;</code>...<code>&lt;/textarea&gt;</code><br>
+<code>&lt;marquee&gt;</code>...<code>&lt;/marquee&gt;</code><br>
+sowie auf alle Tabellenelemente. Bei <code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code> und bei <code>&lt;span&gt;</code>...<code>&lt;/span&gt;</code> müssen Sie Stylesheet-Angaben zu Breite und/oder Höhe des Elements notieren, sonst funktioniert es nicht.</p>
+
+<p>Das obige Beispiel ist im wesentlichen das gleiche wie bei den Grafiken. Im Unterschied dazu wird jedoch ein Übergang zwischen zwei Texten definiert. Der erste Text ist im Dateikörper der HTML-Datei mit <code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code> entsprechend der Regeln definiert. Die Realisierung des Übergangs zwischen den beiden Texten ist ähnlich wie bei Grafiken. Anstelle der Objekteigenschaft <code>src</code> (bei Grafiken) müssen Sie bei Texten jedoch die Eigenschaft <code>innerText</code> (wie im Beispiel) oder <code>innerHTML</code> verwenden. Diese Eigenschaften erlauben das dynamische Austauschen des Inhalts, den das angesprochene HTML-Element enthält.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/msjs.gif" width="30" height="30" alt="MS JScript" title="MS JScript"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0">&nbsp;<a class="an" name="reveal_trans">Fließende Übergänge mit dem revealTrans-Filter</a></h2>
+
+<p>Der revealTrans-Filter ist ganz ähnlich zu handhaben wie der <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#blend_trans">blendTrans-Filter</a>. Während der blendTrans-Filter jedoch nur einfache Blenden von einem Inhalt zum anderen erlaubt, stellt der revealTrans-Filter ein ganzes Arsenal grafischer Überblend-Effekte bereit.</p>
+
+<h3 class="xmp">Beispiel (für Grafik):</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/rainsun.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;img id="DynBild" src="rain.gif"
+style="filter:revealTrans(Duration=2,Transition=12)" width="150"
+   height="145" alt="Sonnenschein?"&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+window.setTimeout("Wechsel()", 5000);
+function Wechsel () {
+  document.all.DynBild.filters.revealTrans.Apply();
+  document.all.DynBild.src = "sun.gif";
+  document.all.DynBild.filters.revealTrans.Play();
+}
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<p>Das Beispiel bewirkt, dass innerhalb von 5 Sekunden (5000 Millisekunden) das angezeigte Bild <code>"rain.gif"</code> zerbröselt und durch das Bild <code>"sun.gif"</code> ersetzt wird.</p>
+
+<h3 class="xmp"><a class="an" name="reveal_trans2">Beispiel (für Text):</a></h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/wernichtehrt2.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;div id="MeinText" style="width:14em; height:150px; font-size:2em; filter:revealTrans(Duration=1,Transition=7)"&gt;
+Wer HTML nicht ehrt
+&lt;/div&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+window.setTimeout("Wechsel()", 2500);
+function Wechsel () {
+  document.all.MeinText.filters.revealTrans.Apply();
+  document.all.MeinText.innerText = "ist des Dynamischen nicht wert";
+  document.all.MeinText.filters.revealTrans.Play();
+}
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das Beispiel bewirkt, dass der Text <i>Wer HTML nicht ehrt</i> nach 2,5 Sekunden durch den Text <i>ist des Dynamischen nicht wert</i> ersetzt wird, und zwar so, dass der neue Text den zunächst angezeigten Text von rechts her "überrollt".</p>
+
+<p>Dazu wird zunächst der Text <i>Wer HTML nicht ehrt</i> innerhalb eines <code>&lt;div&gt;</code>-Bereichs notiert. Denn der revealTrans-Filter ist im Zusammenhang mit Text auf die folgenden HTML-Elemente anwendbar:<br>
+<code>&lt;body&gt;</code>...<code>&lt;/body&gt;</code><br>
+<code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code><br>
+<code>&lt;span&gt;</code>...<code>&lt;/span&gt;</code><br>
+<code>&lt;input&gt;</code><br>
+<code>&lt;button&gt;</code><br>
+<code>&lt;textarea&gt;</code>...<code>&lt;/textarea&gt;</code><br>
+<code>&lt;marquee&gt;</code>...<code>&lt;/marquee&gt;</code><br>
+sowie auf alle Tabellenelemente. Bei <code>&lt;div&gt;</code>...<code>&lt;/div&gt;</code> und bei <code>&lt;span&gt;</code>...<code>&lt;/span&gt;</code> müssen Sie Stylesheet-Angaben zu Breite und/oder Höhe des Elements notieren, sonst funktioniert es nicht. Im obigen Beispiel werden Breite und Höhe des <code>&lt;div&gt;</code>-Bereichs mit <code>width:</code> und <code>height:</code> festgelegt.</p>
+
+<p>Ferner wird eine spezielle Stylesheet-Angabe notiert: der Filter <code>revealTrans(...)</code>. Dieser Filter erwartet zwei Parameter, nämlich die Angabe zu <code>Duration</code> und eine Angabe zu <code>Transition</code>. Mit <code>Duration</code> können Sie angeben, wie lange der Übergang von dem Text zu seinem Nachfolger dauern soll. Im Beispiel wird 1 angegeben - das steht für eine Sekunde. Sie können auch Bruchwerte bis zu tausendstel Sekunden angeben, etwa 2.450 (Dezimalzeichen ist ein Punkt!).</p>
+
+<p>Bei <code>Transition</code> geben Sie die Art an, wie der Filter wirken soll.</p>
+
+<h3 class="xmp"><a class="an" name="reveal_trans_werte">Mögliche Werte beim revealTrans-Filter:</a></h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/ueberblend.htm">Anzeigebeispiel: So sieht's aus</a> (alle 24 Möglichkeiten für Text und Grafik)</p>
+
+<table class="reftable" cellpadding="3" cellspacing="0" border="1">
+<tr>
+<th>Notation</th>
+<th>Bedeutung</th>
+<th>Notation</th>
+<th>Bedeutung</th>
+<th>Notation</th>
+<th>Bedeutung</th>
+</tr>
+<tr>
+<td class="code"><code>Transition=0</code></td>
+<td class="tabxpl">Box-Effekt<br>außen nach innen</td>
+<td class="code"><code>Transition=8</code></td>
+<td class="tabxpl">Streifen-Effekt<br>von links nach rechts</td>
+<td class="code"><code>Transition=16</code></td>
+<td class="tabxpl">Aufklapp-Effekt<br>nach oben und unten</td>
+</tr><tr>
+<td class="code"><code>Transition=1</code></td>
+<td class="tabxpl">Box-Effekt<br>innen nach außen</td>
+<td class="code"><code>Transition=9</code></td>
+<td class="tabxpl">Streifen-Effekt<br>von oben nach unten</td>
+<td class="code"><code>Transition=17</code></td>
+<td class="tabxpl">Aufroll-Effekt von<br>rechts oben nach links unten</td>
+</tr><tr>
+<td class="code"><code>Transition=2</code></td>
+<td class="tabxpl">Kreis-Effekt<br>von außen nach innen</td>
+<td class="code"><code>Transition=10</code></td>
+<td class="tabxpl">Rechteck-Effekt<br>von links nach rechts</td>
+<td class="code"><code>Transition=18</code></td>
+<td class="tabxpl">Aufroll-Effekt von<br>rechts unten nach links oben</td>
+</tr><tr>
+<td class="code"><code>Transition=3</code></td>
+<td class="tabxpl">Kreis-Effekt<br>von innen nach außen</td>
+<td class="code"><code>Transition=11</code></td>
+<td class="tabxpl">Rechteck-Effekt<br>von oben nach unten</td>
+<td class="code"><code>Transition=19</code></td>
+<td class="tabxpl">Aufroll-Effekt von<br>links oben nach rechts unten</td>
+</tr><tr>
+<td class="code"><code>Transition=4</code></td>
+<td class="tabxpl">Aufroll-Effekt<br>von unten nach oben</td>
+<td class="code"><code>Transition=12</code></td>
+<td class="tabxpl">Zerbröselungseffekt<br>in alle Richtungen</td>
+<td class="code"><code>Transition=20</code></td>
+<td class="tabxpl">Aufroll-Effekt von<br>links unten nach rechts oben</td>
+</tr><tr>
+<td class="code"><code>Transition=5</code></td>
+<td class="tabxpl">Aufroll-Effekt<br>von oben nach unten</td>
+<td class="code"><code>Transition=13</code></td>
+<td class="tabxpl">Aufroll-Effekt beidseitig<br>von außen nach innen</td>
+<td class="code"><code>Transition=21</code></td>
+<td class="tabxpl">Jalousie-Effekt<br>waagerecht</td>
+</tr><tr>
+<td class="code"><code>Transition=6</code></td>
+<td class="tabxpl">Aufroll-Effekt<br>von links nach rechts</td>
+<td class="code"><code>Transition=14</code></td>
+<td class="tabxpl">Aufroll-Effekt beidseitig<br>von innen nach außen</td>
+<td class="code"><code>Transition=22</code></td>
+<td class="tabxpl">Jalousie-Effekt<br>senkrecht</td>
+</tr><tr>
+<td class="code"><code>Transition=7</code></td>
+<td class="tabxpl">Aufroll-Effekt<br>von rechts nach links</td>
+<td class="code"><code>Transition=15</code></td>
+<td class="tabxpl">Zuklapp-Effekt<br>von oben und unten</td>
+<td class="code"><code>Transition=23</code></td>
+<td class="tabxpl">Zufallseffekt<br>aus Effekten 0-22</td>
+</tr>
+</table>
+<br>&nbsp;
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/msjs.gif" width="30" height="30" alt="MS JScript" title="MS JScript"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0">&nbsp;<a class="an" name="ein_ausblenden">Ein-/Ausblendeffekte</a></h2>
+
+<p>Sie können die beiden Filter <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#blend_trans">blendTrans</a> und
+<img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#reveal_trans">revealTrans</a> auch dazu nutzen, um Texte oder Grafiken "aus dem Nichts heraus" einzublenden oder auszublenden. Dies ist in Verbindung mit der Stylesheet-Angabe zur <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/eigenschaften/positionierung.htm#visibility">Anzeige bzw. Nichtanzeige mit Platzhalter - (visibility)</a> möglich.</p>
+
+<h3 class="xmp">Beispiel für Text:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/gehkomm.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;div id="KommText" style="width:10em; height:3em; font-size:2em; font-weight:bold; color:#0000FF; visibility:hidden; filter:blendTrans(Duration=4)"&gt;
+Hier kommt der Text
+&lt;/div&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+document.all.KommText.filters.blendTrans.Apply();
+document.all.KommText.style.visibility = "visible";
+document.all.KommText.filters.blendTrans.Play();
+&lt;/script&gt;
+
+&lt;div id="GehText" style="width:10em; height:3em; font-size:2em; font-weight:bold; color:#0000FF;
+visibility:visible; filter:blendTrans(Duration=4)"&gt;
+Hier geht der Text
+&lt;/div&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+document.all.GehText.filters.blendTrans.Apply();
+document.all.GehText.style.visibility = "hidden";
+document.all.GehText.filters.blendTrans.Play();
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im obigen Beispiel werden insgesamt zwei <code>&lt;div&gt;</code>-Bereiche mit Text definiert. Beide Bereiche erhalten mit der <code>id</code>-Angabe jeweils einen Namen, damit sie per Script ansprechbar sind. Der eine Bereich erhält den Namen <code>KommText</code>, der andere den Namen <code>GehText</code>. Beide Bereiche erhalten auch mit Hilfe der Stylesheet-Angabe <code>visibility</code> eine Angabe dazu, ob sie zunächst angezeigt werden sollen oder nicht. Die Angabe <code>visibility:hidden</code> im ersten der beiden <code>&lt;div&gt;</code>-Bereiche sorgt dafür, dass dieser Bereich zunächst nicht angezeigt wird. Im zweiten Bereich steht dagegen die Angabe <code>visibility:visible</code>. Dadurch wird der entsprechende Text zunächst angezeigt. In beiden <code>&lt;div&gt;</code>-Bereichen wird außerdem der blendTrans-Filter notiert.</p>
+
+<p>Unterhalb jedes der beiden <code>&lt;div&gt;</code>-Bereiche ist ein Script notiert, das den jeweiligen blendTrans-Filter ausführt. Das funktioniert genauso wie bei <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#blend_trans">fließenden Übergängen mit dem blendTrans-Filter</a>. Der Unterschied ist lediglich, dass dem jeweiligen <code>&lt;div&gt;</code>-Bereich zwischen dem Aufruf der Methoden <code>Apply()</code> und <code>Play()</code> kein anderer Text zugewiesen wird, sondern ein neuer Wert für <code>visibility</code>. Der Bereich, der zunächst <code>visibility:hidden</code> zugewiesen bekam, wird innerhalb des Scripts mit der Anweisung <code>document.all.KommText.style.visibility = "visible"</code> sichtbar. Da der Wechsel zwischen unsichtbar und sichtbar jedoch in den blendTrans-Filter eingebunden ist, wird der Text nicht sofort sichtbar, sondern erst durch das Ausführen des blendTrans-Filters.<br>
+Mit dem zweiten Text passiert das gleiche, nur umgekehrt.</p>
+
+<h3 class="xmp"><a class="an" name="ein_ausblenden2">Beispiel für Grafik:</a></h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/madrid2.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;p&gt;&lt;a id="ein" style="display:inline" href="javascript:Einblenden()"&gt;Grafik einblenden&lt;/a&gt;&lt;br&gt;
+&lt;a id="aus" style="display:none" href="javascript:Ausblenden()"&gt;Grafik ausblenden&lt;/a&gt;&lt;/p&gt;
+&lt;img id="Bild" src="madrid1.jpg" style="visibility:hidden; filter:revealTrans(Duration=4, Transition=1)" width="433" height="278" alt="Madrid"&gt;
+&lt;script language="JScript" type="text/jscript"&gt;
+function Einblenden () {
+  document.all.Bild.filters.revealTrans.Transition = 1;
+  document.all.Bild.filters.revealTrans.Apply();
+  document.all.Bild.style.visibility = "visible";
+  document.all.Bild.filters.revealTrans.Play();
+  document.all.ein.style.display = "none";
+  document.all.aus.style.display = "inline";
+}
+
+function Ausblenden () {
+  document.all.Bild.filters.revealTrans.Transition = 0;
+  document.all.Bild.filters.revealTrans.Apply();
+  document.all.Bild.style.visibility = "hidden";
+  document.all.Bild.filters.revealTrans.Play();
+  document.all.ein.style.display = "inline";
+  document.all.aus.style.display = "none";
+}
+&lt;/script&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Das voranstehende Beispiel enthält zunächst zwei Verweise. Die beiden Verweise rufen JavaScript-Funktionen auf. Einer der Verweise ruft die Funktion <code>Einblenden()</code> zum Einblenden einer Grafik auf, der andere die Funktion <code>Ausblenden()</code> zum Ausblenden derselben Grafik. Beide Verweise enthalten auch Stylesheet-Angaben zur <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/eigenschaften/positionierung.htm#display">Anzeige bzw. Nichtanzeige ohne Platzhalter - (display)</a>. Der erste Verweis wird zunächst angezeigt, der zweite nicht. Die Angaben werden in den beiden Script-Funktionen <code>Einblenden()</code> und <code>Ausblenden()</code> dynamisch verändert. So wird ermöglicht, dass der Verweis <code>Grafik einblenden</code> angezeigt wird, wenn die Grafik nicht angezeigt wird, und der Verweis <code>Grafik ausblenden</code>, wenn die Grafik angezeigt wird.</p>
+
+<p>Unterhalb der Verweise wird die Grafik notiert, die ein- und ausblendbar sein soll. Durch Stylesheet-Angabe <code>visibility:hidden</code> wird die Anzeige der Grafik zunächst verhindert. Außerdem erhält die Grafik eine Angabe zum <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#reveal_trans">revealTrans</a>-Filter. Wenn der Anwender nun auf den zunächst angezeigten Verweis <code>Grafik einblenden</code> klickt, wird die Script-Funktion <code>Einblenden()</code> aufgerufen. Diese Funktion ändert zwischen dem Aufruf von <code>Apply()</code> und <code>Play()</code> des revealTrans()-Filters die Anzeige der einzublendenden Grafik auf <code>visible</code>. Der Filter wird ausgeführt, und die Grafik wird in der vorgeschriebenen Form (<code>transition = 1</code>) eingeblendet. Ferner tauscht die Funktion <code>Einblenden()</code> noch die Anzeige-Attribute der beiden Verweise aus, sodass nun der Verweis zum Ausblenden der Grafik angezeigt wird.</p>
+
+<p>Die Funktion <code>Ausblenden()</code> leistet das Gleiche, nur umgekehrt. Dabei wird auch die Art des revealTrans-Filters umgekehrt, und zwar durch <code>transition = 0</code>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/msie5.gif" width="30" height="30" alt="MS IE 5.0" title="MS IE 5.0">&nbsp;<a class="an" name="seitenuebergaenge">Fließende Seitenübergänge</a></h2>
+
+<p>Als besonderes Bonbon hat sich Microsoft schließlich noch einfallen lassen, die beiden Filter <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#blend_trans">blendTrans</a> und
+<img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#reveal_trans">revealTrans</a> im Zusammenhang mit <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/kopfdaten/meta.htm">Meta-Angaben</a> zu interpretieren. Auf diese Weise werden fließende Übergänge zwischen zwei Web-Seiten möglich.</p>
+
+<h3 class="xmp">Beispiel - Datei <var>uebergang1.htm</var>:</h3>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/uebergang1.htm">Anzeigebeispiel: So sieht's aus</a></p>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;meta http-equiv="Page-Exit" content="RevealTrans(Duration=3,Transition=12)"&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Hier ist Seite 1&lt;/h1&gt;
+&lt;p&gt;&lt;img src="madrid1.jpg" width="433" height="278" border="0" alt="ein Bild"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="uebergang2.htm"&gt;und ein Link zu Seite 2&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xmp">Beispiel - Datei <var>uebergang2.htm</var>:</h3>
+
+<pre>
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Test&lt;/title&gt;
+&lt;meta http-equiv="Page-Enter" content="RevealTrans(Duration=3,Transition=12)"&gt;
+&lt;meta http-equiv="Page-Exit" content="RevealTrans(Duration=3,Transition=12)"&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Und das hier ist Seite 2&lt;/h1&gt;
+&lt;p&gt;Sie sieht ein klein wenig anders aus, aber nicht viel.&lt;/p&gt;
+&lt;p&gt;&lt;img src="madrid2.jpg" width="433" height="278" border="0" alt="ein Bild"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="uebergang1.htm"&gt;und das ist ein Link, der wieder zu Seite 1 geht&lt;/a&gt;&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta http-equiv="Page-Exit"...</code> bestimmen Sie einen Filter, der beim Verlassen der Seite angewendet wird, und mit <code>&lt;meta http-equiv="Page-Enter"...</code> einen Filter, der beim Laden der Seite angewendet wird. Bei <code>content</code> notieren Sie <code>RevealTrans</code> oder <code>BlendTrans</code> und dahinter in Klammern die gewünschten Angaben zu zu <code>Duration</code> und - beim <code>RevealTrans</code>-Filter - <code>Transition</code>. Im obigen Beispiel wird für alle Fälle in beiden Dateien der <code>RevealTrans</code>-Filter mit <code>Transition=12</code> eingesetzt.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Im Internet Explorer 5.0 war das obige Beispiel nicht nachvollziehbar.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="../beispiele/dhtml_bibliothek.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../beispiele/dhtml_bibliothek.htm">Allgemeine DHTML-Bibliothek</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="datenanbindung.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="datenanbindung.htm">Datenanbindung (nur Microsoft)</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Dynamisches HTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">DHTML-Modelle</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

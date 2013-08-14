@@ -1,0 +1,5 @@
+Trying to Inject mutant for Method Name : <init> in class  com.saxman.textdiff.Report
+Source Line Number: 37
+Jimple Statement considered for mutant injection:  if $z0 == 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isOldOnly()>()
+Successfully injected mutant!!!
+Correspondent Mutant is if $z0 != 0 goto $z0 = virtualinvoke oldLineInfo.<com.saxman.textdiff.LineInfo: boolean isOldOnly()>()

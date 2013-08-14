@@ -1,0 +1,266 @@
+Changes in the JTopas Project:
+------------------------------
+
+Version 0.8
+-----------
+- The build script requires Ant 1.6.0 or higher to work (uses the macrodef task).
+- Due to the Java 1.5 class format that is incompatible with older Java
+  versions, the build script places class and jar files under
+  "build/${ant.java.version}" instead. This also helps to work with the NetBeans 
+  IDE 4.0 that uses ant build scripts for compiling etc. 
+- The MANIFEST.MF in the jar archives contains information about version, build
+  time etc.
+- The software has a better overall performance. How much depends on the 
+  circumstances, an average of 20% to 30% can be assumed.
+- The interface TokenizerProperties contains the new methods addWhitespaces,
+  removeWhitespaces, addSeparators and removeSeparators for easier handling of
+  these token classes.
+- The flag TokenizerProperties.F_RETURN_IMAGE_PARTS is introduced. When set for
+  a TokenizerProperties instance or for a single TokenizerProperty, the token
+  image is further processed. A pattern is split into its capturing groups, 
+  block comments, whitespaces and strings into lines etc. See the description
+  in de.susebox.jtopas.Token.
+- The new interface de.susebox.jtopas.Flags contains the F_... constants 
+  previously defined in TokenizerProperties. Since the flags are used in the 
+  classes or implementations of TokenizerProperties, TokenizerProperty and 
+  Tokenizer, the new interface reduces cross-references.
+- The Flags.F_CASE flag is deprecated. The existence of both a case and no-case 
+  flag leads to various difficulties, e. g. which flag takes precedence over the 
+  other. Instead, a flag mask is introduced in a TokenizerProperty constructor.
+- The Flags.F_ALLOW_NESTED_COMMENTS cannot be separately set for a Tokenizer. 
+  Instead, it can be set for single block comment properties.
+- A common bug in the StandardTokenizerProperties.XXXexists methods when passing
+  null or empty strings has been fixed.
+- The new class de.susebox.jtopas.AbstractTokenizerProperties is introduced to
+  supply the common functionality for TokenizerProperties implementations. 
+  StandardTokenizerProperties is derived from that class.
+- The new class de.susebox.jtopas.AbstractTokenizer is introduced to supply the 
+  common functionality for Tokenizer implementations. StandardTokenizer is 
+  derived from that class.
+- The TokenizerSource interface has got the extension CharSequenceTokenizerSource
+  that utilizes the Java 1.4 interface java.lang.CharSequence. This interface 
+  provides a sometimes faster alternative to the normal TokenizerSource when 
+  String data or existing character buffers should be processed. Needs Java 1.4 
+  to compile and when actually used at runtime!
+- Both StandardTokenizer and StandardTokenizerProperties can use the traditional
+  TokenizerSource and the new CharSequenceTokenizerSource without modifications
+  or additional calls. If the data source passed in Tokenizer.setSource 
+  implements the new CharSequenceTokenizerSource interface the methods of 
+  CharSequenceTokenizerSource are used.
+- The DataProvider interface (de.susebox.jtopas.spi.DataProvider} has got the
+  method getCharAt for access to single characters. Also, the interface requires
+  as a contract an overridden toString method (java.lang.Object#toString) that
+  returns all available data as a string.
+- The original methods of the DataProvider interface are deprecated except the
+  getLength() method. They are potentially dangerous and, moreover, not really
+  well applicable. The methods getCharAt and toString should be used instead
+  (realized in the JTopas classes accessing DataProvider objects).
+- The interface de.susebox.jtopas.spi.PatternHandler has a new inner interface
+  PatternHandler.Result that is now used as the return type of the matches
+  operation.
+- The de.susebox.java.lang.ThrowableList adopts the JDK 1.4 notion of a "cause"
+  in java.lang.Throwable (Method getCause).
+- The flag Flags.F_RETURN_WHITESPACES is now a composed value of
+  the three flags F_RETURN_SIMPLE_WHITESPACES, F_RETURN_BLOCK_COMMENTS and
+  F_RETURN_LINE_COMMENTS. This solves SorgeForge Bug #776149 (not really a bug
+  but a feature request).
+- A flaw in the line and column count mechanism when handling line comments has 
+  been fixed. Applications with lots of line comments and the flag 
+  F_RETURN_WHITSPACES _NOT_ set, should experience a slightly better performance.
+- Rarely encountered bugs with uncommon whitespaces have been fixed (e. g. if
+  carriage return and line feed are not whitespaces).
+- The old version of the tokenizer classes (mainly de.susebox.java.util.* and the
+  plugin interfaces in de.susebox.jtopas) that has been deprecated since 
+  JTopas 0.6, has been removed.
+- The de.susebox.jtopas.ReaderSource has got two new constructors and a close
+  method for convenience.
+- A bug in the Token.equals method was fixed (wrong companion comparison).
+- Faster separator handling. Whitespace is faster if uncommon whitespaces are
+  used.
+- The flag Flags.F_SINGLE_LINE_STRING can be used to enforce strings that do not 
+  contain line separators even if they are not properly terminated.
+- StandardTokenizer (AbstractTokenizer): The check for non-free pattern (pattern 
+  that are bounded by whitespaces, separators, special sequences, comments or 
+  strings) is now performed after the keyword check.
+- Internally: the members _currentReadPos and _currentWritePos are now absolute
+  positions from the beginning of the data (formerly relative). That might affect
+  classes derived by third parties.
+- Internally: the registered de.susebox.jtopas.TokenizerPropertyListener in 
+  de.susebox.jtopas.AbstractTokenizerProperties are wrapped in a 
+  java.lang.ref.WeakReference to prevent a collection of unused Tokenizer objects
+  that haven't had their close()-method called.
+- Internally: The number of protected methods in AbstractTokenizer (from the old 
+  StandardTokenizer) has been significantly reduced. Also, the signatures of 
+  several protected methods has been changed (e. g. complete... routines). This
+  will probably affect derived classes.
+
+Version 0.7
+-----------
+- The Tokenizer interface has a new method close to free resources, deregister
+  from event providers etc. This fixes Sourceforge bug 773486.
+- Pattern matching has been outsourced into a new class 
+  de.susebox.jtopas.impl.PatternMatcher. It is no longer performed dynamically.
+- Special sequence, comment and string matching has been outsourced into the new
+  class de.susebox.jtopas.impl.SequenceStore.
+- Performance of sequence matching has been improved by direct-index access if
+  a sequence starts with character lower than 256 (one byte characters).
+- The next method of java.util.Iterator implementations now throw a 
+  NoSuchElementException instead of returning null as required by the interface.
+- added testSimilarSpecialSequences to TestDifficultSituations
+- better testing in TestStandardTokenizer
+- Removed the ExceptionList and ExceptionMessageFormatter (deprecated since 0.5).
+- The method getCause is introduced in the ThrowableList interface to reflect the
+  new JDK 1.4 chained throwable mechanism. All throwable classes implementing 
+  the interface have been extended to incorporate getCause, so working with both
+  JDK 1.4 and earlier versions.
+- Exceptions still implementing the ExceptionList interface have been modified.
+- Removed the test cases de.susebox.jtopas.TestTokenizerSpeed and 
+  de.susebox.jtopas.TestJavaTokenizing.
+- The test case de.susebox.java.lang.TestExceptionList has been renamed to
+  de.susebox.java.lang.TestThrowableList.
+- Case-insensitive pattern handling is now Unicode-aware (Pattern.UNICODE_CASE)
+- a dot '.' in a pattern now also matches line terminators (Pattern.DOTALL)
+- Test cases now have a real name in the JUnit swingui hierarchy pane.
+
+Version 0.6.2
+-------------
+- Pattern handling has been improved by adding the flag F_FREE_PATTERN to
+  TokenizerProperties. A pattern can now either be handled like a normal
+  token that is enclosed in whitespaces, separators, comments and/or
+  special sequences. Or it is handled like the latter token types.
+- Non-free pattern matches (common are number pattern) can have a maximum length
+  of 1024 characters 
+- Test cases have been modified and added to reflect the new pattern
+  behaviour
+- A bug affecting the current read position in readMoreData was fixed. It occured
+  with huge data sources in conjunction with pattern matching.
+- A new test case TestLargeSource was added to check moving of data in the input
+  buffer, performance on large files etc.
+- The SPI interfaces KeywordHandler, SequenceHandler and PatternHandler now contain
+  a method has... for fast information if the checker methods (isKeyword, matches,
+  and isSequenceCommentOrString) should be invoked at all.
+- Test cases are now running with the textui TestRunner instead of the swingui
+  one. If the swingui is preferred pass "swingui" to the call of the main method.
+- A special class de.susebox.TestUtilities is introduced that contains methods
+  for common actions in the test cases, for instance the selection of the 
+  TestRunner user interface.
+- SourceForge bug ID 688544 "performance degradiation": fixed
+- SourceForge bug ID 694913 "Data too long ...": fixed
+
+Version 0.6.1
+-------------
+- wrong line and column counting when using setReadPosition was fixed (Bug ID
+  677378 on SourceForge)
+- de.susebox.java.lang.ExceptionMessageFormatter and de.susebox.jtopas.InputStreamSource
+  have been moved to the jtopas-compat.jar archive (Bug ID 673003 on SourceForge)
+- using setReadPositionAbsolute and setReadPositionRelative now clears the current 
+  token.
+- currentToken and currentImage throw a TokenizerException if called without
+  a previous call to nextToken or nextImage.
+- pattern matching is now really available :-) That fixes Bug 680089 on SourceForge.
+- the SPI interface de.susebox.jtopas.spi.PatternHandler was completely redesigned
+  since the first version is too complicated and actually not backed by the
+  regular expression package of JDK 1.4
+- lots of bugs (wrong links etc.) in the javadoc documentation were fixed
+
+Version 0.6
+-----------
+- The classes and interfaces Token, Tokenizer, TokenizerProperty and 
+  TokenizerException of package de.susebox.java.util have been deprecated. 
+  Instead, Token and TokenizerProperty are located in de.susebox.jtopas while 
+  the old Tokenizer was split into the interfaces TokenizerProperties and 
+  Tokenizer in de.susebox.jtopas in order to separate the more static and 
+  shareable characteristics from the actual parsing process
+- The new class de.susebox.jtopas.StandardTokenizer realizes the parsing
+  functionality of the older AbstractTokenizer and InputStreamTokenizer of
+  package de.susebox.java.util and the de.susebox.jtopas.PluginTokenizer.
+- The new class de.susebox.jtopas.StandardTokenizerProperties realizes the 
+  configuration functionality of the older de.susebox.java.util.AbstractTokenizer.
+- The new Token class uses the methods setImage and getImage instead of setToken
+  and getToken
+- The new methods setEndPosition and getEndPosition were added to the new Token
+  class since they can easier be used with java.lang.String methods
+- The package de.susebox.jtopas.spi (from service provider interface) is 
+  introduced. It contains interfaces that define the communication between
+  Tokenizer and TokenizerProperties.
+- The interfaces WhitespaceHandler, SeparatorHandler, Keywordhandler and 
+  SequenceHandler of package de.susebox.jtopas have been deprecated in favour of
+  the interfaces in the new package de.susebox.jtopas.spi.
+- The new token type PATTERN is introduced. Token can now be described by a
+  regular expression
+- The generic methods addProperty, getProperty, removeProperty etc. are added.
+- Forwarding page for the website added
+- Fixed the bug in the "equals" methods: compare the identity of classes instead
+  of instanceof comparison (the contract demands a symmetric operation).
+
+Version 0.5.2 (maintenance release):
+------------------------------------
+- Added the Environment, EnvironmentProvider and DefaultEnvironment classes /
+  interfaces for the daemon4j project(see http://daemon4j.sourceforge.net)
+- Added ExtNoSuchMethodException in the de.susebox.java.lang package
+- Added ExtIllegalArgumentException in the de.susebox.java.lang package
+- Added a simple constructor to the ThrowableList implementations
+- NOTE: The archive contains now the root "jtopas/". Its not longer nessecary to
+  create a jtopas directory before extracting the contents.
+
+Version 0.5.1 (maintenance release):
+------------------------------------
+- A bug in the skip method was fixed.
+- skip is deprecated in favour of the new methods setReadPositionRelative and
+  setReadPositionAbsolute.
+
+Version 0.5:
+------------
+- The ExceptionList interface is deprecated. There is the new interface 
+  ThrowableList.
+- The ExceptionMessageFormatter is deprecated. There is the new class
+  ThrowableMessageFormatter.
+
+Version 0.4:
+------------
+- A plugin for keyword handling KeywordHandler was added to the jtopas package.
+- The integer constants of Token and Tokenizer have been changed to byte and 
+  short values.
+- The JUnit tests use JUnit 3.7 with the new assertTrue methods to avoid clashes
+  with the forthcoming JDK 1.4 release, where assert is a keyword.
+- Addes getFormat and getArguments to the ExceptionList interface.
+- Added the ExceptionMessageFormatter class for a common ExceptionList.getMessage
+  implementation.
+- Exceptions implementing the ExceptionList interface return the assembled 
+  messages of all their nested exceptions.
+- Fixed the bug in the ant build file producing the empty test archive 
+  jtopas-jt.jar
+- added test cases for the ExceptionList implementations
+
+Version 0.3:
+------------
+- the collection classes and interfaces of JDK 1.2 are used instead of the 
+  Vector and Hashtable classes of JDK 1.x. The Tokenizer interface changed
+  therefore: instead of Enumeration the nicer Interface Iterator is used
+- The InputStreamTokenizer works with java.io.Reader instances rather than with
+  java.io.InputStreamReader ones only
+- it is now possible to change from one java.io.Reader to another. E.g. a list 
+  of files can be processed with one InputStreamTokenizer instance
+- a bug in completing line comments before EOF or run-out-of-data situations has
+  been fixed
+- the de.susebox.jtopas package with the PluginTokenizer is introduced. It 
+  allows user-supplied handler methods for more efficient parsing of special
+  sequences, whitespaces and more
+- more performant whitespace handling has been implemented in AbstractTokenizer.
+- a skip method is added to AbstractTokenizer
+- a public readMore method is added to AbstractTokenizer to enable an explicite
+  call for more data.
+- the secure method getChar has got an equivalent getCharUnchecked that skips
+  the bounds checking but is faster than getChar.
+
+Version 0.2:
+------------
+- a bug in the embedded-tokenizers feature was fixed. It
+  occured, when the input buffer had to be reallocated.
+- the HTML and CSS sources of the JTopas website on sourceforge.net
+  was included in the release
+- CVS and helper files are excluded from jtopas archive
+
+Version 0.1:
+------------
+This is the initial version

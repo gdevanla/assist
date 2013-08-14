@@ -1,0 +1,6 @@
+<!ELEMENT note (to,from,heading,body)>
+<!ELEMENT to (#PCDATA)>
+<!ELEMENT from (#PCDATA)>
+<!ENTITY % ContentType "CDATA">
+<!ELEMENT heading (#PCDATA)>
+<!ELEMENT body (#PCDATA)>

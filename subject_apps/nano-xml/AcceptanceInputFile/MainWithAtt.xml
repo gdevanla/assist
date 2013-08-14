@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<!DOCTYPE note PUBLIC "book" "example.dtd">
+
+<!-- 
+<note>
+<content></content>
+<heading>Reminder</heading>
+<body tag="content">Don't forget me this weekend!</body>
+</note>
+-->
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body tag="content" style="main">Don't forget me this weekend!</body>
+<end />
+</note>

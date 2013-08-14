@@ -1,0 +1,12 @@
+org.eclipse.compare.internal
+org.eclipse.compare.rangedifferencer
+org.outerj.daisy.diff
+org.outerj.daisy.diff.helper
+org.outerj.daisy.diff.html
+org.outerj.daisy.diff.html.ancestor
+org.outerj.daisy.diff.html.ancestor.tagtostring
+org.outerj.daisy.diff.html.dom
+org.outerj.daisy.diff.html.dom.helper
+org.outerj.daisy.diff.html.modification
+org.outerj.daisy.diff.output
+org.outerj.daisy.diff.tag

@@ -1,0 +1,306 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: XML / Darstellung von XML-Daten / XML-Darstellung mit Stylesheets (CSS)</title>
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<meta name="description"    content="Wie sich CSS in Verbindung mit XML in Browsern mit entsprechenden Fähigkeiten einsetzen lässt.">
+<meta name="keywords"       content="SELFHTML, XML, Stylesheets, CSS, Cascading Style Sheets">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-08-22T21:21:39+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/xml/darstellung/css.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="Darstellung von XML-Daten" href="index.htm">
+<link rel="next" title="Grundlagen von XSL/XSLT" href="xslgrundlagen.htm">
+<link rel="prev" title="Notationen für referenzierte Daten" href="../dtd/notations.htm">
+<link rel="last" title="XPath-Funktionen" href="xpathfunktionen.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">XML/DTDs</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Darstellung von XML-Daten</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">XML-Darstellung mit Stylesheets</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#allgemeines">Allgemeines zur Darstellung mit CSS</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#fahrplanbeispiel">Zusammenhängendes Beispiel: ein Zugfahrplan</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#grenzen">Grenzen und Probleme bei der Darstellung mit CSS</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="allgemeines">Allgemeines zur Darstellung mit CSS</a></h2>
+
+<p><img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../css/index.htm">Stylesheets</a> sind eigentlich als Ergänzungssprache für HTML gedacht. Mit Hilfe von CSS ist es möglich, HTML-Elemente, die ein Browser mit Default-Formatierungen anzeigt, nach eigenen Wünschen zu formatieren. Diese Möglichkeit besteht je nach Browser auch, um XML-Daten zu formatieren. Genauso, wie Sie HTML-Elemente wie <code>blockquote</code>, <code>h1</code> oder <code>div</code> mit CSS formatieren können, ist dies dann mit eigenen XML-Elementen möglich, egal ob sie nun <code>telefonnummer</code>, <code>kurzbeschreibung</code> oder wie auch immer heißen.</p>
+
+<p>Damit die Kombination von XML und CSS funktioniert, müssen im Browser allerdings drei Voraussetzungen erfüllt sein:</p>
+<ol>
+<li>Der Browser muss XML verarbeiten können.</li>
+<li>Der Browser muss CSS kennen.</li>
+<li>Der Browser muss CSS in Verbindung mit XML erlauben.</li>
+</ol>
+
+<p>Erfüllt werden diese Voraussetzungen vom Internet Explorer ab der Version 5.0 und von Netscape ab Version 6.0. Dabei ist nicht einmal eine DTD erforderlich. Es genügt, wenn eine <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../regeln/begriffe.htm#wohlgeformt">wohlgeformte XML-Datei</a> existiert. Die Elemente einer solchen Datei können Sie mit CSS formatieren.</p>
+
+<p>XML in Verbindung mit CSS hat den Vorteil, dass es in den Browsern, in denen es funktioniert, ohne Kenntnisse in XSL/XSLT auskommt. Da die Verarbeitung komplett im Browser stattfindet, ist auch keine Serverumgebung oder ähnliches erforderlich. Zu den Nachteilen siehe <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#grenzen">Grenzen und Probleme bei der Darstellung mit CSS</a>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/xml10.gif" width="30" height="30" alt="XML 1.0" title="XML 1.0"><img src="../../src/msie5.gif" width="30" height="30" alt="MS IE 5.0" title="MS IE 5.0"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="fahrplanbeispiel">Zusammenhängendes Beispiel: ein Zugfahrplan</a></h2>
+
+<p>Der Zugfahrplan eines Bahnhofs ist ein typisches strukturiertes Dokument, für das es in HTML kaum sinnvolle Elemente gibt. Es ist zwar kein Problem, eine schöne <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../html/tabellen/index.htm">Tabelle</a> in HTML zu erstellen und einen Fahrplan darin darzustellen. Doch aus "semantischer Sicht" gehen dabei Daten verloren. Denn eine HTML-Tabelle besteht aus Tabellenzellen, aber diese sagen nichts weiter über ihren jeweiligen Inhalt aus. Mit Hilfe einer XML-Struktur lassen sich die Fahrplandaten so beschreiben, dass die Einzeldaten jeweils in "Elementen mit Bedeutung" stehen.</p>
+
+<p>Das folgende Beispiel zeigt eine solche XML-Struktur. Es besteht aus drei Teilen:</p>
+<ol>
+<li>der <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../dtd/index.htm">DTD</a> für die Validierbarkeit der Daten,</li>
+<li>einer XML-Anwendung dieser DTD, also einem Beispieldokument, das auch eine separate CSS-Datei einbindet, und</li>
+<li>aus dieser separaten CSS-Datei und ihren Definitionen.</li>
+</ol>
+
+<p><img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/fahrplan.xml">Anzeigebeispiel: So sieht's aus</a> (XML-fähiger Browser zeigt z.B. die Datenstruktur an)</p>
+
+<h3 class="xmp">Beispiel-DTD <var>fahrplan.dtd</var>:</h3>
+
+<pre>
+&lt;!ELEMENT fahrplan  (bahnhof)&gt;
+&lt;!ELEMENT bahnhof   (name,(ereignis)*)&gt;
+&lt;!ELEMENT name      (#PCDATA)&gt;
+&lt;!ELEMENT ereignis  (abfahrt | ankunft)&gt;
+&lt;!ELEMENT abfahrt   (zeit,zugtyp,zugnr,route)&gt;
+&lt;!ELEMENT ankunft   (zeit,zugtyp,zugnr,route)&gt;
+&lt;!ELEMENT zeit      (#PCDATA)&gt;
+&lt;!ELEMENT zugtyp    (#PCDATA)&gt;
+&lt;!ELEMENT zugnr     (#PCDATA)&gt;
+&lt;!ELEMENT route     (#PCDATA | start | ziel)*&gt;
+&lt;!ELEMENT start     (#PCDATA)&gt;
+&lt;!ELEMENT ziel      (#PCDATA)&gt;
+</pre>
+
+<h3 class="xmp">Beispiel einer gültigen Anwendung <var>fahrplan.xml</var>:</h3>
+
+<pre>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;!DOCTYPE fahrplan SYSTEM "fahrplan.dtd"&gt;
+&lt;?xml-stylesheet type="text/css" href="fahrplan.css" ?&gt;
+&lt;fahrplan&gt;
+&lt;bahnhof&gt;
+ &lt;name&gt;Frankfurt HBF&lt;/name&gt;
+  &lt;ereignis&gt;
+   &lt;abfahrt&gt;
+    &lt;zeit&gt;10.24&lt;/zeit&gt;
+    &lt;zugtyp class="ic"&gt;IC&lt;/zugtyp&gt;
+    &lt;zugnr&gt;234&lt;/zugnr&gt;
+    &lt;route&gt;Nürnberg 11.48, Regensburg 12.50, Passau 13.38, Linz 14.22
+     &lt;ziel&gt;Wien West an 17.55&lt;/ziel&gt;
+    &lt;/route&gt;
+   &lt;/abfahrt&gt;
+  &lt;/ereignis&gt;
+  &lt;ereignis&gt;
+   &lt;ankunft&gt;
+    &lt;zeit&gt;10.36&lt;/zeit&gt;
+    &lt;zugtyp&gt;RB&lt;/zugtyp&gt;
+    &lt;zugnr&gt;20392&lt;/zugnr&gt;
+    &lt;route&gt;&lt;start&gt;Koblenz ab 08.57&lt;/start&gt;
+     Bacharach 09.16, St. Goar 09.42, Mainz 10.05, Ffm Flughafen 10.25
+    &lt;/route&gt;
+   &lt;/ankunft&gt;
+  &lt;/ereignis&gt;
+  &lt;ereignis&gt;
+   &lt;abfahrt&gt;
+    &lt;zeit&gt;10.39&lt;/zeit&gt;
+    &lt;zugtyp&gt;RSB&lt;/zugtyp&gt;
+    &lt;zugnr&gt;58483&lt;/zugnr&gt;
+    &lt;route&gt;Offenbach 10.52, Hanau 11.01
+     &lt;ziel&gt;Aschaffenburg an 11.27&lt;/ziel&gt;
+    &lt;/route&gt;
+   &lt;/abfahrt&gt;
+  &lt;/ereignis&gt;
+  &lt;ereignis&gt;
+   &lt;ankunft&gt;
+    &lt;zeit&gt;10.40&lt;/zeit&gt;
+    &lt;zugtyp class="ice"&gt;ICE&lt;/zugtyp&gt;
+    &lt;zugnr&gt;23&lt;/zugnr&gt;
+    &lt;route&gt;&lt;start&gt;Hamburg ab 06.55&lt;/start&gt;
+     Hannover 08.05, Göttingen 08.43, Kassel 09.01, Fulda 09.43
+    &lt;/route&gt;
+   &lt;/ankunft&gt;
+  &lt;/ereignis&gt;
+ &lt;/bahnhof&gt;
+&lt;/fahrplan&gt;
+</pre>
+
+<h3 class="xmp">Beispiel der eingebundenen CSS-Datei <var>fahrplan.css</var>:</h3>
+
+<pre>
+bahnhof {
+  position:absolute;
+  top:10px;
+  left:40px;
+  background-color:#C0C0C0;
+  padding:10px;
+}
+
+name {
+  position:relative;
+  display:block;
+  width:600px;
+  background-color:#808080;
+  color:#FFFFFF;
+  font-family:Tahoma,Arial,Helvetica,sans-serif;
+  font-size:48px;
+  padding:5px;
+}
+
+abfahrt {
+  position:relative;
+  display:block;
+  width:600px;
+  background-color:#FFFF80;
+  color:#000000;
+  font-family:Tahoma,Arial,Helvetica,sans-serif;
+  font-size:16px;
+  padding:5px;
+}
+
+ankunft {
+  position:relative;
+  display:block;
+  width:600px;
+  background-color:#FFFFFF;
+  color:#000000;
+  font-family:Tahoma,Arial,Helvetica,sans-serif;
+  font-size:16px;
+  padding:5px;
+}
+
+zeit {
+  position:relative;
+  width:70px;
+  vertical-align:top;
+}
+
+zugtyp {
+  position:relative;
+  width:50px;
+  vertical-align:top;
+}
+
+zugnr {
+  position:relative;
+  width:70px;
+  vertical-align:top;
+}
+
+route {
+  position:relative;
+  width:350px;
+}
+
+ziel,start,zeit {
+  font-weight:bold;
+  color:#0000E0;
+}
+
+.ic, .ice {
+  font-weight:bold;
+  color:#E00000;
+}
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>In der Beispiel-DTD, die separat in einer Datei namens <var>fahrplan.dtd</var> gespeichert wird, wird die gewünschte Elementstruktur der Daten definiert. Unterhalb des Dokument-Elements <code>fahrplan</code> gibt es ein umfassendes Element namens <code>bahnhof</code>, das aus einem Namen für den Bahnhof (Element <code>name</code>) und aus einer beliebigen Anzahl von Ereignissen (Element <code>ereignis</code>) besteht. Ein Ereignis besteht entweder aus einer Abfahrt oder einer Ankunft (Elemente <code>abfahrt</code> und <code>ankunft</code>). Beide Ereignisarten haben die gleiche innere Struktur. Sie bestehen aus einer Uhrzeit (Element <code>zeit</code>), einer Zugtypbezeichnung (Element <code>zugtyp</code>), einer Zugnummer (Element <code>zugnr</code>) und einer Routenbeschreibung des Zuges (<code>route</code>). Das Element <code>route</code> kann nochmals innere Elemente enthalten, nämlich für die Nennung des Startbahnhofs bei ankommenden Zügen (Element <code>start</code>, und für den Endbahnhof bei abfahrenden Zügen (Element <code>ziel</code>).<br>
+Einzelheiten zu solchen DTD-Definitionen finden Sie im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../dtd/elemente.htm">Elemente und Verschachtelungsregeln</a>.</p>
+
+<p>In der XML-Anwendungsdatei wird in einer <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../regeln/dokumenttypdeklaration.htm#externe_dtd">Dokumenttyp-Deklaration mit externer DTD</a> auf die zuvor erstellte DTD Bezug genommen. Gleich im Anschluss an die Dokumenttyp-Deklaration, noch vor den eigentlichen Nutzdaten der Datei, folgt die Anweisung, mit deren Hilfe die CSS-Datei eingebunden wird:<br>
+<code>&lt;?xml-stylesheet type="text/css" href="fahrplan.css" ?&gt;</code></p>
+
+<p>Es handelt dabei um eine <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../regeln/xmldeklaration.htm#verarbeitungsanweisungen">Verarbeitungsanweisung</a>. Durch die Notation <code>xml-stylesheet</code> weiß der Browser, dass die nachfolgenden Attribute eine separate Stylesheet-Datei einbinden, in der Formatierungsangaben für die einzelnen XML-Elemente stehen. Mit dem <code>href</code>-Attribut wird die Datei referenziert. Ebenfalls wichtig, besonders wenn die ganze Anwendung über einen Webserver aufgerufen wird, ist das Attribut <code>type</code>. Bei Verwendung von CSS erhält dieses Attribut den Wert <code>text/css</code>.</p>
+
+<p>Der Rest der XML-Datei besteht aus den eigentlichen Nutzdaten. Dabei werden die Elemente verwendet, die in der DTD definiert wurden, und die Verschachtelungsregeln werden eingehalten. Das obige Beispiel beschränkt sich der Einfachheit halber auf vier "Ereignisse" im Zugfahrplan.</p>
+
+<p>Die separate CSS-Datei, die im Beispiel den Namen <var>fahrplan.css</var> hat, definiert für die einzelnen Elemente gewünschte <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../css/eigenschaften/index.htm">CSS-Eigenschaften</a>. Auf die einzelnen Eigenschaften wird an dieser Stelle nicht näher eingegangen. Aber einen wichtigen Grundsatz sollten Sie kennen: ein XML-Element hat für den Browser zunächst keinerlei Eigenschaften. Der Browser weiß nicht einmal, ob ein Element einen eigenen Block bei der Anzeige erzeugen soll, oder ob es nur innerhalb des laufenden Textes vorkommen soll (inline). Per Voreinstellung wird alles inline angezeigt, also wie ein völlig unstrukturierter Text. Deshalb müssen Sie bei den CSS-Definitionen von XML-Elementen, die einen eigenen Block erzeugen sollen, stets eine entsprechende Angabe notieren. Diese lautet <code>display:block</code>.</p>
+
+<p>Im obigen Beispiel wird das Element <code>bahnhof</code>, das den gesamten Zugfahrplan einschließt, absolut positioniert (<code>position:absolute</code>). Die inneren Elemente werden dann in Abhängigkeit ihres relativen Anfangspunkts positioniert (<code>position:relative</code>). Diese Angaben in Verbindung mit Angaben zur Breite der Elemente (<code>width:...</code>) sorgen dafür, dass die Ausgabe sauber formatiert wie in einer Tabelle erscheint.</p>
+
+<p>Eine Besonderheit stellt die unterste Definition in der CSS-Datei dar. Dort werden zwei so genannte <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/formate/zentrale.htm#klassen">Klassen</a> definiert. Solche Klassen können in HTML-Elementen normalerweise mit dem <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../html/attribute/index.htm">Universalattribut</a> <code>class="Klassenname"</code> angesprochen werden. Der Internet Explorer interpretiert solche Universalattribute auch in XML-Elementen in Verbindung mit CSS. In den Daten der XML-Datei im obigen Beispiel wird an zwei Stellen auf diese Klassen Bezug genommen, z.B. in der Anweisung <code>&lt;zugtyp class="ic"&gt;IC&lt;/zugtyp&gt;</code>.<br>
+Der Internet Explorer interpretiert sogar das Attribut <code>style</code> in einleitenden XML-Tags. Dies erlaubt Ihnen, einzelne XML-Elemente individuell zu formatieren, z.B.: <code>&lt;geburtstag style="font-family:Modern; font-size:18px; color:blue"&gt;</code>.<br>
+Je stärker Sie jedoch die XML-Anwendungsdaten durch HTML-entlehnte Attribute wie <code>class</code> oder <code>style</code> "aufweichen", desto weiter entfernen Sie sich wieder von der reinen XML-Lehre, die Daten und Formatierung streng voneinander trennen will und Formatierung nur für definierte Bestandteile einer DTD erreichen will.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Klassennamen wie im obigen Beispiel <code>.ic</code> und <code>.ice</code> sind in dieser Form nur für das Zusammenspiel von CSS mit HTML definiert. Ein XML-Parser, der anders als der Internet Explorer nicht das Universalattribut <code>class</code> erkennt, kann mit solchen Definitionen nichts anfangen. Eine Alternativnotation, die auch von solchen Parsern verstanden wird, wäre <code>*[class~=ic]</code> anstelle von <code>.ic</code>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="grenzen">Grenzen und Probleme bei der Darstellung mit CSS</a></h2>
+
+<p>CSS ist für Anwender, die sich mit Vorkenntnissen in HTML an XML heranwagen, zunächst sicher einfacher zu verstehen und leichter anzuwenden. Dennoch gibt es Nachteile bei CSS in Verbindung mit XML, die Sie kennen müssen:</p>
+
+<ul>
+<li>Ältere, auch CSS-fähige Browser können mit der Kombination aus XML-Daten und CSS nichts anfangen und zeigen entweder gar nichts oder Text ohne jede Formatierung an. Die Anzeige von XML-Daten in Verbindung mit CSS ist zumindest im WWW derzeit keine empfehlenswerte Lösung, weil derzeit noch zu viele Anwender ausgegrenzt werden.</li>
+<li>Mit CSS in Version 1.0 lassen sich nur Elemente formatieren, keine Attribute. Wenn Sie beispielsweise in einer XML-DTD ein Attribut namens <code>ausrichtung</code> mit den erlaubten Werten <code>links</code>, <code>rechts</code> und <code>zentriert</code> definieren, haben Sie erst ab CSS2 die Möglichkeit, die Verbindung zwischen einer solchen Attributangabe und einer entsprechenden Textformatierung herzustellen. Einzelheiten dazu finden Sie im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../css/formate/zentrale.htm#attributbedingte">Attributbedingte Formate definieren</a>. Beachten Sie allerdings, dass nicht alle Browser solche CSS-Formate unterstützen.</li>
+<li>CSS bietet erst ab Version 2.0 die Möglichkeit, automatische Nummerierungs-Schemata auf Elemente anzuwenden, etwa auf Kapitelüberschriften (Kapitel 1, 1.1, 1.2, 1.2.1, 1.2, 1.3 usw.). In XSL/XSLT ist die Möglichkeit der Nummerierung von vorneherein enthalten.</li>
+<li>Es gibt mit CSS kaum sinnvolle Möglichkeiten, Daten bei der Anzeige zu filtern. Gerade bei feld- und datensatzorientierten Daten, wie sie in XML häufig gespeichert werden, ist nicht unbedingt immer gewünscht, dass bei einer Bildschirmausgabe jedes Feld angezeigt wird. Wenn Sie etwa eine Kontaktdatenbank in XML haben, möchten Sie bei der Ausgabe einer Telefonliste beispielsweise nur Namen, Firma und Telefonnummer ausgeben, aber keine Anschriften, Kontonummern und Geburtstage. In XSL/XSLT besteht eine solche Möglichkeit.</li>
+<li>Auch weitere Leistungsmerkmale von XSL/XSLT, wie etwa die automatische Sortierung von Daten vor der Ausgabe, ist mit CSS derzeit nicht möglich.</li>
+</ul>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="xslgrundlagen.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="xslgrundlagen.htm">Grundlagen von XSL/XSLT</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../dtd/notations.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../dtd/notations.htm">Notationen für referenzierte Daten</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">XML/DTDs</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Darstellung von XML-Daten</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

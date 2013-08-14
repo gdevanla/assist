@@ -1,0 +1,33 @@
+JTopas - Java tokenizer and parser tools:
+-----------------------------------------
+
+JTopas consists of several parts:
+
+- the JTopas Core Library
+- the JTopas Test Suite
+
+JTopas comes under the the GNU Lesser General Public License (LGPL).
+
+
+Licenses:
+---------
+
+The Lesser General Public License (LGPL) can be found in:
+	GNU-LGPL.txt.
+It is copyrighted by the Free Software Foundation.
+
+The source code, libraries and programs of JTopas are copyrighted by
+the authors who actually wrote it.
+
+
+Licenses for nessecary software:
+--------------------------------
+
+The JTopas Test Suite uses the test framework JUnit by Kent Beck and Erich Gamma
+that can be found at http://sourceforge.net/projects/junit or http://junit.org.
+It is released under IBM's common public license version 0.5
+(see http://oss.software.ibm.com/developerworks/oss/license-cpl.html).
+
+Java Development Kits (JDK) or Java Runtime Environments (JRE) are - among others -
+available from Sun (http://java.sun.com) and IBM (http://www.ibm.com). Check 
+Your java installation for license agreements (Sun: $JAVA_HOME/LICENSE).

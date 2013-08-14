@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Stylesheets / Stylesheets und HTML</title>
+<link rel="stylesheet" type="text/css" href="../src/selfhtml.css">
+<meta name="description"    content="Wie Wie Stylesheets und HTML in Zusammenhang stehen und welche Aufgaben CSS hat.">
+<meta name="keywords"       content="SELFHTML, CSS, Stylesheets, Cascading Stylesheets, HTML, Formatierung">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-08-22T21:21:39+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/css/intro.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../src/favicon.ico">
+<link rel="author" title="Impressum" href="../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../index.htm">
+<link rel="up" title="Stylesheets" href="index.htm">
+<link rel="next" title="Stylesheets in HTML einbinden" href="formate/einbinden.htm">
+<link rel="prev" title="HTML-Varianten" href="../html/referenz/varianten.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Stylesheets</a> </td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../index.htm"><img src="../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Stylesheets und HTML</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#sinn_und_zweck">Sinn und Zweck von Stylesheets</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#sprachen_versionen">Stylesheet-Sprachen, Versionen und Informationen</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#styles_browser_anwender">Stylesheets, Web-Browser und Anwender</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#formate_eigenschaften">CSS-Formate und CSS-Eigenschaften</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="sinn_und_zweck">Sinn und Zweck von Stylesheets</a></h2>
+
+<p>Stylesheets sind eine unmittelbare Ergänzung zu HTML. Es handelt sich dabei um eine Sprache zur Definition von Formateigenschaften einzelner HTML-Elemente. Mit Hilfe von Stylesheets können Sie beispielsweise bestimmen, dass Überschriften 1. Ordnung einen großen Schriftgrad aufweisen, in der Schriftart Helvetica, aber nicht fett erscheinen und mit einem Abstand von 1,75 Zentimeter zum darauffolgenden Absatz versehen werden. Angaben dieser Art sind mit reinem HTML nicht möglich.</p>
+
+<p>Das ist aber nur der Anfang. Stylesheets bieten noch viel mehr Möglichkeiten. So können Sie HTML-Elemente - egal ob Textabsätze, Listen oder Formulare - mit einer eigenen Hintergrundfarbe, einem eigenen Hintergrundbild (Wallpaper) oder mit diversen Rahmen ausstatten. Sie können Elemente im Anzeigefenster des WWW-Browsers positionieren und Abstände definieren. Für Print-Layouts stehen Möglichkeiten zur Definition von Seiten-Layout und Textflusskontrolle bereit. Für die akustische Wiedergabe von Web-Seiten gibt es ein ganzes Arsenal an Eigenschaften, um die künstliche Sprachausgabe zu steuern. Einige CSS-Eigenschaften sind auch in der Lage, das Anzeigefenster des Browsers zu beeinflussen, so etwa das Aussehen des Cursors.</p>
+
+<p>Ein weiteres wichtiges Leistungsmerkmal von CSS ist die Möglichkeit, zentrale Formate zu definieren. So können Sie beispielsweise in einer externen Datei zentrale Definitionen zum Aussehen eines Elements notieren und dieses Stylesheet in viele HTML-Seiten parallel einbinden. Alle Elemente der entsprechenden HTML-Dateien erhalten dann die Formateigenschaften, die einmal zentral definiert sind. Das spart Kodierarbeit und macht die HTML-Dateien kleiner. Sie können Ihre Stylesheet-Definitionen sogar in separaten Dateien notieren. Die Stylesheet-Dateien können Sie in beliebig vielen HTML-Dateien referenzieren. Auf diese Weise können Sie für große Projekte einheitliche Layouts entwerfen. Mit ein paar kleinen Änderungen in einer zentralen Stylesheet-Datei können Sie dann für hunderte von HTML-Dateien ein anderes Aussehen bewirken.</p>
+
+<p>Stylesheets unterstützen also die professionelle Gestaltung beim Web-Design und helfen beim Corporate Design für große Projekte oder für unternehmensspezifische Layouts.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="sprachen_versionen">Stylesheet-Sprachen, Versionen und Informationen</a></h2>
+
+<p>Genau wie HTML wird auch CSS vom W3-Konsortium normiert. Es handelt sich also um einen firmenunabhängigen, offen dokumentierten und frei verwendbaren Standard. Für CSS gibt es genau wie für HTML eine Arbeitsgruppe beim W3-Konsortium, die sich um die Weiterentwicklung der Sprache kümmert und sich dabei dem Regelwerk zur Entstehung der so genannten Recommendations (Empfehlungen) des W3-Konsortiums unterzieht.</p>
+
+<p>Wie bei HTML, so gibt es auch bei CSS Sprachversionen, die auf den Neuauflagen der Recommendations basieren. Die Version 1.0 von CSS wurde bereits im Jahr 1996 herausgegeben und 1999 nochmals überarbeitet. 1998 erhielt die Version 2.0 den Status einer Empfehlung. Mittlerweile wird an den Versionen 2.1 und 3.0 parallel gearbeitet. Bei CSS 2.1 handelt es sich um eine korrigierte und geringfügig ergänzte Fassung der zweiten Ausgabe, deren vollständige Bezeichnung <em>CSS Level 2 Revision 1</em> lautet. Sie ersetzt CSS 2, wird voraussichtlich im Laufe des Jahres 2007 den Status einer Empfehlung erlangen und in der vorliegenden Dokumentation bereits berücksichtigt. Folgende Symbole werden zur Auszeichnung der Sprachversionen verwendet:</p>
+
+<table class="reftable" cellpadding="3" cellspacing="0" border="1">
+<tr>
+<th>Symbol</th>
+<th>Bedeutung</th>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><img src="../src/css10.gif" width="30" height="30" alt="CSS 1.0" title="CSS 1.0"></td>
+<td class="tabxpl">Bestandteil der ersten CSS-Version.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><img src="../src/css20.gif" width="30" height="30" alt="CSS 2.0" title="CSS 2.0"></td>
+<td class="tabxpl">Bestandteil der zweiten CSS-Version.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><img src="../src/css21.gif" width="30" height="30" alt="CSS 2.1" title="CSS 2.1"></td>
+<td class="tabxpl">Bestandteil der aktualisierten zweiten CSS-Version.</td>
+</tr>
+</table>
+
+<p>Es gibt mehrere Sprachen zum Definieren von Stylesheets, CSS ist nur eine davon. Aber es ist diejenige Sprache, die speziell als Ergänzung für HTML geschaffen wurde und deshalb für HTML-basierte Web-Seiten optimiert ist. CSS steht für "Cascading Style Sheets". Andere Style-Sprachen sind die "Document Style Semantics and Specification Language" (DSSSL), die für SGML konzipiert wurde und ebenso wie SGML etwas "sophisticated" ist und die mittlerweile bekanntere "Extensible Stylesheet Language" (XSL), die als Formatierungssprache für XML entwickelt wurde (zu XSL siehe auch <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../xml/darstellung/index.htm">Darstellung von XML-Daten</a>).</p>
+
+<p>Im Web können Sie die bisherige Entwicklung und die Weiterentwicklung von CSS auf den Seiten des W3-Konsortiums verfolgen:</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/Style/">Einstiegsseite zu Stylesheets beim W3-Konsortium</a><br>
+Über diese Seite gelangen Sie zu Informationen über CSS, XSL und DSSSL sowie über Software-Projekte rund um Style-Unterstützung.</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/Style/CSS/">Einstiegsseite zu CSS beim W3-Konsortium</a><br>
+Über diese Seite gelangen Sie direkt zu aktuellen Nachrichten und Informationen über CSS.</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/TR/REC-CSS2/">CSS2-Spezifikation beim W3-Konsortium</a><br>
+Über diese Seite gelangen Sie direkt zur aktuellen CSS-Spezifikation.</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/TR/CSS21/">CSS 2.1-Entwurf beim W3-Konsortium</a><br>
+Über diese Seite gelangen Sie zum Arbeitsentwurf der künftigen CSS-Spezifikation.</p>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a target="_top" href="http://www.w3.org/Style/CSS/current-work#CSS3">CSS3 - aktueller Entwicklungsstand beim W3-Konsortium</a><br>
+Über diese Seite gelangen Sie zu Arbeitsentwürfen der künftigen CSS-Spezifikation.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="styles_browser_anwender">Stylesheets, Web-Browser und Anwender</a></h2>
+
+<p>Netscape 4.x, der mittlerweile als ausgestorben gelten darf, interpretierte viele Eigenschaften der CSS-Version 1.0 und einen Teil der Eigenschaften der CSS-Version 2.0. Der Internet Explorer kennt weite Teile der CSS-Version 1.0 bereits seit seiner Produktversion 3.0 aus dem Jahr 1996. In der Version 4.0 interpretiert er einen Teil der CSS-Version 2.0 und einige spezielle, von Microsoft eingeführte Eigenschaften. Auf dem Niveau der 4er-Generation beider Browser ist die CSS-Implementierung jedoch noch äußerst unvollständig und recht unterschiedlich, und speziell beim 4er-Netscape gibt es zum Teil noch haarsträubende Fehler. Seit der 5er-Version des Internet Explorer ist die Situation zwar etwas besser geworden, allerdings weist der Microsoft-Browser bis einschließlich Version 6 viele gravierende Schwächen auf. Opera befindet sich in Sachen CSS spätestens seit seiner 5er-Version ebenfalls auf hohem Niveau.</p>
+
+<p>Die umfassendste Implementierung bieten derzeit die aus dem Mozilla-Projekt hervorgegangenen Browser (Mozilla, Firefox, Camino und Netscape ab Version 6), Opera 9 und die beiden auf dem quelloffenen Darstellungsmodul WebKit basierenden Browser Safari (Mac OS X) und Konqueror (Linux). Microsoft machte mit der Veröffentlichung des Internet Explorer 7 einiges an Boden gut, verfehlt das Niveau der Konkurrenz jedoch immer noch deutlich.</p>
+
+<p>Dieser Umstand gebietet es daher, Web-Seiten ausführlich mit verschiedenen Browsern auszutesten. Die CSS-Implementierungen sind einfach noch nicht so einheitlich oder vollständig, als dass Sie darauf vertrauen können, dass alles in jedem Browser genauso aussieht wie in dem, mit dem Sie bevorzugt arbeiten. Schließlich entwickeln Sie für Ihre Besucher und nicht für sich selbst. Ferner sollte Ihnen bewusst sein, dass die optische Wirkung von Web-Seiten auch stark von der eingesetzten Hardware abhängig ist. Web-Seiten werden nun mal nicht nur auf High-End-Computern mit 22-Zoll-Bildschirmen und 16,7 Millionen Farben gelesen. Sie werden auch mit Sub-Notebooks, Handheld-Computern sowie Handys gelesen und mit veralteten PCs angezeigt. Gerade die unterschiedlichen Technologien, die heute im Bereich der Bildschirme auf dem Markt sind, sorgen für sehr unterschiedliche Wirkungen etwa von Farben. Was auf dem einen Bildschirm als beige wirkt, sieht auf dem nächsten aus wie schweinchenrosa. Zwar lassen sich Bildschirme kalibrieren, doch Sie können ja schlecht vom Anwender verlangen, dass er vor dem Betrachten Ihrer Web-Seiten erst seinen Bildschirm neu einstellt. Immerhin besteht ab CSS2 die Möglichkeit, unterschiedliche CSS-Formate für unterschiedliche Ausgabemedien zu definieren. Damit lassen sich viele, jedoch nicht alle Klippen umschiffen.</p>
+
+<p>Zu bedenken ist weiterhin, dass Schriftgrößenangaben in CSS am Bildschirm nicht zwingend zu einheitlichen Ergebnissen führen. Während im Print-Bereich eine 10-Punkt-Schrift immer gleich groß ist, weil nun mal definiert ist, wie groß ein Punkt ist, werden solche Angaben am Bildschirm in Pixel umgerechnet. Dabei ist aber wiederum nicht festgelegt, wie groß ein Pixel ist. Und nicht einmal die Umrechnungsfaktoren sind die gleichen. So rechnet etwa Windows Schriftgrößenangaben anders in Pixel um als etwa grafische Oberflächen unter Linux oder als das Macintosh-Betriebssystem OS X. Ferner bieten moderne Browser die Möglichkeit, Schriftgrade an die Bedürfnisse des Nutzers anzupassen, worauf ebenfalls Bedacht zu nehmen ist. Kurzum - vieles in CSS steht nur genau in der Datei, aber die Ergebnisse am Bildschirm können doch recht unterschiedlich und nicht selten unbefriedigend sein. Testen Sie daher mit möglichst vielen Browsern, um keine Besucher zu verärgern. Idealerweise entwickeln Sie unter Zuhilfenahme der obgenannten qualitativ hochwertigen Browser und korrigieren anschließend Darstellungsfehler in fehlerbehafteten Exemplaren.</p>
+
+<p>Ein ganz wichtiger Aspekt beim Entwerfen von Stylesheets für Web-Seiten sind aber auch die Menschen, die diese Web-Seiten als Besucher betrachten sollen. Es gibt nicht wenige Menschen, die Farben und Formen oder kleine Schrift aufgrund visueller Schwächen nur eingeschränkt wahrnehmen können. Was Sie beim Designen vielleicht als "edel" empfinden, empfinden solche Menschen nur noch als "unleserlich". Und "unleserlich" bedeutet: Sie haben wieder einen Besucher weniger auf Ihren Seiten. Stylesheets verführen aufgrund ihrer Möglichkeiten leicht zur Verwendung ungewöhnlicher Schriftarten oder zu Dingen wie Ton-in-Ton-Farbgebung. So "schön" das auch aussehen mag - es kann je nach Anzeigegerät und visuellem Auflösungsvermögen beim Betrachter schnell auf Kosten der "Usability" (Benutzbarkeit) und damit der Zweckmäßigkeit gehen. Andererseits können Sie Stylesheets auch explizit dafür nutzen, um Seiten für sehschwache Menschen zu optimieren. Ordentliche Farbkontraste, Schriftarten im normalgroßen Bereich, übliche Schriftweiten und Zeilenhöhen, Vermeidung von kritischen Farbkombinationen wie rot/grün bei Hintergrund/Vordergrund - das sind Eigenschaften, die gut besuchte Web-Seiten aufweisen sollten.</p>
+
+<p>Wenn Sie Web-Seiten gestalten, müssen Sie daraus Ihre eigenen Konsequenzen ziehen. Stylesheets erlauben Ihnen völlig neue Möglichkeiten beim Web-Seiten-Layout. Je intensiver Sie Ihre Layouts jedoch von ungewöhnlichen Stylesheet-Effekten abhängig machen, desto problematischer können die Seiten auf schwacher Hardware, bei sehschwachen Menschen oder Nutzern veralteter Browser wirken. Zwar gibt es außer textbasierten Browsern wie Lynx kaum noch Browser mit nennenswerter Verbreitung, die Stylesheets gar nicht unterstützen, doch gerade der Internet Explorer als Browser mit dem bislang höchsten Marktanteil sorgt hinsichtlich CSS für die eine oder andere Überraschung. Bedenken Sie auch, dass das Publikum Ihre Vorstellungen von gutem Design nicht immer teilen muss und CSS eventuell gar gänzlich deaktiviert. Was bleibt, ist die reine HTML-Darstellung. Zu diesem "Härtetest" sollten Sie sich auf jeden Fall zwingen, um zu begutachten, ob die Reihenfolge der Inhalte deren Wichtigkeit entspricht.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="formate_eigenschaften">CSS-Formate und CSS-Eigenschaften</a></h2>
+
+<p>Stylesheets bestehen aus Formaten, die Sie für bestimmte HTML-Elemente oder für eine bestimmte Auswahl von HTML-Elementen definieren. Zum Auswählen einer bestimmten Gruppe von HTML-Elementen, für die ein Format gelten soll, gibt es in CSS die Syntax der so genannten Selektoren. CSS-Formate lassen sich entweder in einem zentralen Style-Bereich definieren, in einer externen CSS-Datei oder direkt im einleitenden Tag eines HTML-Elements.</p>
+
+<p>CSS-Formate bestehen aus einer oder mehreren Eigenschaften und Wertzuweisungen an diese Eigenschaften. So können Sie beispielsweise ein Format für Überschriften 3. Ordnung definieren, bei dem Sie für Eigenschaften wie Schriftgröße, Schriftfarbe und Absatz-Abstand entsprechende Werte bestimmen.</p>
+
+<h3><a class="an" name="begriffe">CSS-Begriffe</a></h3>
+
+<p>Die nachfolgende <strong>Regel</strong> setzt sich aus dem <strong>Selektor</strong>, der die gewünschten Elemente selektiert (auswählt) und einer <strong>Eigenschaft</strong> sowie dem ihr zugewiesenen <strong>Wert</strong> zusammen:</p>
+
+<pre>
+Selektor { Eigenschaft:Wert; }
+</pre>
+
+<p>Die Kombination aus Eigenschaft und Wert wird als <strong>Deklaration</strong> bezeichnet.</p>
+
+<p>Im Kapitel <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="formate/index.htm">CSS-Formate definieren</a> wird beschrieben, an welchen Stellen Sie CSS in HTML einbinden können, wie die Selektion von HTML-Elementen funktioniert und welche generellen Regeln für Format-Definitionen gelten. Das Kapitel <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="eigenschaften/index.htm">CSS-Eigenschaften</a> beschreibt dagegen systematisch die einzelnen möglichen Eigenschaften für die Element-Formatierung, die Sie innerhalb von Formaten notieren können, und mögliche Wertzuweisungen für diese Eigenschaften. Im Kapitel <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="layouts/index.htm">CSS-basierte&nbsp;Layouts</a> schließlich wird gezeigt, wie die Möglichkeiten von CSS praktisch zur Gestaltung von Web-Seiten genutzt werden können.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="formate/einbinden.htm"><img src="../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="formate/einbinden.htm">Stylesheets in HTML einbinden</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../html/referenz/varianten.htm"><img src="../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../html/referenz/varianten.htm">HTML-Varianten</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">Stylesheets</a> </td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

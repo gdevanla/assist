@@ -1,0 +1,5 @@
+Trying to Inject mutant for Method Name : stretchMatches in class  com.saxman.textdiff.TextDiff
+Source Line Number: 97
+Jimple Statement considered for mutant injection:  line = line + 1
+Successfully injected mutant!!!
+Correspondent Mutant is line = line / 1

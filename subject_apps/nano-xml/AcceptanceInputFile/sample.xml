@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE emp:document [
+<!ELEMENT emp:document (emp:employee)*>
+<!ATTLIST emp:document xmlns:emp CDATA #FIXED "http://www.xmlpowercorp.com/dtds/">
+<!ELEMENT emp:employee (emp:name, emp:hiredate, emp:projects)>
+<!ELEMENT emp:name (emp:lastname, emp:firstname)>
+<!ELEMENT emp:lastname (#PCDATA)>
+<!ATTLIST emp:lastname emp:required CDATA #FIXED "yes">
+<!ELEMENT emp:firstname (#PCDATA)>
+<!ELEMENT emp:hiredate (#PCDATA)>
+<!ELEMENT emp:projects (emp:project)*>
+<!ELEMENT emp:project (emp:product, emp:id, emp:price)>
+<!ELEMENT emp:product (#PCDATA)>
+<!ELEMENT emp:id (#PCDATA)>
+<!ELEMENT emp:price (#PCDATA)>
+<!ENTITY % student PUBLIC "pubID" "example.dtd">
+  %student;
+]>
+<emp:document xmlns:emp="http://www.xmlpowercorp.com/dtds/">
+    <emp:employee>
+        <emp:name>
+            <emp:lastname>Kelly</emp:lastname>
+            <emp:firstname>Grace</emp:firstname>
+        </emp:name>
+        <emp:hiredate>October 15, 2005</emp:hiredate>
+        <emp:projects>
+            <emp:project>
+                <emp:product>Printer</emp:product>
+                <emp:id>111</emp:id>
+                <emp:price>$111.00</emp:price>
+            </emp:project>
+            <emp:project />
+            
+        </emp:projects>
+    </emp:employee>
+</emp:document>

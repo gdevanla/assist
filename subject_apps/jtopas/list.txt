@@ -1,0 +1,16 @@
+http://de.selfhtml.org/xml/intro.htm
+http://de.selfhtml.org/xml/darstellung/css.htm
+http://de.selfhtml.org/index.htm
+http://de.selfhtml.org/html/allgemein/grundgeruest.htm
+http://de.selfhtml.org/html/allgemein/zeichen.htm
+http://de.selfhtml.org/html/allgemein/organisation.htm
+http://de.selfhtml.org/html/kopfdaten/meta.htm
+http://de.selfhtml.org/html/kopfdaten/durchsuchbarkeit.htm
+http://de.selfhtml.org/css/intro.htm
+http://de.selfhtml.org/css/formate/einbinden.htm
+http://de.selfhtml.org/navigation/faq.htm
+http://de.selfhtml.org/dhtml/modelle/dom.htm
+http://de.selfhtml.org/dhtml/modelle/dynamische_filter.htm
+http://de.selfhtml.org/inter/index.htm
+http://de.selfhtml.org/inter/zeichensaetze.htm
+http://de.selfhtml.org/cgiperl/intro/perlpc.htm

@@ -1,0 +1,2 @@
+<!ENTITY % student PUBLIC "pubID" "example.dtd">
+  %student;

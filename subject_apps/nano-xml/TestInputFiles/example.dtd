@@ -1,0 +1,7 @@
+<!ENTITY % p "(#PCDATA)">
+<!ELEMENT student (id,surname,firstname,dob,(subject)*)>
+<!ELEMENT id %p;>
+<!ELEMENT surname %p;>
+<!ELEMENT firstname %p;>
+<!ELEMENT dob %p;>
+<!ELEMENT subject %p;>

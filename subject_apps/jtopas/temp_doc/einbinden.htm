@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: Stylesheets / CSS-Formate definieren / Stylesheets in HTML einbinden</title>
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<meta name="description"    content="An welchen Stellen Sie CSS-Formate notieren können.">
+<meta name="keywords"       content="SELFHTML, CSS, Stylesheets, Cascading Stylesheets, HTML, CSS-Einbindung, link, style, type, rel, href, Kommentare, @media, Ausgabemedien, Content-Style-Type, Stylesheet-Sprache">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-10-03T08:55:27+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/css/formate/einbinden.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="CSS-Formate definieren" href="index.htm">
+<link rel="next" title="Zentrale Formate definieren" href="zentrale.htm">
+<link rel="prev" title="Stylesheets und HTML" href="../intro.htm">
+<link rel="last" title="Das Box-Modell" href="box_modell.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Stylesheets</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">CSS-Formate definieren</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Stylesheets in HTML einbinden</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#zentral">Formate zentral für eine HTML-Datei definieren</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#separat">Formate zentral in separater CSS-Datei definieren</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#innerhalb_element">Formate innerhalb eines HTML-Elements definieren</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#link_media">Verschiedene separate Stylesheets für unterschiedliche Ausgabemedien</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#media">Format-Definitionen für unterschiedliche Ausgabemedien</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#kommentare">Kommentare innerhalb von Stylesheet-Bereichen</a><br>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#stylesheetsprache">Stylesheet-Sprache ausdrücklich festlegen</a>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><img src="../../src/css10.gif" width="30" height="30" alt="CSS 1.0" title="CSS 1.0"><img src="../../src/netsc4.gif" width="30" height="30" alt="Netscape 4.0" title="Netscape 4.0"><img src="../../src/msie3.gif" width="30" height="30" alt="MS IE 3.0" title="MS IE 3.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="zentral">Formate zentral für eine HTML-Datei definieren</a></h2>
+
+<p>Sie können im <code>head</code>-Element einer HTML-Datei einen Bereich für CSS-Formate definieren.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Das style-Element&lt;/title&gt;
+&lt;style type="text/css"&gt;
+&lt;!--
+/* ... Hier werden die Formate definiert ... */
+--&gt;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Das style-Element&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;style...&gt;</code> ... <code>&lt;/style&gt;</code> notieren Sie einen Bereich für Stylesheet-Formatdefinitionen (<i>style = Stil, Format</i>). Im einleitenden <code>&lt;style&gt;</code>-Tag müssen Sie den <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> der Stylesheet-Sprache angeben. Für CSS ist das die Angabe <code>type="text/css"</code>. Zwischen dem einleitenden Tag und dem abschließenden <code>&lt;/style&gt;</code> können Sie dann zentrale CSS-Formate definieren. Lesen Sie dazu den Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="zentrale.htm">zentrale Formate definieren</a>.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Damit ältere Web-Browser, die keine Stylesheets kennen, den Inhalt des <code>style</code>-Elements nicht irrtümlich als anzuzeigenden Text interpretieren, können Sie den Inhalt in einen <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/allgemein/kommentare.htm#nicht_angezeigt">HTML-Kommentar</a> (<code>&lt;!--</code> ... <code>--&gt;</code>) einbinden, so wie im obigen Beispiel. Obwohl dieses Auskommentieren von Stylesheet-Bereichen eine gängige Praxis ist, wird in den Codebeispielen in SELFHTML darauf verzichtet, denn die Browser aus den Anfangstagen des WWW, die CSS-Bereiche nicht erkennen können, sind weitestgehend zu vernachlässigen. Beachten Sie in diesem Zusammenhang die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/xhtml/unterschiede.htm#script_style">Unterschiede zwischen XHTML und HTML</a>.</p>
+
+<p>Formate, die Sie auf diese Weise definieren, sind für diese eine HTML-Datei gültig.</p>
+
+<p>Es ist durchaus erlaubt, mehrere <code>style</code>-Bereiche innerhalb des HTML-Dateikopfs zu notieren. Sinnvoll ist das beispielsweise, wenn Sie mal Style-Definitionen mit unterschiedlichen Style-Sprachen und entsprechend unterschiedlichem MIME-Typ in einer HTML-Datei notieren möchten.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/css10.gif" width="30" height="30" alt="CSS 1.0" title="CSS 1.0"><img src="../../src/netsc4.gif" width="30" height="30" alt="Netscape 4.0" title="Netscape 4.0"><img src="../../src/msie3.gif" width="30" height="30" alt="MS IE 3.0" title="MS IE 3.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="separat">Formate zentral in separater CSS-Datei definieren</a></h2>
+
+<p>In vielen Fällen werden Sie einheitliche Formate für alle HTML-Dateien Ihres Projekts haben wollen. Dann brauchen Sie die Angaben nicht in jeder Datei zu wiederholen. Stattdessen können Sie die Formate in einer separaten Textdatei definieren und diese Datei einfach in jeder gewünschten HTML-Datei einbinden. Wenn Sie die Angaben in der separaten Datei ändern, wirken sich die Änderungen einheitlich auf alle Dateien aus, in denen die separate CSS-Datei eingebunden ist.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Das link-Element f&amp;uuml;r Stylesheets&lt;/title&gt;
+&lt;link rel="stylesheet" type="text/css" href="formate.css"&gt;
+&lt;style type="text/css"&gt;
+/* ... hier sind dateispezifische Formate erlaubt ... */
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Das link-Element f&amp;uuml;r Stylesheets&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Im Dateikopf einer HTML-Datei können Sie mit <code>&lt;link...&gt;</code> eine CSS-Datei referenzieren, die CSS-Formatdefinitionen enthält (<i>link = Verweis</i>). Innerhalb des <code>&lt;link&gt;</code>-Tags müssen die Angaben <code>rel="stylesheet" type="text/css"</code> stehen (<i>rel = relation = Bezug, type = MIME-Typ</i>). Beim Attribut <code>href</code> geben Sie die gewünschte Datei an (<i>href = hyper reference = Hypertext-Referenz</i>). Wenn sich die CSS-Datei in einem anderen Verzeichnis oder auf einem anderen Server befindet, müssen Sie an dieser Stelle Pfadangaben oder absolute <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/allgemein/referenzieren.htm#uri">URIs</a> notieren. Das funktioniert genauso wie etwa beim <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/grafiken/einbinden.htm">Einbinden von Grafiken</a>.</p>
+
+<p>Bei der referenzierten Datei muss es sich um eine reine Textdatei handeln, die die Endung <var>.css</var> haben sollte. Die Datei darf nichts anderes als Definitionen <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="zentrale.htm">zentraler Formate</a> und <img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#kommentare">Kommentare</a> enthalten. Eine solche CSS-Datei können Sie mit jedem einfachen Texteditor erstellen. In SELFHTML wird beispielsweise eine separate CSS-Datei für alle Dokumentdateien verwendet. Sie können diese <img src="../../src/dokf.gif" width="15" height="10" alt="Beispiel-Seite">&nbsp;<a href="anzeige/selfhtmlcss.txt">CSS-Datei als Text betrachten</a> (der Verweis führt zu einer Datei namens <var>selfhtmlcss.txt</var>, damit die Datei in jedem Fall im Browser angezeigt wird - die CSS-Datei heißt eigentlich <var>selfhtml.css</var>).</p>
+
+<h3><a name="kodierung">Kodierung von externen Stylesheets mittels @charset</a></h3>
+
+<p>Wie auch in <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/kopfdaten/meta.htm#zeichenkodierung">HTML-Dateien</a> können Sie in externen Stylesheets optional angeben, welche Zeichenkodierung die CSS-Datei verwendet.  Diese Angabe ist für den Web-Browser besonders wichtig, denn sie teilt ihm mit, nach welcher Kodierung die Bytes der Datei in Zeichen umgewandelt werden müssen. Informationen über ISO 8859-1 und andere Kodierungen finden Sie im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../inter/zeichenkodierungen.htm">Zeichenkodierungen (ISO-8859-Familie und andere)</a>. Die CSS-Syntax lautet:</p>
+
+<pre>
+@charset "ISO-8859-1";
+</pre>
+
+<p>Diese Angabe muss zwingend als absolut erste im externen Stylesheet stehen und darf nur einmal vorkommen. Im Konfliktfall, also wenn der Webserver im HTTP-Header eine hiervon abweichende Angabe sendet, wird üblicherweise die Angabe des HTTP-Headers verwendet. Innerhalb von <code>style</code>-Bereichen, die im <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#zentral">Dateikopf einer HTML-Datei</a> notiert werden ist diese Angabe nicht gestattet, da in diesem Fall die Kodierung der HTML-Datei herangezogen wird.</p>
+
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Wenn Sie mit <code>&lt;link...&gt;</code> eine Datei mit CSS-Formatdefinitionen referenzieren, brauchen Sie keinen Bereich <code>&lt;style...&gt;</code>...<code>&lt;/style&gt;</code>. Im obigen Beispiel wird dennoch ein solcher Bereich definiert. Das soll zeigen, dass Sie beide Arten, Formate zu definieren, miteinander kombinieren können. Wenn Sie beide Arten benutzen, haben Formate, die direkt innerhalb von <code>&lt;style...&gt;</code>...<code>&lt;/style&gt;</code> definiert werden, im Konfliktfall Vorrang vor den referenzierten Formaten. So können Sie etwa immer wieder verwendete Formate als Basis-Stylesheet importieren und einige davon mit dateispezifischen Formaten ergänzen oder überschreiben. Ebenfalls möglich ist die Einbindung mehrerer Stylesheets mit <code>link</code>-Elementen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/css10.gif" width="30" height="30" alt="CSS 1.0" title="CSS 1.0"><img src="../../src/netsc4.gif" width="30" height="30" alt="Netscape 4.0" title="Netscape 4.0"><img src="../../src/msie3.gif" width="30" height="30" alt="MS IE 3.0" title="MS IE 3.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="innerhalb_element">Formate innerhalb eines HTML-Elements definieren</a></h2>
+
+<p>Unabhängig davon, ob Sie Formate zentral definieren oder aus einer separaten CSS-Datei einbinden, können Sie einzelne HTML-Elemente formatieren.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Das style-Attribut&lt;/title&gt;
+&lt;link rel="stylesheet" type="text/css" href="formate.css"&gt;
+&lt;style type="text/css"&gt;
+/* ... hier sind dateispezifische Formate erlaubt ... */
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1 style="[element-spezifische Formate]"&gt;Das style-Attribut&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit dem <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../../html/attribute/index.htm">Universalattribut</a> <code>style</code> im einleitenden Tag eines Elements können Sie CSS-Formate für dieses eine Element notieren. Weitere Einzelheiten dazu werden im Abschnitt <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="direkt.htm">HTML-Elemente direktformatieren</a> beschrieben.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>HTML-Elemente müssen HTML-4.0 konform mit Start- und End-Tag notiert sein, damit CSS-Formatierungen darin angezeigt werden. Dies gilt vor allem für Elemente, bei denen früher mal nur die Notation des Start-Tags genügte, etwa bei <code>p</code>, <code>li</code>, <code>option</code>, <code>td</code> und <code>th</code>.</p>
+
+<p>Das obige Beispiel zeigt, dass Sie parallel zu den Formatdefinitionen im HTML-Element auch die Methoden zur zentralen Formatdefinition verwenden können. Im Konfliktfall haben stets die "inneren" Formatdefinitionen Vorrang vor den "äußeren". Wenn Sie also im einleitenden <code>&lt;h1&gt;</code>-Tag eine andere Schriftart angeben, als Sie im zentralen <code>style</code>-Bereich für <code>h1</code>-Elemente festlegen, dann hat die Definition im einleitenden <code>&lt;h1&gt;</code>-Tag Vorrang vor der zentralen Definition, genauso, wie diese wiederum Vorrang vor den Definitionen der eingebundenen externen CSS-Datei hat.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/css20.gif" width="30" height="30" alt="CSS 2.0" title="CSS 2.0"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie4.gif" width="30" height="30" alt="MS IE 4.0" title="MS IE 4.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="link_media">Verschiedene separate Stylesheets für unterschiedliche Ausgabemedien</a></h2>
+
+<p>Bildschirm und Drucker beispielsweise sind sehr unterschiedliche Ausgabemedien für ansprechend gestaltete Daten. Beide Ausgabemedien haben ihre eigenen Gesetze. Während am Bildschirm etwa helle Schriften auf dunklen Hintergründen attraktiv aussehen, ist das für die Ausgabe am Drucker keine gute Lösung. Bei der Druckerausgabe sehen dagegen Absatzeinzüge von mindestens 2cm besser aus, während durch entsprechende Angaben am Bildschirm möglicherweise kostbarer Präsentationsraum verschenkt wird. Deshalb können Sie für verschiedene Ausgabemedien verschiedene externe CSS-Dateien einbinden, die unterschiedliche Formatdefinitionen enthalten können. Die Software muss beim Präsentieren der Seiten entscheiden, welche der eingebundenen CSS-Dateien maßgeblich ist. Wenn der Web-Browser also beispielsweise die Seiten am Bildschirm anzeigt, sollte er die CSS-Datei verwenden, die Sie explizit für das Medium "Bildschirm" bestimmen, und wenn der Anwender eine Seite ausdruckt, sollte der Browser stattdessen die CSS-Datei verwenden, die Sie für das Medium "Drucker" angeben.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Stylesheets f&amp;uuml;r unterschiedliche Ausgabemedien&lt;/title&gt;
+&lt;link rel="stylesheet" media="screen" href="website.css"&gt;
+&lt;link rel="stylesheet" media="print, embossed" href="druck.css"&gt;
+&lt;link rel="stylesheet" media="aural" href="speaker.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Stylesheets f&amp;uuml;r unterschiedliche Ausgabemedien&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Zunächst benötigen Sie für jedes Ausgabemedium eine Textdatei mit der Endung <code>.css</code>, die nichts anderes als die gewünschten CSS-Formatdefinitionen für das gewünschte Ausgabemedium enthält. In einer HTML-Datei können Sie alle CSS-Dateien wie im obigen Beispiel einbinden. Das Einbinden funktioniert genauso wie bei <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#separat">Formate zentral in separater CSS-Datei definieren</a> beschrieben. Neu ist hierbei nur, dass gleich mehrere <code>&lt;link&gt;</code>-Tags zum Einbinden notiert sind, und dass diese zusätzlich das Attribut <code>media</code> enthalten. Mit diesem Attribut bestimmen Sie, für welches Ausgabemedium die Datei verwendet werden soll, die Sie dann bei der Angabe <code>href</code> einbinden. Sie können einen oder mehrere Medientypen bei <code>media</code> angeben. Mehrere Angaben werden durch Kommata getrennt.</p>
+
+<h3><a name="medientypen">Medientypen:</a></h3>
+
+<p>In CSS2 werden folgende möglichen Angaben genannt:</p>
+
+<table class="reftable" cellpadding="3" cellspacing="0" border="1">
+<tr>
+<th>Angabe</th>
+<th>Bedeutung</th>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="all"</code></td>
+<td class="tabxpl">CSS-Datei gilt für alle Medientypen.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="aural"</code></td>
+<td class="tabxpl">CSS-Datei gilt für computergesteuerte synthetische Sprachausgabe. Beachten Sie in diesem Zusammenhang auch die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../eigenschaften/sprachausgabe.htm">CSS-Eigenschaften für Sprachausgabe</a>.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="braille"</code></td>
+<td class="tabxpl">CSS-Datei gilt für Ausgabegeräte mit so genannter "Braille-Zeile". Dabei wird Text eine veränderbare Oberflächenstruktur des Materials der Braille-Zeile umgewandelt und über Abtasten mit dem Finger gelesen. Diese Form des Ausgabemediums ist für blinde Menschen gedacht.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="embossed"</code></td>
+<td class="tabxpl">CSS-Datei gilt für Braille-Drucker. Dabei wird Text in Form von abtastbaren Oberflächenstrukturen in Papier oder ein vergleichbares Material gestanzt. Wie <code>braille</code> ist <code>embossed</code> für blinde Menschen gedacht.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="handheld"</code></td>
+<td class="tabxpl">CSS-Datei gilt für die Anzeige auf tragbaren Kleinstcomputern. Web-fähige elektronische Organizer sind typische Vertreter dieser Gattung.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="print"</code></td>
+<td class="tabxpl">CSS-Datei gilt für den Ausdruck auf Papier. Web-Browser sollten diese Formatdefinitionen verwenden, wenn der Anwender die Web-Seite ausdrucken möchte. Beachten Sie dazu auch die <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../eigenschaften/printlayouts.htm">CSS-Eigenschaften für Printmedien</a>.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="projection"</code></td>
+<td class="tabxpl">CSS-Datei gilt für die Datenprojektion mit Beamern und ähnlichen Geräten.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="screen"</code></td>
+<td class="tabxpl">CSS-Datei gilt für die Bildschirmanzeige.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="tty"</code></td>
+<td class="tabxpl">CSS-Datei gilt für nicht-grafische Ausgabemedien mit fixer Zeichenbreite, beispielsweise Fernschreiber. Aber auch für text-orientierte Browser wie Lynx ist dieser Medientyp interessant.</td>
+</tr>
+<tr>
+<td class="code" nowrap="nowrap"><code>media="tv"</code></td>
+<td class="tabxpl">CSS-Datei gilt für TV-ähnliche Ausgabegeräte, die sich durch grobe Bildschirmauflösung und mangelnde Unterstützung beim Scrollen in Text, dafür aber durch Sound-Unterstützung auszeichnen.</td>
+</tr>
+</table>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Der Internet Explorer interpretiert diese Angaben ab Version 4 zu einem gewissen Teil.</p>
+
+<p>Der Medientyp <code>aural</code> wird in CSS 2.1 "missbilligt", da hierfür der neue Medientyp <code>speech</code> in CSS 3 vorgesehen ist.</p>
+
+<h2><a class="an" name="at_import">Einbindung mittels <code>@import</code></a></h2>
+
+<p>Die Syntax mit <code>&lt;link...&gt;</code> zum Einbinden weiterer Stylesheet-Dateien ist HTML-Syntax. <a class="an" name="import">Daneben gibt es auch noch eine CSS-Syntax</a>, die den gleichen Zweck hat:</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Stylesheets mittels @import einbinden&lt;/title&gt;
+&lt;style type="text/css"&gt;
+@import "allgemein.css";
+@import url("erweitert.css");
+@import url("druck.css") print, embossed;
+@import url("pocketcomputer.css") handheld;
+@import url("normal.css") screen;
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Stylesheets mittels @import einbinden&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Eine CSS-spezifische Einbindung wird innerhalb eines <code>style</code>-Bereichs im Dateikopf oder <strong>zwingend am Beginn</strong> eines externen Stylesheets notiert. Mit <code>@import</code> oder <code>@import url(&hellip;)</code> starten Sie die Angabe. In Hochkommata notieren Sie dahinter den Dateinamen bzw. die Adresse der separaten CSS-Datei. Hinter der Dateiangabe notieren Sie optional, durch Leerraum getrennt, das gewünschte Ausgabemedium. Es dürfen auch mehrere sein, getrennt durch Kommata. Dabei sind die gleichen Medientypen erlaubt wie im HTML-Attribut <code>media</code>. Am Ende der <code>@import</code>-Angabe muss ein Strichpunkt stehen.</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Der Internet Explorer 5.x unterstützt die Einbindung über <code>@import</code> nur bezüglich der Ausgabemedien <code>screen</code> und <code>all</code>.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/css20.gif" width="30" height="30" alt="CSS 2.0" title="CSS 2.0"><img src="../../src/netsc6.gif" width="30" height="30" alt="Netscape 6.0" title="Netscape 6.0"><img src="../../src/msie5.gif" width="30" height="30" alt="MS IE 5.0" title="MS IE 5.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="media">Format-Definitionen für unterschiedliche Ausgabemedien</a></h2>
+
+<p>Neben der Möglichkeit, <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#link_media">Verschiedene separate Stylesheets für unterschiedliche Ausgabemedien</a> in HTML einzubinden, steht auch die Möglichkeit zur Verfügung, innerhalb eines <code>style</code>-Bereichs zwischen unterschiedlichen Ausgabemedien zu unterscheiden.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Beschr&amp;auml;nkung auf Medientypen&lt;/title&gt;
+&lt;style type="text/css"&gt;
+@media print {
+  /* ... Formatdefinitionen zum Drucken ... */
+  selektor { eigenschaft:wert; }
+}
+@media screen, handheld {
+  /* ... Formatdefinitionen zur Bildschirmausgabe ... */
+  selektor { eigenschaft:wert; }
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Beschr&amp;auml;nkung auf Medientypen&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>@media</code> definieren Sie innerhalb eines <code>style</code>-Bereichs einen Bereich für Formatdefinitionen für ein bestimmtes Ausgabemedium. Für jede Mediensorte, die Sie unterscheiden wollen, können Sie eine solche Einschränkung notieren. Hinter der Regel <code>@media</code> folgt, durch Leerraum getrennt, das gewünschte Ausgabemedium. Sie können auch mehrere Ausgabemedien durch Kommata getrennt in Folge notieren. Erlaubte Angaben sind die gleichen wie im HTML-Attribut <code>media</code> (siehe <img src="../../src/up.gif" width="14" height="10" alt="nach oben">&nbsp;<a href="#medientypen">Medientypen</a>).</p>
+
+<p>Im Anschluss an die <code>@media</code>-Angabe müssen Sie <b>geschweifte Klammern</b> <code>{</code> und <code>}</code> notieren. Alle Formatdefinitionen, die Sie innerhalb dieser geschweiften Klammern notieren, sind dann nur für das oder die angegebenen Medien gültig.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/css10.gif" width="30" height="30" alt="CSS 1.0" title="CSS 1.0"><img src="../../src/netsc4.gif" width="30" height="30" alt="Netscape 4.0" title="Netscape 4.0"><img src="../../src/msie3.gif" width="30" height="30" alt="MS IE 3.0" title="MS IE 3.0"><img src="../../src/op512.gif" width="30" height="30" alt="Opera 5.12" title="Opera 5.12"><img src="../../src/ffox1.gif" width="30" height="30" alt="Mozilla Firefox 1" title="Mozilla Firefox 1"><img src="../../src/konq31.gif" width="30" height="30" alt="Konqueror 3.1" title="Konqueror 3.1"><img src="../../src/saf1.gif" width="30" height="30" alt="Safari 1.0" title="Safari 1.0">&nbsp;<a class="an" name="kommentare">Kommentare innerhalb von Stylesheet-Bereichen</a></h2>
+
+<p>Um Ihre Formatdefinitionen intern auszukommentieren, steht eine spezielle, an die Programmiersprache C angelehnte Syntax zur Verfügung.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;CSS-Syntax für Kommentare&lt;/title&gt;
+&lt;style type="text/css"&gt;
+/*
+  Basis-Stylesheet
+*/
+
+  h1 { color:blue; } /* Format für blaue Überschrift, ergänzt am 19.07.2001 */
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;CSS-Syntax f&uuml;r Kommentare&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Innerhalb von <code>&lt;style...&gt;</code>...<code>&lt;/style&gt;</code> können Sie mit <code>/*</code> - also einem Schrägstrich und einem Sternzeichen in Folge - einen Kommentar einleiten. Mit der umgekehrten Zeichenfolge - also mit <code>*/</code> - beenden Sie den Kommentar. Anfang und Ende des Kommentars müssen nicht in der gleichen Zeile stehen, auch beliebig viele Leerzeilen sind erlaubt. Kommentare dürfen jedoch nicht verschachtelt werden. Einzeilige Kommentare wie in JavaScript <code>//</code> existieren in CSS nicht.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><img src="../../src/html40.gif" width="30" height="30" alt="HTML 4.0" title="HTML 4.0">&nbsp;<a class="an" name="stylesheetsprache">Stylesheet-Sprache ausdrücklich festlegen</a></h2>
+
+<p>Sie können dem Browser in einer HTML-Datei mit Hilfe einer <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../html/kopfdaten/meta.htm">Meta-Angabe</a> ausdrücklich mitteilen, dass diese Datei Stylesheet-Definitionen in einer bestimmten Definitionssprache enthält. Die Angabe ist in der gegenwärtigen Praxis und für die CSS-Sprache nicht zwingend erforderlich. Die Angabe dient dazu, um dem Client (also etwa dem Web-Browser), aber auch dem Web-Server eine Möglichkeit zur Verfügung zu stellen, der beiden Seiten helfen soll, sich vor dem Interpretieren der Datei über die zu verwendende Stylesheet-Syntax zu einigen.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;</code> im Kopf einer HTML-Datei erzwingen Sie die CSS-Syntax als verbindlich für Formatdefinitionen innerhalb dieser Datei. Wenn Sie eine andere Stylesheet-Sprache als CSS verwenden wollen, müssen Sie anstelle von "text/css" den <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../diverses/mimetypen.htm">MIME-Typ</a> der betreffenden Formatdefinitionssprache angeben.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="zentrale.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="zentrale.htm">Zentrale Formate definieren</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../intro.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../intro.htm">Stylesheets und HTML</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">Stylesheets</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">CSS-Formate definieren</a></td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: HTML/XHTML / HTML-Kopfdaten / Durchsuchbarkeit mit Server-Kommunikation</title>
+<meta name="description"    content="Wie Sie in einer HTML-Datei ein Eingabefeld zum Durchsuchen der Datei definieren.">
+<meta name="keywords"       content="SELFHTML, HTML, XHTML, Durchsuchbarkeit, &lt;isindex&gt;">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-10-31T14:21:30+01:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/html/kopfdaten/durchsuchbarkeit.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="stylesheet" type="text/css" href="../../src/selfhtml.css">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../../src/favicon.ico">
+<link rel="author" title="Impressum" href="../../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../../index.htm">
+<link rel="up" title="HTML-Kopfdaten" href="index.htm">
+<link rel="next" title="Farben für Hintergrund, Text und Verweise" href="../dateiweit/farben.htm">
+<link rel="prev" title="Logische Beziehungen" href="beziehungen.htm">
+<link rel="first" title="Titel einer HTML-Datei" href="titel.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">HTML-Kopfdaten</a></td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../../index.htm"><img src="../../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Durchsuchbarkeit mit Server-Kommunikation</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#definieren">Datei als durchsuchbar definieren</a><br>
+</p>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><img src="../../src/html20.gif" width="30" height="30" alt="HTML 2.0" title="HTML 2.0"><img src="../../src/xhtml10.gif" width="30" height="30" alt="XHTML 1.0" title="XHTML 1.0"><img src="../../src/deprecated.gif" width="30" height="30" alt="deprecated (missbilligt)" title="deprecated (missbilligt)">&nbsp;<a class="an" name="definieren">Datei als durchsuchbar definieren</a></h2>
+
+<p>Heute spielt dieses Element in der Praxis keine Rolle mehr, da moderne WWW-Browser bequemes und schnelles Suchen nach Text in einer angezeigten HTML-Datei erlauben. Das Element ist mittlerweile auch als <i>deprecated</i> eingestuft und soll künftig aus dem HTML-Standard entfallen. Die folgenden Informationen haben daher eher "historischen" Charakter.</p>
+
+<p>Eine HTML-Datei kann eine durchsuchbare Datei sein. Das bedeutet, dass ihr Inhalt auf dem Server-Rechner nach allen vorkommenden Wörtern indiziert wurde. Es hat jedoch nur einen Sinn, eine HTML-Datei als durchsuchbar zu definieren, wenn ihr Inhalt tatsächlich in indizierter Form, also in einer Suchindexdatei auf dem Server-Rechner vorliegt.</p>
+
+<p>Bei einer als durchsuchbar definierten HTML-Datei erscheint bei der Anzeige im Web-Browser am Anfang der Datei ein Eingabefeld, das dem Anwender die Eingabe eines Suchbegriffs erlaubt.</p>
+
+<h3 class="xmp">Beispiel:</h3>
+
+<pre>
+&lt;head&gt;
+&lt;isindex prompt="Geben Sie einen Suchbegriff ein: "&gt;
+  &lt;!-- ... andere Angaben im Dateikopf ... --&gt;
+&lt;/head&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung:</h3>
+
+<p>Mit <code>isindex</code> deklarieren Sie eine HTML-Datei als durchsuchbar. Mit dem Attribut <code>prompt</code> bestimmen Sie einen Eingabeaufforderungstext. Der Text muss in Anführungszeichen stehen (<i>prompt = Aufforderung</i>).</p>
+
+<h3 class="inf">Beachten Sie:</h3>
+
+<p>Wenn Sie <b>XHTML-Standard-konform</b> arbeiten, müssen Sie das <code>isindex</code>-Element als inhaltsleer kennzeichnen. Dazu notieren Sie das alleinstehende Tag in der Form <code>&lt;isindex&nbsp;...&nbsp;/&gt;</code>. Weitere Informationen finden Sie im Kapitel <img src="../../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../xhtml/index.htm">XHTML und HTML</a>.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="../dateiweit/farben.htm"><img src="../../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../dateiweit/farben.htm">Farben für Hintergrund, Text und Verweise</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="beziehungen.htm"><img src="../../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="beziehungen.htm">Logische Beziehungen</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../../index.htm">SELFHTML</a>/<a href="../../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="../index.htm">HTML/XHTML</a> <img src="../../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">HTML-Kopfdaten</a></td>
+</tr></table>
+
+<p>&copy; 2007 <img src="../../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+</body>
+</html>

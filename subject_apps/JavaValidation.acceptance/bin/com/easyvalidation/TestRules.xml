@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validations SYSTEM "easy-validation.dtd"><validations>
+<properties locale="EN">
+<file>I:\proj40\JavaValidation\src\test\resources\error_messages_en.properties</file>
+</properties>
+<properties locale="FR">
+<file>I:\proj40\JavaValidation\src\test\resources\error_messages_fr.properties</file>
+</properties>
+<validation name="userFormValidation">
+<rule type="required" fieldName="firstName">
+<!--<message>FirstName is required</message>-->
+<message key="firstName.required"></message>
+</rule> 
+<rule type="stringlength" fieldName="firstName">
+<param min="5" max="10"/> 
+<message useAttributePlaceHolder="true">${fieldName} should be between ${min} and ${max}</message>
+</rule>
+<rule type="email" fieldName="mailid">
+<message>emailid is not valid</message>
+</rule> 
+<rule type="int" fieldName="age">
+<param min="18" max="30"/>
+<message>Enter age between 18 and 30</message>
+</rule>
+<rule type="date" fieldName="deliverydate">
+<param min="01.04.2013" max="31.04.2013" dateformat="dd.MM.yy"/>
+<message>Date is not within range</message>
+</rule>
+<rule type="inetaddress" fieldName="ipaddress">
+<message>Inetaddress is not valid</message>
+</rule>
+<rule type="double" fieldName="CGPA">
+<param min="5.0" max="10.0"/>
+<message>Value is not between 5.0 and 10.0</message>
+</rule>
+<rule type="url" fieldName="webaddress">
+<message useAttributePlaceHolder="true">Web address is not valid</message>
+</rule>
+<rule type="percent" fieldName="percentage">
+<message>Percentage value is not valid</message>
+</rule>
+<rule type="currency" fieldName="amount">
+<message>Amount is not valid</message>
+</rule>
+<rule type="isbn" fieldName="isbn">
+<message>ISBN is not valid</message>
+</rule>
+<rule type="creditcard" fieldName="creditcardnumber">
+<message>Credit card is not valid</message>
+</rule>
+<rule type="expression" fieldName="id">
+<param regex="true" expression="[a-d1-7]*"/>
+<message>It is not valud id</message>
+</rule>
+</validation>
+</validations>

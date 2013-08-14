@@ -1,0 +1,387 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>SELFHTML: XML / Einführung in XML</title>
+<link rel="stylesheet" type="text/css" href="../src/selfhtml.css">
+<meta name="description"    content="Welche Bedeutung XML hat, und auf welchen Prinzipien es aufbaut.">
+<meta name="keywords"       content="SELFHTML, XML">
+<meta name="author"         content="Redaktion SELFHTML, selfhtml81@selfhtml.org">
+<meta name="DC.Publisher"   content="SELFHTML e. V.">
+<meta name="DC.Date"        content="2005-08-22T21:21:39+02:00">
+<meta name="DC.Identifier"  content="http://de.selfhtml.org/xml/intro.htm">
+<meta name="DC.Language"    content="de">
+<meta name="DC.Rights"      content="../editorial/copyright.htm">
+<meta name="DC.Date.created" content="2001-10-27T08:00+01:00">
+<meta name="SELF.Pagetype"  content="page">
+<link rel="alternate" type="application/atom+xml" title="SELFHTML-Weblog (Atom, gesamt)" href="http://aktuell.de.selfhtml.org/weblog/atom-feed">
+<link rel="alternate" type="application/rss+xml" title="SELFHTML-Weblog (RSS, Auszüge)" href="http://aktuell.de.selfhtml.org/weblog/rss-feed">
+<link rel="shortcut icon" type="image/x-icon" href="../src/favicon.ico">
+<link rel="author" title="Impressum" href="../editorial/impressum.htm">
+<link rel="contents" title="Inhaltsverzeichnis" href="../navigation/inhalt.htm">
+<link rel="index" title="Stichwortverzeichnis" href="../navigation/stichwort.htm">
+<link rel="search" title="Suche" href="../navigation/suche/index.htm">
+<link rel="help" title="Hilfe" href="../editorial/index.htm">
+<link rel="copyright" title="Urheberrecht" href="../editorial/copyright.htm">
+<link rel="top" title="SELFHTML" href="../index.htm">
+<link rel="up" title="XML/DTDs" href="index.htm">
+<link rel="next" title="XML-Deklaration und Verarbeitungsanweisungen" href="regeln/xmldeklaration.htm">
+<link rel="prev" title="CSS-Browserweichen zum Ausschließen älterer Browser" href="../css/layouts/browserweichen.htm">
+</head>
+<body>
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr>
+<td colspan="2" class="nav"><a class="an" name="top"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">XML/DTDs</a> </td>
+</tr>
+<tr>
+<td class="doc" width="110"><a href="../index.htm"><img src="../src/logo.gif" width="106" height="109" border="0" alt="SELFHTML"></a></td>
+<td class="docbot" width="100%"><h1 class="ph1">Einführung in XML</h1></td>
+</tr>
+<tr>
+<td class="doctop">
+<img src="../src/dokx.gif" width="30" height="20" vspace="6" alt="Informationsseite">
+</td>
+<td valign="top" nowrap="nowrap">
+<p>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#datenfreiheit">XML - die standardisierte Datenfreiheit</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#validierung">XML, DTDs und Validierung</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#formatierung">XSL oder CSS - Formatierung für XML-Elemente</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#w3c">Das W3-Konsortium und XML</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#softwaremarkt">XML und der Software-Markt</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#parser">Die Aufgaben von XML-Parsern</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#browser">XML und die Browser</a><br>
+<img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#standardsprachen">Wichtige XML-Standardsprachen: SVG, MathML, SMIL, RDF, WML</a><br>
+</p>
+</td>
+</tr><tr><td colspan="2" class="doc">&nbsp;<a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a>&nbsp;</td></tr>
+</table>
+
+
+
+<h2><a class="an" name="datenfreiheit">XML - die standardisierte Datenfreiheit</a></h2>
+
+<p>Die Fachpresse hat XML (Extensible Markup Language - zu deutsch: Erweiterbare Auszeichnungssprache) gefeiert, als sei damit ein völlig neues EDV-Zeitalter angebrochen. Nicht ganz zu Unrecht, denn zweifellos hat XML das Zeug, der EDV neue, entscheidende Impulse zu geben. Allerdings sollte man fairerweise hinzufügen, dass XML nichts Neues ist, sondern eine Untermenge von SGML, das seit 1986 international standardisiert ist. Im Gegensatz zu SGML ist XML nicht ganz so "akademisch", in der Praxis aber ähnlich leistungsfähig wie SGML.</p>
+
+<p>Derzeit sieht es gar nicht schlecht für die weitere Ausbreitung von XML aus. Konzerne wie Microsoft und die damit verfeindete Unix-Welt sind sich weitgehend einig, dass XML die Zukunft gehört, was die einheitliche Speicherung von Daten betrifft. Doch es wird schnell deutlich, warum es schwierig ist, XML einer breiteren Anwenderschicht zu vermitteln. Denn XML ist eigentlich etwas für Leute, die Dateiformate definieren, und das ist naturgemäß eine Minderheit. "Normale" Anwender, auch professionelle, kommen mit XML wohl eher am Rande in Berührung. Sie sind eher diejenigen, die diese Auszeichnungssprachen anwenden müssen, sei es auf Quelltext-Ebene oder mit Hilfe von Software-Oberflächen, die visuelles Arbeiten erlauben und das XML-Format einfach zur Speicherung der Daten benutzen.</p>
+
+<p>Die prominenteste der Sprachen, die mit Hilfe von XML definiert werden, ist derzeit zweifellos die neue Fassung von HTML, XHTML genannt. Aber auch andere bekannte Sprachen, wie etwa WML (Beschreibungssprache für das WAP-Protokoll, das Internet-Inhalte aufs Handy-Display bringt), kommen ins Gespräch. Welcher Erfolg all diesen Sprachen beschieden ist, entscheidet der Markt. Daneben bietet XML jedoch auch die Möglichkeit an, völlig neue Sprachen zu definieren, die für eigene Datenstrukturen optimal angepasst sind, und die aber trotzdem nicht proprietär sind, sondern einem standardisierten Regelwerk folgen.</p>
+
+<p>XML ist für viele Anwender deshalb etwas schwer "greifbar", weil es eigentlich nicht viel tut. Seine Leistung besteht darin, dass man mit den Konzepten und Regeln, die es bereitstellt, eigene Auszeichnungssprachen definieren kann, die ähnlich funktionieren wie HTML. All diese Sprachen bestehen immer wieder aus Elementen, markiert durch Tags, deren Verschachtelungsregeln, und aus Attributen mit erlaubten Wertzuweisungen. Daneben gibt es Regeln, wie man solche Sprachen - in XML auch Namensräume genannt - in andere Sprachen importieren und somit eine Sprache innerhalb einer anderen Sprache benutzen kann.</p>
+
+<h3 class="xmp">Zwei einfache Einsatzbeispiele für Auszeichnungssprachen</h3>
+
+<pre>
+&lt;rechteck oben="100" links="185" breit="427" hoch="110"&gt;
+  &lt;hintergrund typ="verlauf" richtung="waagerecht" startfarbe="#0000FF" endfarbe="#FFFFFF"&gt;
+   &lt;inhalt typ="text" format="stil_6"&gt;
+     Ein kleiner Text
+   &lt;/inhalt&gt;
+  &lt;/hintergrund&gt;
+&lt;/rechteck&gt;
+</pre>
+
+<br>&nbsp;
+<pre>
+&lt;projekt sprache="perl" name="Performance-Test IC-Baustein TL410" typ="shell" stand="02-10-2001"&gt;
+  &lt;modul name="main" stand="02-10-2001" ablage="/usr/scripts/tl410/tl410.pl"&gt;
+   &lt;funktion name="datenversorgung" stand="14-09-2001"&gt;
+    &lt;beschreibung&gt;
+     versorgt den Speicherbaustein mit sinnvollen Anfangswerten aus Testreihe T3.
+    &lt;/beschreibung&gt;
+   &lt;/funktion&gt;
+  &lt;/modul&gt;
+&lt;/projekt&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung</h3>
+
+<p>Es wurden absichtlich zwei Beispiele gewählt, um zu verdeutlichen, wie beliebig sich das Auszeichnungssprachenkonzept einsetzen lässt. Im ersten Beispiel geht es um die Definition eines vektorgrafischen Elements, im zweiten Beispiel um die Dokumentation der Arbeits-Scripts eines Elektrotechnikers. Ebensogut lassen sich auf diese Weise Konstruktionszeichnungen, musikalische Kompositionen, Theaterstücke und biochemische Prozesse beschreiben. Eigentlich alles, was irgendwelche benennbaren und beschreibbaren Strukturen aufweist. Mit welcher Software man diese Daten visualisieren, abspielen oder anderweitig verarbeiten kann, ist damit noch nicht festgelegt. Es geht zunächst nur mal darum, Daten sinnvoll zu strukturieren und vollständig zu beschreiben.</p>
+
+<p>Die beiden Beispiele enthalten ganz unterschiedliche Elemente, Attribute, Wertzuweisungen und typische Verschachtelungen. Gemeinsam ist ihnen jedoch, dass sie offensichtlich aus bestimmten erlaubten Elementen, Attributen, Wertzuweisungen und Regeln zur Verschachtelung bestehen. In den beiden Beispielen finden Sie diese Regeln nirgendwo beschrieben. Insofern sind es einfach Phantasiebeispiele. Es gibt jedoch ein standardisiertes Verfahren, um solche Regeln zu definieren und in den Auszeichnungssprachen anzugeben, auf welche Regeln man sich bezieht und wo diese Regeln definiert sind. Dieses standardisierte Verfahren ist XML.</p>
+
+<p>Als Vorübung zu XML empfiehlt es sich durchaus, wenn Sie einfach mal versuchen, irgendeine Datenstruktur, mit der Sie viel zu tun haben, mit Hilfe solcher phantasierter Elemente, Attribute, Wertzuweisungen und Tag-Verschachtelungen zu beschreiben. Beschreiben Sie beispielsweise mal die Organisationsstruktur Ihres Unternehmens auf diese Weise, oder Ihren typischen Tagesablauf, oder den Grundriss Ihrer Wohnung. Dabei werden Sie schnell feststellen, dass es oft mehrere Wege gibt, um ein und dieselbe Struktur zu definieren. Im zweiten der obigen Beispiele hätte man beispielsweise das Element, das durch <code>&lt;beschreibung&gt;</code>...<code>&lt;/beschreibung&gt;</code> definiert wird, auch als Attribut namens <code>beschreibung</code> innerhalb des <code>&lt;funktion&gt;</code>-Tags definieren können, sodass im Beispiel stehen würde:<br>
+<code>&lt;funktion name="datenversorgung" stand="14-09-2001" beschreibung="versorgt den Speicherbaustein mit sinnvollen Anfangswerten aus Testreihe T3"&gt;&lt;/funktion&gt;</code><br>
+Für welchen Zweck Sie ein eigenes Element spendieren, oder was Sie in ein Attribut packen, gehört zu den Aufgaben des Sprachen-Designs. Wenn Sie sich diese Problematik einmal an eigenen, konkreten Beispielen klarmachen, haben Sie schon sehr viel von XML begriffen, ohne die einzelnen Details von XML zu kennen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="validierung">XML, DTDs und Validierung</a></h2>
+
+<p>Die Regeln für erlaubte Elemente, Attribute und Verschachtelungsmöglichkeiten einer XML-gerechten Auszeichnungssprache werden unabhängig von den eigentlichen Daten definiert. Die Daten mit den Definitionen stellen eine so genannte <b>Dokumenttyp-Definition (engl. document type definition, Abkürzung DTD)</b> dar. XML-fähige Software sollte idealerweise in der Lage sein, solche DTDs auszulesen und Daten, die auf diese DTD Bezug nehmen, nach den Regeln der DTD beurteilen zu können (siehe auch <img src="../src/down.gif" width="14" height="10" alt="nach unten">&nbsp;<a href="#parser">Aufgaben von XML-Parsern</a>). Dabei kann die interpretierende Software feststellen, ob innerhalb der XML-Daten, die sich auf eine bestimmte DTD beziehen, ungültige Notationen vorkommen. Ungültige Notationen sind z.B. Element- oder Attributnamen, die in der DTD nicht definiert werden, oder Elemente an Stellen, an denen sie aufgrund der DTD-Regeln nicht erlaubt sind. Das Verfahren, um zu überprüfen, ob eine XML-Datei nach den Regeln ihrer zugehörigen DTD fehlerfrei ist, nennt man <b>Validierung</b> (von engl. valid = <i>gültig</i>).</p>
+
+<p>Das Verfahren mit den DTDs und der Validierung mag Ihnen anfangs etwas umständlich und aufwendig erscheinen. Doch nur durch dieses Verfahren ist sichergestellt, dass XML-Sprachen nicht nur Phantasiegebilde sind, sondern Sprachen, die sich an bestimmte, genau definierte Regeln halten. Nur so ist es möglich, dass sich verschiedene Autoren und verschiedene Software-Produkte an die Konventionen einer Sprache halten und die Sprache nicht durch spontane, undefinierte Erweiterungen verwässert und für interpretierende Software unbrauchbar wird. Eine XML-Sprache zu erweitern ist durchaus möglich, aber wenn, dann auf dem dafür vorgesehenen Weg, nämlich durch Erweiterung der entsprechenden DTD.</p>
+
+<h3 class="xmp">Beispielauszug aus einer DTD</h3>
+
+<pre>
+&lt;!ELEMENT nachricht (titel,text,datum,redakteur)&gt;
+&lt;!-- Eine Nachricht besteht aus Titel, Text, Datum und Redakteur --&gt;
+
+   &lt;!ELEMENT titel (#PCDATA)&gt;
+   &lt;!-- Der Titel enthaelt den Titeltext, sonst nichts --&gt;
+
+   &lt;!ELEMENT text (#PCDATA)&gt;
+   &lt;!-- Der Text enthält den Nachrichtentext, sonst nichts --&gt;
+
+   &lt;!ELEMENT datum (#PCDATA)&gt;
+   &lt;!-- Das Datum enthaelt die Datumsangabe, sonst nichts --&gt;
+
+   &lt;!ELEMENT redakteur (#PCDATA)&gt;
+   &lt;!-- "redakteur" enthaelt die Angabe zum Redakteur, sonst nichts --&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung</h3>
+
+<p>Auf die genaue Syntax beim Definieren wird an dieser einführenden Stelle nicht weiter eingegangen. Das Beispiel möchte lediglich einen ersten Eindruck vermitteln, wie DTD-Definitionen aussehen, und welche Konsequenzen sie haben. In dem Beispiel werden verschiedene <b>Elementtypen</b> definiert. Das sind die "logischen Vorlagen" für Elemente, die in einer XML-Sprache, die sich auf diese DTD bezieht, vorkommen können. Eine Definition wie z.B. <code>&lt;!ELEMENT&nbsp;titel&nbsp;(#PCDATA)&gt;</code> bedeutet, dass es in dieser XML-Sprache ein Element <code>titel</code> gibt, das durch die Tags <code>&lt;titel&gt;...&lt;/titel&gt;</code> ausgezeichnet wird. Aus den Regeln des Beispiels geht außerdem hervor, dass <code>&lt;titel&gt;...&lt;/titel&gt;</code> (und ebenso <code>&lt;text&gt;...&lt;/text&gt;</code>, <code>&lt;datum&gt;...&lt;/datum&gt;</code> und <code>&lt;redakteur&gt;...&lt;/redakteur&gt;</code>) nur innerhalb von <code>&lt;nachricht&gt;...&lt;/nachricht&gt;</code> vorkommen darf. Alles, was im Beispiel zwischen <code>&lt;!--</code> und <code>--&gt;</code> steht, ist ein Kommentar und gehört nicht zu den eigentlichen Definitionen.</p>
+
+<p>Aufgrund der Definitionen im obigen Beispiel könnte eine XML-Datei, die sich auf diese Definitionen bezieht, folgende Daten enthalten:</p>
+
+<h3 class="xmp">Beispieldaten aufgrund der DTD</h3>
+
+<pre>
+&lt;nachricht&gt;
+ &lt;titel&gt;XML wird jetzt auch in SELFHTML beschrieben!&lt;/titel&gt;
+ &lt;text&gt;
+ Nach langer Pause ist eine neue SELFHTML-Version erschienen. Eine der wichtigsten
+ Neuerungen ist der XML-Teil, in dem die neue Definitionssprache für Auszeichnungssprachen
+ behandelt wird. Der Anwender lernt, wie er Regeln definiert, und Beispiele
+ ergänzen die Beschreibungen.
+ &lt;/text&gt;
+ &lt;datum&gt;20.10.2001&lt;/datum&gt;
+ &lt;redakteur&gt;Ferdinand Schreiberling&lt;/redakteur&gt;
+&lt;/nachricht&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung</h3>
+
+<p>Dem Beispiel können Sie entnehmen, dass die Regeln, die zuvor in der Beispiel-DTD definiert wurden, eingehalten wurden. Es gibt das übergreifende Element <code>nachricht</code>, ausgezeichnet durch die Tags <code>&lt;nachricht&gt;...&lt;/nachricht&gt;</code>. Innerhalb davon sind die anderen Elemente, die eine Nachricht ausmachen, notiert und mit konkreten Daten versehen. Fragen, die Sie sich jetzt stellen mögen, etwa die, wie eine Datendatei sich auf eine DTD bezieht, werden an dieser Stelle ausgeklammert. Es geht hier nur darum, das Verständnis dafür zu entwickeln, dass das, was man "XML" nennt, immer aus dieser Zweiteilung besteht: nämlich aus der Definition von Regeln für eine bestimmte Auszeichnungssprache, und in der konkreten Anwendung dieser Regeln innerhalb dieser Auszeichnungssprache.</p>
+
+<p>Das obige Beispiel ist natürlich nur sehr einfach. In der Praxis können Sie beliebig komplexe Datenstrukturen und deren Beziehungen mit Hilfe der DTD-Syntax definieren. Im Abschnitt <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="dtd/index.htm">Dokumenttyp-Definitionen (DTDs)</a> finden Sie detailliertere Erklärungen dazu, wie man eine XML-gerechte DTD erstellt.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="formatierung">XSL oder CSS - Formatierung für XML-Elemente</a></h2>
+
+<p>XML-basierte Dateien enthalten nichts anderes als logische Auszeichnungen (auch semantische Auszeichnungen genannt). Eine Auszeichnung wie <code>&lt;beschreibung&gt;...&lt;/beschreibung&gt;</code> sagt nur etwas über die Bedeutung der an dieser Stelle gespeicherten Daten aus, aber nichts darüber, wie solche Daten darzustellen sind. Die so bezeichneten Daten sind völlig unabhängig vom Ausgabemedium (etwa Bildschirm, Display, Lautsprecher, Drucker), und sie enthalten keinerlei Angaben zur Formatierung (Schriftart, Schriftgröße, Farben usw.). Im Gegensatz zu HTML-Daten, für deren Darstellung ein Browser Default-Werte benutzt, hat er bei XML-Daten keine Anhaltspunkte, wie diese darzustellen sind. Bevor Sie solche Daten also präsentieren können, müssen Sie mit Hilfe einer Style-Sprache angeben, wie die Daten formatiert werden sollen.</p>
+
+<p>Dazu stehen heute zwei Formatsprachen zur Verfügung: CSS und XSL. <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="../css/index.htm">CSS (Cascading Stylesheets)</a>, auch für HTML eingesetzt, ist dabei die "Brot- und Buttersprache". Sie genügt, um etwa einem Web-Browser mitzuteilen, wie er die Elemente einer XML-Datei darstellen soll. XSL ist dagegen wesentlich mächtiger und enger an den Konzepten von XML orientiert. Ganz besonders wichtig ist die so genannte Transformations-Komponente XSLT. Mit Hilfe von XSLT können Sie beispielsweise XML-Daten in HTML transformieren - und zwar, bevor der Browser überhaupt etwas davon mitbekommt, also server-seitig! Das hat den Vorteil, dass XML in Verbindung mit XSL auch mit älteren Browsern funktioniert, die gar kein XML kennen. Der Nachteil ist, dass es nur in einer HTTP-Umgebung funktioniert, aber nicht, wenn die Daten etwa lokal auf einer CD-ROM  präsentiert werden. Außerdem muss der Web-Server eine entsprechende Schnittstelle besitzen, die das Einbinden eines XSL/XSLT-verarbeitenden Software-Moduls erlaubt.</p>
+
+<p>Daneben stehen in XSL Möglichkeiten zur Verfügung, die in CSS unbekannt sind, zum Beispiel bedingte Formatierung (wie if-Bedingungen in Programmiersprachen) oder Sortierung von Daten.</p>
+
+<p>Ein entscheidender Vorteil von XSL ist außerdem, dass es keine eigene, vom Auszeichnungssprachenschema abweichende Syntax benutzt, so wie CSS. Stattdessen ist XSL selbst eine mit Hilfe von XML definierte Auszeichnungssprache! Eine Stylesheet-Datei, die mit XSL erstellt ist, ist also selber eine XML-gerechte Datei. So sind Software-Tools, die für XML entwickelt wurden, auch für XSL anwendbar.</p>
+
+<h3 class="xmp">Beispieldefinition mit CSS:</h3>
+
+<pre>
+kopfzeile { display:block; font-family:Helvetica; font-size:12px; font-weight:bold }
+</pre>
+
+<h3 class="xmp">Beispieldefinition mit XSLT:</h3>
+
+<pre>
+&lt;xsl:template match="kopfzeile"&gt;
+    &lt;div style="font-family:Helvetica; font-size:12px; font-weight:bold;"&gt;
+      &lt;xsl:value-of select="." /&gt;
+    &lt;/div&gt;
+  &lt;/xsl:template&gt;
+</pre>
+
+<h3 class="xpl">Erläuterung</h3>
+
+<p>Auf den ersten Blick wirkt die CSS-Definition natürlich einfacher - zumindest, wenn Sie sich mit CSS bereits beschäftigt haben. Die XSL-Definition ist dagegen vertrauter, wenn man sie vom Blickwinkel der Auszeichnungssprachen her betrachtet. Auszeichnungen wie <code>&lt;xsl:template&gt;...&lt;/xsl:template&gt;</code> (Schablonen-Definition) oder <code>&lt;xsl:value-of&nbsp;select="."&nbsp;/&gt;</code> (Inhalt des aktuellen Elements einfügen) gehören zu XSL. Im Beispiel fällt Ihnen möglicherweise auf, dass für die eigentlichen Format-Definitionen von <code>kopfzeile</code> plötzlich ein HTML-Element verwendet wird, nämlich <code>div</code>, und dass das einleitende <code>&lt;div&gt;</code>-Tag sogar die vertrauten CSS-Definitionen enthält. Dahinter steckt das Konzept von XSLT. Denn mit Hilfe dieser Sprache können Sie nicht einfach nur Formatierangaben für Elemente notieren, sondern Sie können die Elemente in eine andere Sprache transformieren. In der Praxis wird derzeit hauptsächlich die Transformation von eigenen XML-Daten in HTML benutzt, so wie im obigen Beispiel.</p>
+
+<p>Im Abschnitt <img src="../src/kap.gif" width="15" height="13" alt="Kapitel">&nbsp;<a href="darstellung/index.htm">Darstellung von XML-Daten</a> finden Sie detailliertere Erklärungen dazu, wie XSLT funktioniert.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="w3c">Das W3-Konsortium und XML</a></h2>
+
+<p>XML geht auf die Anstrengungen des W3-Konsortiums zurück, und die Spezifikation und Weiterentwicklung liegt in der Hand dieser Organisation. Über die <img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.w3.org/XML/" target="_top">W3-Einstiegsseite zu XML</a> können Interessierte die aktuelle Weiterentwicklung verfolgen. Dadurch, dass die gleiche Organisation, die auch für die Spezifikation von HTML zuständig ist, den XML-Standard bestimmt, ist auch die vielfach vernommene Einschätzung entstanden, XML werde HTML "ablösen". Dabei ist das Potential von XML viel größer als der Bedarf des Web-Designers an Datenformaten. XML ist ein Universalkonzept für Datenspeicherung und deshalb nicht auf Internet und WWW beschränkt. Allerdings ist der XML-Standard beim W3-Konsortium offensichtlich in guten Händen. Denn die Leute um Dan Connolly, der das XML-Projekt leitet, haben sich über Jahre hinweg als weitsichtig und unbestechlich erwiesen, trotz aller versuchten Einflussnahme von seiten namhafter Software-Konzerne.</p>
+
+<p>Die Ideen zu XML gehen in jene Jahre zurück, als das Web zu boomen begann. Im Oktober 1994 gründete Tim Berners-Lee, der Stammvater von HTTP und HTML, am Massachusetts Institute of Technology ein offenes Entwickler-Forum, zu dem Vertreter aus Industrie, Forschung, Internet-Technologie, Politik und Medien Zugang hatten. Es wurde klar, dass HTML den künftigen Anforderungen alleine nicht genügen kann, und dass aber ein Standard gefunden werden musste, in den HTML integrierbar war, und der den Erfolg von HTML ausnutzen sollte. Eine Definitionssprache für Auszeichnungssprachen war das Ziel. Zunächst waren Konzepte im Gespräch, die SGML außer acht ließen. Doch schließlich setzte sich eine Lösung durch, in der die neue, praxisorientierte Definitionssprache als Teilmenge von SGML konzipiert, also selbst mit Hilfe von SGML definiert wurde, aber Aufgaben von SGML selbst übernimmt, nämlich die Definition konkreter Anwendungs-Auszeichnungssprachen. Auf der SGML 96 Conference in Boston wurde der Erstentwurf zu XML vorgelegt.</p>
+
+<p>Im Februar 1998 brachte das W3-Konsortium schließlich die erste Empfehlung (Recommendation) zu XML heraus. Danach bemühte sich die Organisation, XML zu etablieren und schuf Arbeitsgruppen, die verschiedene wichtige Auszeichnungssprachen mit Hilfe von XML standardisieren. Allen voran natürlich HTML, das mit Hilfe von XML zu dem neuen Standard XHTML umdefiniert wurde und auf dieser Basis weiterentwickelt wird. Andere wichtige Sprachen wie SVG (Vektorgrafikformat), die Mathematical Markup Language (MathML), oder das Resource Description Framework (RDF), ein Modell zur Beschreibung von Metadaten zu Dokumenten werden auf Basis von XML definiert und erhalten durch das W3-typische Standardisierungsverfahren Gewicht als allgemein verbreitete, software-unabhängige Beschreibungssprachen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="softwaremarkt">XML und der Software-Markt</a></h2>
+
+<p>Für den klassischen Software-Markt stellt XML eine gewaltige Provokation dar. Denn es ist ein Generalangriff auf alle proprietären Dateiformate, die an bestimmte, oft teuere Programme gebunden sind. Durch XML entsteht aus Anwendersicht etwas Neues: im Vordergrund steht nicht mehr das Software-Produkt als Einheit von Benutzeroberfläche und Dateiformat, sondern nur noch die Benutzeroberfläche, und gleichzeitig die Erwartung, dass die Daten, die zu erzeugen oder zu verarbeiten sind, in einem modernen, XML-basierten Dateiformat abgespeichert werden. Der Wettbewerb zwischen konkurrierenden Software-Produkten verlagert sich deshalb auf das "Interface-Design". Denn wenn vergleichbare Produkte die gleichen, standardisierten Dateiformate verwenden und den Anwender nicht mehr durch das Dateiformat an sich binden können, müssen sie den Anwender durch überlegene Benutzerführung und eine praxisnahe Arbeitsebene überzeugen. Durch die universelle Anwendbarkeit von XML gilt dies für fast alle Software-Typen, egal ob Textverarbeitung, Grafik, Tabellenkalkulation, Datenbank, CAD, Musik oder sogar Computer-Spiele.</p>
+
+<p>Während die meisten Software-Hersteller noch im seligen Schlaf liegen, beweist der vielgehasste Microsoft-Konzern mal wieder seine Chamäleon-Qualitäten. Mit gewaltigem finanziellen Aufwand arbeitet das angeschlagene Unternehmen daran, die verbreitete Office-Familie, bestehend aus Word, Excel, Powerpoint und Access, komplett auf XML-basierte Dateiformate umzustellen. Aber auch andernorts wachen die Hersteller allmählich auf. Vor allem das vom W3-Konsortium entworfene, XML-basierte SVG-Dateiformat für Vektorgrafik erweist sich dabei als vielversprechend.</p>
+
+<p>XML könnte dafür sorgen, dass es in Zukunft egal ist, womit Sie Ihre Briefe schreiben, Ihre Häuser konstruieren oder Ihre Plakatwerbung erstellen. Wenn die benutzte Software sich konsequent an den XML-Standard hält und nachweisbare Dokumenttypen (DTDs) benutzt, dann steht einem verlustfreien Portieren von Daten zwischen konkurrierenden Anwendungen mit gleichen Fähigkeiten eigentlich nicht mehr viel im Wege. </p>
+
+<p>Ein wichtiger Pluspunkt von XML ist, dass Daten und Layout völlig voneinander getrennt sind. Nicht einmal die Ausgabeform der Daten ist festgelegt. Aus dem gleichen XML-Datenbestand lässt sich eine Web-Seite generieren, eine Druckvorlage oder eine akustische Ausgabe mit künstlichen Stimmen. Es gibt nur noch eine Datenquelle, und das Publizieren erfolgt mit Hilfe von Konvertern, die XML-Daten in andere Daten (z.B. in HTML oder in PostScript) übersetzen. Die klassischen, zuletzt immer monströser gewordenen Programme mit ihren hauseigenen Formaten werden deshalb zunehmend kleineren Software-Modulen weichen, deren Stärke das Zusammenspiel ist. Das Konzept dieser Modularisierung ist zwar schon älter, aber es fehlten zunächst die Schnittstellen. XML jedoch leistet eine solche Schnittstelle auf der Ebene der Datenformate.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="parser">Die Aufgaben von XML-Parsern</a></h2>
+
+<p>Was man in prozeduralen Sprachen, also in Programmiersprachen, als Interpreter bezeichnet, nennt man in beschreibenden Sprachen wie XML einen <b>Parser</b> (auch: <b>Prozessor</b>). Bei XML ist ein Parser diejenige Software, die XML-Strukturen ausliest, analysiert und nachgeschalteter Software zur Verfügung stellt. Ein XML-fähiger Browser beispielsweise besitzt ein eigenes Software-Modul, das den Parser darstellt. Im Parser wird die <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="regeln/baumstruktur.htm">Baumstruktur</a> der XML-Daten analysiert. Ein erfolgreiches Analysieren dieser Struktur ist die Voraussetzung für eine korrekte Darstellung/Wiedergabe der Daten.</p>
+
+<p>Ein Parser muss nicht auf der Client-Seite (im Browser) integriert sein. Er kann genausogut in die Umgebung eines Web-Servers eingebunden sein und Daten, die auf dem Server abgelegt sind und vom Browser über HTTP angefordert werden, schon umwandeln, bevor diese überhaupt übers Internet übertragen werden. Genau dies tut beispielsweise ein server-seitiger XSLT-Parser, der XML-Daten in HTML-Daten übersetzen kann. Ein Browser, der die XML-Daten über HTTP angefordert hat, erhält dann vom Server leicht verdaulichen HTML-Code.</p>
+
+<p>Generell kann man unterscheiden zwischen Parsern, die den Quelltext <b>validieren</b>, und solchen, die das nicht tun. Validierende Parser erwarten zu allen XML-Daten eine DTD und prüfen den gesamten Inhalt der XML-Daten gegen die zugehörige DTD. Ergibt die Prüfung Fehler, geben solche Parser beispielsweise Fehlermeldungen aus und brechen die Verarbeitung ab.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="browser">XML und die Browser</a></h2>
+
+<p>Das entscheidende Problem beim Erfolg von XML ist die Fähigkeit von Software, XML-basierte Daten vollständig und adäquat zu repräsentieren. Egal, ob es sich um Textdaten, Grafikdaten, numerische Daten oder Multimediadaten handelt. Web-Browser sind heute der Software-Typ, der am stärksten mit unterschiedlichen Dateiformaten konfrontiert wird und für eine ansprechende Umsetzung dieser Daten am Bildschirm oder an anderen Ausgabegeräten zu sorgen hat. Außerdem sind Web-Browser von vorneherein internet-fähig, was für XML ebenfalls wichtig sein kann. Denn XML-fähige Software muss gegebenenfalls auf öffentlich im Internet hinterlegte Dokumenttyp-Definitionen zugreifen können, um eine Datei, die nach den Regeln eines bestimmten Dokumenttyps kodiert ist, interpretieren zu können. Insofern haben die Browser eine gewisse Vorreiterrolle, was die Umsetzung der XML-Philosophie in der Praxis betrifft.</p>
+
+<p>Der Internet Explorer interpretiert beliebige, XML-basierte Auszeichnungssprachen seit der Produktversion 5.0, der Netscape-Browser ab seiner völlig neu programmierten Version 6.0. "Interpretieren" meint dabei, dass diese Browser XML-Daten als solche erkennen und parsen können. Schick darstellen können sie die Daten deshalb noch nicht - dazu sind Formatierungen mit CSS oder XSL oder Übersetzungen mit XSLT in HTML erforderlich.</p>
+
+<p>Da Web-Designer meistens auch auf ältere Produktversionen oder andere Browser Rücksicht nehmen müssen, empfiehlt es sich vorläufig nicht, Web-Design unmittelbar mit XML-basierten Sprachen zu betreiben. Nur wenn XML in Verbindung mit XSLT und dessen serverseitigen Interpretation einsetzbar ist, ist die Verwendung im Web heute unbedenklich.</p>
+
+<p>XML gewinnt auf jeden Fall mehr und mehr Bedeutung bei der Datenhaltung umfangreicher, reich strukturierter Datenbestände. Bei großen Web-Sites mit viel und einheitlich strukturiertem Inhalt werden die Daten immer häufiger in XML-basierten, eigenen Dateiformaten gespeichert. Bis es jedoch problemlos möglich sein wird, XML-Daten direkt an aufrufende Browser zu senden, wird noch einige Zeit vergehen.</p>
+
+
+
+<p class="doc"><a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a><a href="#bottom"><img src="../src/down.gif" width="14" height="10" border="0" alt="nach unten"></a></p>
+
+
+
+<h2><a class="an" name="standardsprachen">Wichtige XML-Standardsprachen: SVG, MathML, SMIL, RDF, WML</a></h2>
+
+<p>XML bietet einerseits die Möglichkeit, eigene Datenformate zu erzeugen, die einem standardisierten Schema folgen und daher Kompatibilität garantieren. Andererseits lassen sich mit XML aber auch Datenformate erzeugen, die für eine breitere Verwendung im Software-Markt geeignet sind. Das W3-Konsortium arbeitet gleich an mehreren solcher XML-basierten Auszeichnungssprachen. Für jede dieser Auszeichnungssprachen gibt es eine eigene Arbeitsgruppe, die sich um eine saubere Spezifikation und eine praxisgerechte Weiterentwicklung der jeweiligen Sprache kümmert. Aber auch andere Hersteller und Anbieter versuchen, XML-basierten Sprachen zu einem Standard-Status zu verhelfen. Die folgenden Sprachen sind Beispiele solcher Standardsprachen. Jede Sprache wird anhand eines kleinen Beispiels verdeutlicht. Die Beispiele sind jedoch nur zum Hereinschnuppern gedacht.</p>
+
+<h3>SVG: Scalable Vector Graphics</h3>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.w3.org/Graphics/SVG/" target="_top">W3-Einstiegsseite zu SVG</a><br>
+SVG ist eine mit XML definierte Auszeichnungssprache zur Beschreibung 2-dimensionaler Vektorgrafik. Damit lassen sich grafische Daten beschreiben, wie sie von Programmen wie etwa Corel Draw erzeugbar sind. Ein einfaches Beispiel:</p>
+
+<pre>
+&lt;svg width="4in" height="3in"&gt;
+&lt;g&gt;
+  &lt;rect x="50" y="80" width="200" height="100" style="fill: #FFFFCC"/&gt;
+&lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+
+<p>Das Beispiel zeigt, wie in SVG ein "Canvas", also eine Bildfläche erzeugt wird mit Hilfe des zentralen <code>svg</code>-Elements. Mit Hilfe des Gruppierungs-Elements <code>g</code> lassen sich Elemente zu komplexen Einheiten verbinden. Im Beispiel wird in der einzigen definierten Gruppe nur ein einfaches Rechteck definiert. Dafür steht das <code>rect</code>-Element zur Verfügung.</p>
+
+<h3>MathML: Mathematical Markup Language</h3>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.w3.org/Math/" target="_top">W3-Einstiegsseite zu MathML</a><br>
+MathML hat die Aufgabe, technisch-wissenschaftliche Inhalte, die mathematische Formelsprache zur Darstellung benötigen, abzubilden. Ein einfaches Beispiel (übernommen vom W3-Konsortium):</p>
+
+<pre>
+&lt;mfenced&gt;
+  &lt;mrow&gt;
+    &lt;mi&gt;a&lt;/mi&gt;
+    &lt;mo&gt;+&lt;/mo&gt;
+    &lt;mi&gt;b&lt;/mi&gt;
+  &lt;/mrow&gt;
+&lt;/mfenced&gt;
+&lt;msup&gt;
+  &lt;mn&gt;2&lt;/mn&gt;
+&lt;/msup&gt;
+</pre>
+
+<p>Das Beispiel bewirkt die Ausgabe: (a+b)<sup>2</sup><br>
+Der Aufwand dafür mag im ersten Augenblick übertrieben anmuten. Der Vorteil der Beschreibung in MathML ist jedoch, dass jedes einzelne Element des Ausdrucks eine eigene logische Auszeichnung erhält. Nur dadurch ist es möglich, auch beliebig komplexe Ausdrücke zu beschreiben.<br>
+Mit <code>&lt;mfenced&gt;...&lt;/mfenced&gt;</code> wird die Klammer definiert, mit <code>&lt;mrow&gt;...&lt;/mrow&gt;</code> ein horizontal notierter, zusammenhängender Ausdruck, mit <code>&lt;mi&gt;...&lt;/mi&gt;</code> ein Bezeichner (<i>Identifier</i>), mit <code>&lt;mo&gt;...&lt;/mo&gt;</code> ein Operator, mit <code>&lt;mn&gt;...&lt;/mn&gt;</code> ein numerischer Wert, und mit <code>&lt;msup&gt;...&lt;/msup&gt;</code> wird diese Zahl als hochgestellt (Superscript) definiert.</p>
+
+<h3>SMIL: Synchronized Multimedia Integration Language</h3>
+
+<p>(auszusprechen wie englisch <i>smile</i> - lächeln)<br>
+<img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.w3.org/AudioVideo/" target="_top">W3-Einstiegsseite zu SMIL</a><br>
+SMIL ermöglicht es, Drehbücher für verschiedenste Medienelemente wie Text, Bilder, Video und Audio zu schreiben. Dadurch lassen sich TV-ähnliche, selbst ablaufende Präsentationen erstellen, z.B. für Messen, Ausstellungen, Produktpräsentationen, aber auch im künstlerischen Bereich für Multimedia-Clips. Ein einfaches Beispiel:</p>
+
+<pre>
+&lt;par&gt;
+&lt;text src="title.rt" type="text/html" region="title" dur="20s"/&gt;
+ &lt;audio src="welcome.ra"/&gt;
+&lt;/par&gt;
+</pre>
+
+<p>Im Beispiel wird mit <code>&lt;text&gt;</code> ein Text-Element definiert. Der Text selbst wird aus einer separaten Quelle entnommen (<code>src="title.rt"</code>). Er wird in einer bestimmten Region des Anzeigebereichs platziert (<code>region="title"</code>), die an einer anderen Stelle der SMIL-Datei definiert wird, und er wird 20 Sekunden lang eingeblendet (<code>dur="20s"</code>). Derweil wird eine Audio-Datei namens <code>welcome.ra</code> abgespielt. Beides - der Text und die Audio-Datei - werden in <code>&lt;par&gt;...&lt;/par&gt;</code> eingeschlossen. Das steht für "parallel" und beschreibt die Anweisung, alles, was innerhalb davon notiert ist, gleichzeitig zu präsentieren.</p>
+
+<h3>RDF: Resource Description Framework</h3>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.w3.org/RDF/" target="_top">W3-Einstiegsseite zu RDF</a><br>
+RDF ist eine Sprache zur Beschreibung von Metadaten für Dokumente. Metadaten können verschiedene Aufgaben haben: etwa Input für Robots von Suchmaschinen darzustellen, oder die Daten für die Aufnahme des Dokuments in das Katalogsystem einer bestimmten elektronischen Bibliothek zu liefern. Ein einfaches Beispiel:</p>
+
+<pre>
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.0/"&gt;
+  &lt;rdf:Description rdf:about="http://localhost/doc"
+      dc:creator="Fritz Fisch"
+      dc:title="Fischfang heute"
+      dc:description="Eine Dokumentation moderner Fischfangmethoden"
+      dc:date="2001-03-30" /&gt;
+&lt;/rdf:RDF&gt;
+</pre>
+
+<p>Das Beispiel zeigt eine RDF-Namensraum-Instanz, eingeleitet durch <code>&lt;rdf:RDF...</code> und beendet durch <code>&lt;/rdf:RDF&gt;</code>. Für die Namensraum-Instanz werden jedoch zwei Bezugsquellen angegeben: einmal die Metadaten-Syntax-Definition nach dem RDF-Schema des W3-Konsortiums, und einmal diejenige nach dem RDF-Schema von <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../html/kopfdaten/meta.htm#dublin_core">Dublin Core</a> (dc). Dadurch lassen sich in der Folge mit <code>rdf:</code> Tags aus dem W3-Schema benutzen, und mit <code>dc:</code> Tags aus dem Dublin-Core-Schema.</p>
+
+<h3>WML: Wireless Markup Language</h3>
+
+<p><img src="../src/en.gif" width="16" height="10" alt="englischsprachige Seite">&nbsp;<a href="http://www.wapforum.org/" target="_top">Einstiegsseite zum WAP-Forum</a><br>
+WML ist - gemeinsam mit dem Übertragungsprotokoll WAP, das ähnliche Aufgaben wie HTTP hat - die Beschreibungssprache für Displayinhalte auf Handys oder anderen internet-fähigen Kleinstgeräten. WML ist auch ein Beispiel dafür, wie ein anderes Gremium als das W3-Konsortium sich um die XML-basierte Normierung der Sprache bemüht. WML hat im Prinzip ähnliche Aufgaben wie HTML, ist jedoch für die Display-Anzeige optimiert. Jedes Handy, das sich als WAP-fähig bezeichnet, hat einen integrierten WML-Browser, der die entsprechenden Daten aus dem Internet anzeigen kann. Ein einfaches Beispiel:</p>
+
+<pre>
+&lt;wml&gt;
+&lt;card id="card_1" title="Willkommen!"&gt;
+&lt;p align="left"&gt;hier unser aktuelles&lt;br/&gt;Angebot:&lt;/p&gt;
+&lt;a href="#Card_2"&gt;Unterhosen&lt;/a&gt;&lt;br/&gt;
+&lt;a href="#Card_3"&gt;Baby-Schnuller&lt;/a&gt;
+&lt;/card&gt;
+&lt;/wml&gt;
+</pre>
+
+<p>Charakteristisch für WML-Daten ist die Unterteilung in so genannte "Cards". Das sind kleine Einheiten, die jeweils einen Displayinhalt darstellen. Mit <code>&lt;card&gt;...&lt;/card&gt;</code> wird eine solche Einheit definiert. Innerhalb der Karte sind Elemente notiert, die jedem, der HTML kennt, vertraut vorkommen. Da gibt es Absätze, Zeilenumbrüche und Verweise. Die Syntax dieser Elemente ist in WML von HTML übernommen worden. Auch Grafiken können in WML eingebunden werden, und Formulare lassen sich ebenfalls definieren. Abgesendete Formulare können analog zu HTML-Formularen z.B. durch CGI-Scripts auf dem WAP-Server verarbeitet werden.</p>
+
+
+
+<table cellpadding="4" cellspacing="0" border="0" width="100%">
+<tr><td colspan="2" class="doc">
+&nbsp;<a href="#top"><img src="../src/up.gif" width="14" height="10" border="0" alt="nach oben"></a>
+</td></tr>
+<tr><td class="doc"><a href="regeln/xmldeklaration.htm"><img src="../src/next.gif" width="10" height="10" border="0" hspace="10" alt="weiter"></a></td>
+<td width="100%"><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="regeln/xmldeklaration.htm">XML-Deklaration und Verarbeitungsanweisungen</a>
+</td></tr>
+<tr>
+<td class="doc"><a href="../css/eigenschaften/filter.htm"><img src="../src/prev.gif" width="10" height="10" border="0" hspace="10" alt="zurück"></a></td>
+<td><img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../css/layouts/browserweichen.htm">CSS-Browserweichen zum Ausschließen älterer Browser</a>
+</td>
+</tr>
+<tr><td colspan="2" class="doc">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="nav"><a class="an" name="bottom"><img src="../src/refkap.gif" width="16" height="13" alt="Teil von"></a> <a href="../index.htm">SELFHTML</a>/<a href="../navigation/index.htm" target="_parent" class="navh">Navigationshilfen</a> <img src="../src/refkap.gif" width="16" height="13" alt="Teil von">&nbsp;<a href="index.htm">XML/DTDs</a> </td>
+</tr>
+</table>
+
+<p>&copy; 2007 <img src="../src/dok.gif" width="15" height="10" alt="Seite">&nbsp;<a href="../editorial/impressum.htm">Impressum</a> <a href="http://flattr.com/thing/41584/SELFHTML" target="_blank"><img src="//src.selfhtml.org/flattr-100x17.png" alt="Flattr this" title="Flattr this" border="0" /></a></p>
+
+
+
+</body>
+</html>

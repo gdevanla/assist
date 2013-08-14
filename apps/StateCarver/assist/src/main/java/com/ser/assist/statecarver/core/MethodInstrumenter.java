@@ -32,7 +32,7 @@ public class MethodInstrumenter {
         List<Unit> methodCounterStmts = getMethodCounterStatements(body);
         Stmt methodTraceStmt = getMethodTracerStmt(body, currentClassName);
         List<Unit> parameterSavingStmts = getParameterSavingStatements(body);
-        List<Unit> staticStateSavingStmts = getStaticStateSavingStatements(body);
+       // List<Unit> staticStateSavingStmts = getStaticStateSavingStatements(body);
 
 
         //Stmt thisObjectSavingStmt = getParameterSavingStatements(body);
@@ -45,9 +45,9 @@ public class MethodInstrumenter {
             body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
         }
 
-        if ( staticStateSavingStmts.size()>0){
+       /* if ( staticStateSavingStmts.size()>0){
             body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
-        }
+        }*/
 
         if (!(body.getMethod().getReturnType() instanceof VoidType)){
             List<Unit> allReturnStatements = collectReturnStatements(body);
@@ -228,11 +228,11 @@ public class MethodInstrumenter {
 
     private String buildMethodStringToSave(Body body, String currentClassName){
         String returnType = body.getMethod().getReturnType().toString();
-        System.out.println(returnType);
-        returnType = returnType.replace("[]", "[]");
+        System.out.println("Return Type="+returnType );
+        returnType = returnType.replace("[]", "\\[\\]");
 
 
-        System.out.print(body.getMethod().getSubSignature());
+        System.out.print("SubSignature="+body.getMethod().getSubSignature());
         String subSignatureWithoutReturnType = body.getMethod().getSubSignature().replaceFirst(returnType, "");
         return returnType + " " + subSignatureWithoutReturnType.trim();
     }

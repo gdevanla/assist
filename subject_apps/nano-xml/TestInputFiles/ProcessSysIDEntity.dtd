@@ -1,0 +1,2 @@
+<!ENTITY % student SYSTEM "example.dtd">
+  %student;

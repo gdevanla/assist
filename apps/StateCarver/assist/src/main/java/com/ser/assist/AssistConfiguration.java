@@ -18,13 +18,14 @@ public class AssistConfiguration {
     private final String traceFolder = "trace";
     private final String METHOD_TRACE_FILE_NAME = "MethodTrace.log";
 
-    public final static String config_properties_fname = "hellochicago.assist.properties";
+    //public final static String config_properties_fname = "hellochicago.assist.properties";
+     public final static String config_properties_fname = "jtopas.assist.properties";
     protected Configuration config;
 
     public AssistConfiguration(){
     try {
         //config = new PropertiesConfiguration("assist.properties");
-        config = new PropertiesConfiguration("hellochicago.assist.properties");
+        config = new PropertiesConfiguration(config_properties_fname);
     } catch (ConfigurationException e) {
         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         System.out.println("Unable to load config file assist.properties. Please make sure it is in the classpath.");
