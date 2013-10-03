@@ -1,0 +1,23 @@
+   Date: 2013:09:27::11:42:14
+
+REPORT: 
+                     Project analyzed: testability-explorer
+               Analyzed source folder: src/main/java
+          Analyzed test source folder: src/test/java
+       Generated test cases in folder: test-gen
+   Non-compiling test cases in folder: test-gen-non-compile
+
+       Number of compilation units analyzed:   153
+     Number of public constructors analyzed:   151
+    Number of test cases (classes) analyzed:    82
+              Test generation strategy used: generator.analysis.generation.selection.RandomSelectionStrategy
+           Number of test classes generated:    84
+                     of which non-compiling:    37
+           Number of test methods generated:   420
+               Number of passing test cases:     0
+               Number of failing test cases:     0
+Number of instantiation sequences generated:   849
+      Average instantiation sequence length:     2.13 statements 
+    Number of execution sequences generated:   339
+          Average execution sequence length:     2.03 statements 
+END REPORT

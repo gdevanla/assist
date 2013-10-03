@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm
+END
+NoopFieldVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/NoopFieldVisitor.java
+END
+NoopClassVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/NoopClassVisitor.java
+END
+JavaNamer.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/JavaNamer.java
+END
+MethodVisitorBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/MethodVisitorBuilder.java
+END
+ClassInfoBuilderVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/ClassInfoBuilderVisitor.java
+END
+JavaVisibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/JavaVisibility.java
+END
+FieldVisitorBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/FieldVisitorBuilder.java
+END
+NoopSignatureVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/NoopSignatureVisitor.java
+END
+SignatureParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/asm/SignatureParser.java
+END

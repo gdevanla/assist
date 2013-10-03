@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/javasrc
+END
+QualifierTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/javasrc/QualifierTest.java
+END
+JavaSrcRepositoryTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/javasrc/JavaSrcRepositoryTest.java
+END
+JavaClassInfoBuilderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/javasrc/JavaClassInfoBuilderTest.java
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method
+END
+Stack2TuringTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method/Stack2TuringTest.java
+END
+MethodCostTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method/MethodCostTest.java
+END
+BlockTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method/BlockTest.java
+END
+MethodBlockTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method/MethodBlockTest.java
+END
+BlockDecomposerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/method/BlockDecomposerTest.java
+END

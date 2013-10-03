@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 119
+maven-testability-plugin.iml
+.project
+.classpath
+.settings
+.externalToolBuilders
+~*
+*~
+*.bak
+*.ser
+target
+test-out
+bin
+
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source
+END
+te.css
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/te.css
+END
+Footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Footer.html
+END
+Macro.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Macro.ftl
+END
+Class.html
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Class.html
+END
+Project.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Project.html
+END
+Header.html
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Header.html
+END
+Package.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/resources/com/google/test/metric/report/source/Package.html
+END

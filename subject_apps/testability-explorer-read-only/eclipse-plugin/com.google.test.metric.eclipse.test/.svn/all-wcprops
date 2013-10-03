@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/427/trunk/eclipse-plugin/com.google.test.metric.eclipse.test
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/425/trunk/eclipse-plugin/com.google.test.metric.eclipse.test/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/310/trunk/eclipse-plugin/com.google.test.metric.eclipse.test/.project
+END
+easymock.jar
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/356/trunk/eclipse-plugin/com.google.test.metric.eclipse.test/easymock.jar
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/356/trunk/eclipse-plugin/com.google.test.metric.eclipse.test/build.properties
+END

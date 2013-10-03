@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric
+END
+FieldInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/FieldInfo.java
+END
+ClassNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ClassNotFoundException.java
+END
+LoDViolation.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/LoDViolation.java
+END
+MethodInvocationCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/MethodInvocationCost.java
+END
+TestabilityModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/TestabilityModule.java
+END
+JavaTestabilityModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/JavaTestabilityModule.java
+END
+ClassRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ClassRepository.java
+END
+JavaClassRepository.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/JavaClassRepository.java
+END
+Cost.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Cost.java
+END
+MethodCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/MethodCost.java
+END
+LocalVariableInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/LocalVariableInfo.java
+END
+MethodNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/MethodNotFoundException.java
+END
+CommandLineConfig.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/CommandLineConfig.java
+END
+TestabilityVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/TestabilityVisitor.java
+END
+ClassInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ClassInfo.java
+END
+Variable.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Variable.java
+END
+RegExpWhiteList.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/RegExpWhiteList.java
+END
+Visibility.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Visibility.java
+END
+SourceLocation.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/SourceLocation.java
+END
+JavaTestabilityRunner.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/JavaTestabilityRunner.java
+END
+GlobalCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/GlobalCost.java
+END
+WeightedAverage.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/WeightedAverage.java
+END
+ViolationCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ViolationCost.java
+END
+ReportGeneratorProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ReportGeneratorProvider.java
+END
+ClassCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ClassCost.java
+END
+LocalVariableState.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/LocalVariableState.java
+END
+MetricComputer.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/MetricComputer.java
+END
+AnalysisModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/AnalysisModel.java
+END
+ConstructorInvocationCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ConstructorInvocationCost.java
+END
+ConfigModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ConfigModule.java
+END
+WhiteList.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/WhiteList.java
+END
+FieldNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/FieldNotFoundException.java
+END
+CyclomaticCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/CyclomaticCost.java
+END
+Type.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Type.java
+END
+JavaType.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/JavaType.java
+END
+VariableState.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/VariableState.java
+END
+Reason.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Reason.java
+END
+CostModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/CostModel.java
+END
+MethodInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/MethodInfo.java
+END
+ParameterInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/ParameterInfo.java
+END
+Testability.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/Testability.java
+END
+LocalField.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/LocalField.java
+END

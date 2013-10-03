@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/collection
+END
+LazyHashMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/collection/LazyHashMap.java
+END
+KeyedMultiStack.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/collection/KeyedMultiStack.java
+END
+Factory.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/collection/Factory.java
+END
+PopClosure.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/collection/PopClosure.java
+END

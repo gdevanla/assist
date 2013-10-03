@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/429/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/429/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/.classpath
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/.project
+END
+toc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/toc.xml
+END
+contexts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/contexts.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/build.properties
+END
+plugin.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.doc/plugin.xml
+END

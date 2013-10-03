@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib
+END
+jarjar.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib/jarjar.jar
+END
+junit.jar
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib/junit.jar
+END
+corrupt.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib/corrupt.jar
+END
+asm-3.0.jar
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib/asm-3.0.jar
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/classes/lib/Readme.txt
+END

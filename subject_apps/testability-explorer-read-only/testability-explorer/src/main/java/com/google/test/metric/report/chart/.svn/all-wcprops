@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart
+END
+PieGraph.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/PieGraph.java
+END
+HistogramChartUrl.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/HistogramChartUrl.java
+END
+PieChartUrl.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/PieChartUrl.java
+END
+GoodnessChart.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/GoodnessChart.java
+END
+GoogleChartAPI.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/GoogleChartAPI.java
+END
+Histogram.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/chart/Histogram.java
+END

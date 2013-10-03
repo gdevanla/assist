@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/310/trunk/eclipse-plugin/com.google.test.metric.eclipse.updatesite
+END
+site.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/310/trunk/eclipse-plugin/com.google.test.metric.eclipse.updatesite/site.xml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/310/trunk/eclipse-plugin/com.google.test.metric.eclipse.updatesite/.project
+END

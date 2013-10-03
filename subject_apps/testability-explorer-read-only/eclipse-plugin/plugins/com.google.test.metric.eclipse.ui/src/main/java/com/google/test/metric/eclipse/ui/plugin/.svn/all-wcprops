@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.ui/src/main/java/com/google/test/metric/eclipse/ui/plugin
+END
+Activator.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.ui/src/main/java/com/google/test/metric/eclipse/ui/plugin/Activator.java
+END
+ImageNotFoundException.java
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.ui/src/main/java/com/google/test/metric/eclipse/ui/plugin/ImageNotFoundException.java
+END

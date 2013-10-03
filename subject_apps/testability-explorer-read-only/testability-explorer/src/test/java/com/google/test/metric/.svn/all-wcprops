@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric
+END
+EndToEndTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/EndToEndTest.java
+END
+LocalVariableStateTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/LocalVariableStateTest.java
+END
+PerformanceTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/PerformanceTest.java
+END
+MetricComputerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/MetricComputerTest.java
+END
+CyclomaticComplexityTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CyclomaticComplexityTest.java
+END
+CostUtilTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CostUtilTest.java
+END
+CostUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CostUtil.java
+END
+JavaClassRepositoryTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/JavaClassRepositoryTest.java
+END
+CostTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CostTest.java
+END
+Obj.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/Obj.java
+END
+ConfigModuleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/ConfigModuleTest.java
+END
+CommandLineConfigTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CommandLineConfigTest.java
+END
+TestabilityVisitorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/TestabilityVisitorTest.java
+END
+AutoFieldClearTestCase.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/AutoFieldClearTestCase.java
+END
+WorkInConstructorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/WorkInConstructorTest.java
+END
+ClassInfoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/ClassInfoTest.java
+END
+JavaTypeTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/JavaTypeTest.java
+END
+VariableStateTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/VariableStateTest.java
+END
+InjectabilityVerifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/InjectabilityVerifier.java
+END
+RegExpWhiteListTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/RegExpWhiteListTest.java
+END
+TestabilityRunnerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/TestabilityRunnerTest.java
+END
+CostModelTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/CostModelTest.java
+END
+WeightedAverageTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/WeightedAverageTest.java
+END
+MethodInfoTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/MethodInfoTest.java
+END
+InnerEnumHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/InnerEnumHolder.java
+END
+ClassCostTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/ClassCostTest.java
+END

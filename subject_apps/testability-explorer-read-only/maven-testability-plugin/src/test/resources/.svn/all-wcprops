@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/451/trunk/maven-testability-plugin/src/test/resources
+END
+nonJarProject.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/360/trunk/maven-testability-plugin/src/test/resources/nonJarProject.xml
+END
+xmlTestability.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/449/trunk/maven-testability-plugin/src/test/resources/xmlTestability.xml
+END

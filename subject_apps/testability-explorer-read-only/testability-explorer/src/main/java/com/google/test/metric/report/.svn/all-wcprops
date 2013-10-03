@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report
+END
+Source.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/Source.java
+END
+DrillDownReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/DrillDownReportGenerator.java
+END
+TextHistogram.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/TextHistogram.java
+END
+SummaryReportModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SummaryReportModel.java
+END
+ReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ReportGenerator.java
+END
+ReportOptions.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ReportOptions.java
+END
+PackageReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/PackageReport.java
+END
+ReportModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ReportModel.java
+END
+PropertiesReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/PropertiesReportGenerator.java
+END
+ClassReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ClassReport.java
+END
+ProjectReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ProjectReport.java
+END
+SourceReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SourceReportGenerator.java
+END
+XMLReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/XMLReportGenerator.java
+END
+DiffReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/DiffReport.java
+END
+SourceLinker.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SourceLinker.java
+END
+ClassPathTemplateLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ClassPathTemplateLoader.java
+END
+Diff.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/Diff.java
+END
+SummaryGraphReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SummaryGraphReport.java
+END
+XMLReportDiffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/XMLReportDiffer.java
+END
+CharMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/CharMarker.java
+END
+ProjectSummaryReport.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ProjectSummaryReport.java
+END
+Marker.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/Marker.java
+END
+MultiHistogramDataModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/MultiHistogramDataModel.java
+END
+XMLReportLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/XMLReportLoader.java
+END
+SourceLinkGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SourceLinkGenerator.java
+END
+FreemarkerReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/FreemarkerReportGenerator.java
+END
+TextReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/TextReportGenerator.java
+END
+SourceLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/SourceLoader.java
+END
+GradeCategories.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/GradeCategories.java
+END
+ReportDiffer.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/ReportDiffer.java
+END
+MultiReportGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/MultiReportGenerator.java
+END
+RemovePackageFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/report/RemovePackageFormatter.java
+END

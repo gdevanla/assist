@@ -1,0 +1,13 @@
+K 10
+svn:ignore
+V 91
+
+testability-explorer.ipr
+testability-explorer.iws
+testability-explorer.iml
+*.bak
+~*
+*~
+.*
+
+END

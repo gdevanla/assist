@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/427/trunk/eclipse-plugin/features/com.google.test.metric.eclipse.feature
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/427/trunk/eclipse-plugin/features/com.google.test.metric.eclipse.feature/.project
+END
+feature.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/427/trunk/eclipse-plugin/features/com.google.test.metric.eclipse.feature/feature.xml
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/427/trunk/eclipse-plugin/features/com.google.test.metric.eclipse.feature/build.properties
+END

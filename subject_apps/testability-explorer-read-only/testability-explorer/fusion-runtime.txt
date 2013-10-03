@@ -1,0 +1,4 @@
+   Date: 2013:09:27::11:42:14
+   Project: testability-explorer
+   Execution time (sec): 6
+   Memory used (MB): 7

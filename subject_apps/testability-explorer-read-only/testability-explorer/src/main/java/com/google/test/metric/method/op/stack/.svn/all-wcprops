@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack
+END
+Throw.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Throw.java
+END
+RetSub.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/RetSub.java
+END
+Duplicate.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Duplicate.java
+END
+Swap.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Swap.java
+END
+Transform.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Transform.java
+END
+PutField.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/PutField.java
+END
+ArrayLoad.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/ArrayLoad.java
+END
+MultiANewArrayIns.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/MultiANewArrayIns.java
+END
+Return.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Return.java
+END
+Load.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Load.java
+END
+Convert.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Convert.java
+END
+MonitorExit.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/MonitorExit.java
+END
+GetField.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/GetField.java
+END
+Increment.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Increment.java
+END
+MonitorEnter.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/MonitorEnter.java
+END
+StackOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/StackOperation.java
+END
+Invoke.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Invoke.java
+END
+ArrayStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/ArrayStore.java
+END
+Store.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Store.java
+END
+Duplicate2.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Duplicate2.java
+END
+Pop.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/Pop.java
+END
+JSR.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/stack/JSR.java
+END

@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 114
+.project
+.classpath
+.settings
+.externalToolBuilders
+~*
+*~
+*.bak
+*.ser
+target
+test-out
+bin
+target-eclipse
+core.iml
+
+END

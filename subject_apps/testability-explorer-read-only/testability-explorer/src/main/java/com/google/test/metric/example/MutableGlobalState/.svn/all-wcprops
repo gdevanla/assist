@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/MutableGlobalState
+END
+MutableGlobalExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/MutableGlobalState/MutableGlobalExample.java
+END
+FinalGlobalExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/MutableGlobalState/FinalGlobalExample.java
+END

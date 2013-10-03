@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing
+END
+ReturnOperation.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/ReturnOperation.java
+END
+Operation.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/Operation.java
+END
+LocalAssignment.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/LocalAssignment.java
+END
+ArrayAssignment.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/ArrayAssignment.java
+END
+MethodInvocation.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/MethodInvocation.java
+END
+FieldAssignment.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/method/op/turing/FieldAssignment.java
+END

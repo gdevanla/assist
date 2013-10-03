@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/ExpensiveConstructor
+END
+Cost2ToConstruct.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/ExpensiveConstructor/Cost2ToConstruct.java
+END
+StaticWorkInTheConstructor.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/ExpensiveConstructor/StaticWorkInTheConstructor.java
+END
+ObjectInstantiationWorkInTheConstructor.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/ExpensiveConstructor/ObjectInstantiationWorkInTheConstructor.java
+END

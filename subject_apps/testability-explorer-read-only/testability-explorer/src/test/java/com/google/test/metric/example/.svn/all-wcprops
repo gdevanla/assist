@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/example
+END
+WorkInTheConstructorTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/example/WorkInTheConstructorTest.java
+END
+MultipleMethodsDifferentCostsTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/example/MultipleMethodsDifferentCostsTest.java
+END
+MutableGlobalExampleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/example/MutableGlobalExampleTest.java
+END
+FinalGlobalExampleTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/example/FinalGlobalExampleTest.java
+END

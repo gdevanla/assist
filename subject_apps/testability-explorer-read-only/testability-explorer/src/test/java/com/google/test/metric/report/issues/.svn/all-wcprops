@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues
+END
+ClassIssuesTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/ClassIssuesTest.java
+END
+HypotheticalCostModelTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/HypotheticalCostModelTest.java
+END
+IssuesReportingIntegrationTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/IssuesReportingIntegrationTest.java
+END
+HasSetterCost.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/HasSetterCost.java
+END
+TriageIssuesQueueTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/TriageIssuesQueueTest.java
+END
+IssuesReporterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/issues/IssuesReporterTest.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/NonMockableCollaborator
+END
+FinalMethodCantBeOverridden.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/NonMockableCollaborator/FinalMethodCantBeOverridden.java
+END
+PrivateMethodCantBeOverridden.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/NonMockableCollaborator/PrivateMethodCantBeOverridden.java
+END
+StaticMethodCalled.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/!svn/ver/472/trunk/testability-explorer/src/main/java/com/google/test/metric/example/NonMockableCollaborator/StaticMethodCalled.java
+END

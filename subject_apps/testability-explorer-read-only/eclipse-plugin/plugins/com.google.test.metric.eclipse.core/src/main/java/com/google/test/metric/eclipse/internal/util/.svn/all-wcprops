@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/!svn/ver/449/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util
+END
+Logger.java
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/Logger.java
+END
+TestabilityLaunchConfigurationHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 183
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/TestabilityLaunchConfigurationHelper.java
+END
+JavaProjectHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/JavaProjectHelper.java
+END
+TestabilityConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/!svn/ver/449/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/TestabilityConstants.java
+END
+TestabilityExplorerMessageRetriever.java
+K 25
+svn:wc:ra_dav:version-url
+V 182
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/TestabilityExplorerMessageRetriever.java
+END
+JavaPackageVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/!svn/ver/427/trunk/eclipse-plugin/plugins/com.google.test.metric.eclipse.core/src/main/java/com/google/test/metric/eclipse/internal/util/JavaPackageVisitor.java
+END

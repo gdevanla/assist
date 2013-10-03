@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/456/trunk/maven-testability-plugin/src/main/java/com/google/maven
+END
+MavenConfigModule.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/456/trunk/maven-testability-plugin/src/main/java/com/google/maven/MavenConfigModule.java
+END
+TestabilityExplorerMojo.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/456/trunk/maven-testability-plugin/src/main/java/com/google/maven/TestabilityExplorerMojo.java
+END

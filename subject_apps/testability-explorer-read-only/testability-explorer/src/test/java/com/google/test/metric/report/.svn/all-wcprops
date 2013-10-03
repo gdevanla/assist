@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report
+END
+DiffReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/DiffReportTest.java
+END
+SourceElementFormattingTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/SourceElementFormattingTest.java
+END
+SourceLinkerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/SourceLinkerTest.java
+END
+ClassPathTemplateLoaderTest.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/ClassPathTemplateLoaderTest.ftl
+END
+Class.ftl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/Class.ftl
+END
+XMLReportDifferTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/XMLReportDifferTest.java
+END
+Constants.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/Constants.java
+END
+testability_test.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/testability_test.html
+END
+TextReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/TextReportTest.java
+END
+ClassSourceReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/ClassSourceReportTest.java
+END
+XMLReportLoaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/XMLReportLoaderTest.java
+END
+TextHistorgramTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/TextHistorgramTest.java
+END
+SourceLoaderTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/SourceLoaderTest.java
+END
+PropertiesReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/PropertiesReportTest.java
+END
+DrillDownReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/DrillDownReportTest.java
+END
+XMLReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/XMLReportTest.java
+END
+SourceReportTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/SourceReportTest.java
+END
+RemovePackageFormatterTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/RemovePackageFormatterTest.java
+END
+ClassSourceReportTestExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/472/trunk/testability-explorer/src/test/java/com/google/test/metric/report/ClassSourceReportTestExample.java
+END
