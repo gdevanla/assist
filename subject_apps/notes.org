@@ -1,0 +1,15 @@
+
+Testability Explorer
+
+* Notes on running testability explorer
+
+** pom.xml under testability-explorer has been updated to using assist an all required jar files
+** To run assist and run the tests with assist instrumented code, follow these steps:
+   a. under testability-explorer, mvn clean, mvn compile, mvn test to make
+   sure original code works properly
+   b. Run stateinstrumenter project to generated sootOutput. Currently,
+   outputs to /tmp
+   c. cp -r /tmp/sootOutput target/classes under testabilityexplorer
+   d. mvn test [ this will run tests on instrumented code]
+   **Make sure assisst-SNAPSHOT jar file is package and installed to maven
+   local repository**
