@@ -1,9 +1,10 @@
 package com.ser.assist.statecarver.core;
 
-import com.sun.tools.internal.ws.processor.util.DirectoryUtil;
 import org.apache.commons.io.FileUtils;
-import soot.*;
-import soot.JastAddJ.FileNamesPart;
+import soot.Body;
+import soot.BodyTransformer;
+import soot.PackManager;
+import soot.Transform;
 import soot.options.Options;
 
 import java.io.File;
@@ -38,11 +39,11 @@ public class StateInstrumenter extends BodyTransformer {
           StaticStateOfApp.init();
           staticFieldInitialized = true;
        }
-        /*try {
+        try {
             new MethodInstrumenter().instrumentMethod(body, s, map);
         } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } */
+        }
     }
 
     public static StateInstrumenter v() { return instance;}
@@ -56,6 +57,8 @@ public class StateInstrumenter extends BodyTransformer {
         //Options.v().set_verbose(true);
         //Options.v().set_output_format(Options.output_format_J);
         Options.v().set_output_dir(StateCarverConfiguration.v().getSootOutputFolder());
+        Options.v().set_allow_phantom_refs(true);
+        //Options.v().set_verbose(true);
 
         String sourceFolder = StateCarverConfiguration.v().getProcessDir();
         String sootClassPath = StateCarverConfiguration.v().getSootClassPath();

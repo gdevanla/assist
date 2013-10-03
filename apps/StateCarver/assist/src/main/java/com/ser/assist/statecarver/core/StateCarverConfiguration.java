@@ -1,17 +1,9 @@
 package com.ser.assist.statecarver.core;
 
 import com.google.common.base.Joiner;
-import com.google.inject.Singleton;
-import com.ser.assist.Assist;
 import com.ser.assist.AssistConfiguration;
-import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.io.FilenameUtils;
-
-import javax.swing.plaf.metal.MetalTheme;
-import java.util.Iterator;
-import java.util.concurrent.locks.Lock;
 
 /**
  * Created with IntelliJ IDEA.
@@ -44,8 +36,6 @@ public class StateCarverConfiguration extends AssistConfiguration {
         }
     }
 
-
-
     // The following properties are used during static analysis
 
     public String getAppClassesPrefix(){
@@ -62,7 +52,9 @@ public class StateCarverConfiguration extends AssistConfiguration {
                 config.getString("global.xstreamjar"),
                 config.getString("global.jcejar"),
                 config.getString("global.classesjar"),
-                getProcessDir());
+                getProcessDir(),
+                getAppClasspath(),
+                config.getString("global.junitjar"));
     }
 
     public String getSootOutputFolder() {

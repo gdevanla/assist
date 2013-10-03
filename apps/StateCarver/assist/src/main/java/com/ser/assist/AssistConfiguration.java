@@ -19,7 +19,9 @@ public class AssistConfiguration {
     private final String METHOD_TRACE_FILE_NAME = "MethodTrace.log";
 
     //public final static String config_properties_fname = "hellochicago.assist.properties";
-     public final static String config_properties_fname = "jtopas.assist.properties";
+    //public final static String config_properties_fname = "jtopas.assist.properties";
+    public final static String config_properties_fname = "texplorer.assist.properties";
+
     protected Configuration config;
 
     public AssistConfiguration(){

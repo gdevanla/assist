@@ -1,22 +1,6 @@
 package com.ser.assist.testgenerator;
 
-import com.google.common.base.Joiner;
 import com.ser.assist.AssistConfiguration;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
-
-import java.util.Iterator;
-
-import com.google.inject.Singleton;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import org.apache.commons.io.FilenameUtils;
-
-import javax.swing.plaf.metal.MetalTheme;
-import java.util.Iterator;
-import java.util.concurrent.locks.Lock;
 
 /**
  * Created with IntelliJ IDEA.

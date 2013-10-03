@@ -1,19 +1,7 @@
 package com.ser.assist.statecarver.core;
 
 import com.google.common.base.Splitter;
-import soot.BooleanType;
-import soot.ByteType;
-import soot.CharType;
-import soot.DoubleType;
-import soot.FloatType;
-import soot.IntType;
-import soot.Local;
-import soot.LongType;
-import soot.RefType;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
-import soot.Type;
+import soot.*;
 import soot.jimple.Jimple;
 
 import java.util.Iterator;

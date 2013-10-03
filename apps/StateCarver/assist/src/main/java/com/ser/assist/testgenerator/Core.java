@@ -2,9 +2,10 @@ package com.ser.assist.testgenerator;
 
 
 import soot.*;
-import soot.jimple.*;
-import soot.jimple.internal.IdentityRefBox;
-import soot.jimple.internal.JimpleLocal;
+import soot.jimple.JasminClass;
+import soot.jimple.Jimple;
+import soot.jimple.StringConstant;
+import soot.jimple.ThisRef;
 import soot.options.Options;
 import soot.util.JasminOutputStream;
 
@@ -19,16 +20,13 @@ public class Core {
        Options.v().set_soot_classpath(classpath);
        Options.v().set_output_dir("/tmp");
        //soot.Main.main(new String[]{});
-
    }
 
    public SootClass createTestClazz(String testClazzName){
-
        SootClass superTestClazz = Scene.v().forceResolve("junit.framework.TestCase", SootClass.SIGNATURES);
        SootClass testClazz = new SootClass(testClazzName, Modifier.PUBLIC);
        testClazz.setSuperclass(superTestClazz);
        return testClazz;
-
    }
 
    public SootMethod createTestMethod(String methodName, SootClass testClazz){

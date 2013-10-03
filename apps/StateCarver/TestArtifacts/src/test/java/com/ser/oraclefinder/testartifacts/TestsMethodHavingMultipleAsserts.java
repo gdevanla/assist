@@ -27,8 +27,8 @@ public class TestsMethodHavingMultipleAsserts extends  TestCase {
         Kiwi2 x = new Kiwi2();
         Kiwi2 y = x.anotherInstance();
         int z = y.addNoArgs();
-        assertEquals(20, z);
-        assertEquals(25, y);
+      //  assertEquals(20, z);
+      //  assertEquals(25, y);
     }
 
 
@@ -38,8 +38,8 @@ public class TestsMethodHavingMultipleAsserts extends  TestCase {
         Kiwi2 y = x.anotherInstance();
         Kiwi2 a = x.anotherInstance();
         int z = y.addNoArgs();
-        assertEquals(20, z);
-        assertEquals(25, a);
+     //   assertEquals(20, z);
+     //   assertEquals(25, a);
     }
 
 }

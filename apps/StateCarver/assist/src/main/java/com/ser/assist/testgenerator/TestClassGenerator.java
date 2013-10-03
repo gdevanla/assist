@@ -2,16 +2,13 @@ package com.ser.assist.testgenerator;
 
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Splitter;
 import com.ser.assist.oraclefinder.Oracle;
 import com.ser.assist.statecarver.core.Utils;
-import com.sun.tools.internal.ws.processor.util.DirectoryUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import soot.options.Options;
 
-import javax.sound.midi.SysexMessage;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
@@ -21,7 +18,6 @@ import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 class ClassDefinition{

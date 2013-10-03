@@ -1,7 +1,5 @@
 package com.ser.assist.tests.oraclefinder;
 
-import com.ser.assist.oraclefinder.OracleFinderConfiguration;
-
 /**
  * Created with IntelliJ IDEA.
  * User: gdevanla

@@ -1,6 +1,9 @@
 package com.ser.assist.statecarver.core;
 
-import soot.*;
+import soot.RefType;
+import soot.Scene;
+import soot.SootClass;
+import soot.SootField;
 import soot.util.Chain;
 
 import java.util.ArrayList;

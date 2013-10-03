@@ -1,6 +1,5 @@
 package com.ser.assist.tests.xstreamstatecarver;
 
-import com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver;
 import com.ser.assist.tests.oraclefinder.TestBase;
 import org.junit.Test;
 import org.junit.runner.RunWith;

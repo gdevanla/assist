@@ -1,22 +1,12 @@
 package com.ser.assist.oraclefinder;
 
-import com.sun.deploy.util.StringQuoteUtil;
-import com.sun.jmx.interceptor.DefaultMBeanServerInterceptor;
 import soot.*;
-import soot.dava.toolkits.base.AST.structuredAnalysis.ReachingDefs;
-import soot.jimple.DefinitionStmt;
 import soot.jimple.InvokeExpr;
-import soot.jimple.JimpleBody;
 import soot.jimple.Stmt;
-import soot.jimple.internal.JimpleLocal;
 import soot.options.Options;
-import soot.toolkits.graph.UnitGraph;
-import soot.toolkits.graph.pdg.EnhancedUnitGraph;
-import soot.toolkits.scalar.SimpleLocalDefs;
-import soot.toolkits.scalar.SimpleLocalUses;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Map;
 
 /**
  * Created with IntelliJ IDEA.

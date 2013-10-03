@@ -2,9 +2,6 @@ package com.ser.assist.testgenerator;
 
 import com.ser.assist.oraclefinder.Oracle;
 import soot.Local;
-import soot.RefType;
-import soot.jimple.Jimple;
-import soot.jimple.internal.JimpleLocal;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,7 +15,6 @@ public class SimpleReturnPatternTestGenerator {
     public final String mutSignature;
     public final String clazzName;
     public final Oracle oracle;
-
 
     public SimpleReturnPatternTestGenerator(String mutSignature, String clazz, Oracle oracle){
         this.mutSignature = mutSignature;

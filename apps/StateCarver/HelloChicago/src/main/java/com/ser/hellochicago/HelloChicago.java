@@ -4,6 +4,7 @@ public class HelloChicago {
 
     public String s;
     public int count;
+    public static int counter = 0;
 
     public HelloChicago(String s, int count){
         this.s = s;

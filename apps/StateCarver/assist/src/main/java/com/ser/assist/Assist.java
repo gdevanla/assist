@@ -1,15 +1,7 @@
 package com.ser.assist;
 
-import com.ser.assist.statecarver.core.StateCarverConfiguration;
 import com.ser.assist.statecarver.core.StateInstrumenter;
 import com.ser.assist.testgenerator.TestClassGenerator;
-import com.ser.assist.testgenerator.TestGeneratorConfiguration;
-import org.apache.commons.configuration.Configuration;
-import org.apache.commons.configuration.ConfigurationException;
-import org.apache.commons.configuration.PropertiesConfiguration;
-import soot.PackManager;
-import soot.Transform;
-import soot.options.Options;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,14 +29,14 @@ public class Assist {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        runStateInstrumentor();
+        //runStateInstrumentor();
 
         //run acceptance test
         //runAcceptanceTests();
         //runSequenceMiner();
 
-       // List<MutId> methodTuples = runSequenceMiner();
-       // runIntegrationTestGenerator(methodTuples);
+        List<MutId> methodTuples = runSequenceMiner();
+        runIntegrationTestGenerator(methodTuples);
 
         //compileIntegrationTests();
         //runIntegrationTests();

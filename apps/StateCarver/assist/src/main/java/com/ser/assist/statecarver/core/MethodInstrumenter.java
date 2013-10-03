@@ -41,14 +41,16 @@ public class MethodInstrumenter {
         body.getUnits().insertBefore(methodCounterStmts, stmtToInsertBefore);
         body.getUnits().insertBefore(methodTraceStmt, stmtToInsertBefore);
 
+        /*
         if (parameterSavingStmts.size()>0){
             body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
-        }
+        } */
 
        /* if ( staticStateSavingStmts.size()>0){
             body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
         }*/
 
+        /*
         if (!(body.getMethod().getReturnType() instanceof VoidType)){
             List<Unit> allReturnStatements = collectReturnStatements(body);
             for (Unit u:allReturnStatements){
@@ -62,7 +64,7 @@ public class MethodInstrumenter {
                 body.getUnits().insertBefore(returnValueSaveStatement, u);
             }
 
-        }
+        }*/
 
     }
 
@@ -122,6 +124,7 @@ public class MethodInstrumenter {
         SootClass atomicCounterClass = Scene.v().forceResolve("com.ser.assist.statecarver.core.AtomicCounter", SootClass.SIGNATURES);
         SootField methodCounterField = atomicCounterClass.getFieldByName("methodCounter");
         Unit u1 = Jimple.v().newAssignStmt( atomicMethodCounterRef , Jimple.v().newStaticFieldRef(methodCounterField.makeRef()));
+
 
         SootClass atomicLongClass = Scene.v().forceResolve("java.util.concurrent.atomic.AtomicLong", SootClass.SIGNATURES);
         SootMethod getAndIncrementMethod = atomicLongClass.getMethod("long getAndIncrement()");
