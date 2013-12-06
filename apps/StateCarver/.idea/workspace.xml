@@ -2,17 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f502390-c44b-4565-a8d4-a88480bf95e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AbstractOracleFinder.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AbstractOracleFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" afterPath="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/assist.iml" afterPath="$PROJECT_DIR$/assist/assist.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assist/pom.xml" afterPath="$PROJECT_DIR$/assist/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StateCarver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380664856397" ignored="false" />
+    <file path="/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381755567245" ignored="false" />
     <file path="/TestPojo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373659265533" ignored="false" />
     <file path="/StateInstrumentor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370601642620" ignored="false" />
     <file path="/StateInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380665181569" ignored="false" />
     <file path="$PROJECT_DIR$/../svn/soot/src/soot/JastAddInitialResolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370790253860" ignored="false" />
-    <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380817426711" ignored="false" />
+    <file path="/fragment.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1386351620866" ignored="false" />
     <file path="/XStreamStateCarver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374982877327" ignored="false" />
     <file path="/StaticClassConverter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866263526" ignored="false" />
     <file path="/StaticReflectionProvider.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370866473720" ignored="false" />
@@ -35,7 +39,7 @@
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1370947749007" ignored="false" />
     <file path="/MethodTracer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380820408072" ignored="false" />
-    <file path="/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373926332068" ignored="false" />
+    <file path="/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384458361341" ignored="false" />
     <file path="/Research.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371902499506" ignored="false" />
     <file path="/MethodInstrumenter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380818029434" ignored="false" />
     <file path="/Utils.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374511453550" ignored="false" />
@@ -45,9 +49,9 @@
     <file path="/TestClassReferringToStaticClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371208218959" ignored="false" />
     <file path="/DummyStaticClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371208278019" ignored="false" />
     <file path="/StaticStateOfApp.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373968716908" ignored="false" />
-    <file path="/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378844124700" ignored="false" />
+    <file path="/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381868695144" ignored="false" />
     <file path="/Simple.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371726207464" ignored="false" />
-    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380819857893" ignored="false" />
+    <file path="/Dummy.txt" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1386351881455" ignored="false" />
     <file path="/SimpleParameterMutationPattern.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818303353" ignored="false" />
     <file path="/ParameterMutationWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371818448869" ignored="false" />
     <file path="/SimpleReturnPatternWithCallToAnotherMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1371727600323" ignored="false" />
@@ -89,7 +93,7 @@
     <file path="/TestMethodGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373740109758" ignored="false" />
     <file path="/AssertOnReturnObjectsMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374099323266" ignored="false" />
     <file path="/AbstractOracleFinder.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374147156938" ignored="false" />
-    <file path="/a.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374074466834" ignored="false" />
+    <file path="/a.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1386351808377" ignored="false" />
     <file path="/AssertOnReturnObjectMethod1Test.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373737045286" ignored="false" />
     <file path="/TestClassGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1374529084090" ignored="false" />
     <file path="/Templates.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1373742598513" ignored="false" />
@@ -144,7 +148,7 @@
     <file path="$MAVEN_REPOSITORY$/soot/soot/2.5.0-myversion/soot-2.5.0-myversion.jar!/soot/Main.class" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378852991132" ignored="false" />
     <file path="$PROJECT_DIR$/../../../jMint_paper/jmint2/src/main/java/Driver/RunJmint.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378854921476" ignored="false" />
     <file path="$PROJECT_DIR$/../../../jMint_paper/jmint2/TestArtifacts/src/main/java/TestArtifacts/TestClass1_01.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378933816414" ignored="false" />
-    <file path="/TestClass1_01.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378934336726" ignored="false" />
+    <file path="/TestClass1_01.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380919406211" ignored="false" />
     <file path="$PROJECT_DIR$/../../../jMint_paper/jmint2/TestArtifacts/src/main/java/TestArtifacts/TestClass1_02.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378933806783" ignored="false" />
     <file path="/TestClass1_02.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378934348624" ignored="false" />
     <file path="$PROJECT_DIR$/../../../jMint_paper/jmint2/TestArtifacts/src/main/java/TestArtifacts/TestIntg1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1378933900901" ignored="false" />
@@ -216,6 +220,276 @@
     <file path="/texplorer.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380660884941" ignored="false" />
     <file path="/texplorer.assist.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380665094922" ignored="false" />
     <file path="/a.dummy" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380733752454" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/MutantGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915677953" ignored="false" />
+    <file path="/MutantGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384274637001" ignored="false" />
+    <file path="$USER_HOME$/fsf/soot/src/soot/PackManager.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380887993508" ignored="false" />
+    <file path="/PackManager.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380887991381" ignored="false" />
+    <file path="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/io/File.class" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380888035037" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/test/java/TestMutationInjection.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384458680074" ignored="false" />
+    <file path="/TestMutationInjection.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384456778466" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/IMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380910063227" ignored="false" />
+    <file path="/IMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380907074267" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/JSC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915635439" ignored="false" />
+    <file path="/JSC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915633772" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/AbstractMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380910500271" ignored="false" />
+    <file path="/AbstractMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380911281943" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/BaseMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380911283157" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/AssignStmts/TestClass1_01.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380919408378" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.AssignStmts.TestClass1_01.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380920150335" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.AssignStmts.TestClass1_02.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380920150335" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/JSC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915836683" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/BaseMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915808629" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/IMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915808629" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/MutantGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915836683" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/test/java/TestCrossBoundaryConditions.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915808629" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915757929" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/MutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915757929" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/UseDefChain.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915757929" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/CustomIFDSSolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915758906" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/Core.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915789006" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/CustomIFDSSolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384287945124" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/UseDefChain.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915808629" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/JSC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915808630" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/IMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915836683" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/BaseMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384289448929" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/MutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380915845136" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/MutantGenerator.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276949818" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/JID.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380916274225" ignored="false" />
+    <file path="/JID.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276098862" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.AssignStmts.Main.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380920150335" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/JDC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380917070277" ignored="false" />
+    <file path="/JDC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383014714800" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/JTD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921084970" ignored="false" />
+    <file path="/JTD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276109466" ignored="false" />
+    <file path="/BaseMutantInjector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384289410758" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/Configuration.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384458601025" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/OAN.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921121726" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/OAO.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921159969" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/OMD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921171367" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/OMR.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921233971" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/javaish/JID.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276099590" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/javaish/JDC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383014720528" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/javaish/JSC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921295417" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/javaish/JTD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276110439" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/overloading/OAN.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383001267510" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/overloading/OAO.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383001274077" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/overloading/OMD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276164036" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/overloading/OMR.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276175039" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/errors.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921457866" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/progmistakes.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380921478041" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/progmistakes/EOA.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922328321" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/progmistakes/EOC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922349907" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/progmistakes/EAM.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384275969877" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/progmistakes/EMM.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922317390" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/polymorphism/PNC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276221757" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/polymorphism/PMD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276190191" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/polymorphism/PPD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922289245" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/polymorphism/PRV.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276199477" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IHD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276010961" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IHI.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276027564" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IOD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276050643" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IOP.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922194078" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IOR.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922182247" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/ISK.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383018304208" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Inheritance/IPC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276071220" ignored="false" />
+    <file path="/IHD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276003654" ignored="false" />
+    <file path="/PMD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276189319" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/traditional/BinOpMutant.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380922440698" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/MutantClassWriter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380924396688" ignored="false" />
+    <file path="/MutantClassWriter.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380924084641" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/Mutants.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380923601450" ignored="false" />
+    <file path="/Mutants.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1380923601450" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/pom.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381755569116" ignored="false" />
+    <file path="/EAM.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384275962238" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/SootUtilities.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381843400691" ignored="false" />
+    <file path="/SootUtilities.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381843400691" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/MutantInfo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381767120850" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/MutantHeader.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383018072127" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.verifier.statics.Pass3aVerifier.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381780452658" ignored="false" />
+    <file path="/CustomIFDSSolver.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384287934924" ignored="false" />
+    <file path="/MutantHeader.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383018064961" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.verifier.structurals.InstConstraintVisitor.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381866301089" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.verifier.structurals.ControlFlowGraph.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381791470254" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.generic.InstructionHandle.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381791470254" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/EAM/EAM2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="/EAM2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381868681643" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.EAM.EAM1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384289668188" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.EAM.EAM2.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381866342540" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/TestIPA/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381868698115" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/TestIPA.A.jimp" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1381868710454" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/SUtil.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384384049841" ignored="false" />
+    <file path="/SUtil.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384384048653" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/.idea/workspace.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383238011030" ignored="false" />
+    <file path="/OAO.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1382999230873" ignored="false" />
+    <file path="/OMR.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276174153" ignored="false" />
+    <file path="/OAN.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1382999220695" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.OMR.OMR2.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1382998620046" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/OMR/OMR2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/OMD/OMD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="/OMD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383008297970" ignored="false" />
+    <file path="/OMD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276163549" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.OMD.OMDTest1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383001217968" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.OMD.OMD1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383001217968" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PNC/PNC1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="/PNC1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383002494750" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PNC/Base.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PNC/PNC3.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="/PNC3.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383002487230" ignored="false" />
+    <file path="/Base.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383002461304" ignored="false" />
+    <file path="/PRV.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276198513" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/PRV1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="/PRV1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383004257792" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/PRVTest1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383004087628" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IOP/IOP1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IOP/IOP2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/PRV3.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/PRV2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IOD/IOD2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/PRV4.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PRV/Base.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/OMR/OMR1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/OMD/OMD2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/EMM/EMM1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/EMM/EMM2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IHD/B.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JDC/JDC3.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IHD/A.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JID/JID1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PNC/PNC2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JTD/JTD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383075171358" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JTI/JTI1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JTI/JTI2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PPD/PPD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PPD/PPD2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PPD/PPD3.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/PPD/Child.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IHI/IHI1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IHD/IHD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/resources/log4j.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384456759926" ignored="false" />
+    <file path="/log4j.properties" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384458963767" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JTI.JTI1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383008358789" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JDC/JDC2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JDC/JDC1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.OMD.OMD2.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383008358789" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/IOD/IOD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383017822779" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JID/JID2.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383077603595" ignored="false" />
+    <file path="/ISK.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383018304208" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/MutantsCode.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383075263004" ignored="false" />
+    <file path="/MutantsCode.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383053893253" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/NativeVerifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/VerifierAppFrame.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/Verifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/PassVerifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/generic/Type.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/Constant.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/ConstantClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/ConstantString.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/Attribute.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/package.html" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/Constants.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/ConstantPool.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassVector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassStack.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/package.html" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/LocalVariableInfo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassPath.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/Pass1Verifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/BCELifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/Pass2Verifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/AttributeHTML.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/package.html" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassLoaderRepository.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/generic/Instruction.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassQueue.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/FieldOrMethod.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/InstructionFinder.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/Pass3aVerifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/LocalVariablesInfo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/Utility.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/Class2HTML.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/statics/StringRepresentation.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/JavaWrapper.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/JavaClass.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassLoader.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ClassSet.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/ConstantHTML.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/MethodHTML.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/ConstantCP.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/CodeHTML.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/util/BCELFactory.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/classfile/ConstantNameAndType.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/package.html" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383066205753" ignored="false" />
+    <file path="/JTD1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383075171358" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/JTD/JTDTest1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383074644631" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JTD.JTDTest1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383075182086" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JTD.JTD1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383075182086" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JID.JIDTest1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383077614487" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JID.JID2.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383077614487" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/MutantInjectionArtifacts.JID.JID1.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383077614487" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.generic.ObjectType.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383078222432" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/verifier/structurals/InstConstraintVisitor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383079312421" ignored="false" />
+    <file path="/InstConstraintVisitor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383078929579" ignored="false" />
+    <file path="$USER_HOME$/fsf/bcel-5.2/src/java/org/apache/bcel/generic/LocalVariableGen.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383086622302" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.generic.ANEWARRAY.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383089337487" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.classfile.CodeException.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1383089337487" ignored="false" />
+    <file path="/IHI.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276022550" ignored="false" />
+    <file path="/IOD.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276048856" ignored="false" />
+    <file path="/IPC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276070758" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/src/main/java/jmint/mutants/javaish/JTI.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276140975" ignored="false" />
+    <file path="/JTI.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276139703" ignored="false" />
+    <file path="/PNC.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384276220815" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/sootOutput/org.apache.bcel.classfile.Deprecated.jimple" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384288913862" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint_paper/jmint3/ipa/TestIPA/src/main/java/MutantInjectionArtifacts/EAM/EAM1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384291714584" ignored="false" />
+    <file path="/EAM1.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384289507542" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Mongo.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541986" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/WriteConcern.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Response.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DB.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541986" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MongoClientOptions.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/CompositeServerSelector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798263" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MongoOptions.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541986" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBTCPConnector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerAddress.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/OutMessage.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/CommandResult.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBEncoderFactory.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541986" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ClusterDescription.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ChangeEvent.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ClusterSettings.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ReplicaSetStatus.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/BaseCluster.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MongoAuthority.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Tags.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBPort.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBCollection.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Cluster.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ReadPreference.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerDescription.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541987" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MapReduceCommand.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/RawDBObject.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerSettings.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MongoCredential.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerStateNotifier.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerError.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBApiLayer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerVersion.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DefaultServer.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798263" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBPortPool.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MongoClientURI.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/ServerSelector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBDecoderFactory.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Server.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450541988" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/WriteResult.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798263" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/Bytes.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/MultiServerCluster.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/util/Base64Codec.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384451639670" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/.idea/workspace.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384465169447" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/.idea/misc.xml" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450787566" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/SocketSettings.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798263" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/LatencyMinimizingServerSelector.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/gridfs/GridFS.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../jMint/subject_apps/mongo-java-driver/src/main/com/mongodb/DBCursor.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1384450798264" ignored="false" />
+    <file path="/sample.java" changelist="9f502390-c44b-4565-a8d4-a88480bf95e9" time="1386351827968" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +513,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -277,6 +550,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint url="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" line="125" class="com.ser.assist.oraclefinder.Core" package="com.ser.assist.oraclefinder">
         <option name="ENABLED" value="true" />
@@ -318,59 +592,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="StateInstrumenter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TestClassGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="22" selection-start="605" selection-end="605" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="21" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Assist.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="21" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateInstrumenter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="33" selection-start="2814" selection-end="2814" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaticStateOfApp.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestHelloChicago.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="44" selection-start="0" selection-end="1131" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestHelloChicago2.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="59" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloChicago.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HelloChicago/src/main/java/com/ser/hellochicago/HelloChicago.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AssistConfiguration.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="40" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+            <state line="23" column="33" selection-start="740" selection-end="740" vertical-scroll-proportion="0.29500756">
               <folding />
             </state>
           </provider>
@@ -379,7 +640,34 @@
       <file leaf-file-name="MethodInstrumenter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="39" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0">
+            <state line="170" column="30" selection-start="6749" selection-end="6749" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utils.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="26" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StateRetriever.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OracleFinderConfiguration.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -388,27 +676,7 @@
       <file leaf-file-name="Core.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StateCarverConfiguration.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="12" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MethodTracer.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="59" selection-start="540" selection-end="540" vertical-scroll-proportion="0.85714287">
+            <state line="72" column="50" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -433,10 +701,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assist/src/main/resources/texplorer.properties" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" />
-        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java" />
-        <option value="$PROJECT_DIR$/assist/pom.xml" />
         <option value="$PROJECT_DIR$/assist/src/main/resources/texplorer.assist.properties" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java" />
         <option value="$PROJECT_DIR$/TestArtifacts/src/test/java/com/ser/oraclefinder/testartifacts/AssertOnReturnObjectMethod1Test.java" />
@@ -449,6 +713,10 @@
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java" />
         <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AbstractOracleFinder.java" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java" />
+        <option value="$PROJECT_DIR$/assist/pom.xml" />
+        <option value="$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java" />
       </list>
     </option>
   </component>
@@ -617,7 +885,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
     <option name="width" value="1680" />
-    <option name="height" value="955" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -883,8 +1151,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -913,80 +1179,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="HelloChicago" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloChicago" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloChicago" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hellochicago" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1091,109 +1283,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="statecarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StateCarver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assist" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="oraclefinder" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="Assist.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="198" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="196" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="200" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="199" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="true" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="199" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="197" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="209" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="999" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="997" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="205" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="207" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="991" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="989" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="204" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="statecarver" />
     <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="201" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="199" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
@@ -1234,38 +1356,16 @@
       <recent name="com.ser.assist.tests.oraclefinder" />
       <recent name="com.ser.statecarver.xstreamcarver" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.ser.testapp" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/HelloWorldApp/src/main" />
       <recent name="$PROJECT_DIR$/assist/src/main/resources" />
       <recent name="$PROJECT_DIR$/assist/src" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.ser.testapp" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.StateInstrumenter">
-    <configuration default="false" name="Assist" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.ser.assist.Assist" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="ALTERNATIVE_JRE_PATH" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="assist" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Assist">
     <configuration default="false" name="StateInstrumenter" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.ser.assist.statecarver.core.StateInstrumenter" />
       <option name="VM_PARAMETERS" value="" />
@@ -1310,28 +1410,6 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="All in HelloChicago" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="HelloChicago" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="com.ser.hellochicago.tests in HelloChicago" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="HelloChicago" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1350,6 +1428,38 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Core" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.testgenerator.Core" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Assist" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.ser.assist.Assist" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="assist" />
+      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -1465,19 +1575,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Assist" />
-      <item index="1" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in HelloChicago" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.com.ser.hellochicago.tests in HelloChicago" />
+      <item index="0" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.com.ser.hellochicago.tests in HelloChicago" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Core" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Assist" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.com.ser.hellochicago.tests in HelloChicago" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in HelloChicago" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Assist" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Assist" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Core" />
+        <item index="2" class="java.lang.String" itemvalue="Application.StateInstrumenter" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.com.ser.hellochicago.tests in HelloChicago" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestHelloChicago" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1613,28 +1723,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="955" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32705882" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.06119951" sideWeight="0.74970347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34371257" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26542324" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52163464" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36350575" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21238938" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22769953" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16340269" sideWeight="0.35449103" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18298654" sideWeight="0.7710177" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24541004" sideWeight="0.35449103" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.645509" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19339046" sideWeight="0.7876106" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2289823" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34419262" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36350575" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.994228" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1726,120 +1836,106 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/ClassLoader.class">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/AbstractOracleFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="0" selection-start="9440" selection-end="9440" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="25" column="11" selection-start="644" selection-end="644" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/TestBase.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Oracle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="18" column="35" selection-start="670" selection-end="670" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/oraclefinder/AssertOnReturnValue.java">
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/SimpleReturnPatternFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="7" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/AtomicCounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/test/java/com/ser/assist/tests/xstreamstatecarver/TestXStreamStateCarver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/xstreamcarver/XStreamStateCarver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="8" selection-start="5543" selection-end="5543" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="44" selection-start="0" selection-end="1131" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloChicago/src/test/java/com/ser/hellochicago/tests/TestHelloChicago2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="59" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelloChicago/src/main/java/com/ser/hellochicago/HelloChicago.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="11" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/AssistConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="40" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="39" selection-start="1694" selection-end="1694" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="30" column="32" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StaticStateOfApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="11" column="13" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateCarverConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="12" selection-start="1864" selection-end="1864" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="33" selection-start="2814" selection-end="2814" vertical-scroll-proportion="0.0">
+        <state line="15" column="13" selection-start="423" selection-end="423" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodTracer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="59" selection-start="540" selection-end="540" vertical-scroll-proportion="0.85714287">
+        <state line="16" column="52" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/MethodInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="170" column="30" selection-start="6749" selection-end="6749" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="26" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/StateRetriever.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="338" selection-end="338" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/OracleFinderConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/oraclefinder/Core.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="50" selection-start="2480" selection-end="2480" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/testgenerator/TestClassGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="22" selection-start="605" selection-end="605" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="21" selection-start="668" selection-end="668" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/Assist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="21" selection-start="2678" selection-end="2678" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assist/src/main/java/com/ser/assist/statecarver/core/StateInstrumenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="33" selection-start="740" selection-end="740" vertical-scroll-proportion="0.29500756">
           <folding />
         </state>
       </provider>

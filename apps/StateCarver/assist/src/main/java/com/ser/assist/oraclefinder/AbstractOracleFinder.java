@@ -11,13 +11,6 @@ import soot.jimple.internal.JimpleLocal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gdevanla
- * Date: 7/12/13
- * Time: 6:48 PM
- * To change this template use File | Settings | File Templates.
- */
 public class AbstractOracleFinder {
 
     public final Body body;

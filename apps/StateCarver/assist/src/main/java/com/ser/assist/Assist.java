@@ -29,14 +29,14 @@ public class Assist {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        //runStateInstrumentor();
+        runStateInstrumentor();
 
         //run acceptance test
         //runAcceptanceTests();
         //runSequenceMiner();
 
-        List<MutId> methodTuples = runSequenceMiner();
-        runIntegrationTestGenerator(methodTuples);
+       // List<MutId> methodTuples = runSequenceMiner();
+       // runIntegrationTestGenerator(methodTuples);
 
         //compileIntegrationTests();
         //runIntegrationTests();
