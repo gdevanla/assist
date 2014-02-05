@@ -1,24 +1,33 @@
 package com.ser.assist.oraclefinder;
 
 import org.apache.commons.lang.StringUtils;
+import soot.SootClass;
+import soot.SootMethod;
+import soot.SootMethodRef;
+import soot.Unit;
 import soot.jimple.Stmt;
+
+import java.util.List;
 
 public class Oracle {
 
-    public final String testMethodClass;
-    public final String testMethodName;
+    public final SootClass testMethodClass;
+    public final SootMethod testMethodName;
     public final OraclePattern pattern;
     public final Assertion assertion;
     public final String mutSignature;
     public final UnitWrapper uw;
 
-    public Oracle(String testMethodClass, String testMethodName, OraclePattern pattern, Assertion assertion, String mutSignature, UnitWrapper uw){
-        this.testMethodName = testMethodName;
-        this.testMethodClass = testMethodClass;
+    public List<Unit> units = null;
+
+    public Oracle(SootClass clazz, SootMethod method, OraclePattern pattern, Assertion assertion, String mutSignature, UnitWrapper uw){
+        this.testMethodName = method;
+        this.testMethodClass = clazz;
         this.pattern = pattern;
         this.assertion = assertion;
         this.mutSignature = mutSignature;
         this.uw = uw;
+
     }
 
     public String getAssertionMethod(){

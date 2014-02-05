@@ -44,8 +44,8 @@ public class SimpleReturnPatternFinder extends AbstractOracleFinder{
             for(Local local:locals){
                 if (hasReachingDefinitionToMUT(simpleLocalDefs,unit,local)){
                     oraclesFound.add(new Oracle(
-                            body.getMethod().getDeclaringClass().getName(),
-                            body.getMethod().getName(),
+                            body.getMethod().getDeclaringClass(),
+                            body.getMethod(),
                             Oracle.OraclePattern.ASSERT_EXPLICIT_RETURN_VALUE,
                             new Assertion(unit), this.mutSignature, null));
                 }

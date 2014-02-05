@@ -5,22 +5,11 @@ import com.ser.assist.AssistConfiguration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gdevanla
- * Date: 6/11/13
- * Time: 6:33 AM
- * To change this template use File | Settings | File Templates.
- */
-
 public class StateCarverConfiguration extends AssistConfiguration {
 
     private static class Loader {
         public static StateCarverConfiguration stateCarverConfiguration = new StateCarverConfiguration();
     }
-
-
-    //private static StateCarverConfiguration stateCarverConfiguration=null;
 
     public static StateCarverConfiguration v(){
         return Loader.stateCarverConfiguration;
@@ -44,17 +33,6 @@ public class StateCarverConfiguration extends AssistConfiguration {
 
     public String getProcessDir(){
        return getAppSourceFolder();
-    }
-
-    public String getSootClassPath(){
-
-        return Joiner.on(":").join(config.getString("global.assist_classpath"),
-                config.getString("global.xstreamjar"),
-                config.getString("global.jcejar"),
-                config.getString("global.classesjar"),
-                getProcessDir(),
-                getAppClasspath(),
-                config.getString("global.junitjar"));
     }
 
     public String getSootOutputFolder() {

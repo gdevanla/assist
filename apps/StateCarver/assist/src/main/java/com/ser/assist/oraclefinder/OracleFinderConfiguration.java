@@ -5,14 +5,6 @@ import com.ser.assist.AssistConfiguration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gdevanla
- * Date: 6/11/13
- * Time: 6:33 AM
- * To change this template use File | Settings | File Templates.
- */
-
 public class OracleFinderConfiguration extends AssistConfiguration {
 
     private static class Loader {

@@ -1,6 +1,5 @@
 package com.ser.assist.statecarver.random;
 
-
 import soot.Body;
 import soot.Local;
 import soot.SootMethod;

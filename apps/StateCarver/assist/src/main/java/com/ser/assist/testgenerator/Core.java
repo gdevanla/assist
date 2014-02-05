@@ -91,6 +91,7 @@ public class Core {
                new FileOutputStream(fileName));
        PrintWriter writerOut = new PrintWriter(
                new OutputStreamWriter(streamOut));
+       System.out.println("Writing class = " + clazz);
        JasminClass jasminClass = new soot.jimple.JasminClass(clazz);
        jasminClass.print(writerOut);
        writerOut.flush();
@@ -166,7 +167,7 @@ public class Core {
                 + ":" + "/Users/gdevanla/.m2/repository/com/thoughtworks/xstream/xstream/1.4.4/xstream-1.4.4.jar"
                 + ":" + "/Users/gdevanla/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"
                 + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java"
-                + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist/src/main/java";
+                + ":" + "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist/target/classes";
 
         core.initSoot(sootClassPath);
         core.builder();

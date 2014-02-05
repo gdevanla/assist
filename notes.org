@@ -1,8 +1,169 @@
-* TODO
-  * Get Vimals project running and test
-  * 
+* ASSIST - Development and Paper Submission Notes
+
+** Requirements for implementing the sequence mining part of ASSIST
+
+   This section explains how to generate input for BIDE and how the
+   output from BIDE needs to be transformed, so that the output can
+   be used in subsequent steps of ASSIST execution.
+
+   Description:
+
+   The first part of assist will generate a file which will have the
+   list of methods that are invoked when a test is generated:
+
+   Each line in the file will have the following information:
+
+   counter:<id>  =  This field will give the unique id for each
+   event(transaction) in terms of BIDE.
+
+   class_name:method_name =   This two fields will give the actual
+   method that was invoked. [This will constitute the item in terms
+   of BIDE]. Before providing an input to BIDE in terms of item_id,
+   each method should be given an unique id, based on their unique
+   signatures.
+
+   level:  This field provides the stack depth of the methods that
+   was invoked. For generating the needed input for BIDE,we need to
+   create sequnces. We create these sequences by comparing the levels
+   of the method. For example, in the file we will have
+
+   l10: m1
+   l11: m2
+   l12: m3
+   l13: m4
+   l11 :m4
+   l10: m5
+   l11: m6
+
+   So, here we have 2 sequences. We get this by dividing the list,
+   whenever we encounter the least level in the input file.
+
+   So,we will have
+
+   1: m1 m2 m3 m4 m4
+   2: m5 m6
+
+   So, we have 2 sequences
+
+   Example of input to bide: Given a file like
+   counter:1:class1:m1:level=28
+   counter:2:class1:m2:level=29
+   counter:3:class1:m3:level=30
+   counter:4:class1:m2:level=28
+   counter:5:class1:m3:level=29
+   counter:6:class1:m1:level=30
+   counter:7:class1:m1:level=28
 
 
-* Given an experiment
-  * And an acceptance test generate call graph
-  * 
+   * Do a sanity check to the document for the levels.
+
+
+   1 3 4
+
+   MethodTrace.log
+   counter:100 m1  level = 28
+   counter:101 m2
+   counter:102 m3
+   counter:103 m4
+   .               level = 28
+   .
+   .
+   .
+   countet:105 m6... level = 28
+   counter:106 m1
+   counter:107 m3
+   counter:108 m5
+   counter:109 m4
+
+
+   Sequence Map file
+   1 <counter...level=28> <counter...level> <counter....level>
+   2 <counter...level=28> <
+
+   Method Map
+   1 m1
+   2 m2
+
+   BIDE Output
+
+   BIDE-Method Trace Map
+   1 3 4 = >  (1: 100, 102, 103) , (3, 106, 107, 109)
+   3
+
+
+
+** Enhancements/Indepedent Variables
+
+   - MUT methods could be static invocations
+   -
+** Sample Test Orackes and corresponding Integration Test
+
+*** Example 1:
+
+    MUT = getAnotherInstance
+
+    //Unit Test
+    public void testTest1(){
+        /* Here MUT is getAnotherInstance*/
+        Kiwi x = new Kiwi();
+        Kiwi y = x.getAnotherInstance();
+        int z = y.addNoArgs();
+        assertEquals(z, new SomeObject())
+        assertEquals(20, z);
+
+        /* This can only be compared with this before function call
+        and this after function call.
+         */
+    }
+
+
+    //Integration Test
+    Test1
+    s1  = load state of Kiwi before call to getAnotherInstance
+    s2  = load return value of getAnotherInstance
+    assertEquals ( s1.getAnotherInstance().getNoArgs(), s2.getNoArgs())
+
+    Test2
+    s1  = load state of Kiwi before call to getAnotherInstance
+    s2  = load return value of getAnotherInstance
+    assertEquals ( s1.getAnotherInstance(), s2)
+
+
+*** Example 2:
+
+    MUT = addCantaloupe
+
+    public void testPatternWithMethodCall() {
+        /* Here MUT is add*/
+      Cantaloupe c = new Cantaloupe();
+
+      new OrangeCountIncrementer().addCantaloupe(c, 10);
+      assertEquals(20, c.getCount());
+    }
+
+    //Integration Test
+    s1 = load state of OrangeCountIncremenenter before call to addCantaloupe()
+    p1 = load first paramter to addCantalupe() method
+    p2 = load second parameter to addCataloupe() method
+    s2 = load return value of addCantaloupe
+
+    assertEquals(s1.addCantaloupe(p1, p2), ss.getCount())
+
+*** Example 3:
+
+    If we consider the sequence provided in the original writeup, this is what we would produce
+
+    Test1:
+
+    s1 = load state of object before call to measure()
+    r1 = load return value of measure()
+    assertEquals(s1.measure().getResultsTable(), r1)
+
+Other points for discussion:
+
+1. In the first example since we have 2 assert statements, we have two
+   tests, even though they could potentially be one test. This is just
+   to make it simple.
+
+2. In example 3, we cannot generate the second assert listed in the
+   writeup, since we will not have enough information.

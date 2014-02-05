@@ -1,14 +1,12 @@
 package com.ser.assist.statecarver.core;
 
 import org.apache.commons.io.FileUtils;
-import soot.Body;
-import soot.BodyTransformer;
-import soot.PackManager;
-import soot.Transform;
+import soot.*;
 import soot.options.Options;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 
 //TODO:
@@ -20,11 +18,6 @@ import java.util.Map;
 // save state before exception throw statements
 
 public class StateInstrumenter extends BodyTransformer {
-
-    /*move to configuration*/
-    //static final String appBaseFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/assist";
-    //static final String sourceFolder = "/Users/gdevanla/Dropbox/private/se_research/myprojects/assist/apps/StateCarver/TestArtifacts/src/main/java";
-    //static final String sootClassPath = sourceFolder + ":" + appBaseFolder + "/" + "target/classes";
 
     private static StateInstrumenter instance = new StateInstrumenter();
     private StateInstrumenter() {}
@@ -39,26 +32,36 @@ public class StateInstrumenter extends BodyTransformer {
           StaticStateOfApp.init();
           staticFieldInitialized = true;
        }
+
         try {
             new MethodInstrumenter().instrumentMethod(body, s, map);
         } catch (Exception e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
     }
 
     public static StateInstrumenter v() { return instance;}
 
-    public static boolean run() throws IOException {
+    public static void run(int outputFormat /* class or jimple*/) throws  IOException {
+        //Default soot settings -move to some central class
+        G.reset();
+        //Options.v().set_verbose(true);
+        Options.v().set_no_bodies_for_excluded(true);
+        ArrayList<String> exclude_list = new ArrayList<String>();
+        exclude_list.add("java.");
+        Options.v().set_exclude(exclude_list);
+        Options.v().set_whole_program(true);
+        Options.v().set_output_format(outputFormat);
+        Options.v().set_keep_line_number(true);
+        Options.v().setPhaseOption("jb", "use-original-names");
+
         PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", StateInstrumenter.v()));
 
         //create required folders
-        FileUtils.forceMkdir(new File(StateCarverConfiguration.v().getTraceDestination()));
+        //FileUtils.forceMkdir(new File(StateCarverConfiguration.v().getTraceDestination()));
 
-        //Options.v().set_verbose(true);
-        //Options.v().set_output_format(Options.output_format_J);
-        Options.v().set_output_dir(StateCarverConfiguration.v().getSootOutputFolder());
+        //Options.v().set_output_dir(StateCarverConfiguration.v().getSootOutputFolder());
         Options.v().set_allow_phantom_refs(true);
-        //Options.v().set_verbose(true);
 
         String sourceFolder = StateCarverConfiguration.v().getProcessDir();
         String sootClassPath = StateCarverConfiguration.v().getSootClassPath();
@@ -70,11 +73,17 @@ public class StateInstrumenter extends BodyTransformer {
         String[] sootArguments = new String[]{"-process-dir", sourceFolder, "-cp", sootClassPath};
 
         soot.Main.main(sootArguments);
+
+    }
+
+    public static boolean run() throws IOException {
+
+        run(Options.output_format_J);
+        run(Options.output_format_c);
         return true;
     }
 
     public static void main(String[] args) throws IOException {
        run();
-
     }
 }

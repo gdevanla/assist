@@ -2,24 +2,6 @@ package com.ser.oraclefinder.testartifacts;
 
 import junit.framework.TestCase;
 
-class Kiwi2{
-    public Kiwi2(){
-
-    }
-
-    public int add(int x){
-        return x*2;
-    }
-
-    public Kiwi2 anotherInstance(){
-        return new Kiwi2();
-    }
-
-    public int addNoArgs(){
-        return 100;
-    }
-}
-
 public class TestsMethodHavingMultipleAsserts extends  TestCase {
 
     public void testTest1(){

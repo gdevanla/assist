@@ -3,20 +3,6 @@ package com.ser.oraclefinder.testartifacts;
 import junit.framework.TestCase;
 
 
-class Cantaloupe{
-    int count = 10;
-
-    public int getCount(){
-        return count;
-    }
-}
-
-class OrangeCountIncrementer{
-    public void addCantaloupe(Cantaloupe c, int x){
-        c.count += x;
-    }
-}
-
 public class AssertOnMethodOfMutatedObjectTest extends TestCase {
 
     public void testPatternWithMethodCall() {

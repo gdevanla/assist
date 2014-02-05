@@ -1,0 +1,14 @@
+$PACKAGE_NAMES_GOES_HERE$
+
+class IntegrationTest$TEST_CLASS_NUM$Test extends GroovyTestCase {
+
+   public void testTest$MUT$_$TEST_METHOD_NUM$() {
+
+         println "$MUT$_$TEST_METHOD_NUM$"
+         def loadedObject = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState($STATE_FILE_NAME$)
+         def x = s1.invokeMethod("sayHello", null)
+         $ASSERT_STATEMENTS_GOES_HERE$ x , $
+
+     } //end of method
+
+} //end of class

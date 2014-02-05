@@ -4,88 +4,9 @@ import com.ser.assist.statecarver.core.StateCarverConfiguration;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
 
 import java.io.*;
-
-class InnerTestObjectForXStream{
-    public int a;
-    private String b;
-
-    public InnerTestObjectForXStream(int x, String s){
-        this.a = x;
-        this.b = s;
-    }
-}
-
-class ObjectWithCircularReference{
-    public TestObjectForXStream x;
-
-    public ObjectWithCircularReference(TestObjectForXStream x){
-        this.x =x;
-    }
-}
-
-class TestStaticClass{
-    private String label;
-    public static TestStaticClass instance = new TestStaticClass();
-    private TestStaticClass(){
-        this.label = "I am the label inside the static class";
-    }
-}
-
-class Parent {
-    String s = "I am from parent";
-    ObjectWithCircularReference c;
-    static TestStaticClass staticClass;
-    public Parent(ObjectWithCircularReference c){
-        this.c = c;
-        staticClass = TestStaticClass.instance;
-    }
-}
-
-class Child extends Parent{
-    private static String childsStaticField;
-    public Child(ObjectWithCircularReference o){
-        super(o);
-        childsStaticField = "I am a static field in the Child";
-    }
-}
-
-class TestObjectForXStream{
-    private int x;
-    public String y;
-    private InnerTestObjectForXStream innerObject;
-    private ObjectWithCircularReference circularReference;
-    private Child treeSample;
-
-    int[] x_int_array = new int[10];
-    Parent[] clazz_array = new Parent[10];
-
-    public TestObjectForXStream(int x, String s){
-        this.x = x;
-        this.y = s;
-        innerObject = new InnerTestObjectForXStream(x*10, s+":"+s);
-        circularReference = new ObjectWithCircularReference(this);
-        this.treeSample = new Child(circularReference);
-
-        for ( int i=0; i<10; i++){
-            x_int_array[i] = i;
-            clazz_array[i] = new Parent(circularReference);
-        }
-    }
-}
-
-
-class ClassHavingStaticMember{
-    public  Integer I = new Integer(10);
-    public  int i;
-    public  String s = "static";
-    int instance_i;
-
-    public ClassHavingStaticMember(int y){
-        instance_i = y;
-    }
-}
 
 public class XStreamStateCarver {
 
@@ -98,12 +19,15 @@ public class XStreamStateCarver {
        // this.fileName = MethodTracer.getStateFileForMethod();
         xstream = new XStream(new Sun14ReflectionProvider(),
                 new DomDriver());
-        //TODO: Do I need to set a Marshalling Strategy?
 
+        //xstream.setMode();
+
+        //TODO: Do I need to set a Marshalling Strategy?
        /* xstream.registerConverter(new StaticAttributeConverter(
                 xstream.getMapper(),
                 new StaticReflectionProvider()),
-                XStream.PRIORITY_LOW);*/
+                XStream.PRIORITY_LOW);
+                */
     }
 
     private void save(Object o, String fileName){
@@ -112,6 +36,7 @@ public class XStreamStateCarver {
             System.out.println("Writing to file now.. =" + filePath);
             ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(filePath, false));
             out.writeObject(o);
+
             out.close();
         }
         catch(IOException e){
@@ -139,25 +64,46 @@ public class XStreamStateCarver {
         return null;
     }
 
-    public static void saveState1(Object o, String fileName) {
-       System.out.println("Over here - this time");
-       instance.save(o, fileName);
-       System.out.println("Done saving file");
+    // Helper methods
+    public static String getParamStateFileName(long methodCounter, String paramNumberOrThis, String type){
+        return "state" + "." + methodCounter + "." + paramNumberOrThis + ".xml";
     }
 
-    public static String getParamStateFileName(long methodCounter, String paramNumberOrThis, String type){
-        return "state" + "." + methodCounter + "." + paramNumberOrThis + "." + type + ".xml";
+    public static String getParamStateFileName(long methodCounter, String paramNumberOrThis){
+        return "state" + "." + methodCounter + "." + paramNumberOrThis + ".xml";
     }
+
+    public static String getStateFileName(long methodCounter)
+    {
+        return getParamStateFileName(methodCounter, "this");
+    }
+
+    public static String getParamFileName(long methodCounter, int index)
+    {
+        return getParamStateFileName(methodCounter, Integer.toString(index));
+    }
+
+    public static String getReturnFileName(long methodCounter)
+    {
+        return getParamStateFileName(methodCounter, "return");
+    }
+
 
     public static void saveState(Object o, long methodCounter, String paramNumberOrThisOrRet, String type){
+        System.out.println("Saving state for methodCounter " + methodCounter + "type=" + type);
         String fileName = getParamStateFileName(methodCounter, paramNumberOrThisOrRet, type);
-        instance.save(o, fileName);
+        saveStateToFile(o, fileName);
+    }
+
+    public static void saveStateToFile(Object o, String fileName){
+          instance.save(o, fileName);
     }
 
     public static void savePrimitiveInt(int o, long methodCounter, String paramNumberOrThisOrRet, String type){
         String fileName = getParamStateFileName(methodCounter, paramNumberOrThisOrRet, type);
         instance.save(o, fileName);
     }
+
 
     public static String getStaticStateFileName(long methodCounter, String enclosingClass,
                                            String type, String variableName){
@@ -172,8 +118,8 @@ public class XStreamStateCarver {
 
     }
 
-    public static Object loadState(String filePath) {
-        return instance.load(filePath);
+    public static Object loadState(String fileName) {
+        return instance.load(getFilePath(fileName));
     }
 
 
@@ -183,13 +129,14 @@ public class XStreamStateCarver {
     }
 
     public static void main(String[] args){
-       // TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
-        //ClassHavingStaticMember o = new ClassHavingStaticMember(1000);
-        //XStreamStateCarver.saveState(o, o.toString());
-        //x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
 
-        Object o = XStreamStateCarver.loadState("/tmp/state.0.0.int.xml");
-        System.out.println(o.getClass());
+        //TestObjectForXStream o = new TestObjectForXStream(10, "OuterObject");
+        //ClassHavingStaticMember o = new ClassHavingStaticMember(1000);
+        //XStreamStateCarver.saveState(o, 1, "1", o.getClass().getCanonicalName());
+        //x.saveState(TestObjectForXStream.class, TestObjectForXStream.class.toString());
+        //XStreamStateCarver.saveState(10);
+        //Object o = XStreamStateCarver.loadState("/tmp/trace/saveint.xml");
+        //System.out.println(o.getClass());
 
         // ClassHavingStaticMember o = (ClassHavingStaticMember)XStreamStateCarver.loadState("/tmp/state.0.0.int.xml");
         // System.out.println(o.s);

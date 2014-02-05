@@ -115,10 +115,8 @@ class MethodDefinition{
             return strReturnType.split(" ")[1]; //get rid of "class"
         else
             return strReturnType;
-
     }
 }
-
 
 public class TestClassGenerator {
 

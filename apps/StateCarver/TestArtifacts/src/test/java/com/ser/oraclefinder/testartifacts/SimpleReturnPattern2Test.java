@@ -3,16 +3,7 @@ package com.ser.oraclefinder.testartifacts;
 import junit.framework.TestCase;
 
 
-class Apples1 {
-    public Apples1(){
-    }
-
-    public int add(int x){
-        return x*2;
-    }
-}
-
-public class SimpleReturnPatternTest2 extends TestCase {
+public class SimpleReturnPattern2Test extends TestCase {
 
     public void testSimpleReturnPattern2() {
         /* Here MUT is add*/
@@ -23,7 +14,7 @@ public class SimpleReturnPatternTest2 extends TestCase {
         }
         else
         {
-            z = x.add(20);
+            z = x.add(100);
         }
 
         int y = z;

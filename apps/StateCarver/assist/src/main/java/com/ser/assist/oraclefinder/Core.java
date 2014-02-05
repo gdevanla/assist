@@ -1,20 +1,16 @@
 package com.ser.assist.oraclefinder;
 
+import com.ser.assist.statecarver.core.StateCarverConfiguration;
 import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.options.Options;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map;
 
-/**
- * Created with IntelliJ IDEA.
- * User: gdevanla
- * Date: 6/23/13
- * Time: 5:25 AM
- * To change this template use File | Settings | File Templates.
- */
 public class Core extends BodyTransformer {
 
     public final String clazzNameofMUT;
@@ -27,32 +23,6 @@ public class Core extends BodyTransformer {
         this.mutSignature = mutSignature;
         //this is a static instance and therefore has to be here
        // PackManager.v().getPack("jtp").add(new Transform("jtp."+ Math.random(), this));
-
-    }
-
-
-    public void  runAnalysis(int outputFormat, boolean verbose){
-        soot.G.reset();
-        Options.v().set_verbose(verbose);
-        Options.v().set_output_format(outputFormat);
-        String[] sootArguments = new String[]{"-process-dir",
-                OracleFinderConfiguration.v().getAppTestsSourceFolder(),
-                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
-        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
-
-        soot.Main.main(sootArguments);
-    }
-
-    public void  runAnalysis(int outputFormat, boolean verbose, String inputFileName){
-        soot.G.reset();
-        //Options.v().set_verbose(verbose);
-        Options.v().set_output_format(outputFormat);
-        String[] sootArguments = new String[]{inputFileName,
-                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
-        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
-
-        soot.Main.main(sootArguments);
-
     }
 
     @Override
@@ -106,7 +76,6 @@ public class Core extends BodyTransformer {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -128,5 +97,54 @@ public class Core extends BodyTransformer {
         System.out.println(c.oraclesFound.size());
 
     }
+
+    public void  runAnalysis(int outputFormat, boolean verbose){
+
+
+
+        //Default soot settings -move to some central class
+        G.reset();
+        //Options.v().set_verbose(true);
+        Options.v().set_no_bodies_for_excluded(true);
+        ArrayList<String> exclude_list = new ArrayList<String>();
+        exclude_list.add("java.");
+        Options.v().set_exclude(exclude_list);
+        Options.v().set_whole_program(true);
+        Options.v().set_output_format(outputFormat);
+        Options.v().set_keep_line_number(true);
+        Options.v().setPhaseOption("jb", "use-original-names");
+
+        String[] sootArguments = new String[]{"-process-dir",
+                OracleFinderConfiguration.v().getAppTestsSourceFolder(),
+                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
+        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
+
+        soot.Main.main(sootArguments);
+
+    }
+
+    public void  runAnalysis(int outputFormat, boolean verbose, String inputFileName){
+        //Default soot settings -move to some central class
+        G.reset();
+        //Options.v().set_verbose(true);
+        Options.v().set_no_bodies_for_excluded(true);
+        ArrayList<String> exclude_list = new ArrayList<String>();
+        exclude_list.add("java.");
+        Options.v().set_exclude(exclude_list);
+        Options.v().set_whole_program(true);
+        Options.v().set_output_format(outputFormat);
+        Options.v().set_keep_line_number(true);
+        Options.v().setPhaseOption("jb", "use-original-names");
+        //Options.v().set_verbose(verbose);
+        Options.v().set_output_format(outputFormat);
+        String[] sootArguments = new String[]{inputFileName,
+                "-cp", OracleFinderConfiguration.v().getSootClassPath()};
+        PackManager.v().getPack("jtp").add(new Transform("jtp.myTransformer", this));
+
+        soot.Main.main(sootArguments);
+
+    }
+
+
 
 }

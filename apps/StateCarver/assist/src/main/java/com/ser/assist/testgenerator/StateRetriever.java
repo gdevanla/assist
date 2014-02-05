@@ -19,7 +19,7 @@ public class StateRetriever {
     public StateRetriever(String clazzName, String mutSignature, int sequenceNumber, String basePath){
         this.clazzName = clazzName;
         this.mutSignature = mutSignature;
-        this.sequenceNumber = sequenceNumber;
+         this.sequenceNumber = sequenceNumber;
         this.basePath = basePath;
     }
 

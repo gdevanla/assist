@@ -1,9 +1,6 @@
 package com.ser.assist.oraclefinder;
 
-import soot.Body;
-import soot.Local;
-import soot.Unit;
-import soot.ValueBox;
+import soot.*;
 import soot.jimple.InvokeExpr;
 import soot.jimple.StaticInvokeExpr;
 import soot.jimple.Stmt;
@@ -11,6 +8,7 @@ import soot.jimple.internal.JimpleLocal;
 import soot.toolkits.graph.UnitGraph;
 import soot.toolkits.graph.pdg.EnhancedUnitGraph;
 import soot.toolkits.scalar.SimpleLocalDefs;
+import sun.awt.SunHints;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -96,8 +94,8 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
         for (List<UnitWrapper> uws:uwss){
             for(UnitWrapper uw:uws){
             oraclesFound.add(new Oracle(
-                    body.getMethod().getDeclaringClass().getName(),
-                    body.getMethod().getName(),
+                    body.getMethod().getDeclaringClass(),
+                    body.getMethod(),
                     Oracle.OraclePattern.ASSERT_MODIFIED_OBJECTS_VALUE,
                     new Assertion(uw.u), this.mutSignature, uw));
             }
@@ -124,10 +122,9 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
         else
         {
             //for all other units, check if it makes sense to proceed
-            if (hasInvokeExprsWithArgs(uw.u)
-                    || isStaticInvokeExpression(uw.u))
+            if (hasInvokeExprsWithArgs(uw.u))
             {
-                System.out.println("Continuing...");
+                System.out.println("Continuing..Not processing since we have method with multiple args = " + uw.u);
                 return;
             }
 
@@ -149,7 +146,6 @@ public class AssertOnReturnObjectsMethod extends AbstractOracleFinder {
                 local = (Local)useBoxes.get(0).getValue();
             else
                 return; // we just saw an assignment of local to a constant, perhaps!
-
         }
 
         if (simpleLocalDefs.hasDefsAt(local, uw.u) ){

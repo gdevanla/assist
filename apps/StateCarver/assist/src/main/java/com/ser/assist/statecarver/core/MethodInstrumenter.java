@@ -19,7 +19,6 @@ public class MethodInstrumenter {
     SootMethod xStreamSaveMethodPrimitiveInt = xStreamStateCarverClass.getMethodByName("savePrimitiveInt");
     SootMethod xStreamStaticSaveMethod = xStreamStateCarverClass.getMethodByName("saveStaticState");
 
-
     Local methodCounter;
 
     public void instrumentMethod(Body body, String s, Map map) throws Exception {
@@ -29,32 +28,33 @@ public class MethodInstrumenter {
 
         String currentClassName = body.getMethod().getDeclaringClass().getName();
         Stmt stmtToInsertBefore = getStatementToInsertBefore(body.getUnits());
+        //Note: Locals are added when this method is called
         List<Unit> methodCounterStmts = getMethodCounterStatements(body);
+
+        //Note: Locals are added when this method is called.
         Stmt methodTraceStmt = getMethodTracerStmt(body, currentClassName);
-        List<Unit> parameterSavingStmts = getParameterSavingStatements(body);
-       // List<Unit> staticStateSavingStmts = getStaticStateSavingStatements(body);
 
+       List<Unit> parameterSavingStmts = getParameterSavingStatements(body);
 
-        //Stmt thisObjectSavingStmt = getParameterSavingStatements(body);
-        //Stmt staticFieldsSavingStatement = getParameterSavingStatements(body);
+       List<Unit> staticStateSavingStmts = getStaticStateSavingStatements(body);
 
         body.getUnits().insertBefore(methodCounterStmts, stmtToInsertBefore);
         body.getUnits().insertBefore(methodTraceStmt, stmtToInsertBefore);
 
-        /*
         if (parameterSavingStmts.size()>0){
             body.getUnits().insertBefore(parameterSavingStmts, stmtToInsertBefore);
-        } */
+        }
 
-       /* if ( staticStateSavingStmts.size()>0){
+        if ( staticStateSavingStmts.size()>0){
             body.getUnits().insertBefore(staticStateSavingStmts, stmtToInsertBefore);
-        }*/
+        }
 
-        /*
+        System.out.println("Collecting return statements");
         if (!(body.getMethod().getReturnType() instanceof VoidType)){
             List<Unit> allReturnStatements = collectReturnStatements(body);
             for (Unit u:allReturnStatements){
                 if (!(u instanceof ReturnStmt)) continue;
+                System.out.println("Going to instrument unit =" + u + "in Method = " + body.getMethod());
                 ReturnStmt r = (ReturnStmt)u;
                 List<ValueBox> retValues = r.getUseBoxes();
                 if (retValues.size()>1)
@@ -64,7 +64,7 @@ public class MethodInstrumenter {
                 body.getUnits().insertBefore(returnValueSaveStatement, u);
             }
 
-        }*/
+        }
 
     }
 
@@ -253,9 +253,9 @@ public class MethodInstrumenter {
         //TODO: Revisit this
         if(body.getMethod().isPrivate()) return true;
         if(body.getMethod().getName().contains("init")) return true;
-        if(body.getMethod().getName().contains("main")) return true;
-        return false;
+        return body.getMethod().getName().contains("main");
     }
+
 
     private Stmt getStatementToInsertBefore(PatchingChain<Unit> units) {
         Stmt s = null;
