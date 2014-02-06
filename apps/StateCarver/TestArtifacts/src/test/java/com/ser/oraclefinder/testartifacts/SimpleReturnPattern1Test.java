@@ -3,6 +3,8 @@ package com.ser.oraclefinder.testartifacts;
 
 import junit.framework.TestCase;
 
+import java.util.List;
+
 
 public class SimpleReturnPattern1Test extends TestCase {
 
@@ -62,6 +64,22 @@ public class SimpleReturnPattern1Test extends TestCase {
         }
 
         //assertEquals(z, y);
+    }
+
+    public void testMethodsReturningLists() {
+
+        Apples a = new Apples();
+        List<Integer> x = a.getListOfApples();
+        assertEquals((int) x.get(2), 30);
+
+    }
+
+    public void testMethodsReturningArray() {
+
+        Apples a = new Apples();
+        int[] x = a.getArrayOfApples();
+        assertEquals(x[2], 30);
+
     }
 
 

@@ -5,6 +5,7 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.reflection.Sun14ReflectionProvider;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.*;
 
@@ -66,11 +67,11 @@ public class XStreamStateCarver {
 
     // Helper methods
     public static String getParamStateFileName(long methodCounter, String paramNumberOrThis, String type){
-        return "state" + "." + methodCounter + "." + paramNumberOrThis + ".xml";
+        return "state" + ":" + methodCounter + ":" + paramNumberOrThis + ".xml";
     }
 
     public static String getParamStateFileName(long methodCounter, String paramNumberOrThis){
-        return "state" + "." + methodCounter + "." + paramNumberOrThis + ".xml";
+        return "state" + ":" + methodCounter + ":" + paramNumberOrThis + ".xml";
     }
 
     public static String getStateFileName(long methodCounter)
@@ -107,7 +108,7 @@ public class XStreamStateCarver {
 
     public static String getStaticStateFileName(long methodCounter, String enclosingClass,
                                            String type, String variableName){
-        return "static" + "." + methodCounter + "." + enclosingClass +
+        return "static" + ":" + methodCounter + ":" + enclosingClass +
                 ":" + type + ":" + variableName + ".xml";
     }
 
@@ -125,8 +126,40 @@ public class XStreamStateCarver {
 
     private static String getFilePath(String fileName){
         //TODO: use proper path concatenation style
-        return StateCarverConfiguration.v().getTraceDestination() + "/" + fileName;
+        return FilenameUtils.concat(StateCarverConfiguration.v().getTraceDestination(),
+                fileName);
     }
+
+   /* *//*Return contained class, type and field name for static data*//*
+    public static String[] getFieldAttributes(String fileName){
+        if (fileName.startsWith("static")){
+                String[] parts = fileName.split(":");
+                return new String[]{parts[2], parts[3], parts[4].split(".")[0]};
+        }
+        else{
+                //not implemented yet
+                return new String[]{};
+        }
+
+    }
+
+    public static void loadStaticClasses() {
+        //http://groovy.codehaus.org/JN3535-Reflection
+        String fileName = "static:9:com.ser.instrument.artifacts.SingletonClass:com.ser.instrument.artifacts.SingletonClass:s.xml";
+        String[] attr = getFieldAttributes(fileName)
+        Object obj = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState(fileName);
+        try {
+            Class.forName(attr[0]).getField(attr[2]).set(Class.forName(attr[0]), obj);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+    }*/
 
     public static void main(String[] args){
 

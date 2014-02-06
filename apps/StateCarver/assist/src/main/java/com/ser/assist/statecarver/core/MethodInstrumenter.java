@@ -316,7 +316,7 @@ public class MethodInstrumenter {
         args.add(methodCounter);
         args.add(StringConstant.v(field.getDeclaringClass().getName()));
         args.add(StringConstant.v(nonPrimitiveLocal.getType().toString()));
-        args.add(StringConstant.v(larg.getName()));
+        args.add(StringConstant.v(field.getName()));
 
 
         for ( Value v:args){

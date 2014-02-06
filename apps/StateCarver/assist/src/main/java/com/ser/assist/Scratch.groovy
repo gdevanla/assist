@@ -13,15 +13,11 @@ import soot.SootMethod
 import soot.Transform
 import soot.Unit
 import soot.Value
-import soot.coffi.array_element_value
-import soot.grimp.NewInvokeExpr
 import soot.jimple.AssignStmt
 import soot.jimple.Constant
 import soot.jimple.InstanceInvokeExpr
-import soot.jimple.InterfaceInvokeExpr
 import soot.jimple.InvokeExpr
 import soot.jimple.NewExpr
-import soot.jimple.RetStmt
 import soot.jimple.ReturnStmt
 import soot.jimple.ReturnVoidStmt
 import soot.jimple.SpecialInvokeExpr
@@ -32,7 +28,6 @@ import soot.toolkits.graph.BriefUnitGraph
 import soot.toolkits.graph.UnitGraph
 import soot.toolkits.graph.pdg.EnhancedUnitGraph
 import soot.toolkits.scalar.SimpleLocalDefs
-import sun.rmi.rmic.iiop.SpecialClassType
 
 import java.util.regex.Pattern
 
@@ -80,7 +75,7 @@ def setSootOptions(String className, String subSignature){
 def processMethod(Body body, SimpleLocalDefs simpleLocalDefs, String className, String subSignature)
 {
     //this call update the body by performing constant propogation
-    SootHelper.propogateConstants(body)
+    //SootHelper.propogateConstants(body)
 
     SootMethod mut = SootHelper.getResolvedMethod(className, subSignature)
     List<Unit> unitsWithMut = body.getUnits().findAll() { Unit it ->
@@ -99,12 +94,6 @@ def processMethod(Body body, SimpleLocalDefs simpleLocalDefs, String className, 
     oinfos.each() {OracleReplayInfo r -> println "New sequence" ; println r.method; println r.mut;
           r.replayUnits.each() { println it }
     }
-
-    /*for (u in unitsWithMut){
-      List paths = []
-      //all_paths(g, u, [],paths)
-      println "path in " + body.getMethod() + "==>" + paths.each() {println it}
-    }*/
 
     oinfos.each() {replay(it)};
 
@@ -127,7 +116,7 @@ def replay(OracleReplayInfo oInfo)
         alllocals.each() { vars.add(it.getName()); vars.add(((Local)it).getName() + "_clone")}
 
         if ( it instanceof AssignStmt){
-            String varname = ((Local)mutUnit.getDefBoxes().get(0).value).toString()
+            String varname = ((Local)it.getDefBoxes().get(0).value).toString()
             vars.add(varname)
             vars.add(varname + "_clone")
         }
@@ -324,18 +313,6 @@ def generateReplayInfo(Body body, Unit u){
          current_unit = g.getSuccsOf(current_unit).get(0);
         List<Immediate> imm = SootHelper.getAllImmediates(current_unit);
 
-       // if ( !SootHelper.isAssert(current_unit))
-        //{
-        //    if (!SootHelper.allLocals(imm)) continue;
-        //}
-        //else
-        //{
-            //we will just add the Assert know and deal with
-            //creating with all locals later.
-        //    oInfo.replayUnits.add(current_unit);
-        //    continue;
-        //}
-
         //check if we know the defs of each local in the unit
         if (allDefsKnown(imm, simpleLocalDefs, current_unit, defUnitsInEnv)){
             if (u instanceof AssignStmt){
@@ -395,9 +372,10 @@ def all_paths(UnitGraph g, Unit u, List path, List paths)
 
 }
 
+//setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int add(int)")
+//setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "java.util.List getListOfApples()")
+setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int[] getArrayOfApples()")
 
-
-setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int add(int)")
 String[] sootArguments = ["-process-dir",
         OracleFinderConfiguration.v().getAppTestsSourceFolder(),
         "-cp", OracleFinderConfiguration.v().getSootClassPath()];

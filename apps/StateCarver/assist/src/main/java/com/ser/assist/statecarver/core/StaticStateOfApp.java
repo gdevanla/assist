@@ -59,43 +59,4 @@ public class StaticStateOfApp {
         return staticFields;
     }
 
-  /*  private void collectStaticFields(){
-        Chain<SootClass> applicationClasses = Scene.v().getApplicationClasses();
-        for (SootClass sootClass : applicationClasses) {
-            if (visitedClasses.contains(sootClass)){
-                continue;
-            }
-            collectStaticFields(sootClass);
-        }
-    }*/
-
-   /* private void collectStaticFields(SootClass sootClazz){
-
-        System.out.println("Fetching static fields for" + sootClazz.getName());
-        Chain<SootField> fields = sootClazz.getFields();
-
-        for (SootField field : fields) {
-            //if(field.isPublic() && field.isStatic() && !field.isFinal())
-            if (field.isStatic() && !field.isFinal())
-                staticFields.add(field);
-            // if(Utils.isPrimitive(field.getType())) //no need to drill deeper
-            //     continue;
-
-            *//*
-            RefType type;
-            soot.Type fieldType = field.getType();
-            if(fieldType instanceof soot.ArrayType){
-                soot.ArrayType arrayType = (soot.ArrayType) field.getType();
-                if(Utils.isPrimitive(arrayType.baseType))
-                    continue;
-                fieldType = (RefType) arrayType.baseType;
-            }
-            type = (RefType) fieldType;
-            SootClass clazz = type.getSootClass();
-            visitedClasses.add(sootClazz);
-            if(!visitedClasses.contains(clazz))
-                collectStaticFields(clazz);
-                *//*
-        }
-    }*/
 }

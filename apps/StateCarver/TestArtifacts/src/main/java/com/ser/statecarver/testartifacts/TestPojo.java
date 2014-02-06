@@ -1,5 +1,8 @@
 package com.ser.statecarver.testartifacts;
 
+import groovy.lang.Closure;
+import java_cup.lalr_state;
+
 /**
  * Created with IntelliJ IDEA.
  * User: gdevanla
@@ -20,6 +23,10 @@ public class TestPojo {
         this.private_int_x = private_int_x;
         this.public_string_s = public_string_s;
         static_int_x = this.static_int_x;
+    }
+
+    public static void getPrintStaticValues() {
+        System.out.println("The value of static_int_x= " + static_int_x);
     }
 
     public void newadd(int x){
