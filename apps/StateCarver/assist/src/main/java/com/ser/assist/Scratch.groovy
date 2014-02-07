@@ -15,12 +15,14 @@ import soot.Unit
 import soot.Value
 import soot.jimple.AssignStmt
 import soot.jimple.Constant
+import soot.jimple.InstanceFieldRef
 import soot.jimple.InstanceInvokeExpr
 import soot.jimple.InvokeExpr
 import soot.jimple.NewExpr
 import soot.jimple.ReturnStmt
 import soot.jimple.ReturnVoidStmt
 import soot.jimple.SpecialInvokeExpr
+import soot.jimple.StaticFieldRef
 import soot.jimple.StaticInvokeExpr
 import soot.jimple.Stmt
 import soot.options.Options
@@ -32,7 +34,7 @@ import soot.toolkits.scalar.SimpleLocalDefs
 import java.util.regex.Pattern
 
 class OracleReplayInfo {
-    int counter = 13;
+    int counter = 4;
     Body testBody = null;
     SootMethod method;
     Unit mut;
@@ -103,13 +105,7 @@ def replay(OracleReplayInfo oInfo)
 {
     //Create defs
     HashSet<String> vars = new HashSet<>();
-
-    //Create local for mut statement if it has an assignment
     Unit mutUnit = oInfo.replayUnits[0];
-    if (mutUnit instanceof AssignStmt){
-        //println "Mut Unit = " + mutUnit
-       //vars.add(((Local)mutUnit.getDefBoxes().get(0).value).toString());
-    }
 
     oInfo.replayUnits.drop(0).each(){
         def alllocals = SootHelper.getAllImmediates(it).findAll() { it instanceof Local };
@@ -126,8 +122,6 @@ def replay(OracleReplayInfo oInfo)
     //AssignStmt
     List<String> statements = []
 
-
-
     mutUnits = generateStatementForMut(oInfo);
 
     //consolidate all vars
@@ -140,8 +134,6 @@ def replay(OracleReplayInfo oInfo)
     oInfo.replayUnits.drop(1).each() {
         statements.addAll(generateStatement(it))
     }
-
-
 
     println "Output Test for Test Method =" + oInfo.method;
     statements.each() { println it}
@@ -158,21 +150,36 @@ def generateStatement(Unit u){
             InvokeExpr expr = ((Stmt)u).getInvokeExpr();
             switch(expr) {
                 case {expr instanceof SpecialInvokeExpr}:
+                    String specialInvokeFormat = "%s = new %s(%s)"
                     String type =  ((Local)((SpecialInvokeExpr)expr).getBase()).getType();
-                    String u1 = ((Local)((SpecialInvokeExpr)expr).getBase()).getName() + " =  new " + type + "()"
-                    String u2 = ((Local)((SpecialInvokeExpr)expr).getBase()).getName() + "_clone =  new " + type + "()"
-                    statements.add(u1);
-                    statements.add(u2);
-                    break;
+                    List<Value> argLocals = ((SpecialInvokeExpr)expr).getArgs()
+                    String args = argLocals.join(",")
+                    List<String> argLocals_clone = argLocals.collect() {
+                        if (it instanceof Local) { ((Local)it).getName() + "_clone"} else { ((Constant)it).toString() }
+                    }
+                    String argsClone = argLocals_clone.join(",")
+
+                    String u1 = String.format(specialInvokeFormat, ((Local)((SpecialInvokeExpr)expr).getBase()).getName(), type, args)
+                    String u2 = String.format(specialInvokeFormat, ((Local)((SpecialInvokeExpr)expr).getBase()).getName() + "_clone", type, argsClone)
+
+
+                    statements.add(u1)
+                    statements.add(u2)
+                    break
+
                 case { expr instanceof InstanceInvokeExpr }:  //handles interface and virtual
                     String base  = ((Local)((InstanceInvokeExpr)expr).getBase()).getName()
                     SootMethod method = ((InstanceInvokeExpr)expr).getMethod()
                     List<Value> argLocals = ((InstanceInvokeExpr)expr).getArgs()
                     String args = argLocals.join(",")
                     //(argLocals.inject() { "," + it.getName() }).getAt(0..1)
+                    List<String> argLocals_clone = argLocals.collect() {
+                        if (it instanceof Local) { ((Local)it).getName() + "_clone"} else { ((Constant)it).toString() }
+                    }
+                    String argsClone = argLocals_clone.join(",")
 
                     String u1 = String.format("%s.%s(%s)", base, method.getName(), args)
-                    String u2 = String.format("%s.%s(%s)", base + "_clone", method.getName(), args)
+                    String u2 = String.format("%s.%s(%s)", base + "_clone", method.getName(), argsClone)
 
                     if ( u instanceof AssignStmt){
                         u1 = ((Local)((AssignStmt)u).getLeftOp()).getName() + " = " + u1
@@ -214,6 +221,31 @@ def generateStatement(Unit u){
 
                         }
                     }
+                    else {
+                        String clazz  = ((StaticInvokeExpr)expr).getMethod().getDeclaringClass().toString();
+                        SootMethod staticMethod = ((StaticInvokeExpr)expr).getMethod()
+                        List<Value> argLocals = ((StaticInvokeExpr)expr).getArgs()
+                        String args = argLocals.join(",")
+
+                        List<String> argLocals_clone = argLocals.collect() {
+                            if (it instanceof Local) { ((Local)it).getName() + "_clone"} else { ((Constant)it).toString() }
+                        }
+                        String argsClone = argLocals_clone.join(",")
+
+                        //(argLocals.inject() { "," + it.getName() }).getAt(0..1)
+
+                        String u1 = String.format("%s.%s(%s)", clazz, method.getName(), args)
+                        String u2 = String.format("%s.%s(%s)", clazz, method.getName(), argsClone)
+
+                        if ( u instanceof AssignStmt){
+                            u1 = ((Local)((AssignStmt)u).getLeftOp()).getName() + " = " + u1
+                            u2 =  ((Local)((AssignStmt)u).getLeftOp()).getName() + "_clone" + " = " + u2
+                        }
+
+                        statements.add(u1)
+                        statements.add(u2)
+                        break
+                    }
 
                     break
             }
@@ -222,6 +254,28 @@ def generateStatement(Unit u){
                 u instanceof AssignStmt && ((AssignStmt)u).getRightOp() instanceof NewExpr}:
             statements.add("//" + u.toString());
             break;
+        case { ((Stmt)u).containsFieldRef() && u instanceof AssignStmt}:
+            def processOp = { f , suffix ->
+                switch (f) {
+                    case { f instanceof InstanceFieldRef}:
+                        ((Local)f.getUseBoxes().get(0).getValue()).getName() + suffix + "." + f.getField().getName()
+                        break
+                    case {f instanceof StaticFieldRef}:
+                        ((StaticFieldRef)f).getFieldRef().declaringClass().getName() + "." +
+                                ((StaticFieldRef)f).getFieldRef().name();
+                        break;
+                    default:
+                        ((Local)f).getName() + suffix
+                }
+            }
+
+            String u1 =   processOp(((AssignStmt)u).getLeftOp(), "") + " = " + processOp(((AssignStmt)u).getRightOp(), "")
+            String u2 =  processOp(((AssignStmt)u).getLeftOp(), "_clone") + " = " + processOp(((AssignStmt)u).getRightOp(), "_clone")
+
+            statements.add(u1)
+            statements.add(u2)
+            break;
+
         default:
             String u1 = u.toString();
             String u2 = u.toString();
@@ -256,7 +310,7 @@ def generateStatementForMut(OracleReplayInfo oInfo){
     SootMethod method =  mutUnitExpr.getMethod();
 
     //Load all states
-    def state1_var = VariableNameGenerator.getNextName("state")
+    def state1_var = ((Local)base).getName();
     vars.add(state1_var)
     statements.add(String.format(loadStatementTemplate, state1_var, XStreamStateCarver.getStateFileName(oInfo.counter)))
 
@@ -265,10 +319,20 @@ def generateStatementForMut(OracleReplayInfo oInfo){
     vars.add(state2_var)
     statements.add(String.format(loadStatementTemplate, state2_var, XStreamStateCarver.getStateFileName(oInfo.counter)))
 
-    List<String> paramVar = (0..<method.getParameterCount()).collect() { VariableNameGenerator.getNextName("param_" + it)}
-    paramVar.each() { vars.add(it)}
+    List<String> paramVar = (0..<method.getParameterCount()).collect() {
+        Immediate im = mutUnitExpr.getArg(it)
+        if (im instanceof Local){
+            ((Local)im).getName();
+        }
+        else {
+            VariableNameGenerator.getNextName("param_" + it)
+        }
+    }
+
+    paramVar.each() { vars.add(it); vars.add(it + "_clone") }
     paramVar.eachWithIndex { String entry, int i ->
-     statements.add(String.format(loadStatementTemplate, entry, XStreamStateCarver.getParamFileName(oInfo.counter, i )))
+        statements.add(String.format(loadStatementTemplate, entry, XStreamStateCarver.getParamFileName(oInfo.counter, i )))
+        //statements.add(String.format("%s = %s", entry, entry + "_clone")
     }
 
     //Invoke mut
@@ -283,10 +347,16 @@ def generateStatementForMut(OracleReplayInfo oInfo){
                 ((Local)mutUnit.leftOp).getName() + "_clone"])
 
         u1 = ((Local)mutUnit.leftOp).getName() + " = " + u1
+
         u2 = String.format(loadStatementTemplate,
                 ((Local)mutUnit.leftOp).getName() + "_clone" ,
                 XStreamStateCarver.getReturnFileName(oInfo.counter) )
         statements.addAll([u1, u2])
+    }
+
+    //all set the cloned params, since they may have changed when passed by ref
+    paramVar.eachWithIndex { String entry, int i ->
+        statements.add(String.format("%s = %s", entry + "_clone", entry))
     }
 
     return [vars, statements]
@@ -315,7 +385,7 @@ def generateReplayInfo(Body body, Unit u){
 
         //check if we know the defs of each local in the unit
         if (allDefsKnown(imm, simpleLocalDefs, current_unit, defUnitsInEnv)){
-            if (u instanceof AssignStmt){
+            if (current_unit instanceof AssignStmt){
                 defUnitsInEnv.add(current_unit) //add the known definition to assignment
             }
 
@@ -374,7 +444,13 @@ def all_paths(UnitGraph g, Unit u, List path, List paths)
 
 //setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int add(int)")
 //setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "java.util.List getListOfApples()")
-setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int[] getArrayOfApples()")
+//setSootOptions("com.ser.oraclefinder.testartifacts.Apples", "int[] getArrayOfApples()")
+//setSootOptions("com.ser.oraclefinder.testartifacts.Cantaloupe", "int getCount()" )
+setSootOptions("com.ser.oraclefinder.testartifacts.OrangeCountIncrementer",
+       "void addCantaloupe(com.ser.oraclefinder.testartifacts.Cantaloupe,int)")
+
+
+
 
 String[] sootArguments = ["-process-dir",
         OracleFinderConfiguration.v().getAppTestsSourceFolder(),

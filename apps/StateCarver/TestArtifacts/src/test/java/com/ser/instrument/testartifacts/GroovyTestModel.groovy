@@ -172,8 +172,131 @@ class GroovyTestModel extends GroovyTestCase {
         assertEquals(temp$4,temp$4_clone)
     }
 
+    public void testTest6() {
+        def $i0_clone
+        def $r1
+        def $r1_clone
+        def var_param_1_1_clone
+        def $i0
+        def l0
+        def var_param_1_1
+        def l0_clone
+        $r1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        $r1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        l0 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:0.xml")
+        var_param_1_1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:1.xml")
+        l0_clone = l0
+        var_param_1_1_clone = var_param_1_1
+        $i0 = l0.getCount()
+        $i0_clone = l0_clone.getCount()
+        //return
+
+        println l0
+        println var_param_1_1
+
+    }
+
+    public void testTest7() {
+        def $i0_clone
+        def $r1
+        def $r1_clone
+        def var_param_1_1_clone
+        def $i0
+        def l0
+        def var_param_1_1
+        def l0_clone
+        $r1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        $r1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        l0 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:0.xml")
+        var_param_1_1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:1.xml")
+        l0_clone = l0
+        var_param_1_1_clone = var_param_1_1
+        $i0 = l0.getCount()
+        $i0_clone = l0_clone.getCount()
+        assertEquals($i0_clone,$i0)
+        //return
+    }
 
 
+    public void testTest8() {
+        def $i0_clone
+        def var_param_1_2_clone
+        def $r1
+        def $r1_clone
+        def $i0
+        def l0
+        def var_param_1_2
+        def l0_clone
+        $r1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        $r1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        l0 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:0.xml")
+        var_param_1_2 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:1.xml")
+        l0_clone = l0
+        var_param_1_2_clone = var_param_1_2
+        $i0 = l0.count
+        $i0_clone = l0_clone.count
+        assertEquals($i0_clone,$i0)
+    }
+
+
+    public void testTest9() {
+        def temp$1
+        def temp$2
+        def c
+        def x_clone
+        def temp$1_clone
+        def temp$2_clone
+        def var_param_1_3
+        def var_param_1_3_clone
+        def x
+        def c_clone
+        temp$1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        temp$1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        c = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:0.xml")
+        var_param_1_3 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:1.xml")
+        c_clone = c
+        var_param_1_3_clone = var_param_1_3
+        x = com.ser.instrument.artifacts.StaticContainer.y_static
+        x_clone = com.ser.instrument.artifacts.StaticContainer.y_static
+        temp$2 = c.count
+        temp$2_clone = c_clone.count
+        assertEquals(x,temp$2)
+        assertEquals(x_clone,temp$2_clone)
+        assertEquals(x,temp$2_clone)
+        assertEquals(x_clone,temp$2)
+    }
+
+    public void testTest10() {
+        def temp$1
+        def temp$3
+        def temp$3_clone
+        def temp$2
+        def c
+        def var_param_1_4
+        def var_param_1_4_clone
+        def x_clone
+        def temp$1_clone
+        def temp$2_clone
+        def x
+        def c_clone
+        temp$1 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        temp$1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        c = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:0.xml")
+        var_param_1_4 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:1.xml")
+        c_clone = c
+        var_param_1_4_clone = var_param_1_4
+        temp$2 = com.ser.statecarver.testartifacts.TestPojo.getPrintStaticValues()
+        temp$2_clone = com.ser.statecarver.testartifacts.TestPojo.getPrintStaticValues()
+        x = temp$2
+        x_clone = temp$2_clone
+        temp$3 = c.count
+        temp$3_clone = c_clone.count
+        assertEquals(x,temp$3)
+        assertEquals(x_clone,temp$3_clone)
+        assertEquals(x,temp$3_clone)
+        assertEquals(x_clone,temp$3)
+//return
+    }
 
 
 }

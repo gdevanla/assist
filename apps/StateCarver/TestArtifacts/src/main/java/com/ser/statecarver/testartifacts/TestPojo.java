@@ -16,7 +16,7 @@ public class TestPojo {
     public int public_int_x;
     private int private_int_x;
 
-    static int static_int_x;
+    static int static_int_x= 20;
 
     public TestPojo(int public_int_x, int private_int_x, int static_int_x, String public_string_s){
         this.public_int_x = public_int_x;
@@ -25,9 +25,17 @@ public class TestPojo {
         static_int_x = this.static_int_x;
     }
 
-    public static void getPrintStaticValues() {
+    public static int getPrintStaticValues() {
+
         System.out.println("The value of static_int_x= " + static_int_x);
+        return static_int_x;
     }
+
+    public static int getStaticValues(int x, int y)
+    {
+        return x + y;
+    }
+
 
     public void newadd(int x){
         System.out.println("new add");
