@@ -299,4 +299,49 @@ class GroovyTestModel extends GroovyTestCase {
     }
 
 
+    public void testTest100() {
+        def temp$4_clone
+        def temp$3_clone
+        def a_clone
+        def a
+        def temp$1_clone
+        def x_clone
+        def temp$2_clone
+        def xx_clone
+        def xx
+        def temp$1
+        def temp$3
+        def temp$2
+        def temp$4
+        def aa
+        def aa_clone
+        def x
+        xx = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:4:this.xml")
+        xx_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:4:this.xml")
+        temp$3 = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:4:0.xml")
+        temp$4 = xx.invokeMethod("add", temp$3)
+        temp$4_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:return.xml")
+        temp$3_clone = temp$3
+        aa = temp$4
+        aa_clone = temp$4_clone
+        a = aa
+        a_clone = aa_clone
+//return
+        a = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        a_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:this.xml")
+        temp$1 = a.invokeMethod("getListOfApples", null)
+        temp$1_clone = com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver.loadState("state:3:return.xml")
+        x = temp$1
+        x_clone = temp$1_clone
+        temp$2 = x.get(2)
+        temp$2_clone = x_clone.get(2)
+        temp$3 = (java.lang.Integer) temp$2
+        temp$3_clone = (java.lang.Integer) temp$2_clone
+        temp$4 = temp$3.intValue()
+        temp$4_clone = temp$3_clone.intValue()
+        assertEquals(temp$4,temp$4_clone)
+//return
+    }
+
+
 }

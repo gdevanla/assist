@@ -1,4 +1,4 @@
-package com.ser.assist;
+package com.ser.assist.testgenerator;
 
 
 
@@ -27,5 +27,7 @@ public class MethodTrace {
 
         this.methodIndex = methodIndex;
     }
+
+
 
 }

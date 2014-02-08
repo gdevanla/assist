@@ -1,7 +1,9 @@
+/* Initial prototype of oracle identification and test snippet generation*/
+
 package com.ser.assist
 
-import com.ser.assist.oraclefinder.OracleFinderConfiguration
 import com.ser.assist.statecarver.xstreamcarver.XStreamStateCarver
+import com.ser.assist.testgenerator.OracleReplayInfo
 import com.ser.assist.testgenerator.VariableNameGenerator
 import soot.Body
 import soot.BodyTransformer
@@ -33,13 +35,6 @@ import soot.toolkits.scalar.SimpleLocalDefs
 
 import java.util.regex.Pattern
 
-class OracleReplayInfo {
-    int counter = 4;
-    Body testBody = null;
-    SootMethod method;
-    Unit mut;
-    List<Unit> replayUnits = new ArrayList<>();
-}
 
 //set up soot options
 

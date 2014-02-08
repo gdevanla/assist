@@ -1,7 +1,7 @@
 package com.ser.assist;
 
 import com.ser.assist.statecarver.core.StateInstrumenter;
-import com.ser.assist.testgenerator.TestClassGenerator;
+//import com.ser.assist.testgenerator.TestClassGenerator;
 
 import java.io.File;
 import java.io.IOException;
@@ -67,11 +67,11 @@ public class Assist {
         int sequenceNumber = 0;
 
         for (MutId methodTuple:methodTuples){
-        if (!TestClassGenerator.run(methodTuple.clazzName, "mutee", methodTuple.mutSignature,
+       /* if (!TestClassGenerator.run(methodTuple.clazzName, "mutee", methodTuple.mutSignature,
                 methodTuple.sequenceNumber)){
                 System.out.println("****Failed at Test generation");
             System.exit(-1);
-        }
+        }*/
         }
     }
 
